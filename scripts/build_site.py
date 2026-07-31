@@ -20,6 +20,15 @@ def load(name):
     return json.loads((DATA_DIR / name).read_text())
 
 
+def compute_rings(championships):
+    rings = {}
+    runner_ups = {}
+    for c in championships:
+        rings[c["winner"]] = rings.get(c["winner"], 0) + 1
+        runner_ups[c["runner_up"]] = runner_ups.get(c["runner_up"], 0) + 1
+    return rings, runner_ups
+
+
 def slugify(name):
     s = re.sub(r"[^a-z0-9]+", "-", name.lower())
     return s.strip("-")
@@ -81,9 +90,20 @@ def player_row(p):
 </tr>"""
 
 
-def build_team_page(team, content):
+def build_team_page(team, content, rings, runner_ups):
     verdict = content["verdict"]
     vclass = VERDICT_CLASS.get(verdict, "")
+    ring_count = rings.get(team["roster_id"], 0)
+    runner_up_count = runner_ups.get(team["roster_id"], 0)
+    trophies = "🏆" * ring_count
+    trophy_line = ""
+    if ring_count or runner_up_count:
+        bits = []
+        if ring_count:
+            bits.append(f"{ring_count}x champion")
+        if runner_up_count:
+            bits.append(f"{runner_up_count}x runner-up")
+        trophy_line = f'<p class="trophy-line">{trophies} {esc(" · ".join(bits))}</p>'
     starters = [p for p in team["roster"] if p["is_starter"]]
     bench = [p for p in team["roster"] if not p["is_starter"]]
 
@@ -95,6 +115,7 @@ def build_team_page(team, content):
     strengths = "".join(f"<li>{esc(s)}</li>" for s in content["strengths"])
     weaknesses = "".join(f"<li>{esc(w)}</li>" for w in content["weaknesses"])
     standing_paras = "".join(f"<p>{esc(p)}</p>" for p in content.get("standing", []))
+    outlook_paras = "".join(f"<p>{esc(p)}</p>" for p in content.get("future_outlook", []))
 
     pos_counts = team["position_counts"]
     pos_ages = team["position_avg_age"]
@@ -107,8 +128,9 @@ def build_team_page(team, content):
 <a class="back-link" href="index.html">&larr; All Teams</a>
 <header class="team-header">
   <div class="verdict-badge {vclass}">{esc(verdict)}</div>
-  <h1>{esc(team['team_name'])}</h1>
+  <h1>{esc(team['team_name'])} {trophies}</h1>
   <p class="owner">Managed by {esc(team['display_name'])}</p>
+  {trophy_line}
   <p class="tagline">{esc(content['tagline'])}</p>
 </header>
 
@@ -131,6 +153,11 @@ def build_team_page(team, content):
 <section class="standing-section">
   <h2>Where They Stand</h2>
   <div class="standing">{standing_paras}</div>
+</section>
+
+<section class="outlook-section">
+  <h2>Future Outlook</h2>
+  <div class="outlook">{outlook_paras}</div>
 </section>
 
 <section class="narrative-section">
@@ -180,9 +207,10 @@ def build_team_page(team, content):
     )
 
 
-def build_index(teams, content_all, league_content):
+def build_index(teams, content_all, league_content, rings, runner_ups):
     verdict_order = ["Win-Now Contender", "Contender", "Retool", "Rebuild"]
     teams_by_verdict = {v: [] for v in verdict_order}
+    team_by_id = {t["roster_id"]: t for t in teams}
     for t in teams:
         c = content_all[str(t["roster_id"])]
         teams_by_verdict[c["verdict"]].append((t, c))
@@ -198,12 +226,13 @@ def build_index(teams, content_all, league_content):
             slug = f"team-{t['roster_id']}.html"
             record = t["recent_history"][-1] if t["recent_history"] else None
             record_str = f"{record['wins']}-{record['losses']} in {record['season']}" if record else "No history"
+            trophies = "🏆" * rings.get(t["roster_id"], 0)
             cards.append(f"""
 <a class="team-card" href="{slug}">
   <div class="team-card-top">
     <span class="verdict-badge small {vclass}">{esc(verdict)}</span>
   </div>
-  <h3>{esc(t['team_name'])}</h3>
+  <h3>{esc(t['team_name'])} {trophies}</h3>
   <p class="card-owner">{esc(t['display_name'])}</p>
   <p class="card-tagline">{esc(c['tagline'])}</p>
   <div class="card-stats">
@@ -219,12 +248,31 @@ def build_index(teams, content_all, league_content):
   </div>
 </section>""")
 
+    history_rows = []
+    for c in sorted(league_content.get("championships", []), key=lambda c: -c["year"]):
+        winner = team_by_id[c["winner"]]
+        loser = team_by_id[c["runner_up"]]
+        history_rows.append(f"""<tr>
+<td class="hist-year">{c['year']}</td>
+<td><a href="team-{winner['roster_id']}.html">🏆 {esc(winner['team_name'])}</a></td>
+<td><a href="team-{loser['roster_id']}.html">{esc(loser['team_name'])}</a></td>
+</tr>""")
+    history_table = f"""
+<section class="history-section">
+  <h2>League History</h2>
+  <table class="history-table">
+    <thead><tr><th>Year</th><th>Champion</th><th>Runner-up</th></tr></thead>
+    <tbody>{"".join(history_rows)}</tbody>
+  </table>
+</section>""" if history_rows else ""
+
     body = f"""
 <header class="league-header">
   <h1>{esc(league_content['league_headline'])}</h1>
   <p class="league-summary">{esc(league_content['league_summary'])}</p>
 </header>
 {"".join(sections)}
+{history_table}
 <footer class="site-footer">
   <p>Built from live Sleeper league data. Analysis and grades are opinion, not projections.</p>
 </footer>
@@ -329,7 +377,8 @@ a:hover { text-decoration: underline; }
 .back-link { display: inline-block; margin-bottom: 16px; font-size: 0.9rem; }
 .team-header { margin-bottom: 28px; }
 .team-header h1 { font-size: 1.9rem; margin: 10px 0 2px; }
-.owner { color: var(--text-muted); margin: 0 0 12px; }
+.owner { color: var(--text-muted); margin: 0 0 4px; }
+.trophy-line { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 12px; }
 .tagline { font-size: 1.1rem; max-width: 60ch; }
 
 .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
@@ -344,6 +393,10 @@ a:hover { text-decoration: underline; }
 .standing-section { margin-bottom: 32px; }
 .standing { max-width: 72ch; }
 .standing p { margin: 0 0 14px; }
+
+.outlook-section { margin-bottom: 32px; }
+.outlook { max-width: 72ch; }
+.outlook p { margin: 0 0 14px; }
 
 .narrative-section { margin-bottom: 32px; }
 .narrative { max-width: 72ch; }
@@ -378,6 +431,12 @@ a:hover { text-decoration: underline; }
   .sw-grid { grid-template-columns: 1fr; }
 }
 
+.history-section { margin-top: 48px; }
+.history-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.history-table th { text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.history-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
+.hist-year { color: var(--text-muted); font-weight: 600; }
+
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 """
 
@@ -386,15 +445,16 @@ def main():
     DOCS_DIR.mkdir(exist_ok=True)
     teams = load("teams.json")
     content = load("content.json")
+    rings, runner_ups = compute_rings(content.get("championships", []))
 
     (DOCS_DIR / "style.css").write_text(CSS)
 
     for t in teams:
         c = content["teams"][str(t["roster_id"])]
-        html = build_team_page(t, c)
+        html = build_team_page(t, c, rings, runner_ups)
         (DOCS_DIR / f"team-{t['roster_id']}.html").write_text(html)
 
-    index_html = build_index(teams, content["teams"], content)
+    index_html = build_index(teams, content["teams"], content, rings, runner_ups)
     (DOCS_DIR / "index.html").write_text(index_html)
 
     print(f"Built {len(teams)} team pages + index into {DOCS_DIR}")

@@ -1,10 +1,20 @@
 {
   "league_headline": "Ethel's Dynasty: 2026 Draft Preview",
-  "league_summary": "Twelve teams, half-PPR, one quarterback, four-round rookie draft. The gap between the top and bottom of this league is mostly about draft capital discipline: the best teams either built deep rosters and kept their future picks intact, or spent capital ruthlessly to win now. The bottom of the standings is stacked with future first-round picks waiting to be turned into a real core.",
+  "league_summary": "Twelve teams, half-PPR, one quarterback, four-round rookie draft. The gap between the top and bottom of this league is mostly about draft capital discipline: the best teams either built deep rosters and kept their future picks intact, or spent capital ruthlessly to win now. The bottom of the standings is stacked with future first-round picks waiting to be turned into a real core. The league's history looms over this draft too: the Chicken Boys' four-peat dynasty has completely collapsed, Long Live Wopo is the only two-time champion, and the Moon Unit enters as defending champs after finally breaking through in 2025.",
+  "championships": [
+    {"year": 2018, "winner": 4, "runner_up": 7},
+    {"year": 2019, "winner": 8, "runner_up": 2},
+    {"year": 2020, "winner": 1, "runner_up": 7},
+    {"year": 2021, "winner": 1, "runner_up": 11},
+    {"year": 2022, "winner": 1, "runner_up": 8},
+    {"year": 2023, "winner": 1, "runner_up": 6},
+    {"year": 2024, "winner": 8, "runner_up": 10},
+    {"year": 2025, "winner": 5, "runner_up": 9}
+  ],
   "teams": {
     "1": {
       "verdict": "Retool",
-      "tagline": "A young, talented team that took a step back and needs to decide what it's building toward.",
+      "tagline": "A four-time champion dynasty that has completely fallen off, and needs to decide whether it's retooling or starting a real rebuild.",
       "strengths": [
         "Herbert at QB with four full seasons of team control left",
         "WR room is genuinely deep: Waddle, Pickens, Olave, Downs as the four, with Golden and Higgins developing behind them",
@@ -17,8 +27,12 @@
       ],
       "narrative": "The Chicken Boys have the best pure receiver room in the league not named Moon Unit, and Herbert gives them a real quarterback anchor. The 2025 fade to 5-9 looks more like touchdown luck evening out than a talent problem, since almost nothing about this roster got worse. The draft capital here is the interesting part: a 2026 first plus three fourths, and then a genuinely stacked 2028 with two firsts. That is a retooling team's dream position, not a rebuilder's. Use the 2026 first on the best true bell-cow back available, since RB is the one spot where name recognition doesn't match production, and stop paying for WR depth you already have.",
       "standing": [
-        "Finished 5-9 in 2025, tied for the worst record in the league by wins, but the underlying numbers tell a different story: 1290.68 points scored actually outpaces four teams that made the playoffs. That gap between record and output usually closes on its own without a full rebuild being necessary.",
-        "The bigger red flag is the direction, not the level: this team went from a near-title-contending 10-4 in 2024 to 5-9 in 2025 despite arguably the deepest receiver corps in the league. Heading into this draft they sit in the middle of the pack in draft capital but comfortably in the top half in roster talent, the classic sign of a team a couple of lineup tweaks away from the playoff mix rather than one that needs to blow anything up."
+        "This is the most decorated franchise in league history, four straight championships from 2020 through 2023, a run nobody else in this league has come close to matching. Since then: no finals appearance in 2024, and a 5-9 finish in 2025. That is as sharp a fall from a dynasty as this league has seen.",
+        "Finished 5-9 in 2025, tied for the worst record in the league by wins, but the underlying numbers tell a different story: 1290.68 points scored actually outpaces four teams that made the playoffs. That gap between record and output usually closes on its own without a full rebuild being necessary. Heading into this draft they sit in the middle of the pack in draft capital but comfortably in the top half in roster talent, the classic sign of a former champion a couple of lineup tweaks away from the playoff mix rather than one that needs to blow anything up."
+      ],
+      "future_outlook": [
+        "The receiver room isn't just deep, it's young: Pickens (25), Olave (26), and Downs (24) are all entering their prime rather than leaving it, and Herbert doesn't turn 30 until 2028. That's a three-year runway, not a one-year fix, and it lines up well with when the 2028 draft capital (five picks, including a first) is scheduled to land.",
+        "The name to watch is Oronde Gadsden at TE, a 23-year-old who's the only real answer at the position right now; if he develops into a legitimate starter over the next two seasons, this roster stops needing to draft TE at all and can pour every future pick into fixing running back instead."
       ]
     },
     "2": {
@@ -36,8 +50,12 @@
       ],
       "narrative": "This roster is a snapshot of a team that contended a couple of years ago and didn't turn the roster over in time. Henry and Jones were great value buys once, but a dynasty backfield anchored by two players over 30 is a ticking clock, and Kelce at 36 makes the TE room a liability waiting to happen. The saving grace is that this front office clearly saw it coming and hoarded picks: four firsts across the next three classes. That's the resource to go get a young workhorse back and a real TE in the same offseason. Sell Henry and Kelce now while they still have redraft value, and spend the stack of firsts rebuilding the skill-position core around Stroud rather than trying to squeeze one more year out of the current group.",
       "standing": [
-        "Two consecutive 6-8 seasons, squarely in the league's middle class: neither good enough to contend nor bad enough to fully sell. That is often the most dangerous place to sit in a dynasty league, since it invites half-measures instead of a real decision.",
+        "Two consecutive 6-8 seasons, squarely in the league's middle class: neither good enough to contend nor bad enough to fully sell. That is often the most dangerous place to sit in a dynasty league, since it invites half-measures instead of a real decision. The one finals appearance in this team's recent history was a loss, to Long Live Wopo back in 2019, and it hasn't been particularly close to another one since.",
         "The roster's average age (26.6) and its top contributors (Henry at 32, Kelce at 36) both point toward a closing window rather than an opening one. This team is nowhere close to the top tier right now, BateBoul, the Choo Choo Crew, and the Moon Unit all finished with 11 or more wins in 2025, and staying in the mushy middle for one more year without spending the stacked draft capital would be the worst possible outcome."
+      ],
+      "future_outlook": [
+        "There's already a young core quietly forming underneath the aging vets: Stroud is 24 and entering his ascending years, Brian Thomas (23), Ladd McConkey (24), and Ricky Pearsall (25) all have real WR1/WR2 trajectories, and Chase Brown (26) is a legitimate every-down back. By 2027 or 2028, that group is fully in its prime at the exact moment Henry, Jones, and Kelce are gone from the league entirely.",
+        "The four future first-round picks are the accelerant, not the plan itself. Spend them on a young TE and one more difference-making receiver or back, and this roster quietly becomes Stroud's team well before the current vets retire, rather than needing a slow multi-year teardown."
       ]
     },
     "3": {
@@ -57,11 +75,15 @@
       "standing": [
         "Trending in the right direction, up from 7-7 to 8-6 with the second-most points scored in the league in 2025 (1418.74), trailing only the three teams that finished with 11 or more wins. Real production without a gaudy win total usually means better health or better in-season decisions are the difference between this team and the top tier.",
         "Right now they sit one clear tier below BateBoul, the Choo Choo Crew, and the Moon Unit, but with the deepest bench in the league and a full run of picks through 2028, they have both the assets and the timeline to close that gap as soon as this offseason rather than needing multiple years to get there."
+      ],
+      "future_outlook": [
+        "This is one of the youngest elite cores in the league: Nabers (23), Burden (22), and McMillan (23) are all still on rookie deals and still improving, and Judkins (22) gives them a running back with the same long runway. None of that talent is going anywhere for years.",
+        "Combined with a full complement of picks in every round through 2028, this team doesn't have a ceiling problem, it has an allocation problem: as long as future capital gets spent fixing QB and TE instead of adding to an already-loaded WR room, this roster should be a top-two or top-three team for the rest of the decade."
       ]
     },
     "4": {
       "verdict": "Rebuild",
-      "tagline": "Two losing seasons and a war chest of draft picks that hasn't been converted into a core yet.",
+      "tagline": "The league's original champion, back in 2018, now several years into a full rebuild with the picks to show for it.",
       "strengths": [
         "Three first-round picks in the 2026 draft plus three more seconds, the single biggest draft haul in the league this year",
         "Jeanty and Loveland give this team two blue-chip rookies to build around already",
@@ -74,13 +96,17 @@
       ],
       "narrative": "This is a team that has clearly been selling for two years, and the return is sitting right there: three firsts and three seconds in this rookie class alone. Jeanty and Loveland are the kind of foundational pieces a rebuild is supposed to produce, and now the job is to keep stacking. With this much draft capital, the temptation is to take the top player at every pick, but the better play is package two or three of these seconds to jump back into the first round and guarantee a second blue-chip rookie. Stafford is a one-year QB rental at best, don't build around him. Sit through one more mediocre season, spend every pick you have on this class and the next one, and this becomes the scariest team in the league by 2028.",
       "standing": [
-        "Two years of losing seasons, but the trajectory is actually upward: 3-11 in 2024 improved to 6-8 in 2025, and scoring ticked up too (953.06 to 1059.84), even though both marks still sit near the bottom of the league.",
+        "Two years of losing seasons, but the trajectory is actually upward: 3-11 in 2024 improved to 6-8 in 2025, and scoring ticked up too (953.06 to 1059.84), even though both marks still sit near the bottom of the league. It's a long way removed from this franchise's high point, a championship all the way back in 2018, but the rebuild has clearly been underway for a while and the draft capital reflects it.",
         "That combination, more losses than almost anyone but a front office that has clearly been trading proven production for future capital, points to a rebuild that is further along than the record suggests. Sitting on three firsts and three seconds in this class alone, they have more draft capital than current production, which is exactly the state a rebuild should be in a year or two before it's supposed to contend again."
+      ],
+      "future_outlook": [
+        "Jeanty and Loveland are both 22 and both entering situations where their target and touch share should only grow, and Xavier Worthy (23) gives this team a legitimate third foundational piece if his role keeps expanding. None of the three turns 25 until at least 2028, so the core doesn't need replacing again anytime soon.",
+        "That's the real case for patience here: this isn't a team hoping the draft finds its stars, the stars are already on the roster and just need two more years to mature. The picks are for filling in around them, not replacing them, which is the healthiest possible position for a team that's currently losing."
       ]
     },
     "5": {
       "verdict": "Win-Now Contender",
-      "tagline": "The best roster in the league, built by trading future picks for a stacked present.",
+      "tagline": "The defending champions, and the best roster in the league heading into the title defense.",
       "strengths": [
         "Mahomes, CMC, Bijan, A.J. Brown, CeeDee Lamb, St. Brown as the starting eight is as good as it gets in this league",
         "11-3 in 2025, the league's best record, and it wasn't particularly close",
@@ -93,8 +119,12 @@
       ],
       "narrative": "The Moon Unit paid for this roster with future picks and it's hard to argue with the result: the best record in the league and a starting lineup with almost no weak link. The one real risk is CMC, who is entering the danger zone for a running back with his mileage, and there is no obvious in-house replacement if he falls off. The 2026 draft is thin here on purpose, so the move isn't to force a rookie pick, it's to use CMC's remaining trade value now, while he's still productive, to bring back a younger complementary piece before the market prices in the decline everyone can see coming.",
       "standing": [
-        "11-3 in 2025, the second-best record and second-most points in the league (1626.14), a clear step up from an already solid 8-6 mark in 2024. That is a two-year upward trajectory that has now arrived at true title contention, in the same tier as BateBoul and the Choo Choo Crew.",
+        "11-3 in 2025, the second-best record and second-most points in the league (1626.14), a clear step up from an already solid 8-6 mark in 2024, and this team turned that into the franchise's first championship, beating BateBoul in the final. That two-year upward trajectory has now arrived at a title, not just contention.",
         "Only two other rosters scored more points in 2025, and the gap from that top tier down to the rest of the league is wide. The real question for this team isn't whether it's good enough to win now, it clearly is, it's how long the window stays open given the injury risk sitting at the center of the roster in CMC."
+      ],
+      "future_outlook": [
+        "Bijan Robinson (24) is the one true long-term answer on this roster, and he's already good enough to be a team's clear lead back the day CMC's workload starts getting managed down. St. Brown (26) also has several prime years left. Past those two, though, the rest of the core (Mahomes, CMC, A.J. Brown, Lamb) is aging as a group.",
+        "The thin draft capital (just a third and fourth this year, a first, third, and fourth in both 2027 and 2028) means there isn't much coming to replace that group when it goes. The realistic outlook is a two-to-three-year win-now window built around Bijan and St. Brown, with CMC's trade value the best tool available to buy insurance before that window narrows."
       ]
     },
     "6": {
@@ -112,13 +142,17 @@
       ],
       "narrative": "This roster has a real problem: it's hoarding depth at the position it's already deepest at while running dangerously thin at running back. Twelve receivers is a lot of bodies for four to six roster spots, and most of the names past Odunze and Chism are speculative. The fix is straightforward even if it's not fun: package three or four of the fringe WR dart-throws, add in a couple of the extra seconds, and go get a real starting running back. With eight picks in this class, there's no excuse for walking out of the draft without addressing the backfield directly, even if it costs moving up from the back of the first round.",
       "standing": [
-        "Back-to-back 5-9 seasons and the lowest point total in the league both years, 1243.34 followed by an actual decline to 1042.18. That is not just a run of bad luck, it is the profile of a roster genuinely underproducing, most likely because the twelve-receiver logjam is diluting playing time rather than concentrating it behind real difference-makers.",
+        "Back-to-back 5-9 seasons and the lowest point total in the league both years, 1243.34 followed by an actual decline to 1042.18. That is not just a run of bad luck, it is the profile of a roster genuinely underproducing, most likely because the twelve-receiver logjam is diluting playing time rather than concentrating it behind real difference-makers. This team was a finals participant as recently as 2023, losing to the Chicken Boys, which makes the two-year slide since then even more striking.",
         "This roster sits in the bottom tier of the standings alongside the Chicken Boys and the Factory, but unlike those two, the construction doesn't obviously support a bounce-back on its own. The fix here has to come from actual roster changes this offseason, not from better health or better touchdown luck next season."
+      ],
+      "future_outlook": [
+        "Caleb Williams (24) is a legitimate long-term answer at QB, and Rome Odunze (24) and Efton Chism (24) both have real WR1-caliber trajectories if they get more concentrated volume. That's a fine foundation, the problem is everything else on the roster is either a lottery ticket or a hole.",
+        "With a first and three seconds in this class plus a loaded 2028 (six picks, a first among them), the multi-year outlook depends entirely on whether this front office finally uses that capital to add a real running back rather than another speculative receiver. Do that, and Williams-Odunze-Chism is a real core to build 2027 and 2028 around."
       ]
     },
     "7": {
       "verdict": "Win-Now Contender",
-      "tagline": "All the chips are already on the table. There is no 2026 draft capital left to spend.",
+      "tagline": "Twice a finalist, twice a runner-up, all the chips are already on the table and there is no 2026 draft capital left to spend.",
       "strengths": [
         "Bowers at TE is one of the best building blocks in the league at any position",
         "Garrett Wilson and Zay Flowers give this team a genuinely explosive young WR2/WR3 behind Evans",
@@ -131,13 +165,17 @@
       ],
       "narrative": "Brock Hard mortgaged an entire draft class to build this roster, and now there's no cushion left if it doesn't work. Bowers, Wilson, and Flowers form a genuinely dangerous young skill-position core, but the running back room is aging and thin, and there's no rookie capital left this year to fix it. The 10-4-to-6-8 slide is the warning sign: this team needs the talent it already has to perform now, because it has nothing coming to bail it out. The right move is aggressive in-season trading rather than waiting on a draft that isn't coming, targeting a real workhorse back from a seller before the season even kicks off.",
       "standing": [
-        "Fell from a strong 10-4 season in 2024 to 6-8 in 2025, and unlike some of the other decliners in this league, the point totals fell hard too, from 1518.52 down to 1146.16. This wasn't just touchdown variance evening out, the offense actually got worse.",
+        "Fell from a strong 10-4 season in 2024 to 6-8 in 2025, and unlike some of the other decliners in this league, the point totals fell hard too, from 1518.52 down to 1146.16. This wasn't just touchdown variance evening out, the offense actually got worse. It's a familiar shape for this franchise: finals losses in 2018 and 2020 mean this is the only team in the league to reach the championship game twice without ever winning it.",
         "That decline, combined with zero picks anywhere in this draft to correct course, makes this the most precarious standing in the league heading into the season: a team that was recently good, is trending the wrong way, and has no draft-capital cushion if 2026 goes sideways as well."
+      ],
+      "future_outlook": [
+        "Brock Bowers is a 23-year-old who's already a top-two dynasty TE, and Garrett Wilson (26) and Zay Flowers (25) both still have several prime years ahead. That trio alone is a real long-term foundation, arguably as good as any three-player core in the league at their positions.",
+        "The problem is everything around them: Evans is 32 and won't be part of the next contention window, and with almost no picks anywhere through 2028 (a second in 2027, a first, second, and fourth in 2028), there's very little way to replace him or the aging running back room. The outlook here hinges entirely on aggressive trades, since the draft isn't going to be the tool that fixes this roster."
       ]
     },
     "8": {
       "verdict": "Contender",
-      "tagline": "The model of a sustainable, well-balanced contender.",
+      "tagline": "A two-time champion and the model of a sustainable, well-balanced contender.",
       "strengths": [
         "Barkley, Jacobs, and Javonte Williams give this team three legitimate every-down-caliber backs",
         "Jefferson at WR1 is as safe a foundational piece as exists in fantasy",
@@ -150,13 +188,17 @@
       ],
       "narrative": "Long Live Wopo doesn't have a glaring weakness, which is its own kind of advantage in a league with this much roster turnover elsewhere. Barkley, Jacobs, and Jefferson form a stable core, and having a full run of picks through 2027 means this team can be patient and opportunistic rather than desperate. The swing factor is Dart: if he takes a real second-year step, this roster has no obvious ceiling. Use this year's picks on WR depth rather than reaching for need, since the roster construction here rewards adding the best player available and letting the lineup sort itself out.",
       "standing": [
-        "The definition of consistent: 8-6 in both 2024 and 2025, with respectable point totals both years (1578.0, then 1473.36) that comfortably clear the bottom half of the league. Not a top-three team, but clearly ahead of the middle pack and only a tier removed from true contention.",
+        "The definition of consistent: 8-6 in both 2024 and 2025, with respectable point totals both years (1578.0, then 1473.36) that comfortably clear the bottom half of the league. Not a top-three team by regular-season record right now, but this is the only franchise in the league with multiple championships, winning it in 2019 and again in 2024, plus a runner-up finish in 2022. Three finals appearances in the league's history and this is the team in two of them.",
         "With a full run of picks and no glaring roster need, this is a team that could climb into the top tier simply by drafting well and letting Dart continue to develop, without needing a single dramatic move to get there."
+      ],
+      "future_outlook": [
+        "Dart is only 23 and already the starter, and if he develops the way rookie QBs with his draft capital typically do, this team has a true long-term answer at the league's most important position, something more than half the league can't say. Javonte Williams (26) and Jonathon Brooks (23) give the backfield real depth beyond Barkley's timeline too.",
+        "With a full run of picks through 2027, this team doesn't need to make a big swing, it just needs to keep drafting well and let Dart's development set the pace. If he hits, Long Live Wopo has as good a multi-year outlook as anyone not already in the league's top tier."
       ]
     },
     "9": {
       "verdict": "Win-Now Contender",
-      "tagline": "Back-to-back dominant seasons and a roster with almost no holes.",
+      "tagline": "Back-to-back dominant seasons, a roster with almost no holes, and still no championship to show for it.",
       "strengths": [
         "12-2 in 2025 on top of 11-3 in 2024, the most consistent winning roster in the league",
         "Chase, Deebo, London, and Smith-Njigba is an elite four-man WR room",
@@ -169,13 +211,17 @@
       ],
       "narrative": "BateBoul has been the best team in the league for two straight years and the roster explains why: elite WR depth, a true difference-making TE, and enough RB competence to not be a liability. There isn't much left to fix, which is a good problem to have. The one real crack is QB, where Dak is solid but unspectacular and there's no young answer waiting behind him. With multiple seconds in this draft and a full 2027/2028 complement, the highest-value move is packaging picks to jump into the back of the first round for a rookie QB with real upside, insurance for the day Dak's play (or health) turns.",
       "standing": [
-        "The best standing in the league by a clear margin: 12-2 and 11-3 in back-to-back years, and the most points scored in the league both seasons, 1622.56 followed by 1658.66. No other roster has combined that level of volume and consistency over two straight years.",
+        "The best regular-season standing in the league by a clear margin: 12-2 and 11-3 in back-to-back years, and the most points scored in the league both seasons, 1622.56 followed by 1658.66. No other roster has combined that level of volume and consistency over two straight years, but the 2025 season ended in a finals loss to the Moon Unit, the closest this team has come to a title and still short.",
         "Heading into this draft, this is the team every other roster is either trying to catch or trying to avoid meeting in the semifinals. The only real question is whether they can get better at the margins, since there isn't an obvious hole left to fill on this roster."
+      ],
+      "future_outlook": [
+        "This is the rare contender whose best players are also its youngest: Bucky Irving (23), Ja'Marr Chase (26), Drake London (25), and Jaxon Smith-Njigba (24) are all either still improving or squarely in their prime, and Trey McBride (26) is one of the best young TEs in the league. Almost none of that core needs replacing in the next three years.",
+        "That's what makes this roster's outlook different from the other win-now teams in the league: BateBoul isn't racing a closing window, the current core should still be excellent in 2028. The only real long-term need is finding a young QB to eventually replace Dak, and multiple future seconds give them the ammunition to go get one without disturbing anything else."
       ]
     },
     "10": {
       "verdict": "Win-Now Contender",
-      "tagline": "12-2 two years running, the deepest running back room in the league, and no reason to change anything.",
+      "tagline": "12-2 two years running, a finals loss in 2024, and the deepest running back room in the league still chasing its first ring.",
       "strengths": [
         "Henderson, Jonathan Taylor, and Achane is arguably the best three-man backfield in the league",
         "Burrow at QB with a strong supporting cast (Godwin, Sutton, Jameson Williams)",
@@ -188,8 +234,12 @@
       ],
       "narrative": "The Choo Choo Crew has been the most dominant team in the league for two seasons running, and the roster shows exactly how: an elite three-headed backfield, a true QB1, and enough perimeter talent to not need to draft. The tradeoff is almost no incoming draft capital, which is fine as long as the timeline is now. The real long-term risk is that Henderson, Taylor, and Achane are all in the same general career window; when that trio starts declining it will likely happen at once, and there's very little behind them to soften the blow. Enjoy the title window, but start using the aging bench pieces (Kupp, Allen, McLaurin) as trade sweeteners now to quietly restock future picks while they still carry value.",
       "standing": [
-        "Matches BateBoul's 12-2 record in both 2024 and 2025, with elite point totals both years as well (1553.26, then 1498.42), placing this roster in the exact same top tier as the league's other juggernaut.",
+        "Matches BateBoul's 12-2 record in both 2024 and 2025, with elite point totals both years as well (1553.26, then 1498.42), placing this roster in the exact same top tier as the league's other juggernaut. The 2024 season ended in a championship-game loss to Long Live Wopo, so this roster has already proven it can get there; it just hasn't closed it out yet.",
         "The difference between the two is how they got there: this roster spent far more of its draft capital assembling the current core, which shows up in how thin the incoming picks are. As long as the RB trio stays healthy, the standing here doesn't change, but there is less margin for error than BateBoul has if any of the top three backs go down, since there isn't much depth behind them and not much draft capital left to fix it in-season."
+      ],
+      "future_outlook": [
+        "TreVeyon Henderson (23) and De'Von Achane (24) are both young enough to anchor a backfield well past 2028, which softens the concern about Jonathan Taylor's timeline somewhat, he's the one member of the trio who'll be aging out first. Jameson Williams (25) is also still ascending at receiver.",
+        "The catch is the almost total absence of future draft capital (a single third in 2027, three picks total in 2028), which means there's no easy way to add a fourth long-term piece if injuries hit or if Taylor declines faster than expected. This outlook is good specifically because Henderson and Achane are already secured, not because there's a plan to add more."
       ]
     },
     "11": {
@@ -207,8 +257,12 @@
       ],
       "narrative": "The Factory is sitting on the largest draft war chest in the league and it isn't close: three first-round picks in 2028 alone. This is the definition of a team that has been selling everything not nailed down, and it's the right strategy, because the current roster has almost no foundational young talent to show for the losing seasons. The job now is conversion, not accumulation: package the extra seconds to move up and guarantee multiple blue-chip rookies rather than spreading capital across the whole draft board. With three of the TE room's veterans holding real trade value, moving one for a future first only deepens an already unmatched draft position. This team should be the scariest roster in the league by 2027 if the picks get spent on premium talent instead of floor plays.",
       "standing": [
-        "Two losing seasons in a row and the lowest point totals in the league both years, 1038.84 followed by 1012.78, a clear last-place standing by production, not just by record.",
+        "Two losing seasons in a row and the lowest point totals in the league both years, 1038.84 followed by 1012.78, a clear last-place standing by production, not just by record. There's a finals appearance in this franchise's past, a loss to the Chicken Boys back in 2021 during that team's four-peat, but nothing about the current roster resembles that team anymore.",
         "That is not a coincidence, it is the direct result of aggressively trading proven players for future picks, and the strategy has paid off in draft capital even as it tanked the current record. Of every team in the bottom tier, this is the one best positioned to climb quickly, since no other roster in the league is sitting on three first-round picks in a single future class."
+      ],
+      "future_outlook": [
+        "Bo Nix is only 26 and clearly still improving, which gives this rebuild a real foundation at the league's most important position already in place, something a lot of rebuilding teams don't have. Beyond him, though, there isn't much proven young talent yet, this roster's future outlook is almost entirely about what the picks become.",
+        "That's not a knock, given the sheer volume: ten picks in 2027 alone, five of them seconds, and three firsts in 2028. Even a modest hit rate on that many premium picks should produce two or three real difference-makers, and if management is disciplined about packaging picks to move up rather than spreading them thin, this team could go from worst to best in the league inside two draft classes."
       ]
     },
     "12": {
@@ -228,6 +282,10 @@
       "standing": [
         "Improved from 4-10 to 6-8, but points climbed only modestly (1083.24 to 1057.30, essentially flat), so the record uptick outpaced the underlying performance a little. Still solidly in the bottom half of the league for now.",
         "That current standing undersells where this team is actually headed. This is the youngest roster in the league by a wide margin, more than a full year younger on average than the next-youngest team, and with two of the best rookie backs in recent memory already in the building plus four future first-round picks lined up for 2027, this is a team currently near the bottom of the table with a clearer path to the top than almost anyone else in the league."
+      ],
+      "future_outlook": [
+        "This is the best-timed young core in the league: Omarion Hampton (23) and RJ Harvey give this team two building-block backs, and Marvin Harrison Jr. (23) and Travis Hunter (23) pair with Tee Higgins to form a real long-term WR room. Every one of those names is entering their prime right as this roster's four 2027 first-round picks arrive.",
+        "That convergence, a young core already hitting its stride at the exact moment a wave of premium draft capital lands, is what separates this team from every other rebuild in the league. If even two of those four firsts turn into real contributors, Nikkis' Victims isn't just competitive by 2027, it's a legitimate favorite."
       ]
     }
   }

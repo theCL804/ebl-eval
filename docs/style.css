@@ -91,7 +91,8 @@ a:hover { text-decoration: underline; }
 .back-link { display: inline-block; margin-bottom: 16px; font-size: 0.9rem; }
 .team-header { margin-bottom: 28px; }
 .team-header h1 { font-size: 1.9rem; margin: 10px 0 2px; }
-.owner { color: var(--text-muted); margin: 0 0 12px; }
+.owner { color: var(--text-muted); margin: 0 0 4px; }
+.trophy-line { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 12px; }
 .tagline { font-size: 1.1rem; max-width: 60ch; }
 
 .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
@@ -106,6 +107,10 @@ a:hover { text-decoration: underline; }
 .standing-section { margin-bottom: 32px; }
 .standing { max-width: 72ch; }
 .standing p { margin: 0 0 14px; }
+
+.outlook-section { margin-bottom: 32px; }
+.outlook { max-width: 72ch; }
+.outlook p { margin: 0 0 14px; }
 
 .narrative-section { margin-bottom: 32px; }
 .narrative { max-width: 72ch; }
@@ -139,5 +144,11 @@ a:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   .sw-grid { grid-template-columns: 1fr; }
 }
+
+.history-section { margin-top: 48px; }
+.history-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.history-table th { text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.history-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
+.hist-year { color: var(--text-muted); font-weight: 600; }
 
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
