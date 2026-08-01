@@ -45,7 +45,22 @@ def esc(s):
     )
 
 
-def page_shell(title, body, description=""):
+NAV_ITEMS = [
+    ("index.html", "Power Rankings"),
+    ("history.html", "League History"),
+    ("head-to-head.html", "Head-to-Head"),
+]
+
+
+def nav_html(active):
+    links = []
+    for href, label in NAV_ITEMS:
+        cls = "nav-link active" if href == active else "nav-link"
+        links.append(f'<a class="{cls}" href="{href}">{esc(label)}</a>')
+    return f'<nav class="site-nav"><span class="nav-brand">Ethel\'s Dynasty</span><div class="nav-links">{"".join(links)}</div></nav>'
+
+
+def page_shell(title, body, description="", active=""):
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -56,6 +71,7 @@ def page_shell(title, body, description=""):
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+{nav_html(active)}
 <div class="page">
 {body}
 </div>
@@ -204,13 +220,13 @@ def build_team_page(team, content, rings, runner_ups):
         f"{team['team_name']} — Ethel's Dynasty 2026 Draft Preview",
         body,
         description=content["tagline"],
+        active="",
     )
 
 
 def build_index(teams, content_all, league_content, rings, runner_ups):
     verdict_order = ["Win-Now Contender", "Contender", "Retool", "Rebuild"]
     teams_by_verdict = {v: [] for v in verdict_order}
-    team_by_id = {t["roster_id"]: t for t in teams}
     for t in teams:
         c = content_all[str(t["roster_id"])]
         teams_by_verdict[c["verdict"]].append((t, c))
@@ -248,31 +264,13 @@ def build_index(teams, content_all, league_content, rings, runner_ups):
   </div>
 </section>""")
 
-    history_rows = []
-    for c in sorted(league_content.get("championships", []), key=lambda c: -c["year"]):
-        winner = team_by_id[c["winner"]]
-        loser = team_by_id[c["runner_up"]]
-        history_rows.append(f"""<tr>
-<td class="hist-year">{c['year']}</td>
-<td><a href="team-{winner['roster_id']}.html">🏆 {esc(winner['team_name'])}</a></td>
-<td><a href="team-{loser['roster_id']}.html">{esc(loser['team_name'])}</a></td>
-</tr>""")
-    history_table = f"""
-<section class="history-section">
-  <h2>League History</h2>
-  <table class="history-table">
-    <thead><tr><th>Year</th><th>Champion</th><th>Runner-up</th></tr></thead>
-    <tbody>{"".join(history_rows)}</tbody>
-  </table>
-</section>""" if history_rows else ""
-
     body = f"""
 <header class="league-header">
   <h1>{esc(league_content['league_headline'])}</h1>
   <p class="league-summary">{esc(league_content['league_summary'])}</p>
+  <p class="header-links"><a href="history.html">See full League History &rarr;</a> &nbsp;&middot;&nbsp; <a href="head-to-head.html">Head-to-Head records &rarr;</a></p>
 </header>
 {"".join(sections)}
-{history_table}
 <footer class="site-footer">
   <p>Built from live Sleeper league data. Analysis and grades are opinion, not projections.</p>
 </footer>
@@ -280,8 +278,108 @@ def build_index(teams, content_all, league_content, rings, runner_ups):
     return page_shell(
         league_content["league_headline"],
         body,
+        active="index.html",
         description=league_content["league_summary"],
     )
+
+
+def build_history_page(season_summaries, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(name, owner_id):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name) if name else "&mdash;"
+
+    cards = []
+    for s in sorted(season_summaries, key=lambda s: -s["season"]):
+        if s["season"] == 2018:
+            cards.append(f"""
+<div class="season-card">
+  <h3>2018 <span class="season-note">(pre-Sleeper)</span></h3>
+  <p class="season-champ">🏆 {team_link(s['champion'], s['champion_owner_id'])} beat {team_link(s['runner_up'], s['runner_up_owner_id'])}</p>
+  <p class="season-note">{esc(s.get('note', ''))}</p>
+</div>""")
+            continue
+
+        rows = "".join(
+            f"""<tr>
+<td class="place">{st['place'] or '-'}</td>
+<td>{team_link(st['team_name'], st['owner_id'])}</td>
+<td>{st['wins']}-{st['losses']}{'-' + str(st['ties']) if st['ties'] else ''}</td>
+<td>{st['points_for']:.1f}</td>
+<td>{st['points_against']:.1f}</td>
+</tr>"""
+            for st in s["standings"]
+        )
+        cards.append(f"""
+<div class="season-card">
+  <h3>{s['season']}</h3>
+  <p class="season-champ">🏆 {team_link(s['champion'], s['champion_owner_id'])} beat {team_link(s['runner_up'], s['runner_up_owner_id'])}{f" (3rd: {team_link(s['third'], None)})" if s.get('third') else ''}</p>
+  <table class="roster-table season-standings">
+    <thead><tr><th>Place</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr></thead>
+    <tbody>{rows}</tbody>
+  </table>
+</div>""")
+
+    body = f"""
+<header class="league-header">
+  <h1>League History</h1>
+  <p class="league-summary">Every season since the league's founding in 2018. 2019 onward is sourced live from Sleeper; 2018 predates the platform and is recorded from league history. See the 2022 note below for a schedule quirk that year.</p>
+</header>
+<section class="history-list">
+  {"".join(cards)}
+</section>
+<footer class="site-footer">
+  <p>2022 note: a schedule mixup pushed the playoffs back a week and results were tracked manually that year; the numbers above have since been corrected to match.</p>
+</footer>
+"""
+    return page_shell("League History — Ethel's Dynasty", body, description="Season-by-season standings and champions since 2018.", active="history.html")
+
+
+def build_head_to_head_page(matrix, teams):
+    teams_sorted = sorted(teams, key=lambda t: t["team_name"])
+    owner_ids = [t["owner_id"] for t in teams_sorted]
+    name_by_owner = {t["owner_id"]: t["team_name"] for t in teams_sorted}
+
+    header_cells = "".join(f'<th title="{esc(name_by_owner[o])}">{esc(name_by_owner[o][:3].upper())}</th>' for o in owner_ids)
+    rows = []
+    for row_owner in owner_ids:
+        cells = []
+        for col_owner in owner_ids:
+            if row_owner == col_owner:
+                cells.append('<td class="h2h-self">&mdash;</td>')
+                continue
+            rec = matrix.get(row_owner, {}).get(col_owner)
+            if not rec:
+                cells.append('<td class="h2h-none">-</td>')
+                continue
+            label = f"{rec['wins']}-{rec['losses']}"
+            if rec["ties"]:
+                label += f"-{rec['ties']}"
+            cls = "h2h-winning" if rec["wins"] > rec["losses"] else ("h2h-losing" if rec["losses"] > rec["wins"] else "")
+            cells.append(f'<td class="{cls}" title="{esc(name_by_owner[row_owner])} vs {esc(name_by_owner[col_owner])}: {label}">{label}</td>')
+        rows.append(f'<tr><th class="h2h-row-label">{esc(name_by_owner[row_owner])}</th>{"".join(cells)}</tr>')
+
+    body = f"""
+<header class="league-header">
+  <h1>Head-to-Head Records</h1>
+  <p class="league-summary">All-time regular-season and playoff record between every pair of current teams, aggregated across every season 2019-2025 (2022-2025 week 14 "vs. league median" games excluded, since those weren't real matchups). Read each row as that team's record against the column opponent.</p>
+</header>
+<section class="h2h-section">
+  <div class="h2h-scroll">
+    <table class="h2h-table">
+      <thead><tr><th></th>{header_cells}</tr></thead>
+      <tbody>{"".join(rows)}</tbody>
+    </table>
+  </div>
+</section>
+<footer class="site-footer">
+  <p>Only games between two teams still active in 2026 are counted. Matchups against departed franchises (Allah's Army, Los Diablos, and others) aren't shown here.</p>
+</footer>
+"""
+    return page_shell("Head-to-Head — Ethel's Dynasty", body, description="All-time head-to-head records between every team in the league.", active="head-to-head.html")
 
 
 CSS = """
@@ -333,6 +431,48 @@ body {
 h1, h2, h3 { line-height: 1.2; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand { font-weight: 700; font-size: 1rem; }
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-link {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.nav-link:hover { text-decoration: none; background: var(--surface); color: var(--text); }
+.nav-link.active { color: var(--text); background: var(--surface); border: 1px solid var(--border); }
+
+.header-links { font-size: 0.9rem; margin-top: 12px; }
+
+.season-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+.season-card h3 { margin: 0 0 6px; }
+.season-note { color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
+.season-champ { margin: 0 0 10px; font-size: 0.95rem; }
+.season-standings { font-size: 0.85rem; }
+.season-standings .place { color: var(--text-muted); font-weight: 700; }
+
+.h2h-section { margin-top: 8px; }
+.h2h-scroll { overflow-x: auto; }
+.h2h-table { border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
+.h2h-table th, .h2h-table td { padding: 7px 9px; text-align: center; border: 1px solid var(--border); }
+.h2h-row-label { text-align: left !important; font-weight: 600; position: sticky; left: 0; background: var(--bg); }
+.h2h-self { background: var(--border); }
+.h2h-none { color: var(--text-muted); }
+.h2h-winning { color: var(--contender); font-weight: 700; }
+.h2h-losing { color: var(--winnow); font-weight: 700; }
 
 .league-header h1 { font-size: 2rem; margin-bottom: 8px; }
 .league-summary { color: var(--text-muted); max-width: 68ch; font-size: 1.05rem; }
@@ -457,7 +597,15 @@ def main():
     index_html = build_index(teams, content["teams"], content, rings, runner_ups)
     (DOCS_DIR / "index.html").write_text(index_html)
 
-    print(f"Built {len(teams)} team pages + index into {DOCS_DIR}")
+    season_summaries = load("season_summaries.json")
+    history_html = build_history_page(season_summaries, teams)
+    (DOCS_DIR / "history.html").write_text(history_html)
+
+    h2h_matrix = load("head_to_head.json")
+    h2h_html = build_head_to_head_page(h2h_matrix, teams)
+    (DOCS_DIR / "head-to-head.html").write_text(h2h_html)
+
+    print(f"Built {len(teams)} team pages + index + history + head-to-head into {DOCS_DIR}")
 
 
 if __name__ == "__main__":

@@ -48,6 +48,48 @@ h1, h2, h3 { line-height: 1.2; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand { font-weight: 700; font-size: 1rem; }
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-link {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.nav-link:hover { text-decoration: none; background: var(--surface); color: var(--text); }
+.nav-link.active { color: var(--text); background: var(--surface); border: 1px solid var(--border); }
+
+.header-links { font-size: 0.9rem; margin-top: 12px; }
+
+.season-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+.season-card h3 { margin: 0 0 6px; }
+.season-note { color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
+.season-champ { margin: 0 0 10px; font-size: 0.95rem; }
+.season-standings { font-size: 0.85rem; }
+.season-standings .place { color: var(--text-muted); font-weight: 700; }
+
+.h2h-section { margin-top: 8px; }
+.h2h-scroll { overflow-x: auto; }
+.h2h-table { border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
+.h2h-table th, .h2h-table td { padding: 7px 9px; text-align: center; border: 1px solid var(--border); }
+.h2h-row-label { text-align: left !important; font-weight: 600; position: sticky; left: 0; background: var(--bg); }
+.h2h-self { background: var(--border); }
+.h2h-none { color: var(--text-muted); }
+.h2h-winning { color: var(--contender); font-weight: 700; }
+.h2h-losing { color: var(--winnow); font-weight: 700; }
+
 .league-header h1 { font-size: 2rem; margin-bottom: 8px; }
 .league-summary { color: var(--text-muted); max-width: 68ch; font-size: 1.05rem; }
 
