@@ -228,6 +228,26 @@ to re-run anytime.
   2026+ once the playoff start moved to week 15 and the team count
   normalized back to 12.
 
+## Playoff weeks must be excluded from win/loss analytics
+
+- Sleeper's `matchups/{week}` endpoint still returns matchup data for every
+  week through the end of the playoffs, including for teams that missed
+  the playoffs (they get placed in a "toilet bowl" consolation bracket
+  instead). Those weeks are **not part of the official regular-season
+  win/loss record** — a roster's `settings.wins`/`settings.losses` in the
+  rosters endpoint only ever sums to the regular-season week count
+  (`playoff_week_start - 1`, minus the week-14 median week in 2022–2025),
+  never the extra playoff/consolation weeks.
+- **`scripts/compute_analytics.py`'s luck (`real_matchup_weeks`) and
+  positional-scoring-mix computations must exclude any week
+  `>= playoff_week_start`** for that season, or all-time "actual wins" and
+  win-derived stats come out inflated in games-played and diluted in
+  win rate versus each team's real record (this was a bug fixed in
+  2026-08 — a team's real 48-45-1 record was showing as 46.5 wins over
+  109 games instead of 91). Each season's `playoff_week_start` lives at
+  `data["league"]["settings"]["playoff_week_start"]` in that season's
+  history file.
+
 ## General rule
 
 When in doubt about a specific season's historical results, prefer the

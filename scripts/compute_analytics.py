@@ -21,10 +21,15 @@ def load(path):
     return json.loads(path.read_text())
 
 
-def real_matchup_weeks(season, matchups_by_week):
-    """Yield (week, [(roster_id, points), ...]) for weeks that were real head-to-head play."""
+def real_matchup_weeks(season, matchups_by_week, playoff_week_start):
+    """Yield (week, [(roster_id, points), ...]) for weeks that were real
+    regular-season head-to-head play (excludes playoffs/consolation bracket
+    weeks, which Sleeper still returns matchups for but which don't count
+    toward the official win/loss record)."""
     for week_str, matchups in matchups_by_week.items():
         week = int(week_str)
+        if week >= playoff_week_start:
+            continue
         if season in MEDIAN_WEEK_SEASONS and week == MEDIAN_WEEK:
             continue
         by_matchup_id = {}
@@ -48,7 +53,7 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
 
         # build the week's full score pool once per week for all-play calc
         week_pools = {}
-        for week, pair in real_matchup_weeks(season, data["matchups_by_week"]):
+        for week, pair in real_matchup_weeks(season, data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
             for m in pair:
                 owner = roster_owner.get(m["roster_id"])
                 if not owner or owner == PHANTOM_OWNER_ID:
@@ -67,7 +72,7 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
                 s["expected_wins"] += expected
                 s["games"] += 1
 
-        for week, pair in real_matchup_weeks(season, data["matchups_by_week"]):
+        for week, pair in real_matchup_weeks(season, data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
             m1, m2 = pair
             o1, o2 = roster_owner.get(m1["roster_id"]), roster_owner.get(m2["roster_id"])
             if not o1 or not o2 or o1 == PHANTOM_OWNER_ID or o2 == PHANTOM_OWNER_ID:
@@ -123,8 +128,11 @@ def compute_positional(all_season_data, owner_to_name, current_owner_ids, player
         roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
         season_totals = {}
         league_totals = {pos: 0.0 for pos in POSITIONS}
+        playoff_week_start = data["league"]["settings"]["playoff_week_start"]
 
         for week_str, matchups in data["matchups_by_week"].items():
+            if int(week_str) >= playoff_week_start:
+                continue
             for m in matchups:
                 owner = roster_owner.get(m["roster_id"])
                 if not owner or owner == PHANTOM_OWNER_ID:

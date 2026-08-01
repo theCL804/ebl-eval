@@ -55,7 +55,7 @@ NAV_ITEMS = [
     ("trades.html", "Trades Hub"),
 ]
 
-POSITION_COLORS = {"QB": "#7c93f0", "RB": "#3fb97d", "WR": "#d9a635", "TE": "#e0664a"}
+POSITION_COLORS = {"QB": "#e5484d", "RB": "#3fb97d", "WR": "#4f7fe0", "TE": "#d9a635"}
 
 
 def nav_html(active):
@@ -1035,10 +1035,10 @@ a:hover { text-decoration: underline; }
 .trade-empty { color: var(--text-muted); font-style: italic; }
 .trade-nfl { color: var(--text-muted); font-size: 0.78rem; }
 .trade-pos { font-size: 0.68rem; font-weight: 700; width: 30px; text-align: center; border-radius: 3px; padding: 1px 0; color: #fff; flex-shrink: 0; }
-.trade-pos.pos-QB { background: #7c93f0; }
+.trade-pos.pos-QB { background: #e5484d; }
 .trade-pos.pos-RB { background: #3fb97d; }
-.trade-pos.pos-WR { background: #d9a635; }
-.trade-pos.pos-TE { background: #e0664a; }
+.trade-pos.pos-WR { background: #4f7fe0; }
+.trade-pos.pos-TE { background: #d9a635; }
 .trade-pos.pos- { background: var(--text-muted); }
 .trade-pos.trade-pick { background: var(--text-muted); width: auto; padding: 1px 6px; }
 
