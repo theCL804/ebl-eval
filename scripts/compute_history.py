@@ -15,6 +15,11 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 HISTORY_DIR = DATA_DIR / "history"
 
 PHANTOM_OWNER_ID = "480904402215890944"
+# Shane's 2019-2023 account (BeHated/Nick Gives Me A Chubb/Sexy Wentzy) locked
+# him out in 2023, so he made a new Sleeper account, which became The Choo
+# Choo Crew in 2024. Same person; alias the old id to the new one so his
+# 2019-2023 history joins correctly with his current team.
+OWNER_ALIASES = {"394252838206713856": "1065778674277945344"}
 MEDIAN_WEEK_SEASONS = {2022, 2023, 2024, 2025}
 MEDIAN_WEEK = 14
 
@@ -48,7 +53,7 @@ def build_placements(winners_bracket):
 
 def season_summary(season, data, owner_to_name):
     rosters = data["rosters"]
-    roster_owner = {r["roster_id"]: r["owner_id"] for r in rosters}
+    roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in rosters}
     placements = build_placements(data["winners_bracket"])
     season_name_by_owner = {
         u["user_id"]: (u.get("metadata") or {}).get("team_name") or u["display_name"] for u in data["users"]
@@ -56,7 +61,7 @@ def season_summary(season, data, owner_to_name):
 
     standings = []
     for r in rosters:
-        owner_id = r["owner_id"]
+        owner_id = OWNER_ALIASES.get(r["owner_id"], r["owner_id"])
         if owner_id == PHANTOM_OWNER_ID:
             continue
         settings = r["settings"]
@@ -105,7 +110,7 @@ def head_to_head(all_season_data, current_owner_ids):
         return matrix[a][b]
 
     for season, data in all_season_data.items():
-        roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
         playoff_week_start = data["league"]["settings"]["playoff_week_start"]
         for week_str, matchups in data["matchups_by_week"].items():
             week = int(week_str)

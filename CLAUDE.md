@@ -180,6 +180,34 @@ to re-run anytime.
   historical data by `owner_id`/`user_id`, never by team name or
   season-specific `roster_id`.
 
+## One owner has two Sleeper accounts across history: Shane / The Choo Choo Crew
+
+- Shane (Sleeper `display_name` `shanetrainor`, current team **The Choo Choo
+  Crew**, `user_id 1065778674277945344`) is the same person as the owner of
+  a since-abandoned account that played 2019–2023 under `user_id
+  394252838206713856` (team names "Sexy Wentzy" in 2019, "Nick Gives Me A
+  Chubb" in 2020, "BeHated" 2021–2023). Confirmed by the repo owner
+  2026-08: Shane lost the password to the old account in 2023 and made a
+  new one, which is why "The Choo Choo Crew" appears to start fresh in
+  2024 with no prior history despite being one of the league's original
+  2019 members.
+- This is **not** a case like Team 12/Allah's Army below — it's the same
+  person on two different Sleeper accounts, not two different owners.
+  **All computation scripts that build a `roster_owner` map (`roster_id ->
+  owner_id`) must alias the old id to the new one** via an
+  `OWNER_ALIASES = {"394252838206713856": "1065778674277945344"}` dict
+  applied at that lookup, so 2019–2023 results, trades, and transactions
+  join correctly with the current team, the same way name-only rebrands
+  already do. Applied in `compute_history.py`, `compute_analytics.py`,
+  `compute_draft_flow.py`, `compute_trades.py`, and
+  `compute_team_transactions.py` (2026-08). Before this fix,
+  `compute_team_transactions.py` silently dropped all of the old
+  account's transactions entirely, since its ledger only initializes
+  entries for current owners.
+- If another such case turns up (a league member who changed Sleeper
+  accounts), extend the same `OWNER_ALIASES` dict in each of those five
+  scripts rather than inventing a new mechanism.
+
 ## 2022 season: schedule was messed up, but the API bracket checks out
 
 - In 2022 the league messed up the regular-season schedule and had to push

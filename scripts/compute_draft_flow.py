@@ -12,6 +12,11 @@ from pathlib import Path
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 HISTORY_DIR = DATA_DIR / "history"
 SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
+# Shane's 2019-2023 account (BeHated/Nick Gives Me A Chubb/Sexy Wentzy) locked
+# him out in 2023, so he made a new Sleeper account, which became The Choo
+# Choo Crew in 2024. Same person; alias the old id to the new one so his
+# 2019-2023 pick trades join correctly with his current team.
+OWNER_ALIASES = {"394252838206713856": "1065778674277945344"}
 
 
 def load(path):
@@ -31,7 +36,7 @@ def main():
         if not path.exists():
             continue
         data = load(path)
-        roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
         for tp in data["traded_picks"]:
             if int(tp["season"]) > 2025:
                 continue  # future-pick trades belong in future_trades, sourced from the current league

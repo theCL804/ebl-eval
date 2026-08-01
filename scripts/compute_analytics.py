@@ -11,6 +11,11 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 HISTORY_DIR = DATA_DIR / "history"
 
 PHANTOM_OWNER_ID = "480904402215890944"
+# Shane's 2019-2023 account (BeHated/Nick Gives Me A Chubb/Sexy Wentzy) locked
+# him out in 2023, so he made a new Sleeper account, which became The Choo
+# Choo Crew in 2024. Same person; alias the old id to the new one so his
+# 2019-2023 history joins correctly with his current team.
+OWNER_ALIASES = {"394252838206713856": "1065778674277945344"}
 DISCARD_WEEK = 14
 SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -63,7 +68,7 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
     all_time = {o: {"actual_wins": 0.0, "expected_wins": 0.0, "games": 0} for o in current_owner_ids}
 
     for season, data in all_season_data.items():
-        roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
         playoff_week_start = data["league"]["settings"]["playoff_week_start"]
         season_stats = {}
 
@@ -138,7 +143,7 @@ def compute_positional(all_season_data, owner_to_name, current_owner_ids, player
     league_by_season = {}
 
     for season, data in all_season_data.items():
-        roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
         season_totals = {}
         league_totals = {pos: 0.0 for pos in POSITIONS}
         playoff_week_start = data["league"]["settings"]["playoff_week_start"]
@@ -184,7 +189,7 @@ def compute_transactions(all_season_data, owner_to_name, current_owner_ids):
     trade_partners = {}  # frozenset({a,b}) -> count
 
     for season, data in all_season_data.items():
-        roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
         season_totals = {}
 
         for week_str, txs in data.get("transactions_by_week", {}).items():

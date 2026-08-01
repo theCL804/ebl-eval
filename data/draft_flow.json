@@ -539,8 +539,8 @@
     {
       "season": "2022",
       "round": 2,
-      "from_owner": "394252838206713856",
-      "from_name": "(departed team)",
+      "from_owner": "1065778674277945344",
+      "from_name": "The Choo Choo Crew",
       "to_owner": "393989477577588736",
       "to_name": "The Moon Unit"
     },
@@ -667,8 +667,8 @@
     {
       "season": "2021",
       "round": 1,
-      "from_owner": "394252838206713856",
-      "from_name": "(departed team)",
+      "from_owner": "1065778674277945344",
+      "from_name": "The Choo Choo Crew",
       "to_owner": "394226654450315264",
       "to_name": "The Cheese Children "
     },
@@ -797,8 +797,8 @@
       "round": 3,
       "from_owner": "406674259818065920",
       "from_name": "(departed team)",
-      "to_owner": "394252838206713856",
-      "to_name": "(departed team)"
+      "to_owner": "1065778674277945344",
+      "to_name": "The Choo Choo Crew"
     },
     {
       "season": "2021",
@@ -853,8 +853,8 @@
       "round": 1,
       "from_owner": "407246708687314944",
       "from_name": "Mattpao",
-      "to_owner": "394252838206713856",
-      "to_name": "(departed team)"
+      "to_owner": "1065778674277945344",
+      "to_name": "The Choo Choo Crew"
     },
     {
       "season": "2020",
@@ -867,8 +867,8 @@
     {
       "season": "2020",
       "round": 1,
-      "from_owner": "394252838206713856",
-      "from_name": "(departed team)",
+      "from_owner": "1065778674277945344",
+      "from_name": "The Choo Choo Crew",
       "to_owner": "406674259818065920",
       "to_name": "(departed team)"
     },
@@ -1027,8 +1027,8 @@
     {
       "season": "2019",
       "round": 1,
-      "from_owner": "394252838206713856",
-      "from_name": "(departed team)",
+      "from_owner": "1065778674277945344",
+      "from_name": "The Choo Choo Crew",
       "to_owner": "394531785582608384",
       "to_name": "The Factory"
     },
@@ -1380,41 +1380,11 @@
     }
   ],
   "net_capital": {
-    "390894031879553024": {
-      "team_name": "DickTatorMiller",
+    "393989477577588736": {
+      "team_name": "The Moon Unit",
       "picks_gained": 16,
-      "picks_lost": 14,
-      "net": 2
-    },
-    "394226654450315264": {
-      "team_name": "The Cheese Children ",
-      "picks_gained": 15,
-      "picks_lost": 12,
-      "net": 3
-    },
-    "394252975431766016": {
-      "team_name": "Brock Hard",
-      "picks_gained": 9,
-      "picks_lost": 24,
-      "net": -15
-    },
-    "394248955468185600": {
-      "team_name": "The Chicken Boys\ud83d\udc14",
-      "picks_gained": 11,
-      "picks_lost": 19,
-      "net": -8
-    },
-    "394253124748980224": {
-      "team_name": "Long Live Wopo ",
-      "picks_gained": 7,
-      "picks_lost": 9,
-      "net": -2
-    },
-    "394251491289911296": {
-      "team_name": "Fuck Michael Thomas",
-      "picks_gained": 9,
-      "picks_lost": 11,
-      "net": -2
+      "picks_lost": 16,
+      "net": 0
     },
     "394491025806135296": {
       "team_name": "BateBoul",
@@ -1422,35 +1392,65 @@
       "picks_lost": 5,
       "net": 10
     },
-    "336348640681398272": {
-      "team_name": "Nikkis\u2019 Victims",
-      "picks_gained": 14,
-      "picks_lost": 15,
-      "net": -1
-    },
-    "1065778674277945344": {
-      "team_name": "The Choo Choo Crew",
-      "picks_gained": 2,
-      "picks_lost": 11,
-      "net": -9
-    },
-    "393989477577588736": {
-      "team_name": "The Moon Unit",
-      "picks_gained": 16,
-      "picks_lost": 16,
-      "net": 0
-    },
     "394531785582608384": {
       "team_name": "The Factory",
       "picks_gained": 27,
       "picks_lost": 11,
       "net": 16
     },
+    "336348640681398272": {
+      "team_name": "Nikkis\u2019 Victims",
+      "picks_gained": 14,
+      "picks_lost": 15,
+      "net": -1
+    },
+    "394251491289911296": {
+      "team_name": "Fuck Michael Thomas",
+      "picks_gained": 9,
+      "picks_lost": 11,
+      "net": -2
+    },
+    "394226654450315264": {
+      "team_name": "The Cheese Children ",
+      "picks_gained": 15,
+      "picks_lost": 12,
+      "net": 3
+    },
+    "394248955468185600": {
+      "team_name": "The Chicken Boys\ud83d\udc14",
+      "picks_gained": 11,
+      "picks_lost": 19,
+      "net": -8
+    },
+    "394252975431766016": {
+      "team_name": "Brock Hard",
+      "picks_gained": 9,
+      "picks_lost": 24,
+      "net": -15
+    },
     "407246708687314944": {
       "team_name": "Mattpao",
       "picks_gained": 23,
       "picks_lost": 15,
       "net": 8
+    },
+    "394253124748980224": {
+      "team_name": "Long Live Wopo ",
+      "picks_gained": 7,
+      "picks_lost": 9,
+      "net": -2
+    },
+    "1065778674277945344": {
+      "team_name": "The Choo Choo Crew",
+      "picks_gained": 4,
+      "picks_lost": 15,
+      "net": -11
+    },
+    "390894031879553024": {
+      "team_name": "DickTatorMiller",
+      "picks_gained": 16,
+      "picks_lost": 14,
+      "net": 2
     }
   }
 }
