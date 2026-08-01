@@ -22,6 +22,7 @@ SEASON_LEAGUE_IDS = {
     2023: "915838243437330432",
     2024: "1048295810074656768",
     2025: "1182746000653811712",
+    2026: "1312135999710572544",
 }
 
 PHANTOM_OWNER_ID = "480904402215890944"  # Any Boul FFC, bye-week placeholder
@@ -73,6 +74,39 @@ def fetch_season(season, league_id):
     }
 
 
+def expand_player_cache():
+    """The players.json cache (built by fetch_data.py) only covers currently
+    rostered players. Trades going back to 2019 reference players who have
+    since retired or been dropped, so widen the cache to every player_id that
+    ever appears in a trade's adds/drops across all fetched history."""
+    players_path = DATA_DIR / "players.json"
+    known = json.loads(players_path.read_text()) if players_path.exists() else {}
+    traded_ids = set(known.keys())
+    for season in SEASON_LEAGUE_IDS:
+        path = HISTORY_DIR / f"{season}.json"
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text())
+        for txs in data.get("transactions_by_week", {}).values():
+            for t in txs:
+                if t.get("type") != "trade":
+                    continue
+                for side in (t.get("adds"), t.get("drops")):
+                    if side:
+                        traded_ids.update(side.keys())
+
+    missing = traded_ids - known.keys()
+    if not missing:
+        return
+    print(f"fetching {len(missing)} additional players seen in historical trades...")
+    all_players = get(f"{BASE}/players/nfl")
+    for pid in missing:
+        if pid in all_players:
+            known[pid] = all_players[pid]
+    players_path.write_text(json.dumps(known, indent=2))
+    print(f"  players.json now has {len(known)} players")
+
+
 def main():
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     for season, league_id in SEASON_LEAGUE_IDS.items():
@@ -81,6 +115,8 @@ def main():
         out_path = HISTORY_DIR / f"{season}.json"
         out_path.write_text(json.dumps(data, indent=2))
         print(f"  wrote {out_path} ({len(data['matchups_by_week'])} weeks)")
+
+    expand_player_cache()
 
 
 if __name__ == "__main__":

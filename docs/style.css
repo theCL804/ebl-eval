@@ -237,4 +237,25 @@ a:hover { text-decoration: underline; }
 .trade-ledger .rd { color: var(--text-muted); font-weight: 600; width: 55px; }
 .trade-ledger .arrow { color: var(--text-muted); width: 20px; text-align: center; }
 
+.trade-list { display: flex; flex-direction: column; gap: 12px; }
+.trade-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+.trade-meta { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.trade-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.trade-side h4 { margin: 0 0 8px; font-size: 0.95rem; }
+.trade-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.trade-side li { font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+.trade-empty { color: var(--text-muted); font-style: italic; }
+.trade-nfl { color: var(--text-muted); font-size: 0.78rem; }
+.trade-pos { font-size: 0.68rem; font-weight: 700; width: 30px; text-align: center; border-radius: 3px; padding: 1px 0; color: #fff; flex-shrink: 0; }
+.trade-pos.pos-QB { background: #7c93f0; }
+.trade-pos.pos-RB { background: #3fb97d; }
+.trade-pos.pos-WR { background: #d9a635; }
+.trade-pos.pos-TE { background: #e0664a; }
+.trade-pos.pos- { background: var(--text-muted); }
+.trade-pos.trade-pick { background: var(--text-muted); width: auto; padding: 1px 6px; }
+
+.pair-section { margin-bottom: 32px; }
+.pair-section h3 { margin-bottom: 10px; }
+.pair-section .trade-list { margin-bottom: 4px; }
+
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }

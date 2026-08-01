@@ -2,6 +2,7 @@
 """Generate the static GitHub Pages site into docs/ from data/teams.json + data/content.json."""
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -51,6 +52,7 @@ NAV_ITEMS = [
     ("head-to-head.html", "Head-to-Head"),
     ("analytics.html", "Analytics"),
     ("draft-flow.html", "Draft Capital Flow"),
+    ("trades.html", "Trades Hub"),
 ]
 
 POSITION_COLORS = {"QB": "#7c93f0", "RB": "#3fb97d", "WR": "#d9a635", "TE": "#e0664a"}
@@ -579,6 +581,100 @@ def build_draft_flow_page(draft_flow, teams):
     return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
+def build_trades_page(trades_data, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    def pair_anchor(a, b):
+        return f"pair-{a}-{b}"
+
+    def trade_date(t):
+        if not t.get("created"):
+            return f"{t['season']} season"
+        dt = datetime.fromtimestamp(t["created"] / 1000, tz=timezone.utc)
+        return dt.strftime("%b %-d, %Y")
+
+    def side_items(side):
+        items = []
+        for p in side["players"]:
+            pos = p["position"] or ""
+            team = p["team"] or "FA"
+            items.append(f'<li><span class="trade-pos pos-{pos}">{esc(pos)}</span> {esc(p["name"])} <span class="trade-nfl">{esc(team)}</span></li>')
+        for pk in side["picks"]:
+            items.append(f'<li><span class="trade-pos trade-pick">PICK</span> {esc(pk["season"])} Round {pk["round"]}</li>')
+        if not items:
+            return '<li class="trade-empty">(nothing)</li>'
+        return "".join(items)
+
+    def trade_card(t):
+        sides_html = "".join(
+            f"""<div class="trade-side">
+  <h4>{team_link(o, t['team_names'][o])}</h4>
+  <ul>{side_items(t['sides'][o])}</ul>
+</div>"""
+            for o in t["teams"]
+        )
+        return f"""
+<div class="trade-card">
+  <div class="trade-meta">{esc(trade_date(t))}</div>
+  <div class="trade-sides">{sides_html}</div>
+</div>"""
+
+    # --- top trade partners leaderboard ---
+    partner_rows = "".join(
+        f"""<tr>
+<td><a href="#{pair_anchor(p['a'], p['b'])}">{team_link(p['a'], p['a_name'])} &harr; {team_link(p['b'], p['b_name'])}</a></td>
+<td>{p['count']}</td>
+</tr>"""
+        for p in trades_data["partners"]
+    )
+
+    # --- all trades, newest first ---
+    all_trades_html = "".join(trade_card(t) for t in trades_data["trades"])
+
+    # --- per-pair sections, sorted by most active first ---
+    pair_sections = []
+    for p in trades_data["partners"]:
+        cards = "".join(trade_card(t) for t in p["trades"])
+        pair_sections.append(f"""
+<div class="pair-section" id="{pair_anchor(p['a'], p['b'])}">
+  <h3>{team_link(p['a'], p['a_name'])} &harr; {team_link(p['b'], p['b_name'])} <span class="section-note">({p['count']} trade{'s' if p['count'] != 1 else ''})</span></h3>
+  {cards}
+</div>""")
+
+    body = f"""
+<header class="league-header">
+  <h1>Trades Hub</h1>
+  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both, not just picks. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
+</header>
+
+<section class="analytics-section">
+  <h2>Most Active Trade Partners</h2>
+  <table class="roster-table">
+    <thead><tr><th>Pair</th><th>Trades</th></tr></thead>
+    <tbody>{partner_rows}</tbody>
+  </table>
+</section>
+
+<section class="analytics-section">
+  <h2>All Trades</h2>
+  <p class="section-note">Newest first, {len(trades_data['trades'])} trades total.</p>
+  <div class="trade-list">{all_trades_html}</div>
+</section>
+
+<section class="analytics-section">
+  <h2>By Team Pair</h2>
+  {"".join(pair_sections)}
+</section>
+"""
+    return page_shell("Trades Hub — Ethel's Dynasty", body, description="Every trade in league history, players and picks, with a breakdown of who trades with whom.", active="trades.html")
+
+
 CSS = """
 :root {
   --bg: #f7f7f8;
@@ -818,6 +914,27 @@ a:hover { text-decoration: underline; }
 .trade-ledger .rd { color: var(--text-muted); font-weight: 600; width: 55px; }
 .trade-ledger .arrow { color: var(--text-muted); width: 20px; text-align: center; }
 
+.trade-list { display: flex; flex-direction: column; gap: 12px; }
+.trade-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+.trade-meta { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.trade-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.trade-side h4 { margin: 0 0 8px; font-size: 0.95rem; }
+.trade-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.trade-side li { font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+.trade-empty { color: var(--text-muted); font-style: italic; }
+.trade-nfl { color: var(--text-muted); font-size: 0.78rem; }
+.trade-pos { font-size: 0.68rem; font-weight: 700; width: 30px; text-align: center; border-radius: 3px; padding: 1px 0; color: #fff; flex-shrink: 0; }
+.trade-pos.pos-QB { background: #7c93f0; }
+.trade-pos.pos-RB { background: #3fb97d; }
+.trade-pos.pos-WR { background: #d9a635; }
+.trade-pos.pos-TE { background: #e0664a; }
+.trade-pos.pos- { background: var(--text-muted); }
+.trade-pos.trade-pick { background: var(--text-muted); width: auto; padding: 1px 6px; }
+
+.pair-section { margin-bottom: 32px; }
+.pair-section h3 { margin-bottom: 10px; }
+.pair-section .trade-list { margin-bottom: 4px; }
+
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 """
 
@@ -854,7 +971,11 @@ def main():
     draft_flow_html = build_draft_flow_page(draft_flow, teams)
     (DOCS_DIR / "draft-flow.html").write_text(draft_flow_html)
 
-    print(f"Built {len(teams)} team pages + index + history + head-to-head + analytics + draft-flow into {DOCS_DIR}")
+    trades_data = load("trades.json")
+    trades_html = build_trades_page(trades_data, teams)
+    (DOCS_DIR / "trades.html").write_text(trades_html)
+
+    print(f"Built {len(teams)} team pages + index + history + head-to-head + analytics + draft-flow + trades into {DOCS_DIR}")
 
 
 if __name__ == "__main__":

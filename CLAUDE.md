@@ -1,11 +1,119 @@
-# Ethel's Dynasty — league quirks and data caveats
+# Ethel's Dynasty — project overview, architecture, and league quirks
 
-This repo builds a static analysis/history site for a Sleeper dynasty fantasy
-football league ("Ethel's Dynasty", league_id `1312135999710572544` for 2026).
-The raw Sleeper API data does not tell the full story for several seasons.
-The following corrections are known from the league's actual history and
-MUST be applied when building history, standings, or head-to-head pages —
-do not trust the raw API output alone for these cases.
+## Purpose
+
+This repo generates a static analysis and history site for "Ethel's
+Dynasty," a 12-team half-PPR, one-QB, four-round-rookie-draft dynasty
+league on Sleeper (current league_id `1312135999710572544`, 2026 season).
+It started as a "vibe-written" scouting report for each team ahead of the
+2026 rookie draft (roster construction, contention window, draft capital,
+opinionated draft recommendations) and grew into a full league site:
+season-by-season history back to the league's 2018 founding, an all-time
+head-to-head matrix, advanced analytics (luck, positional scoring mix,
+transaction activity), and a draft-pick trade flow ledger. The site is
+published via GitHub Pages, serving the `docs/` folder on `main`
+(`https://thecl804.github.io/ebl-eval/`), at the request of the repo owner
+(a league member, not the commissioner) who wants to share it with the
+league.
+
+## Architecture
+
+Everything is a static site generator, no frontend framework, no build
+step beyond running Python scripts and committing the output:
+
+1. **Fetch scripts** pull raw data from the public Sleeper API (no auth
+   needed) into `data/*.json`:
+   - `scripts/fetch_data.py` — current (2026) league: users, rosters,
+     draft picks, traded picks, a player cache filtered to rostered
+     players.
+   - `scripts/fetch_history.py` — full historical data for every season
+     2019–2026 (2026 included so in-season trades show up in the trades
+     hub): rosters, weekly matchups, transactions, winners bracket, traded
+     picks, and that season's draft results. Writes one file per season to
+     `data/history/{season}.json`. Also widens `data/players.json` (which
+     `fetch_data.py` filters to only currently-rostered players) to include
+     every player who ever appears in a historical trade's adds/drops,
+     since trades reference players who have since retired or been
+     dropped.
+2. **Compute scripts** turn raw data into the shapes the site templates
+   consume:
+   - `scripts/compute_teams.py` → `data/teams.json` (per-team roster
+     composition, age, draft capital for the current league)
+   - `scripts/compute_history.py` → `data/season_summaries.json` +
+     `data/head_to_head.json` (season standings/champions, all-time
+     rivalry matrix)
+   - `scripts/compute_analytics.py` → `data/analytics.json` (all-play
+     luck, positional scoring mix, transaction activity)
+   - `scripts/compute_draft_flow.py` → `data/draft_flow.json` (draft pick
+     trade ledger and net-capital leaderboard, 2019–2028, derived from
+     `traded_picks` ownership snapshots)
+   - `scripts/compute_trades.py` → `data/trades.json` (the full trade
+     ledger, players and picks both, read directly from each season's
+     trade transactions rather than pick-ownership snapshots; also a
+     pairwise team-partner breakdown for the trades hub's "click a pair,
+     see every deal" view)
+3. **`data/content.json`** is hand-authored, not generated: the
+   opinionated scouting-report prose per team (verdict, tagline,
+   strengths/weaknesses, narrative, current standing, future outlook) and
+   the league-wide summary. This is the one file in `data/` that isn't a
+   mechanical transform of the Sleeper API and should be edited directly
+   when the analysis needs to change.
+4. **`scripts/build_site.py`** reads everything in `data/` and renders
+   plain HTML/CSS into `docs/` (one file per team plus Power Rankings,
+   League History, Head-to-Head, Analytics, Draft Capital Flow, and
+   Trades Hub pages, all sharing one `style.css` and a nav bar). Re-run
+   this after editing `content.json` or any compute script's output; it's
+   the only script
+   that touches `docs/`.
+
+Run order for a full rebuild from scratch: `fetch_data.py` →
+`fetch_history.py` → `compute_teams.py` → `compute_history.py` →
+`compute_analytics.py` → `compute_draft_flow.py` → `compute_trades.py` →
+`build_site.py`. In practice the fetch scripts only need re-running when
+Sleeper data changes
+(new season, new trades); the compute + build scripts are cheap and safe
+to re-run anytime.
+
+## Key decisions
+
+- **Always join across seasons by `owner_id`/`user_id`, never by team
+  name or season-specific `roster_id`.** Team names get rebranded often
+  (see below) and `roster_id` numbering isn't guaranteed stable across
+  different league_ids/seasons.
+- **Display every historical result under the owner's current (2026) team
+  name**, not whatever they were called that season. This matches how the
+  league itself talks about its history and is far less confusing for
+  readers. See the team-name-churn note below for why this matters.
+- **Season standings tables sort by regular-season record (wins, then
+  points), not by final playoff finish.** Playoff results (including
+  upsets) are shown as a separate "Playoff Finish" badge column instead of
+  reordering the table — a team that went 8-6 and won the bracket
+  shouldn't display above a 12-2 team that lost early.
+- **Head-to-head matrix only includes the 12 teams currently in the
+  league.** Games against departed franchises (Allah's Army, Los Diablos,
+  Zshep27, etc.) are real and counted in that season's standings, but
+  aren't shown in the head-to-head grid since there's no current team to
+  attribute them to.
+- **The scouting-report prose (`data/content.json`) is meant to be
+  genuinely opinionated**, not a neutral data summary: verdicts
+  (Win-Now Contender / Contender / Retool / Rebuild), explicit strengths
+  and weaknesses, and specific draft recommendations. Ground it in current
+  research (web search for that year's rookie class and dynasty rankings)
+  rather than training-data knowledge alone, since the site is meant to
+  reflect the current market, not a snapshot from months ago.
+- **No em dashes in any written prose on the site or in responses in this
+  repo** — an explicit, standing style preference from the repo owner.
+- League history (standings trends, championship results) should be used
+  as light narrative context, not over-engineered — the depth of
+  historical data pulled (full 2019–2025 matchups/transactions) ended up
+  being useful for the Analytics and Draft Capital Flow pages, but the
+  original ask was for "a reference for where teams are going into this
+  season," not an exhaustive archive for its own sake.
+- The raw Sleeper API data does not tell the full story for several
+  seasons. The following corrections are known from the league's actual
+  history and MUST be applied when building history, standings, or
+  head-to-head pages — do not trust the raw API output alone for these
+  cases.
 
 ## Platform history
 
