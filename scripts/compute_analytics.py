@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """Compute points/luck, positional scoring, and transaction analytics from data/history/*.json.
 
-See CLAUDE.md for the exclusion rules applied here (phantom team, week 14
-median games in 2022-2025).
+See CLAUDE.md for the phantom-team exclusion rule applied here. Note that
+the week-14 "vs. league median" weeks (2023-2025) are deliberately NOT
+excluded here, unlike in compute_history.py's head-to-head matrix: the raw
+matchup data still pairs each team against some roster that week, and
+whatever the actual win/loss result was for that pairing matches the
+official record (Sleeper's own win/loss determination for a median week
+already resolves to a real win or loss in `settings.wins/losses`), so it's
+correct to count it as a real result here. It's only excluded from
+head-to-head because the specific *opponent* listed for that week is
+fabricated, not because the result itself is fake.
 """
 import json
 from pathlib import Path
@@ -11,8 +19,6 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 HISTORY_DIR = DATA_DIR / "history"
 
 PHANTOM_OWNER_ID = "480904402215890944"
-MEDIAN_WEEK_SEASONS = {2022, 2023, 2024, 2025}
-MEDIAN_WEEK = 14
 SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
@@ -21,16 +27,14 @@ def load(path):
     return json.loads(path.read_text())
 
 
-def real_matchup_weeks(season, matchups_by_week, playoff_week_start):
-    """Yield (week, [(roster_id, points), ...]) for weeks that were real
-    regular-season head-to-head play (excludes playoffs/consolation bracket
-    weeks, which Sleeper still returns matchups for but which don't count
-    toward the official win/loss record)."""
+def real_matchup_weeks(matchups_by_week, playoff_week_start):
+    """Yield (week, [(roster_id, points), ...]) for weeks that were part of
+    the regular season (excludes playoffs/consolation bracket weeks, which
+    Sleeper still returns matchups for but which don't count toward the
+    official win/loss record)."""
     for week_str, matchups in matchups_by_week.items():
         week = int(week_str)
         if week >= playoff_week_start:
-            continue
-        if season in MEDIAN_WEEK_SEASONS and week == MEDIAN_WEEK:
             continue
         by_matchup_id = {}
         for m in matchups:
@@ -53,7 +57,7 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
 
         # build the week's full score pool once per week for all-play calc
         week_pools = {}
-        for week, pair in real_matchup_weeks(season, data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
+        for week, pair in real_matchup_weeks(data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
             for m in pair:
                 owner = roster_owner.get(m["roster_id"])
                 if not owner or owner == PHANTOM_OWNER_ID:
@@ -72,15 +76,18 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
                 s["expected_wins"] += expected
                 s["games"] += 1
 
-        for week, pair in real_matchup_weeks(season, data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
+        for week, pair in real_matchup_weeks(data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
             m1, m2 = pair
             o1, o2 = roster_owner.get(m1["roster_id"]), roster_owner.get(m2["roster_id"])
-            if not o1 or not o2 or o1 == PHANTOM_OWNER_ID or o2 == PHANTOM_OWNER_ID:
+            if not o1 or not o2:
                 continue
+            # a real team's game against the phantom bye team still counts
+            # as a real result in the official record (they still "won" that
+            # week); only the phantom side itself has no wins to credit
             p1, p2 = m1.get("points", 0) or 0, m2.get("points", 0) or 0
-            if o1 in season_stats:
+            if o1 in season_stats and o1 != PHANTOM_OWNER_ID:
                 season_stats[o1]["actual_wins"] += 1 if p1 > p2 else (0.5 if p1 == p2 else 0)
-            if o2 in season_stats:
+            if o2 in season_stats and o2 != PHANTOM_OWNER_ID:
                 season_stats[o2]["actual_wins"] += 1 if p2 > p1 else (0.5 if p1 == p2 else 0)
 
         season_result = {}

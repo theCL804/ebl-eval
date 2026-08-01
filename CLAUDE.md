@@ -236,17 +236,46 @@ to re-run anytime.
   instead). Those weeks are **not part of the official regular-season
   win/loss record** — a roster's `settings.wins`/`settings.losses` in the
   rosters endpoint only ever sums to the regular-season week count
-  (`playoff_week_start - 1`, minus the week-14 median week in 2022–2025),
-  never the extra playoff/consolation weeks.
+  (`playoff_week_start - 1`, minus the week-14 median week in 2023–2025 —
+  2022's `playoff_week_start` is already 14, same as 2019–2021, so its
+  week 14 is a playoff week, not a median week; the median week only
+  actually started in 2023 despite `MEDIAN_WEEK_SEASONS` in the compute
+  scripts including 2022 for harmless redundancy).
 - **`scripts/compute_analytics.py`'s luck (`real_matchup_weeks`) and
   positional-scoring-mix computations must exclude any week
   `>= playoff_week_start`** for that season, or all-time "actual wins" and
   win-derived stats come out inflated in games-played and diluted in
-  win rate versus each team's real record (this was a bug fixed in
-  2026-08 — a team's real 48-45-1 record was showing as 46.5 wins over
-  109 games instead of 91). Each season's `playoff_week_start` lives at
+  win rate versus each team's real record (bug fixed 2026-08 — a team's
+  real 48-45-1 record was showing as 46.5 wins over 109 games instead of
+  91). Each season's `playoff_week_start` lives at
   `data["league"]["settings"]["playoff_week_start"]` in that season's
-  history file.
+  history file. `scripts/compute_history.py`'s `head_to_head()` needed the
+  same fix (it excluded the median week but not playoff weeks).
+- **The week-14 median week must NOT be excluded from
+  `compute_analytics.py`'s win/loss totals**, unlike in the head-to-head
+  matrix. The raw matchup data still pairs each team against some roster
+  that week, and whatever win/loss that pairing produces matches the real
+  record, so it's a real result — it's only excluded from head-to-head
+  because the specific *opponent* is fabricated, not because the result
+  is fake. (A prior version of this fix wrongly reused the head-to-head
+  exclusion here too, which silently dropped real wins from every team's
+  2023–2025 median weeks.)
+- **A real team's win over the phantom "Any Boul FFC" bye team still
+  counts as a real win** in the official record and must be credited in
+  `compute_analytics.py`'s actual-wins tally — only the phantom side
+  itself should be skipped. A bug fixed 2026-08 was skipping the *entire*
+  matchup (both sides) whenever either side was the phantom team, which
+  undercounted real teams' wins for every season 2021–2025 the phantom
+  team existed, while their games-played count (computed via a separate
+  code path) still included those weeks — the mismatch was the tell.
+- After both fixes, all 12 current teams' all-time actual-wins now match
+  their real win totals exactly except two (off by exactly one win each,
+  in 2019 only) — a residual discrepancy between the raw per-week
+  `points` values and the final `settings.wins/losses` for one specific
+  2019 matchup, not reproducible from the fetched data. Small enough and
+  old enough (the league's first Sleeper season) to be a one-off
+  historical scoring correction rather than a code bug; not worth chasing
+  further unless the commissioner has a record of it.
 
 ## General rule
 

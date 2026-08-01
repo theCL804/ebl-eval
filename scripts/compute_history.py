@@ -2,8 +2,11 @@
 """Compute season summaries and all-time head-to-head records from data/history/*.json.
 
 See CLAUDE.md for the league-specific rules this implements: exclude the
-phantom "Any Boul FFC" team, and exclude week 14 of the 2022-2025 seasons
-from head-to-head (those were "vs. league median" weeks, not real games).
+phantom "Any Boul FFC" team, exclude week 14 of the 2022-2025 seasons from
+head-to-head (those were "vs. league median" weeks with no real opponent),
+and exclude playoff/consolation-bracket weeks (Sleeper still returns
+matchup data for those, but they aren't part of the regular-season
+head-to-head history this matrix represents).
 """
 import json
 from pathlib import Path
@@ -103,8 +106,11 @@ def head_to_head(all_season_data, current_owner_ids):
 
     for season, data in all_season_data.items():
         roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        playoff_week_start = data["league"]["settings"]["playoff_week_start"]
         for week_str, matchups in data["matchups_by_week"].items():
             week = int(week_str)
+            if week >= playoff_week_start:
+                continue
             if season in MEDIAN_WEEK_SEASONS and week == MEDIAN_WEEK:
                 continue
             by_matchup_id = {}
