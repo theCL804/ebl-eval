@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
 """Compute points/luck, positional scoring, and transaction analytics from data/history/*.json.
 
-See CLAUDE.md for the phantom-team exclusion rule applied here. Note that
-the week-14 "vs. league median" weeks (2023-2025) are deliberately NOT
-excluded here, unlike in compute_history.py's head-to-head matrix: the raw
-matchup data still pairs each team against some roster that week, and
-whatever the actual win/loss result was for that pairing matches the
-official record (Sleeper's own win/loss determination for a median week
-already resolves to a real win or loss in `settings.wins/losses`), so it's
-correct to count it as a real result here. It's only excluded from
-head-to-head because the specific *opponent* listed for that week is
-fabricated, not because the result itself is fake.
+See CLAUDE.md for the phantom-team exclusion rule applied here, and for
+the "always discard week 14" rule the luck computation follows.
 """
 import json
 from pathlib import Path
@@ -19,7 +11,8 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 HISTORY_DIR = DATA_DIR / "history"
 
 PHANTOM_OWNER_ID = "480904402215890944"
-SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
+DISCARD_WEEK = 14
+SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
 
@@ -27,77 +20,89 @@ def load(path):
     return json.loads(path.read_text())
 
 
-def real_matchup_weeks(matchups_by_week, playoff_week_start):
-    """Yield (week, [(roster_id, points), ...]) for weeks that were part of
-    the regular season (excludes playoffs/consolation bracket weeks, which
-    Sleeper still returns matchups for but which don't count toward the
-    official win/loss record)."""
+def regular_season_weeks(matchups_by_week, playoff_week_start):
+    """Yield (week, [pair, pair, ...]) for every regular-season week, where
+    each pair is the two matchup entries for one real head-to-head game.
+    Always discards week 14 (some seasons used it as a "vs. league median"
+    week with no real opponent; simplest to just drop it everywhere rather
+    than special-case which seasons actually did that) and any week at or
+    past that season's playoff_week_start (Sleeper still returns matchup
+    data for playoff and consolation-bracket weeks, but those aren't part
+    of the official regular-season record)."""
     for week_str, matchups in matchups_by_week.items():
         week = int(week_str)
-        if week >= playoff_week_start:
+        if week == DISCARD_WEEK or week >= playoff_week_start:
             continue
         by_matchup_id = {}
         for m in matchups:
             if m.get("matchup_id") is None:
                 continue
             by_matchup_id.setdefault(m["matchup_id"], []).append(m)
-        for pair in by_matchup_id.values():
-            if len(pair) != 2:
-                continue
-            yield week, pair
+        pairs = [pair for pair in by_matchup_id.values() if len(pair) == 2]
+        if pairs:
+            yield week, pairs
 
 
 def compute_luck(all_season_data, owner_to_name, current_owner_ids):
+    """For every real regular-season week (see regular_season_weeks), each
+    team gets:
+      - actual_wins: 1 for a real win that week, 0.5 for a tie, 0 for a loss
+      - expected_wins: that week's "all-play" win rate -- if the team's
+        score had been compared against every other team's score that
+        week instead of just its one assigned opponent, the fraction of
+        those match-ups it would have won (ties worth half a win)
+      - luck: actual_wins - expected_wins, summed across every game. A
+        team that keeps winning games it "shouldn't" (by score) accumulates
+        positive luck; one that keeps losing close, high-scoring weeks to
+        an opponent's even bigger week accumulates negative luck.
+    A team's game against the phantom bye team still counts as a normal
+    win for them (that's a real result in the official record) -- only the
+    phantom side itself is never credited a win.
+    """
     per_season = {}
     all_time = {o: {"actual_wins": 0.0, "expected_wins": 0.0, "games": 0} for o in current_owner_ids}
 
     for season, data in all_season_data.items():
         roster_owner = {r["roster_id"]: r["owner_id"] for r in data["rosters"]}
+        playoff_week_start = data["league"]["settings"]["playoff_week_start"]
         season_stats = {}
 
-        # build the week's full score pool once per week for all-play calc
-        week_pools = {}
-        for week, pair in real_matchup_weeks(data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
-            for m in pair:
-                owner = roster_owner.get(m["roster_id"])
-                if not owner or owner == PHANTOM_OWNER_ID:
-                    continue
-                week_pools.setdefault(week, {})[owner] = m.get("points", 0) or 0
+        for week, pairs in regular_season_weeks(data["matchups_by_week"], playoff_week_start):
+            # this week's full score pool, for the all-play expected-wins calc
+            pool = {}
+            for pair in pairs:
+                for m in pair:
+                    owner = roster_owner.get(m["roster_id"])
+                    if owner and owner != PHANTOM_OWNER_ID:
+                        pool[owner] = m.get("points", 0) or 0
 
-        for week, pool in week_pools.items():
             for owner, pts in pool.items():
                 others = [p for o, p in pool.items() if o != owner]
                 if not others:
                     continue
                 all_play_wins = sum(1 for p in others if pts > p)
                 all_play_ties = sum(1 for p in others if pts == p)
-                expected = (all_play_wins + 0.5 * all_play_ties) / len(others)
                 s = season_stats.setdefault(owner, {"actual_wins": 0.0, "expected_wins": 0.0, "games": 0})
-                s["expected_wins"] += expected
+                s["expected_wins"] += (all_play_wins + 0.5 * all_play_ties) / len(others)
                 s["games"] += 1
 
-        for week, pair in real_matchup_weeks(data["matchups_by_week"], data["league"]["settings"]["playoff_week_start"]):
-            m1, m2 = pair
-            o1, o2 = roster_owner.get(m1["roster_id"]), roster_owner.get(m2["roster_id"])
-            if not o1 or not o2:
-                continue
-            # a real team's game against the phantom bye team still counts
-            # as a real result in the official record (they still "won" that
-            # week); only the phantom side itself has no wins to credit
-            p1, p2 = m1.get("points", 0) or 0, m2.get("points", 0) or 0
-            if o1 in season_stats and o1 != PHANTOM_OWNER_ID:
-                season_stats[o1]["actual_wins"] += 1 if p1 > p2 else (0.5 if p1 == p2 else 0)
-            if o2 in season_stats and o2 != PHANTOM_OWNER_ID:
-                season_stats[o2]["actual_wins"] += 1 if p2 > p1 else (0.5 if p1 == p2 else 0)
+            for m1, m2 in pairs:
+                o1, o2 = roster_owner.get(m1["roster_id"]), roster_owner.get(m2["roster_id"])
+                if not o1 or not o2:
+                    continue
+                p1, p2 = m1.get("points", 0) or 0, m2.get("points", 0) or 0
+                if o1 in season_stats and o1 != PHANTOM_OWNER_ID:
+                    season_stats[o1]["actual_wins"] += 1 if p1 > p2 else (0.5 if p1 == p2 else 0)
+                if o2 in season_stats and o2 != PHANTOM_OWNER_ID:
+                    season_stats[o2]["actual_wins"] += 1 if p2 > p1 else (0.5 if p1 == p2 else 0)
 
         season_result = {}
         for owner, s in season_stats.items():
-            luck = round(s["actual_wins"] - s["expected_wins"], 2)
             season_result[owner] = {
                 "team_name": owner_to_name.get(owner, "(departed team)"),
                 "actual_wins": s["actual_wins"],
                 "expected_wins": round(s["expected_wins"], 2),
-                "luck": luck,
+                "luck": round(s["actual_wins"] - s["expected_wins"], 2),
                 "games": s["games"],
             }
             if owner in all_time:
@@ -106,15 +111,16 @@ def compute_luck(all_season_data, owner_to_name, current_owner_ids):
                 all_time[owner]["games"] += s["games"]
         per_season[season] = season_result
 
-    all_time_result = {}
-    for owner, s in all_time.items():
-        all_time_result[owner] = {
+    all_time_result = {
+        owner: {
             "team_name": owner_to_name.get(owner),
             "actual_wins": round(s["actual_wins"], 1),
             "expected_wins": round(s["expected_wins"], 2),
             "luck": round(s["actual_wins"] - s["expected_wins"], 2),
             "games": s["games"],
         }
+        for owner, s in all_time.items()
+    }
 
     return per_season, all_time_result
 

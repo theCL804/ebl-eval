@@ -362,367 +362,368 @@
       "2023": {
         "394248955468185600": {
           "team_name": "The Chicken Boys\ud83d\udc14",
-          "actual_wins": 10.0,
-          "expected_wins": 11.08,
-          "luck": -1.08,
-          "games": 14
+          "actual_wins": 9.0,
+          "expected_wins": 10.42,
+          "luck": -1.42,
+          "games": 13
         },
         "394251491289911296": {
           "team_name": "Fuck Michael Thomas",
           "actual_wins": 7.0,
-          "expected_wins": 5.17,
-          "luck": 1.83,
-          "games": 14
+          "expected_wins": 4.92,
+          "luck": 2.08,
+          "games": 13
         },
         "390894031879553024": {
           "team_name": "DickTatorMiller",
-          "actual_wins": 5.0,
-          "expected_wins": 5.75,
-          "luck": -0.75,
-          "games": 14
+          "actual_wins": 4.0,
+          "expected_wins": 5.17,
+          "luck": -1.17,
+          "games": 13
         },
         "336348640681398272": {
           "team_name": "Nikkis\u2019 Victims",
           "actual_wins": 5.0,
-          "expected_wins": 5.0,
-          "luck": 0.0,
-          "games": 14
+          "expected_wins": 4.58,
+          "luck": 0.42,
+          "games": 13
         },
         "394226654450315264": {
           "team_name": "The Cheese Children ",
           "actual_wins": 5.0,
-          "expected_wins": 4.75,
-          "luck": 0.25,
-          "games": 14
+          "expected_wins": 4.42,
+          "luck": 0.58,
+          "games": 13
         },
         "394491025806135296": {
           "team_name": "BateBoul",
-          "actual_wins": 7.0,
-          "expected_wins": 8.0,
-          "luck": -1.0,
-          "games": 14
+          "actual_wins": 6.0,
+          "expected_wins": 7.25,
+          "luck": -1.25,
+          "games": 13
         },
         "393989477577588736": {
           "team_name": "The Moon Unit",
-          "actual_wins": 12.0,
-          "expected_wins": 11.5,
-          "luck": 0.5,
-          "games": 14
+          "actual_wins": 11.0,
+          "expected_wins": 10.67,
+          "luck": 0.33,
+          "games": 13
         },
         "394253124748980224": {
           "team_name": "Long Live Wopo ",
-          "actual_wins": 7.0,
-          "expected_wins": 8.58,
+          "actual_wins": 6.0,
+          "expected_wins": 7.58,
           "luck": -1.58,
-          "games": 14
+          "games": 13
         },
         "407246708687314944": {
           "team_name": "Mattpao",
           "actual_wins": 8.0,
-          "expected_wins": 6.25,
-          "luck": 1.75,
-          "games": 14
+          "expected_wins": 6.08,
+          "luck": 1.92,
+          "games": 13
         },
         "394531785582608384": {
           "team_name": "The Factory",
           "actual_wins": 8.0,
-          "expected_wins": 6.25,
-          "luck": 1.75,
-          "games": 14
+          "expected_wins": 6.17,
+          "luck": 1.83,
+          "games": 13
         },
         "394252975431766016": {
           "team_name": "Brock Hard",
-          "actual_wins": 8.0,
-          "expected_wins": 7.58,
-          "luck": 0.42,
-          "games": 14
+          "actual_wins": 7.0,
+          "expected_wins": 6.67,
+          "luck": 0.33,
+          "games": 13
         },
         "394252838206713856": {
           "team_name": "(departed team)",
           "actual_wins": 8.0,
           "expected_wins": 5.33,
           "luck": 2.67,
-          "games": 14
+          "games": 13
         },
         "406674259818065920": {
           "team_name": "(departed team)",
-          "actual_wins": 8.0,
-          "expected_wins": 5.75,
-          "luck": 2.25,
-          "games": 14
+          "actual_wins": 7.0,
+          "expected_wins": 5.25,
+          "luck": 1.75,
+          "games": 13
         }
       },
       "2024": {
         "394248955468185600": {
           "team_name": "The Chicken Boys\ud83d\udc14",
-          "actual_wins": 10.0,
-          "expected_wins": 6.33,
-          "luck": 3.67,
-          "games": 14
+          "actual_wins": 9.0,
+          "expected_wins": 5.75,
+          "luck": 3.25,
+          "games": 13
         },
         "390894031879553024": {
           "team_name": "DickTatorMiller",
-          "actual_wins": 6.0,
-          "expected_wins": 7.25,
-          "luck": -1.25,
-          "games": 14
+          "actual_wins": 5.0,
+          "expected_wins": 6.75,
+          "luck": -1.75,
+          "games": 13
         },
         "394226654450315264": {
           "team_name": "The Cheese Children ",
-          "actual_wins": 7.0,
-          "expected_wins": 6.5,
-          "luck": 0.5,
-          "games": 14
+          "actual_wins": 6.0,
+          "expected_wins": 5.83,
+          "luck": 0.17,
+          "games": 13
         },
         "394251491289911296": {
           "team_name": "Fuck Michael Thomas",
           "actual_wins": 3.0,
           "expected_wins": 2.17,
           "luck": 0.83,
-          "games": 14
+          "games": 13
         },
         "393989477577588736": {
           "team_name": "The Moon Unit",
           "actual_wins": 8.0,
-          "expected_wins": 9.17,
-          "luck": -1.17,
-          "games": 14
+          "expected_wins": 8.75,
+          "luck": -0.75,
+          "games": 13
         },
         "336348640681398272": {
           "team_name": "Nikkis\u2019 Victims",
           "actual_wins": 4.0,
-          "expected_wins": 3.5,
-          "luck": 0.5,
-          "games": 14
+          "expected_wins": 3.33,
+          "luck": 0.67,
+          "games": 13
         },
         "407246708687314944": {
           "team_name": "Mattpao",
           "actual_wins": 5.0,
-          "expected_wins": 5.5,
-          "luck": -0.5,
-          "games": 14
+          "expected_wins": 5.25,
+          "luck": -0.25,
+          "games": 13
         },
         "394252975431766016": {
           "team_name": "Brock Hard",
           "actual_wins": 10.0,
-          "expected_wins": 9.25,
-          "luck": 0.75,
-          "games": 14
+          "expected_wins": 8.92,
+          "luck": 1.08,
+          "games": 13
         },
         "394253124748980224": {
           "team_name": "Long Live Wopo ",
-          "actual_wins": 8.0,
-          "expected_wins": 9.33,
+          "actual_wins": 7.0,
+          "expected_wins": 8.33,
           "luck": -1.33,
-          "games": 14
+          "games": 13
         },
         "394531785582608384": {
           "team_name": "The Factory",
           "actual_wins": 3.0,
-          "expected_wins": 2.75,
-          "luck": 0.25,
-          "games": 14
+          "expected_wins": 2.67,
+          "luck": 0.33,
+          "games": 13
         },
         "394491025806135296": {
           "team_name": "BateBoul",
-          "actual_wins": 11.0,
-          "expected_wins": 11.08,
-          "luck": -0.08,
-          "games": 14
+          "actual_wins": 10.0,
+          "expected_wins": 10.25,
+          "luck": -0.25,
+          "games": 13
         },
         "406674259818065920": {
           "team_name": "(departed team)",
-          "actual_wins": 11.0,
-          "expected_wins": 8.5,
-          "luck": 2.5,
-          "games": 14
+          "actual_wins": 10.0,
+          "expected_wins": 7.58,
+          "luck": 2.42,
+          "games": 13
         },
         "1065778674277945344": {
           "team_name": "The Choo Choo Crew",
-          "actual_wins": 12.0,
-          "expected_wins": 9.67,
-          "luck": 2.33,
-          "games": 14
+          "actual_wins": 11.0,
+          "expected_wins": 8.92,
+          "luck": 2.08,
+          "games": 13
         }
       },
       "2025": {
         "394248955468185600": {
           "team_name": "The Chicken Boys\ud83d\udc14",
           "actual_wins": 5.0,
-          "expected_wins": 7.0,
-          "luck": -2.0,
-          "games": 14
+          "expected_wins": 6.83,
+          "luck": -1.83,
+          "games": 13
         },
         "394226654450315264": {
           "team_name": "The Cheese Children ",
-          "actual_wins": 8.0,
-          "expected_wins": 8.33,
-          "luck": -0.33,
-          "games": 14
+          "actual_wins": 7.0,
+          "expected_wins": 7.58,
+          "luck": -0.58,
+          "games": 13
         },
         "390894031879553024": {
           "team_name": "DickTatorMiller",
           "actual_wins": 6.0,
-          "expected_wins": 5.42,
-          "luck": 0.58,
-          "games": 14
+          "expected_wins": 5.33,
+          "luck": 0.67,
+          "games": 13
         },
         "336348640681398272": {
           "team_name": "Nikkis\u2019 Victims",
           "actual_wins": 6.0,
-          "expected_wins": 3.67,
-          "luck": 2.33,
-          "games": 14
+          "expected_wins": 3.33,
+          "luck": 2.67,
+          "games": 13
         },
         "394251491289911296": {
           "team_name": "Fuck Michael Thomas",
-          "actual_wins": 6.0,
-          "expected_wins": 4.67,
-          "luck": 1.33,
-          "games": 14
+          "actual_wins": 5.0,
+          "expected_wins": 4.0,
+          "luck": 1.0,
+          "games": 13
         },
         "406674259818065920": {
           "team_name": "(departed team)",
-          "actual_wins": 8.0,
-          "expected_wins": 9.75,
+          "actual_wins": 7.0,
+          "expected_wins": 8.75,
           "luck": -1.75,
-          "games": 14
+          "games": 13
         },
         "393989477577588736": {
           "team_name": "The Moon Unit",
           "actual_wins": 11.0,
-          "expected_wins": 10.92,
-          "luck": 0.08,
-          "games": 14
+          "expected_wins": 10.5,
+          "luck": 0.5,
+          "games": 13
         },
         "394531785582608384": {
           "team_name": "The Factory",
           "actual_wins": 5.0,
           "expected_wins": 3.33,
           "luck": 1.67,
-          "games": 14
+          "games": 13
         },
         "407246708687314944": {
           "team_name": "Mattpao",
           "actual_wins": 5.0,
-          "expected_wins": 3.83,
-          "luck": 1.17,
-          "games": 14
+          "expected_wins": 3.58,
+          "luck": 1.42,
+          "games": 13
         },
         "394252975431766016": {
           "team_name": "Brock Hard",
-          "actual_wins": 6.0,
-          "expected_wins": 5.17,
-          "luck": 0.83,
-          "games": 14
+          "actual_wins": 5.0,
+          "expected_wins": 4.25,
+          "luck": 0.75,
+          "games": 13
         },
         "1065778674277945344": {
           "team_name": "The Choo Choo Crew",
-          "actual_wins": 12.0,
-          "expected_wins": 8.5,
-          "luck": 3.5,
-          "games": 14
+          "actual_wins": 11.0,
+          "expected_wins": 8.0,
+          "luck": 3.0,
+          "games": 13
         },
         "394253124748980224": {
           "team_name": "Long Live Wopo ",
-          "actual_wins": 8.0,
-          "expected_wins": 9.25,
-          "luck": -1.25,
-          "games": 14
+          "actual_wins": 7.0,
+          "expected_wins": 8.42,
+          "luck": -1.42,
+          "games": 13
         },
         "394491025806135296": {
           "team_name": "BateBoul",
-          "actual_wins": 12.0,
-          "expected_wins": 11.17,
-          "luck": 0.83,
-          "games": 14
+          "actual_wins": 11.0,
+          "expected_wins": 10.58,
+          "luck": 0.42,
+          "games": 13
         }
-      }
+      },
+      "2026": {}
     },
     "all_time": {
-      "390894031879553024": {
-        "team_name": "DickTatorMiller",
-        "actual_wins": 45.0,
-        "expected_wins": 45.47,
-        "luck": -0.47,
-        "games": 94
-      },
-      "394226654450315264": {
-        "team_name": "The Cheese Children ",
-        "actual_wins": 44.0,
-        "expected_wins": 44.71,
-        "luck": -0.71,
-        "games": 94
-      },
-      "394253124748980224": {
-        "team_name": "Long Live Wopo ",
-        "actual_wins": 54.0,
-        "expected_wins": 55.52,
-        "luck": -1.52,
-        "games": 94
-      },
-      "394531785582608384": {
-        "team_name": "The Factory",
-        "actual_wins": 37.0,
-        "expected_wins": 31.92,
+      "1065778674277945344": {
+        "team_name": "The Choo Choo Crew",
+        "actual_wins": 22.0,
+        "expected_wins": 16.92,
         "luck": 5.08,
-        "games": 94
+        "games": 26
       },
       "394251491289911296": {
         "team_name": "Fuck Michael Thomas",
-        "actual_wins": 48.5,
-        "expected_wins": 41.77,
-        "luck": 6.73,
-        "games": 94
-      },
-      "1065778674277945344": {
-        "team_name": "The Choo Choo Crew",
-        "actual_wins": 24.0,
-        "expected_wins": 18.17,
-        "luck": 5.83,
-        "games": 28
-      },
-      "394491025806135296": {
-        "team_name": "BateBoul",
-        "actual_wins": 45.0,
-        "expected_wins": 46.57,
-        "luck": -1.57,
-        "games": 94
-      },
-      "394252975431766016": {
-        "team_name": "Brock Hard",
-        "actual_wins": 60.0,
-        "expected_wins": 53.83,
-        "luck": 6.17,
-        "games": 94
+        "actual_wins": 47.5,
+        "expected_wins": 40.85,
+        "luck": 6.65,
+        "games": 91
       },
       "336348640681398272": {
         "team_name": "Nikkis\u2019 Victims",
         "actual_wins": 27.0,
-        "expected_wins": 20.25,
-        "luck": 6.75,
-        "games": 68
+        "expected_wins": 19.33,
+        "luck": 7.67,
+        "games": 65
       },
-      "393989477577588736": {
-        "team_name": "The Moon Unit",
-        "actual_wins": 55.0,
-        "expected_wins": 57.47,
-        "luck": -2.47,
-        "games": 94
+      "394226654450315264": {
+        "team_name": "The Cheese Children ",
+        "actual_wins": 42.0,
+        "expected_wins": 42.96,
+        "luck": -0.96,
+        "games": 91
+      },
+      "390894031879553024": {
+        "team_name": "DickTatorMiller",
+        "actual_wins": 43.0,
+        "expected_wins": 44.31,
+        "luck": -1.31,
+        "games": 91
       },
       "394248955468185600": {
         "team_name": "The Chicken Boys\ud83d\udc14",
-        "actual_wins": 61.5,
-        "expected_wins": 62.47,
-        "luck": -0.97,
-        "games": 94
+        "actual_wins": 59.5,
+        "expected_wins": 61.06,
+        "luck": -1.56,
+        "games": 91
+      },
+      "394491025806135296": {
+        "team_name": "BateBoul",
+        "actual_wins": 42.0,
+        "expected_wins": 44.4,
+        "luck": -2.4,
+        "games": 91
+      },
+      "394531785582608384": {
+        "team_name": "The Factory",
+        "actual_wins": 37.0,
+        "expected_wins": 31.76,
+        "luck": 5.24,
+        "games": 91
+      },
+      "393989477577588736": {
+        "team_name": "The Moon Unit",
+        "actual_wins": 54.0,
+        "expected_wins": 55.8,
+        "luck": -1.8,
+        "games": 91
+      },
+      "394253124748980224": {
+        "team_name": "Long Live Wopo ",
+        "actual_wins": 51.0,
+        "expected_wins": 52.69,
+        "luck": -1.69,
+        "games": 91
+      },
+      "394252975431766016": {
+        "team_name": "Brock Hard",
+        "actual_wins": 58.0,
+        "expected_wins": 51.66,
+        "luck": 6.34,
+        "games": 91
       },
       "407246708687314944": {
         "team_name": "Mattpao",
         "actual_wins": 45.0,
-        "expected_wins": 39.74,
-        "luck": 5.26,
-        "games": 94
+        "expected_wins": 39.08,
+        "luck": 5.92,
+        "games": 91
       }
     }
   },
@@ -1364,36 +1365,16 @@
           "WR": 482.7,
           "TE": 75.1
         }
-      }
+      },
+      "2026": {}
     },
     "all_time": {
-      "390894031879553024": {
-        "team_name": "DickTatorMiller",
-        "QB": 1721.3,
-        "RB": 2681.7,
-        "WR": 3752.3,
-        "TE": 747.8
-      },
-      "394226654450315264": {
-        "team_name": "The Cheese Children ",
-        "QB": 1760.8,
-        "RB": 2504.6,
-        "WR": 3935.2,
-        "TE": 704.3
-      },
-      "394253124748980224": {
-        "team_name": "Long Live Wopo ",
-        "QB": 2083.9,
-        "RB": 3388.3,
-        "WR": 3362.2,
-        "TE": 814.4
-      },
-      "394531785582608384": {
-        "team_name": "The Factory",
-        "QB": 1979.8,
-        "RB": 2113.5,
-        "WR": 3109.7,
-        "TE": 624.9
+      "1065778674277945344": {
+        "team_name": "The Choo Choo Crew",
+        "QB": 598.3,
+        "RB": 1252.2,
+        "WR": 948.6,
+        "TE": 252.6
       },
       "394251491289911296": {
         "team_name": "Fuck Michael Thomas",
@@ -1402,12 +1383,33 @@
         "WR": 2761.5,
         "TE": 1374.8
       },
-      "1065778674277945344": {
-        "team_name": "The Choo Choo Crew",
-        "QB": 598.3,
-        "RB": 1252.2,
-        "WR": 948.6,
-        "TE": 252.6
+      "336348640681398272": {
+        "team_name": "Nikkis\u2019 Victims",
+        "QB": 1018.3,
+        "RB": 1721.3,
+        "WR": 2068.2,
+        "TE": 614.3
+      },
+      "394226654450315264": {
+        "team_name": "The Cheese Children ",
+        "QB": 1760.8,
+        "RB": 2504.6,
+        "WR": 3935.2,
+        "TE": 704.3
+      },
+      "390894031879553024": {
+        "team_name": "DickTatorMiller",
+        "QB": 1721.3,
+        "RB": 2681.7,
+        "WR": 3752.3,
+        "TE": 747.8
+      },
+      "394248955468185600": {
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "QB": 1803.1,
+        "RB": 3241.3,
+        "WR": 3894.4,
+        "TE": 1200.8
       },
       "394491025806135296": {
         "team_name": "BateBoul",
@@ -1416,19 +1418,12 @@
         "WR": 3335.0,
         "TE": 1141.0
       },
-      "394252975431766016": {
-        "team_name": "Brock Hard",
-        "QB": 1704.0,
-        "RB": 3689.4,
-        "WR": 3330.4,
-        "TE": 844.5
-      },
-      "336348640681398272": {
-        "team_name": "Nikkis\u2019 Victims",
-        "QB": 1018.3,
-        "RB": 1721.3,
-        "WR": 2068.2,
-        "TE": 614.3
+      "394531785582608384": {
+        "team_name": "The Factory",
+        "QB": 1979.8,
+        "RB": 2113.5,
+        "WR": 3109.7,
+        "TE": 624.9
       },
       "393989477577588736": {
         "team_name": "The Moon Unit",
@@ -1437,12 +1432,19 @@
         "WR": 4160.3,
         "TE": 684.7
       },
-      "394248955468185600": {
-        "team_name": "The Chicken Boys\ud83d\udc14",
-        "QB": 1803.1,
-        "RB": 3241.3,
-        "WR": 3894.4,
-        "TE": 1200.8
+      "394253124748980224": {
+        "team_name": "Long Live Wopo ",
+        "QB": 2083.9,
+        "RB": 3388.3,
+        "WR": 3362.2,
+        "TE": 814.4
+      },
+      "394252975431766016": {
+        "team_name": "Brock Hard",
+        "QB": 1704.0,
+        "RB": 3689.4,
+        "WR": 3330.4,
+        "TE": 844.5
       },
       "407246708687314944": {
         "team_name": "Mattpao",
@@ -1494,6 +1496,12 @@
         "RB": 5817.6,
         "WR": 5973.1,
         "TE": 1837.6
+      },
+      "2026": {
+        "QB": 0.0,
+        "RB": 0.0,
+        "WR": 0.0,
+        "TE": 0.0
       }
     }
   },
@@ -1528,19 +1536,19 @@
           "free_agent": 18,
           "total": 28
         },
-        "394253124748980224": {
-          "team_name": "Long Live Wopo ",
-          "trade": 4,
-          "waiver": 10,
-          "free_agent": 18,
-          "total": 32
-        },
         "394252975431766016": {
           "team_name": "Brock Hard",
           "trade": 5,
           "waiver": 8,
           "free_agent": 77,
           "total": 90
+        },
+        "394253124748980224": {
+          "team_name": "Long Live Wopo ",
+          "trade": 4,
+          "waiver": 10,
+          "free_agent": 18,
+          "total": 32
         },
         "394248955468185600": {
           "team_name": "The Chicken Boys\ud83d\udc14",
@@ -1951,19 +1959,19 @@
         }
       },
       "2024": {
-        "336348640681398272": {
-          "team_name": "Nikkis\u2019 Victims",
-          "trade": 8,
-          "waiver": 2,
-          "free_agent": 18,
-          "total": 28
-        },
         "394252975431766016": {
           "team_name": "Brock Hard",
           "trade": 11,
           "waiver": 1,
           "free_agent": 26,
           "total": 38
+        },
+        "336348640681398272": {
+          "team_name": "Nikkis\u2019 Victims",
+          "trade": 8,
+          "waiver": 2,
+          "free_agent": 18,
+          "total": 28
         },
         "394491025806135296": {
           "team_name": "BateBoul",
@@ -2128,36 +2136,52 @@
           "free_agent": 11,
           "total": 15
         }
+      },
+      "2026": {
+        "394491025806135296": {
+          "team_name": "BateBoul",
+          "trade": 0,
+          "waiver": 0,
+          "free_agent": 2,
+          "total": 2
+        },
+        "336348640681398272": {
+          "team_name": "Nikkis\u2019 Victims",
+          "trade": 1,
+          "waiver": 0,
+          "free_agent": 2,
+          "total": 3
+        },
+        "407246708687314944": {
+          "team_name": "Mattpao",
+          "trade": 2,
+          "waiver": 0,
+          "free_agent": 0,
+          "total": 2
+        },
+        "394248955468185600": {
+          "team_name": "The Chicken Boys\ud83d\udc14",
+          "trade": 1,
+          "waiver": 0,
+          "free_agent": 1,
+          "total": 2
+        },
+        "394531785582608384": {
+          "team_name": "The Factory",
+          "trade": 0,
+          "waiver": 0,
+          "free_agent": 2,
+          "total": 2
+        }
       }
     },
     "all_time": {
-      "390894031879553024": {
-        "team_name": "DickTatorMiller",
-        "trade": 20,
-        "waiver": 15,
-        "free_agent": 70,
-        "total": 105
-      },
-      "394226654450315264": {
-        "team_name": "The Cheese Children ",
-        "trade": 16,
-        "waiver": 11,
-        "free_agent": 116,
-        "total": 143
-      },
-      "394253124748980224": {
-        "team_name": "Long Live Wopo ",
-        "trade": 14,
-        "waiver": 20,
-        "free_agent": 71,
-        "total": 105
-      },
-      "394531785582608384": {
-        "team_name": "The Factory",
-        "trade": 22,
-        "waiver": 15,
-        "free_agent": 69,
-        "total": 106
+      "1065778674277945344": {
+        "team_name": "The Choo Choo Crew",
+        "trade": 12,
+        "waiver": 7,
+        "free_agent": 28,
+        "total": 47
       },
       "394251491289911296": {
         "team_name": "Fuck Michael Thomas",
@@ -2166,33 +2190,47 @@
         "free_agent": 54,
         "total": 78
       },
-      "1065778674277945344": {
-        "team_name": "The Choo Choo Crew",
-        "trade": 12,
-        "waiver": 7,
-        "free_agent": 28,
-        "total": 47
+      "336348640681398272": {
+        "team_name": "Nikkis\u2019 Victims",
+        "trade": 29,
+        "waiver": 12,
+        "free_agent": 73,
+        "total": 114
+      },
+      "394226654450315264": {
+        "team_name": "The Cheese Children ",
+        "trade": 16,
+        "waiver": 11,
+        "free_agent": 116,
+        "total": 143
+      },
+      "390894031879553024": {
+        "team_name": "DickTatorMiller",
+        "trade": 20,
+        "waiver": 15,
+        "free_agent": 70,
+        "total": 105
+      },
+      "394248955468185600": {
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "trade": 32,
+        "waiver": 33,
+        "free_agent": 119,
+        "total": 184
       },
       "394491025806135296": {
         "team_name": "BateBoul",
         "trade": 10,
         "waiver": 16,
-        "free_agent": 67,
-        "total": 93
+        "free_agent": 69,
+        "total": 95
       },
-      "394252975431766016": {
-        "team_name": "Brock Hard",
-        "trade": 31,
-        "waiver": 30,
-        "free_agent": 195,
-        "total": 256
-      },
-      "336348640681398272": {
-        "team_name": "Nikkis\u2019 Victims",
-        "trade": 28,
-        "waiver": 12,
+      "394531785582608384": {
+        "team_name": "The Factory",
+        "trade": 22,
+        "waiver": 15,
         "free_agent": 71,
-        "total": 111
+        "total": 108
       },
       "393989477577588736": {
         "team_name": "The Moon Unit",
@@ -2201,19 +2239,26 @@
         "free_agent": 137,
         "total": 181
       },
-      "394248955468185600": {
-        "team_name": "The Chicken Boys\ud83d\udc14",
+      "394253124748980224": {
+        "team_name": "Long Live Wopo ",
+        "trade": 14,
+        "waiver": 20,
+        "free_agent": 71,
+        "total": 105
+      },
+      "394252975431766016": {
+        "team_name": "Brock Hard",
         "trade": 31,
-        "waiver": 33,
-        "free_agent": 118,
-        "total": 182
+        "waiver": 30,
+        "free_agent": 195,
+        "total": 256
       },
       "407246708687314944": {
         "team_name": "Mattpao",
-        "trade": 19,
+        "trade": 21,
         "waiver": 18,
         "free_agent": 71,
-        "total": 108
+        "total": 110
       }
     },
     "trade_partners": [
@@ -2260,6 +2305,13 @@
         "trades": 4
       },
       {
+        "a": "394248955468185600",
+        "b": "407246708687314944",
+        "a_name": "The Chicken Boys\ud83d\udc14",
+        "b_name": "Mattpao",
+        "trades": 4
+      },
+      {
         "a": "390894031879553024",
         "b": "394252975431766016",
         "a_name": "DickTatorMiller",
@@ -2281,17 +2333,17 @@
         "trades": 3
       },
       {
-        "a": "394248955468185600",
-        "b": "407246708687314944",
-        "a_name": "The Chicken Boys\ud83d\udc14",
-        "b_name": "Mattpao",
-        "trades": 3
-      },
-      {
         "a": "394226654450315264",
         "b": "394491025806135296",
         "a_name": "The Cheese Children ",
         "b_name": "BateBoul",
+        "trades": 3
+      },
+      {
+        "a": "336348640681398272",
+        "b": "407246708687314944",
+        "a_name": "Nikkis\u2019 Victims",
+        "b_name": "Mattpao",
         "trades": 3
       },
       {
@@ -2390,13 +2442,6 @@
         "b": "394251491289911296",
         "a_name": "The Cheese Children ",
         "b_name": "Fuck Michael Thomas",
-        "trades": 2
-      },
-      {
-        "a": "336348640681398272",
-        "b": "407246708687314944",
-        "a_name": "Nikkis\u2019 Victims",
-        "b_name": "Mattpao",
         "trades": 2
       },
       {
