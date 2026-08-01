@@ -1,0 +1,3620 @@
+[
+  {
+    "a": "394491025806135296",
+    "b": "407246708687314944",
+    "a_name": "BateBoul",
+    "b_name": "Mattpao",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 629.86,
+    "b_points": 759.02,
+    "games": [
+      {
+        "season": 2019,
+        "week": 9,
+        "a_score": 65.46,
+        "b_score": 135.28
+      },
+      {
+        "season": 2020,
+        "week": 9,
+        "a_score": 84.76,
+        "b_score": 121.2
+      },
+      {
+        "season": 2021,
+        "week": 1,
+        "a_score": 98.06,
+        "b_score": 117.62
+      },
+      {
+        "season": 2022,
+        "week": 12,
+        "a_score": 76.02,
+        "b_score": 85.58
+      },
+      {
+        "season": 2023,
+        "week": 8,
+        "a_score": 87.06,
+        "b_score": 115.12
+      },
+      {
+        "season": 2024,
+        "week": 8,
+        "a_score": 127.14,
+        "b_score": 99.12
+      },
+      {
+        "season": 2025,
+        "week": 8,
+        "a_score": 91.36,
+        "b_score": 85.1
+      }
+    ]
+  },
+  {
+    "a": "394491025806135296",
+    "b": "394531785582608384",
+    "a_name": "BateBoul",
+    "b_name": "The Factory",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 599.58,
+    "b_points": 530.6,
+    "games": [
+      {
+        "season": 2019,
+        "week": 8,
+        "a_score": 81.96,
+        "b_score": 115.86
+      },
+      {
+        "season": 2020,
+        "week": 6,
+        "a_score": 84.14,
+        "b_score": 75.6
+      },
+      {
+        "season": 2021,
+        "week": 12,
+        "a_score": 37.46,
+        "b_score": 49.92
+      },
+      {
+        "season": 2022,
+        "week": 10,
+        "a_score": 91.2,
+        "b_score": 59.24
+      },
+      {
+        "season": 2023,
+        "week": 7,
+        "a_score": 99.26,
+        "b_score": 112.56
+      },
+      {
+        "season": 2024,
+        "week": 7,
+        "a_score": 96.66,
+        "b_score": 47.54
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 108.9,
+        "b_score": 69.88
+      }
+    ]
+  },
+  {
+    "a": "394252975431766016",
+    "b": "394491025806135296",
+    "a_name": "Brock Hard",
+    "b_name": "BateBoul",
+    "a_wins": 7,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 1013.34,
+    "b_points": 853.88,
+    "games": [
+      {
+        "season": 2019,
+        "week": 2,
+        "a_score": 88.66,
+        "b_score": 76.82
+      },
+      {
+        "season": 2019,
+        "week": 12,
+        "a_score": 112.24,
+        "b_score": 95.64
+      },
+      {
+        "season": 2020,
+        "week": 1,
+        "a_score": 146.3,
+        "b_score": 82.0
+      },
+      {
+        "season": 2020,
+        "week": 11,
+        "a_score": 90.08,
+        "b_score": 88.3
+      },
+      {
+        "season": 2021,
+        "week": 9,
+        "a_score": 120.18,
+        "b_score": 74.68
+      },
+      {
+        "season": 2022,
+        "week": 4,
+        "a_score": 96.7,
+        "b_score": 100.16
+      },
+      {
+        "season": 2023,
+        "week": 13,
+        "a_score": 145.76,
+        "b_score": 110.92
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 146.72,
+        "b_score": 113.52
+      },
+      {
+        "season": 2025,
+        "week": 2,
+        "a_score": 66.7,
+        "b_score": 111.84
+      }
+    ]
+  },
+  {
+    "a": "394252975431766016",
+    "b": "394253124748980224",
+    "a_name": "Brock Hard",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 4,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 637.84,
+    "b_points": 640.18,
+    "games": [
+      {
+        "season": 2020,
+        "week": 7,
+        "a_score": 129.92,
+        "b_score": 99.08
+      },
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 112.78,
+        "b_score": 94.38
+      },
+      {
+        "season": 2022,
+        "week": 5,
+        "a_score": 122.54,
+        "b_score": 116.78
+      },
+      {
+        "season": 2023,
+        "week": 3,
+        "a_score": 109.7,
+        "b_score": 126.08
+      },
+      {
+        "season": 2024,
+        "week": 11,
+        "a_score": 105.06,
+        "b_score": 100.98
+      },
+      {
+        "season": 2025,
+        "week": 6,
+        "a_score": 57.84,
+        "b_score": 102.88
+      }
+    ]
+  },
+  {
+    "a": "394252975431766016",
+    "b": "407246708687314944",
+    "a_name": "Brock Hard",
+    "b_name": "Mattpao",
+    "a_wins": 5,
+    "b_wins": 1,
+    "ties": 0,
+    "a_points": 617.2,
+    "b_points": 479.96,
+    "games": [
+      {
+        "season": 2019,
+        "week": 5,
+        "a_score": 85.52,
+        "b_score": 70.5
+      },
+      {
+        "season": 2021,
+        "week": 6,
+        "a_score": 112.38,
+        "b_score": 120.8
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 111.2,
+        "b_score": 64.64
+      },
+      {
+        "season": 2023,
+        "week": 4,
+        "a_score": 111.2,
+        "b_score": 99.14
+      },
+      {
+        "season": 2024,
+        "week": 1,
+        "a_score": 107.28,
+        "b_score": 59.22
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 89.62,
+        "b_score": 65.66
+      }
+    ]
+  },
+  {
+    "a": "394252975431766016",
+    "b": "394531785582608384",
+    "a_name": "Brock Hard",
+    "b_name": "The Factory",
+    "a_wins": 7,
+    "b_wins": 0,
+    "ties": 0,
+    "a_points": 784.68,
+    "b_points": 541.32,
+    "games": [
+      {
+        "season": 2019,
+        "week": 6,
+        "a_score": 119.04,
+        "b_score": 69.62
+      },
+      {
+        "season": 2020,
+        "week": 9,
+        "a_score": 107.26,
+        "b_score": 91.98
+      },
+      {
+        "season": 2021,
+        "week": 4,
+        "a_score": 155.86,
+        "b_score": 118.82
+      },
+      {
+        "season": 2022,
+        "week": 7,
+        "a_score": 108.0,
+        "b_score": 87.02
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 92.54,
+        "b_score": 49.2
+      },
+      {
+        "season": 2024,
+        "week": 13,
+        "a_score": 103.46,
+        "b_score": 53.96
+      },
+      {
+        "season": 2025,
+        "week": 5,
+        "a_score": 98.52,
+        "b_score": 70.72
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394491025806135296",
+    "a_name": "DickTatorMiller",
+    "b_name": "BateBoul",
+    "a_wins": 5,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 891.3,
+    "b_points": 733.74,
+    "games": [
+      {
+        "season": 2019,
+        "week": 3,
+        "a_score": 116.6,
+        "b_score": 114.56
+      },
+      {
+        "season": 2019,
+        "week": 13,
+        "a_score": 113.52,
+        "b_score": 79.58
+      },
+      {
+        "season": 2020,
+        "week": 4,
+        "a_score": 163.4,
+        "b_score": 79.14
+      },
+      {
+        "season": 2021,
+        "week": 8,
+        "a_score": 123.14,
+        "b_score": 64.88
+      },
+      {
+        "season": 2022,
+        "week": 1,
+        "a_score": 72.8,
+        "b_score": 82.32
+      },
+      {
+        "season": 2023,
+        "week": 4,
+        "a_score": 95.38,
+        "b_score": 123.06
+      },
+      {
+        "season": 2024,
+        "week": 3,
+        "a_score": 125.16,
+        "b_score": 91.24
+      },
+      {
+        "season": 2025,
+        "week": 12,
+        "a_score": 81.3,
+        "b_score": 98.96
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394252975431766016",
+    "a_name": "DickTatorMiller",
+    "b_name": "Brock Hard",
+    "a_wins": 5,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 739.0,
+    "b_points": 797.3,
+    "games": [
+      {
+        "season": 2019,
+        "week": 1,
+        "a_score": 101.26,
+        "b_score": 98.82
+      },
+      {
+        "season": 2019,
+        "week": 11,
+        "a_score": 74.12,
+        "b_score": 63.94
+      },
+      {
+        "season": 2020,
+        "week": 5,
+        "a_score": 123.6,
+        "b_score": 103.84
+      },
+      {
+        "season": 2021,
+        "week": 13,
+        "a_score": 100.04,
+        "b_score": 87.92
+      },
+      {
+        "season": 2022,
+        "week": 11,
+        "a_score": 103.48,
+        "b_score": 99.68
+      },
+      {
+        "season": 2023,
+        "week": 2,
+        "a_score": 76.76,
+        "b_score": 109.04
+      },
+      {
+        "season": 2024,
+        "week": 9,
+        "a_score": 99.26,
+        "b_score": 130.9
+      },
+      {
+        "season": 2025,
+        "week": 4,
+        "a_score": 60.48,
+        "b_score": 103.16
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394251491289911296",
+    "a_name": "DickTatorMiller",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 3,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 809.16,
+    "b_points": 796.54,
+    "games": [
+      {
+        "season": 2019,
+        "week": 5,
+        "a_score": 141.36,
+        "b_score": 154.04
+      },
+      {
+        "season": 2020,
+        "week": 1,
+        "a_score": 107.52,
+        "b_score": 80.82
+      },
+      {
+        "season": 2020,
+        "week": 11,
+        "a_score": 104.18,
+        "b_score": 113.86
+      },
+      {
+        "season": 2021,
+        "week": 7,
+        "a_score": 77.08,
+        "b_score": 80.3
+      },
+      {
+        "season": 2022,
+        "week": 10,
+        "a_score": 79.5,
+        "b_score": 100.88
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 110.36,
+        "b_score": 91.52
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 79.92,
+        "b_score": 124.48
+      },
+      {
+        "season": 2025,
+        "week": 6,
+        "a_score": 109.24,
+        "b_score": 50.64
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394253124748980224",
+    "a_name": "DickTatorMiller",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 2,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 504.6,
+    "b_points": 581.92,
+    "games": [
+      {
+        "season": 2019,
+        "week": 9,
+        "a_score": 102.3,
+        "b_score": 106.02
+      },
+      {
+        "season": 2021,
+        "week": 10,
+        "a_score": 80.14,
+        "b_score": 70.92
+      },
+      {
+        "season": 2022,
+        "week": 2,
+        "a_score": 77.36,
+        "b_score": 133.42
+      },
+      {
+        "season": 2023,
+        "week": 5,
+        "a_score": 125.32,
+        "b_score": 82.84
+      },
+      {
+        "season": 2024,
+        "week": 10,
+        "a_score": 60.58,
+        "b_score": 87.8
+      },
+      {
+        "season": 2025,
+        "week": 3,
+        "a_score": 58.9,
+        "b_score": 100.92
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "407246708687314944",
+    "a_name": "DickTatorMiller",
+    "b_name": "Mattpao",
+    "a_wins": 3,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 687.16,
+    "b_points": 707.24,
+    "games": [
+      {
+        "season": 2019,
+        "week": 7,
+        "a_score": 85.36,
+        "b_score": 102.84
+      },
+      {
+        "season": 2020,
+        "week": 2,
+        "a_score": 95.66,
+        "b_score": 113.1
+      },
+      {
+        "season": 2020,
+        "week": 12,
+        "a_score": 96.2,
+        "b_score": 79.04
+      },
+      {
+        "season": 2021,
+        "week": 5,
+        "a_score": 69.78,
+        "b_score": 90.06
+      },
+      {
+        "season": 2022,
+        "week": 6,
+        "a_score": 66.82,
+        "b_score": 88.04
+      },
+      {
+        "season": 2023,
+        "week": 6,
+        "a_score": 75.78,
+        "b_score": 88.58
+      },
+      {
+        "season": 2024,
+        "week": 13,
+        "a_score": 112.04,
+        "b_score": 86.68
+      },
+      {
+        "season": 2025,
+        "week": 10,
+        "a_score": 85.52,
+        "b_score": 58.9
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394226654450315264",
+    "a_name": "DickTatorMiller",
+    "b_name": "The Cheese Children ",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 650.64,
+    "b_points": 670.22,
+    "games": [
+      {
+        "season": 2019,
+        "week": 8,
+        "a_score": 68.94,
+        "b_score": 119.38
+      },
+      {
+        "season": 2020,
+        "week": 9,
+        "a_score": 109.0,
+        "b_score": 72.62
+      },
+      {
+        "season": 2021,
+        "week": 2,
+        "a_score": 123.22,
+        "b_score": 110.98
+      },
+      {
+        "season": 2022,
+        "week": 7,
+        "a_score": 45.5,
+        "b_score": 68.08
+      },
+      {
+        "season": 2023,
+        "week": 9,
+        "a_score": 98.92,
+        "b_score": 71.06
+      },
+      {
+        "season": 2024,
+        "week": 5,
+        "a_score": 143.32,
+        "b_score": 116.38
+      },
+      {
+        "season": 2025,
+        "week": 7,
+        "a_score": 61.74,
+        "b_score": 111.72
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394248955468185600",
+    "a_name": "DickTatorMiller",
+    "b_name": "The Chicken Boys\ud83d\udc14",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 714.78,
+    "b_points": 744.24,
+    "games": [
+      {
+        "season": 2019,
+        "week": 4,
+        "a_score": 104.6,
+        "b_score": 105.34
+      },
+      {
+        "season": 2020,
+        "week": 6,
+        "a_score": 95.14,
+        "b_score": 82.32
+      },
+      {
+        "season": 2021,
+        "week": 4,
+        "a_score": 126.96,
+        "b_score": 128.92
+      },
+      {
+        "season": 2022,
+        "week": 13,
+        "a_score": 88.4,
+        "b_score": 112.6
+      },
+      {
+        "season": 2023,
+        "week": 8,
+        "a_score": 78.96,
+        "b_score": 115.72
+      },
+      {
+        "season": 2024,
+        "week": 1,
+        "a_score": 91.22,
+        "b_score": 102.76
+      },
+      {
+        "season": 2025,
+        "week": 8,
+        "a_score": 129.5,
+        "b_score": 96.58
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "394531785582608384",
+    "a_name": "DickTatorMiller",
+    "b_name": "The Factory",
+    "a_wins": 3,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 501.44,
+    "b_points": 467.98,
+    "games": [
+      {
+        "season": 2020,
+        "week": 10,
+        "a_score": 70.62,
+        "b_score": 70.38
+      },
+      {
+        "season": 2021,
+        "week": 3,
+        "a_score": 74.32,
+        "b_score": 85.4
+      },
+      {
+        "season": 2022,
+        "week": 4,
+        "a_score": 122.78,
+        "b_score": 72.96
+      },
+      {
+        "season": 2023,
+        "week": 12,
+        "a_score": 73.22,
+        "b_score": 106.42
+      },
+      {
+        "season": 2024,
+        "week": 12,
+        "a_score": 99.3,
+        "b_score": 58.72
+      },
+      {
+        "season": 2025,
+        "week": 2,
+        "a_score": 61.2,
+        "b_score": 74.1
+      }
+    ]
+  },
+  {
+    "a": "390894031879553024",
+    "b": "393989477577588736",
+    "a_name": "DickTatorMiller",
+    "b_name": "The Moon Unit",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 586.4,
+    "b_points": 780.34,
+    "games": [
+      {
+        "season": 2019,
+        "week": 10,
+        "a_score": 115.12,
+        "b_score": 57.52
+      },
+      {
+        "season": 2020,
+        "week": 7,
+        "a_score": 129.32,
+        "b_score": 114.08
+      },
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 74.28,
+        "b_score": 93.16
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 60.9,
+        "b_score": 143.7
+      },
+      {
+        "season": 2023,
+        "week": 13,
+        "a_score": 61.5,
+        "b_score": 118.42
+      },
+      {
+        "season": 2024,
+        "week": 7,
+        "a_score": 68.94,
+        "b_score": 117.42
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 76.34,
+        "b_score": 136.04
+      }
+    ]
+  },
+  {
+    "a": "394251491289911296",
+    "b": "394491025806135296",
+    "a_name": "Fuck Michael Thomas",
+    "b_name": "BateBoul",
+    "a_wins": 5,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 674.26,
+    "b_points": 640.34,
+    "games": [
+      {
+        "season": 2019,
+        "week": 6,
+        "a_score": 98.4,
+        "b_score": 80.82
+      },
+      {
+        "season": 2020,
+        "week": 10,
+        "a_score": 64.52,
+        "b_score": 44.74
+      },
+      {
+        "season": 2021,
+        "week": 3,
+        "a_score": 160.62,
+        "b_score": 74.94
+      },
+      {
+        "season": 2022,
+        "week": 3,
+        "a_score": 64.96,
+        "b_score": 129.5
+      },
+      {
+        "season": 2023,
+        "week": 3,
+        "a_score": 100.46,
+        "b_score": 74.98
+      },
+      {
+        "season": 2024,
+        "week": 12,
+        "a_score": 66.92,
+        "b_score": 122.56
+      },
+      {
+        "season": 2025,
+        "week": 4,
+        "a_score": 118.38,
+        "b_score": 112.8
+      }
+    ]
+  },
+  {
+    "a": "394251491289911296",
+    "b": "394252975431766016",
+    "a_name": "Fuck Michael Thomas",
+    "b_name": "Brock Hard",
+    "a_wins": 5,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 661.78,
+    "b_points": 662.38,
+    "games": [
+      {
+        "season": 2019,
+        "week": 4,
+        "a_score": 83.9,
+        "b_score": 82.18
+      },
+      {
+        "season": 2020,
+        "week": 4,
+        "a_score": 103.0,
+        "b_score": 80.4
+      },
+      {
+        "season": 2021,
+        "week": 8,
+        "a_score": 114.7,
+        "b_score": 112.7
+      },
+      {
+        "season": 2022,
+        "week": 13,
+        "a_score": 97.98,
+        "b_score": 109.94
+      },
+      {
+        "season": 2023,
+        "week": 8,
+        "a_score": 83.78,
+        "b_score": 82.4
+      },
+      {
+        "season": 2024,
+        "week": 5,
+        "a_score": 89.0,
+        "b_score": 115.16
+      },
+      {
+        "season": 2025,
+        "week": 9,
+        "a_score": 89.42,
+        "b_score": 79.6
+      }
+    ]
+  },
+  {
+    "a": "394251491289911296",
+    "b": "394253124748980224",
+    "a_name": "Fuck Michael Thomas",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 1,
+    "b_wins": 6,
+    "ties": 0,
+    "a_points": 693.66,
+    "b_points": 856.72,
+    "games": [
+      {
+        "season": 2019,
+        "week": 8,
+        "a_score": 130.96,
+        "b_score": 133.58
+      },
+      {
+        "season": 2020,
+        "week": 6,
+        "a_score": 90.8,
+        "b_score": 131.54
+      },
+      {
+        "season": 2021,
+        "week": 5,
+        "a_score": 166.7,
+        "b_score": 100.98
+      },
+      {
+        "season": 2022,
+        "week": 4,
+        "a_score": 102.66,
+        "b_score": 139.26
+      },
+      {
+        "season": 2023,
+        "week": 11,
+        "a_score": 84.34,
+        "b_score": 115.26
+      },
+      {
+        "season": 2024,
+        "week": 6,
+        "a_score": 72.1,
+        "b_score": 79.82
+      },
+      {
+        "season": 2025,
+        "week": 8,
+        "a_score": 46.1,
+        "b_score": 156.28
+      }
+    ]
+  },
+  {
+    "a": "394251491289911296",
+    "b": "407246708687314944",
+    "a_name": "Fuck Michael Thomas",
+    "b_name": "Mattpao",
+    "a_wins": 6,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 866.04,
+    "b_points": 832.16,
+    "games": [
+      {
+        "season": 2019,
+        "week": 3,
+        "a_score": 93.74,
+        "b_score": 87.4
+      },
+      {
+        "season": 2019,
+        "week": 13,
+        "a_score": 100.86,
+        "b_score": 92.0
+      },
+      {
+        "season": 2020,
+        "week": 3,
+        "a_score": 114.36,
+        "b_score": 107.92
+      },
+      {
+        "season": 2020,
+        "week": 13,
+        "a_score": 103.74,
+        "b_score": 82.3
+      },
+      {
+        "season": 2021,
+        "week": 13,
+        "a_score": 141.3,
+        "b_score": 72.16
+      },
+      {
+        "season": 2022,
+        "week": 8,
+        "a_score": 123.78,
+        "b_score": 97.96
+      },
+      {
+        "season": 2023,
+        "week": 12,
+        "a_score": 74.56,
+        "b_score": 88.3
+      },
+      {
+        "season": 2024,
+        "week": 9,
+        "a_score": 44.2,
+        "b_score": 113.14
+      },
+      {
+        "season": 2025,
+        "week": 2,
+        "a_score": 69.5,
+        "b_score": 90.98
+      }
+    ]
+  },
+  {
+    "a": "394251491289911296",
+    "b": "394531785582608384",
+    "a_name": "Fuck Michael Thomas",
+    "b_name": "The Factory",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 605.16,
+    "b_points": 579.62,
+    "games": [
+      {
+        "season": 2019,
+        "week": 7,
+        "a_score": 107.92,
+        "b_score": 62.54
+      },
+      {
+        "season": 2020,
+        "week": 8,
+        "a_score": 105.74,
+        "b_score": 107.34
+      },
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 116.74,
+        "b_score": 52.1
+      },
+      {
+        "season": 2022,
+        "week": 6,
+        "a_score": 70.42,
+        "b_score": 89.52
+      },
+      {
+        "season": 2023,
+        "week": 5,
+        "a_score": 85.38,
+        "b_score": 101.34
+      },
+      {
+        "season": 2024,
+        "week": 8,
+        "a_score": 79.3,
+        "b_score": 88.8
+      },
+      {
+        "season": 2025,
+        "week": 7,
+        "a_score": 39.66,
+        "b_score": 77.98
+      }
+    ]
+  },
+  {
+    "a": "394253124748980224",
+    "b": "394491025806135296",
+    "a_name": "Long Live Wopo ",
+    "b_name": "BateBoul",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 672.24,
+    "b_points": 642.12,
+    "games": [
+      {
+        "season": 2019,
+        "week": 5,
+        "a_score": 98.84,
+        "b_score": 93.56
+      },
+      {
+        "season": 2020,
+        "week": 5,
+        "a_score": 69.5,
+        "b_score": 58.5
+      },
+      {
+        "season": 2021,
+        "week": 6,
+        "a_score": 99.58,
+        "b_score": 91.5
+      },
+      {
+        "season": 2022,
+        "week": 8,
+        "a_score": 104.92,
+        "b_score": 71.3
+      },
+      {
+        "season": 2023,
+        "week": 6,
+        "a_score": 95.82,
+        "b_score": 98.2
+      },
+      {
+        "season": 2024,
+        "week": 5,
+        "a_score": 109.32,
+        "b_score": 123.38
+      },
+      {
+        "season": 2025,
+        "week": 1,
+        "a_score": 94.26,
+        "b_score": 105.68
+      }
+    ]
+  },
+  {
+    "a": "394253124748980224",
+    "b": "407246708687314944",
+    "a_name": "Long Live Wopo ",
+    "b_name": "Mattpao",
+    "a_wins": 3,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 582.26,
+    "b_points": 671.64,
+    "games": [
+      {
+        "season": 2019,
+        "week": 6,
+        "a_score": 73.84,
+        "b_score": 123.52
+      },
+      {
+        "season": 2020,
+        "week": 4,
+        "a_score": 69.72,
+        "b_score": 101.88
+      },
+      {
+        "season": 2021,
+        "week": 3,
+        "a_score": 105.48,
+        "b_score": 83.54
+      },
+      {
+        "season": 2022,
+        "week": 13,
+        "a_score": 79.34,
+        "b_score": 66.44
+      },
+      {
+        "season": 2023,
+        "week": 7,
+        "a_score": 95.58,
+        "b_score": 79.94
+      },
+      {
+        "season": 2024,
+        "week": 2,
+        "a_score": 84.08,
+        "b_score": 121.86
+      },
+      {
+        "season": 2025,
+        "week": 12,
+        "a_score": 74.22,
+        "b_score": 94.46
+      }
+    ]
+  },
+  {
+    "a": "394253124748980224",
+    "b": "394531785582608384",
+    "a_name": "Long Live Wopo ",
+    "b_name": "The Factory",
+    "a_wins": 4,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 886.32,
+    "b_points": 943.72,
+    "games": [
+      {
+        "season": 2019,
+        "week": 3,
+        "a_score": 144.58,
+        "b_score": 130.86
+      },
+      {
+        "season": 2019,
+        "week": 13,
+        "a_score": 80.0,
+        "b_score": 135.0
+      },
+      {
+        "season": 2020,
+        "week": 2,
+        "a_score": 61.06,
+        "b_score": 119.08
+      },
+      {
+        "season": 2020,
+        "week": 12,
+        "a_score": 84.22,
+        "b_score": 121.98
+      },
+      {
+        "season": 2021,
+        "week": 1,
+        "a_score": 82.24,
+        "b_score": 114.48
+      },
+      {
+        "season": 2022,
+        "week": 11,
+        "a_score": 102.56,
+        "b_score": 76.66
+      },
+      {
+        "season": 2023,
+        "week": 13,
+        "a_score": 82.16,
+        "b_score": 84.06
+      },
+      {
+        "season": 2024,
+        "week": 1,
+        "a_score": 123.32,
+        "b_score": 88.06
+      },
+      {
+        "season": 2025,
+        "week": 4,
+        "a_score": 126.18,
+        "b_score": 73.54
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394491025806135296",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "BateBoul",
+    "a_wins": 1,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 401.68,
+    "b_points": 506.9,
+    "games": [
+      {
+        "season": 2021,
+        "week": 4,
+        "a_score": 69.16,
+        "b_score": 102.88
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 92.0,
+        "b_score": 66.12
+      },
+      {
+        "season": 2023,
+        "week": 11,
+        "a_score": 92.46,
+        "b_score": 100.1
+      },
+      {
+        "season": 2024,
+        "week": 10,
+        "a_score": 88.44,
+        "b_score": 118.78
+      },
+      {
+        "season": 2025,
+        "week": 10,
+        "a_score": 59.62,
+        "b_score": 119.02
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394252975431766016",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "Brock Hard",
+    "a_wins": 4,
+    "b_wins": 1,
+    "ties": 0,
+    "a_points": 433.4,
+    "b_points": 390.42,
+    "games": [
+      {
+        "season": 2021,
+        "week": 1,
+        "a_score": 99.94,
+        "b_score": 88.66
+      },
+      {
+        "season": 2022,
+        "week": 6,
+        "a_score": 79.78,
+        "b_score": 70.42
+      },
+      {
+        "season": 2023,
+        "week": 12,
+        "a_score": 109.04,
+        "b_score": 87.26
+      },
+      {
+        "season": 2024,
+        "week": 3,
+        "a_score": 66.48,
+        "b_score": 85.28
+      },
+      {
+        "season": 2025,
+        "week": 7,
+        "a_score": 78.16,
+        "b_score": 58.8
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "390894031879553024",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "DickTatorMiller",
+    "a_wins": 2,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 417.96,
+    "b_points": 493.8,
+    "games": [
+      {
+        "season": 2021,
+        "week": 12,
+        "a_score": 64.0,
+        "b_score": 137.28
+      },
+      {
+        "season": 2022,
+        "week": 3,
+        "a_score": 78.86,
+        "b_score": 79.16
+      },
+      {
+        "season": 2023,
+        "week": 1,
+        "a_score": 95.94,
+        "b_score": 85.84
+      },
+      {
+        "season": 2024,
+        "week": 2,
+        "a_score": 97.74,
+        "b_score": 74.7
+      },
+      {
+        "season": 2025,
+        "week": 1,
+        "a_score": 81.42,
+        "b_score": 116.82
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394251491289911296",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 3,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 396.08,
+    "b_points": 432.68,
+    "games": [
+      {
+        "season": 2021,
+        "week": 2,
+        "a_score": 91.7,
+        "b_score": 107.22
+      },
+      {
+        "season": 2022,
+        "week": 5,
+        "a_score": 68.7,
+        "b_score": 106.72
+      },
+      {
+        "season": 2023,
+        "week": 7,
+        "a_score": 76.4,
+        "b_score": 72.94
+      },
+      {
+        "season": 2024,
+        "week": 11,
+        "a_score": 82.96,
+        "b_score": 70.2
+      },
+      {
+        "season": 2025,
+        "week": 11,
+        "a_score": 76.32,
+        "b_score": 75.6
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394253124748980224",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 1,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 394.28,
+    "b_points": 541.06,
+    "games": [
+      {
+        "season": 2021,
+        "week": 8,
+        "a_score": 113.0,
+        "b_score": 61.38
+      },
+      {
+        "season": 2022,
+        "week": 10,
+        "a_score": 53.6,
+        "b_score": 131.08
+      },
+      {
+        "season": 2023,
+        "week": 2,
+        "a_score": 75.8,
+        "b_score": 115.68
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 75.38,
+        "b_score": 96.74
+      },
+      {
+        "season": 2025,
+        "week": 5,
+        "a_score": 76.5,
+        "b_score": 136.18
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "407246708687314944",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "Mattpao",
+    "a_wins": 1,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 373.42,
+    "b_points": 395.36,
+    "games": [
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 74.46,
+        "b_score": 92.5
+      },
+      {
+        "season": 2022,
+        "week": 1,
+        "a_score": 111.42,
+        "b_score": 83.1
+      },
+      {
+        "season": 2023,
+        "week": 3,
+        "a_score": 69.16,
+        "b_score": 79.24
+      },
+      {
+        "season": 2024,
+        "week": 7,
+        "a_score": 68.1,
+        "b_score": 78.34
+      },
+      {
+        "season": 2025,
+        "week": 6,
+        "a_score": 50.28,
+        "b_score": 62.18
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394226654450315264",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "The Cheese Children ",
+    "a_wins": 1,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 345.68,
+    "b_points": 397.46,
+    "games": [
+      {
+        "season": 2021,
+        "week": 5,
+        "a_score": 83.64,
+        "b_score": 123.88
+      },
+      {
+        "season": 2022,
+        "week": 2,
+        "a_score": 103.28,
+        "b_score": 49.78
+      },
+      {
+        "season": 2023,
+        "week": 6,
+        "a_score": 53.52,
+        "b_score": 74.18
+      },
+      {
+        "season": 2024,
+        "week": 12,
+        "a_score": 50.3,
+        "b_score": 60.46
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 54.94,
+        "b_score": 89.16
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394248955468185600",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "The Chicken Boys\ud83d\udc14",
+    "a_wins": 3,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 470.42,
+    "b_points": 461.74,
+    "games": [
+      {
+        "season": 2021,
+        "week": 9,
+        "a_score": 89.66,
+        "b_score": 73.04
+      },
+      {
+        "season": 2022,
+        "week": 8,
+        "a_score": 95.7,
+        "b_score": 98.64
+      },
+      {
+        "season": 2023,
+        "week": 5,
+        "a_score": 127.08,
+        "b_score": 104.12
+      },
+      {
+        "season": 2024,
+        "week": 8,
+        "a_score": 80.18,
+        "b_score": 109.46
+      },
+      {
+        "season": 2025,
+        "week": 2,
+        "a_score": 77.8,
+        "b_score": 76.48
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "394531785582608384",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "The Factory",
+    "a_wins": 2,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 336.92,
+    "b_points": 364.34,
+    "games": [
+      {
+        "season": 2021,
+        "week": 7,
+        "a_score": 61.46,
+        "b_score": 76.24
+      },
+      {
+        "season": 2022,
+        "week": 12,
+        "a_score": 74.84,
+        "b_score": 60.6
+      },
+      {
+        "season": 2023,
+        "week": 9,
+        "a_score": 51.8,
+        "b_score": 70.6
+      },
+      {
+        "season": 2024,
+        "week": 6,
+        "a_score": 82.46,
+        "b_score": 108.62
+      },
+      {
+        "season": 2025,
+        "week": 3,
+        "a_score": 66.36,
+        "b_score": 48.28
+      }
+    ]
+  },
+  {
+    "a": "336348640681398272",
+    "b": "393989477577588736",
+    "a_name": "Nikkis\u2019 Victims",
+    "b_name": "The Moon Unit",
+    "a_wins": 1,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 415.2,
+    "b_points": 531.52,
+    "games": [
+      {
+        "season": 2021,
+        "week": 10,
+        "a_score": 96.38,
+        "b_score": 69.64
+      },
+      {
+        "season": 2022,
+        "week": 4,
+        "a_score": 82.08,
+        "b_score": 98.76
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 98.16,
+        "b_score": 137.5
+      },
+      {
+        "season": 2024,
+        "week": 1,
+        "a_score": 69.98,
+        "b_score": 102.74
+      },
+      {
+        "season": 2025,
+        "week": 12,
+        "a_score": 68.6,
+        "b_score": 122.88
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394491025806135296",
+    "a_name": "The Cheese Children ",
+    "b_name": "BateBoul",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 631.74,
+    "b_points": 668.3,
+    "games": [
+      {
+        "season": 2019,
+        "week": 10,
+        "a_score": 86.48,
+        "b_score": 85.48
+      },
+      {
+        "season": 2020,
+        "week": 7,
+        "a_score": 85.1,
+        "b_score": 61.72
+      },
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 83.74,
+        "b_score": 84.98
+      },
+      {
+        "season": 2022,
+        "week": 13,
+        "a_score": 97.7,
+        "b_score": 102.4
+      },
+      {
+        "season": 2023,
+        "week": 1,
+        "a_score": 39.32,
+        "b_score": 48.8
+      },
+      {
+        "season": 2024,
+        "week": 13,
+        "a_score": 111.44,
+        "b_score": 121.12
+      },
+      {
+        "season": 2025,
+        "week": 5,
+        "a_score": 127.96,
+        "b_score": 163.8
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394252975431766016",
+    "a_name": "The Cheese Children ",
+    "b_name": "Brock Hard",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 568.24,
+    "b_points": 715.7,
+    "games": [
+      {
+        "season": 2019,
+        "week": 7,
+        "a_score": 85.46,
+        "b_score": 73.96
+      },
+      {
+        "season": 2020,
+        "week": 8,
+        "a_score": 81.62,
+        "b_score": 117.74
+      },
+      {
+        "season": 2021,
+        "week": 3,
+        "a_score": 88.82,
+        "b_score": 124.28
+      },
+      {
+        "season": 2022,
+        "week": 10,
+        "a_score": 88.8,
+        "b_score": 105.22
+      },
+      {
+        "season": 2023,
+        "week": 7,
+        "a_score": 64.4,
+        "b_score": 112.18
+      },
+      {
+        "season": 2024,
+        "week": 6,
+        "a_score": 45.62,
+        "b_score": 108.4
+      },
+      {
+        "season": 2025,
+        "week": 10,
+        "a_score": 113.52,
+        "b_score": 73.92
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394251491289911296",
+    "a_name": "The Cheese Children ",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 2,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 600.2,
+    "b_points": 586.32,
+    "games": [
+      {
+        "season": 2019,
+        "week": 2,
+        "a_score": 147.46,
+        "b_score": 92.46
+      },
+      {
+        "season": 2019,
+        "week": 12,
+        "a_score": 60.68,
+        "b_score": 81.32
+      },
+      {
+        "season": 2021,
+        "week": 10,
+        "a_score": 117.34,
+        "b_score": 83.92
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 61.1,
+        "b_score": 66.0
+      },
+      {
+        "season": 2023,
+        "week": 2,
+        "a_score": 53.42,
+        "b_score": 96.5
+      },
+      {
+        "season": 2024,
+        "week": 1,
+        "a_score": 68.36,
+        "b_score": 70.5
+      },
+      {
+        "season": 2025,
+        "week": 12,
+        "a_score": 91.84,
+        "b_score": 95.62
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394253124748980224",
+    "a_name": "The Cheese Children ",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 4,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 845.14,
+    "b_points": 818.02,
+    "games": [
+      {
+        "season": 2019,
+        "week": 4,
+        "a_score": 77.12,
+        "b_score": 95.3
+      },
+      {
+        "season": 2020,
+        "week": 3,
+        "a_score": 137.78,
+        "b_score": 49.68
+      },
+      {
+        "season": 2020,
+        "week": 13,
+        "a_score": 108.66,
+        "b_score": 102.28
+      },
+      {
+        "season": 2021,
+        "week": 13,
+        "a_score": 103.72,
+        "b_score": 120.02
+      },
+      {
+        "season": 2022,
+        "week": 1,
+        "a_score": 103.46,
+        "b_score": 126.52
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 122.76,
+        "b_score": 78.82
+      },
+      {
+        "season": 2024,
+        "week": 7,
+        "a_score": 73.68,
+        "b_score": 133.14
+      },
+      {
+        "season": 2025,
+        "week": 9,
+        "a_score": 117.96,
+        "b_score": 112.26
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "407246708687314944",
+    "a_name": "The Cheese Children ",
+    "b_name": "Mattpao",
+    "a_wins": 2,
+    "b_wins": 6,
+    "ties": 0,
+    "a_points": 678.24,
+    "b_points": 741.7,
+    "games": [
+      {
+        "season": 2019,
+        "week": 1,
+        "a_score": 74.34,
+        "b_score": 81.0
+      },
+      {
+        "season": 2019,
+        "week": 11,
+        "a_score": 79.76,
+        "b_score": 90.96
+      },
+      {
+        "season": 2020,
+        "week": 10,
+        "a_score": 57.68,
+        "b_score": 116.5
+      },
+      {
+        "season": 2021,
+        "week": 8,
+        "a_score": 99.8,
+        "b_score": 93.36
+      },
+      {
+        "season": 2022,
+        "week": 5,
+        "a_score": 78.44,
+        "b_score": 111.08
+      },
+      {
+        "season": 2023,
+        "week": 11,
+        "a_score": 73.46,
+        "b_score": 77.54
+      },
+      {
+        "season": 2024,
+        "week": 10,
+        "a_score": 127.64,
+        "b_score": 75.14
+      },
+      {
+        "season": 2025,
+        "week": 3,
+        "a_score": 87.12,
+        "b_score": 96.12
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394248955468185600",
+    "a_name": "The Cheese Children ",
+    "b_name": "The Chicken Boys\ud83d\udc14",
+    "a_wins": 1,
+    "b_wins": 8,
+    "ties": 0,
+    "a_points": 874.02,
+    "b_points": 1135.8,
+    "games": [
+      {
+        "season": 2019,
+        "week": 3,
+        "a_score": 77.74,
+        "b_score": 153.52
+      },
+      {
+        "season": 2019,
+        "week": 13,
+        "a_score": 70.4,
+        "b_score": 106.22
+      },
+      {
+        "season": 2020,
+        "week": 2,
+        "a_score": 138.6,
+        "b_score": 175.04
+      },
+      {
+        "season": 2020,
+        "week": 12,
+        "a_score": 106.64,
+        "b_score": 134.8
+      },
+      {
+        "season": 2021,
+        "week": 7,
+        "a_score": 122.9,
+        "b_score": 120.34
+      },
+      {
+        "season": 2022,
+        "week": 12,
+        "a_score": 72.64,
+        "b_score": 108.3
+      },
+      {
+        "season": 2023,
+        "week": 13,
+        "a_score": 116.38,
+        "b_score": 151.78
+      },
+      {
+        "season": 2024,
+        "week": 11,
+        "a_score": 83.04,
+        "b_score": 94.68
+      },
+      {
+        "season": 2025,
+        "week": 1,
+        "a_score": 85.68,
+        "b_score": 91.12
+      }
+    ]
+  },
+  {
+    "a": "394226654450315264",
+    "b": "394531785582608384",
+    "a_name": "The Cheese Children ",
+    "b_name": "The Factory",
+    "a_wins": 7,
+    "b_wins": 1,
+    "ties": 0,
+    "a_points": 788.12,
+    "b_points": 629.66,
+    "games": [
+      {
+        "season": 2019,
+        "week": 9,
+        "a_score": 115.88,
+        "b_score": 81.82
+      },
+      {
+        "season": 2020,
+        "week": 1,
+        "a_score": 101.64,
+        "b_score": 95.64
+      },
+      {
+        "season": 2020,
+        "week": 11,
+        "a_score": 101.96,
+        "b_score": 99.72
+      },
+      {
+        "season": 2021,
+        "week": 6,
+        "a_score": 167.3,
+        "b_score": 48.38
+      },
+      {
+        "season": 2022,
+        "week": 3,
+        "a_score": 92.56,
+        "b_score": 64.28
+      },
+      {
+        "season": 2023,
+        "week": 4,
+        "a_score": 66.38,
+        "b_score": 118.62
+      },
+      {
+        "season": 2024,
+        "week": 9,
+        "a_score": 76.42,
+        "b_score": 70.32
+      },
+      {
+        "season": 2025,
+        "week": 8,
+        "a_score": 65.98,
+        "b_score": 50.88
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "394491025806135296",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "BateBoul",
+    "a_wins": 4,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 633.28,
+    "b_points": 632.96,
+    "games": [
+      {
+        "season": 2020,
+        "week": 8,
+        "a_score": 110.54,
+        "b_score": 72.36
+      },
+      {
+        "season": 2021,
+        "week": 13,
+        "a_score": 120.82,
+        "b_score": 77.38
+      },
+      {
+        "season": 2022,
+        "week": 6,
+        "a_score": 90.7,
+        "b_score": 57.1
+      },
+      {
+        "season": 2023,
+        "week": 12,
+        "a_score": 133.88,
+        "b_score": 126.3
+      },
+      {
+        "season": 2024,
+        "week": 9,
+        "a_score": 70.76,
+        "b_score": 135.8
+      },
+      {
+        "season": 2025,
+        "week": 6,
+        "a_score": 106.58,
+        "b_score": 164.02
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "394252975431766016",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "Brock Hard",
+    "a_wins": 3,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 656.16,
+    "b_points": 724.44,
+    "games": [
+      {
+        "season": 2019,
+        "week": 10,
+        "a_score": 96.16,
+        "b_score": 102.68
+      },
+      {
+        "season": 2020,
+        "week": 10,
+        "a_score": 108.1,
+        "b_score": 67.42
+      },
+      {
+        "season": 2021,
+        "week": 5,
+        "a_score": 107.26,
+        "b_score": 177.84
+      },
+      {
+        "season": 2022,
+        "week": 3,
+        "a_score": 69.12,
+        "b_score": 110.34
+      },
+      {
+        "season": 2023,
+        "week": 6,
+        "a_score": 142.88,
+        "b_score": 74.9
+      },
+      {
+        "season": 2024,
+        "week": 2,
+        "a_score": 52.1,
+        "b_score": 130.26
+      },
+      {
+        "season": 2025,
+        "week": 11,
+        "a_score": 80.54,
+        "b_score": 61.0
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "394251491289911296",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 1,
+    "a_points": 890.5,
+    "b_points": 805.8,
+    "games": [
+      {
+        "season": 2019,
+        "week": 1,
+        "a_score": 132.02,
+        "b_score": 132.02
+      },
+      {
+        "season": 2019,
+        "week": 11,
+        "a_score": 107.9,
+        "b_score": 96.56
+      },
+      {
+        "season": 2020,
+        "week": 9,
+        "a_score": 141.22,
+        "b_score": 92.94
+      },
+      {
+        "season": 2021,
+        "week": 12,
+        "a_score": 138.22,
+        "b_score": 96.58
+      },
+      {
+        "season": 2022,
+        "week": 2,
+        "a_score": 103.28,
+        "b_score": 132.68
+      },
+      {
+        "season": 2023,
+        "week": 1,
+        "a_score": 105.76,
+        "b_score": 123.66
+      },
+      {
+        "season": 2024,
+        "week": 10,
+        "a_score": 90.86,
+        "b_score": 57.14
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 71.24,
+        "b_score": 74.22
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "394253124748980224",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 5,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 852.64,
+    "b_points": 795.22,
+    "games": [
+      {
+        "season": 2019,
+        "week": 7,
+        "a_score": 93.86,
+        "b_score": 86.02
+      },
+      {
+        "season": 2020,
+        "week": 1,
+        "a_score": 137.3,
+        "b_score": 121.1
+      },
+      {
+        "season": 2020,
+        "week": 11,
+        "a_score": 121.92,
+        "b_score": 68.14
+      },
+      {
+        "season": 2021,
+        "week": 2,
+        "a_score": 135.4,
+        "b_score": 103.76
+      },
+      {
+        "season": 2022,
+        "week": 7,
+        "a_score": 110.94,
+        "b_score": 114.9
+      },
+      {
+        "season": 2023,
+        "week": 9,
+        "a_score": 57.84,
+        "b_score": 110.28
+      },
+      {
+        "season": 2024,
+        "week": 3,
+        "a_score": 111.08,
+        "b_score": 106.68
+      },
+      {
+        "season": 2025,
+        "week": 10,
+        "a_score": 84.3,
+        "b_score": 84.34
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "407246708687314944",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "Mattpao",
+    "a_wins": 6,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 807.88,
+    "b_points": 692.68,
+    "games": [
+      {
+        "season": 2019,
+        "week": 2,
+        "a_score": 71.16,
+        "b_score": 69.7
+      },
+      {
+        "season": 2019,
+        "week": 12,
+        "a_score": 68.38,
+        "b_score": 86.62
+      },
+      {
+        "season": 2020,
+        "week": 7,
+        "a_score": 85.0,
+        "b_score": 105.22
+      },
+      {
+        "season": 2021,
+        "week": 10,
+        "a_score": 109.14,
+        "b_score": 90.08
+      },
+      {
+        "season": 2022,
+        "week": 11,
+        "a_score": 115.18,
+        "b_score": 102.42
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 165.82,
+        "b_score": 94.72
+      },
+      {
+        "season": 2024,
+        "week": 6,
+        "a_score": 90.98,
+        "b_score": 79.14
+      },
+      {
+        "season": 2025,
+        "week": 4,
+        "a_score": 102.22,
+        "b_score": 64.78
+      }
+    ]
+  },
+  {
+    "a": "394248955468185600",
+    "b": "394531785582608384",
+    "a_name": "The Chicken Boys\ud83d\udc14",
+    "b_name": "The Factory",
+    "a_wins": 6,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 957.74,
+    "b_points": 720.28,
+    "games": [
+      {
+        "season": 2019,
+        "week": 5,
+        "a_score": 107.64,
+        "b_score": 112.24
+      },
+      {
+        "season": 2020,
+        "week": 3,
+        "a_score": 141.5,
+        "b_score": 129.8
+      },
+      {
+        "season": 2020,
+        "week": 13,
+        "a_score": 117.42,
+        "b_score": 95.82
+      },
+      {
+        "season": 2021,
+        "week": 8,
+        "a_score": 93.66,
+        "b_score": 46.1
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 110.96,
+        "b_score": 59.14
+      },
+      {
+        "season": 2023,
+        "week": 3,
+        "a_score": 220.76,
+        "b_score": 103.68
+      },
+      {
+        "season": 2024,
+        "week": 5,
+        "a_score": 83.2,
+        "b_score": 68.34
+      },
+      {
+        "season": 2025,
+        "week": 9,
+        "a_score": 82.6,
+        "b_score": 105.16
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394491025806135296",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "BateBoul",
+    "a_wins": 4,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 970.78,
+    "b_points": 884.3,
+    "games": [
+      {
+        "season": 2019,
+        "week": 1,
+        "a_score": 108.02,
+        "b_score": 153.2
+      },
+      {
+        "season": 2019,
+        "week": 11,
+        "a_score": 87.46,
+        "b_score": 136.34
+      },
+      {
+        "season": 2020,
+        "week": 3,
+        "a_score": 150.98,
+        "b_score": 76.72
+      },
+      {
+        "season": 2020,
+        "week": 13,
+        "a_score": 118.4,
+        "b_score": 61.06
+      },
+      {
+        "season": 2021,
+        "week": 2,
+        "a_score": 115.58,
+        "b_score": 75.4
+      },
+      {
+        "season": 2022,
+        "week": 7,
+        "a_score": 115.84,
+        "b_score": 49.52
+      },
+      {
+        "season": 2023,
+        "week": 10,
+        "a_score": 78.88,
+        "b_score": 89.6
+      },
+      {
+        "season": 2024,
+        "week": 6,
+        "a_score": 107.32,
+        "b_score": 118.66
+      },
+      {
+        "season": 2025,
+        "week": 9,
+        "a_score": 88.3,
+        "b_score": 123.8
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394252975431766016",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "Brock Hard",
+    "a_wins": 2,
+    "b_wins": 7,
+    "ties": 0,
+    "a_points": 915.44,
+    "b_points": 965.74,
+    "games": [
+      {
+        "season": 2019,
+        "week": 3,
+        "a_score": 106.8,
+        "b_score": 123.74
+      },
+      {
+        "season": 2019,
+        "week": 13,
+        "a_score": 71.2,
+        "b_score": 97.48
+      },
+      {
+        "season": 2020,
+        "week": 2,
+        "a_score": 110.22,
+        "b_score": 126.82
+      },
+      {
+        "season": 2020,
+        "week": 12,
+        "a_score": 116.68,
+        "b_score": 132.9
+      },
+      {
+        "season": 2021,
+        "week": 7,
+        "a_score": 115.94,
+        "b_score": 137.64
+      },
+      {
+        "season": 2022,
+        "week": 1,
+        "a_score": 85.12,
+        "b_score": 88.78
+      },
+      {
+        "season": 2023,
+        "week": 5,
+        "a_score": 107.96,
+        "b_score": 64.72
+      },
+      {
+        "season": 2024,
+        "week": 12,
+        "a_score": 133.3,
+        "b_score": 80.88
+      },
+      {
+        "season": 2025,
+        "week": 1,
+        "a_score": 68.22,
+        "b_score": 112.78
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "390894031879553024",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "DickTatorMiller",
+    "a_wins": 6,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 801.56,
+    "b_points": 740.84,
+    "games": [
+      {
+        "season": 2019,
+        "week": 2,
+        "a_score": 65.3,
+        "b_score": 123.82
+      },
+      {
+        "season": 2019,
+        "week": 12,
+        "a_score": 97.96,
+        "b_score": 91.52
+      },
+      {
+        "season": 2020,
+        "week": 8,
+        "a_score": 64.76,
+        "b_score": 126.44
+      },
+      {
+        "season": 2021,
+        "week": 6,
+        "a_score": 113.94,
+        "b_score": 83.46
+      },
+      {
+        "season": 2022,
+        "week": 8,
+        "a_score": 141.98,
+        "b_score": 109.68
+      },
+      {
+        "season": 2023,
+        "week": 7,
+        "a_score": 89.12,
+        "b_score": 60.64
+      },
+      {
+        "season": 2024,
+        "week": 11,
+        "a_score": 129.64,
+        "b_score": 84.54
+      },
+      {
+        "season": 2025,
+        "week": 11,
+        "a_score": 98.86,
+        "b_score": 60.74
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394251491289911296",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 5,
+    "b_wins": 1,
+    "ties": 0,
+    "a_points": 644.44,
+    "b_points": 546.06,
+    "games": [
+      {
+        "season": 2020,
+        "week": 7,
+        "a_score": 154.04,
+        "b_score": 88.46
+      },
+      {
+        "season": 2021,
+        "week": 1,
+        "a_score": 124.34,
+        "b_score": 104.24
+      },
+      {
+        "season": 2022,
+        "week": 12,
+        "a_score": 122.8,
+        "b_score": 92.76
+      },
+      {
+        "season": 2023,
+        "week": 13,
+        "a_score": 52.9,
+        "b_score": 120.38
+      },
+      {
+        "season": 2024,
+        "week": 7,
+        "a_score": 75.94,
+        "b_score": 65.4
+      },
+      {
+        "season": 2025,
+        "week": 3,
+        "a_score": 114.42,
+        "b_score": 74.82
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394253124748980224",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 730.18,
+    "b_points": 660.98,
+    "games": [
+      {
+        "season": 2019,
+        "week": 10,
+        "a_score": 98.9,
+        "b_score": 109.42
+      },
+      {
+        "season": 2020,
+        "week": 9,
+        "a_score": 75.9,
+        "b_score": 81.8
+      },
+      {
+        "season": 2021,
+        "week": 4,
+        "a_score": 78.72,
+        "b_score": 104.74
+      },
+      {
+        "season": 2022,
+        "week": 9,
+        "a_score": 102.04,
+        "b_score": 81.92
+      },
+      {
+        "season": 2023,
+        "week": 8,
+        "a_score": 136.32,
+        "b_score": 97.58
+      },
+      {
+        "season": 2024,
+        "week": 13,
+        "a_score": 126.46,
+        "b_score": 110.38
+      },
+      {
+        "season": 2025,
+        "week": 13,
+        "a_score": 111.84,
+        "b_score": 75.14
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "407246708687314944",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "Mattpao",
+    "a_wins": 5,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 703.76,
+    "b_points": 593.32,
+    "games": [
+      {
+        "season": 2019,
+        "week": 8,
+        "a_score": 78.1,
+        "b_score": 73.5
+      },
+      {
+        "season": 2020,
+        "week": 6,
+        "a_score": 139.12,
+        "b_score": 91.6
+      },
+      {
+        "season": 2021,
+        "week": 12,
+        "a_score": 98.72,
+        "b_score": 125.18
+      },
+      {
+        "season": 2022,
+        "week": 4,
+        "a_score": 83.18,
+        "b_score": 108.84
+      },
+      {
+        "season": 2023,
+        "week": 9,
+        "a_score": 95.02,
+        "b_score": 66.68
+      },
+      {
+        "season": 2024,
+        "week": 3,
+        "a_score": 100.08,
+        "b_score": 95.04
+      },
+      {
+        "season": 2025,
+        "week": 7,
+        "a_score": 109.54,
+        "b_score": 32.48
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "336348640681398272",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "Nikkis\u2019 Victims",
+    "a_wins": 4,
+    "b_wins": 1,
+    "ties": 0,
+    "a_points": 492.8,
+    "b_points": 438.48,
+    "games": [
+      {
+        "season": 2021,
+        "week": 13,
+        "a_score": 69.7,
+        "b_score": 93.46
+      },
+      {
+        "season": 2022,
+        "week": 11,
+        "a_score": 99.4,
+        "b_score": 78.62
+      },
+      {
+        "season": 2023,
+        "week": 4,
+        "a_score": 96.36,
+        "b_score": 81.0
+      },
+      {
+        "season": 2024,
+        "week": 5,
+        "a_score": 101.08,
+        "b_score": 95.5
+      },
+      {
+        "season": 2025,
+        "week": 8,
+        "a_score": 126.26,
+        "b_score": 89.9
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394226654450315264",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "The Cheese Children ",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 703.2,
+    "b_points": 706.56,
+    "games": [
+      {
+        "season": 2019,
+        "week": 6,
+        "a_score": 95.02,
+        "b_score": 66.92
+      },
+      {
+        "season": 2020,
+        "week": 4,
+        "a_score": 83.8,
+        "b_score": 128.48
+      },
+      {
+        "season": 2021,
+        "week": 9,
+        "a_score": 93.68,
+        "b_score": 101.78
+      },
+      {
+        "season": 2022,
+        "week": 6,
+        "a_score": 128.7,
+        "b_score": 109.16
+      },
+      {
+        "season": 2023,
+        "week": 12,
+        "a_score": 68.8,
+        "b_score": 110.24
+      },
+      {
+        "season": 2024,
+        "week": 8,
+        "a_score": 120.66,
+        "b_score": 91.92
+      },
+      {
+        "season": 2025,
+        "week": 4,
+        "a_score": 112.54,
+        "b_score": 98.06
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394248955468185600",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "The Chicken Boys\ud83d\udc14",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 748.46,
+    "b_points": 811.7,
+    "games": [
+      {
+        "season": 2019,
+        "week": 9,
+        "a_score": 142.7,
+        "b_score": 130.76
+      },
+      {
+        "season": 2020,
+        "week": 5,
+        "a_score": 98.22,
+        "b_score": 124.7
+      },
+      {
+        "season": 2021,
+        "week": 11,
+        "a_score": 104.72,
+        "b_score": 96.7
+      },
+      {
+        "season": 2022,
+        "week": 5,
+        "a_score": 148.28,
+        "b_score": 128.14
+      },
+      {
+        "season": 2023,
+        "week": 11,
+        "a_score": 53.74,
+        "b_score": 121.2
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 80.18,
+        "b_score": 102.46
+      },
+      {
+        "season": 2025,
+        "week": 5,
+        "a_score": 120.62,
+        "b_score": 107.74
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "394531785582608384",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "The Factory",
+    "a_wins": 6,
+    "b_wins": 0,
+    "ties": 0,
+    "a_points": 576.86,
+    "b_points": 449.02,
+    "games": [
+      {
+        "season": 2019,
+        "week": 4,
+        "a_score": 81.0,
+        "b_score": 51.8
+      },
+      {
+        "season": 2021,
+        "week": 10,
+        "a_score": 103.86,
+        "b_score": 61.54
+      },
+      {
+        "season": 2022,
+        "week": 13,
+        "a_score": 110.14,
+        "b_score": 84.52
+      },
+      {
+        "season": 2023,
+        "week": 2,
+        "a_score": 91.98,
+        "b_score": 65.6
+      },
+      {
+        "season": 2024,
+        "week": 2,
+        "a_score": 122.02,
+        "b_score": 118.4
+      },
+      {
+        "season": 2025,
+        "week": 12,
+        "a_score": 67.86,
+        "b_score": 67.16
+      }
+    ]
+  },
+  {
+    "a": "1065778674277945344",
+    "b": "393989477577588736",
+    "a_name": "The Choo Choo Crew",
+    "b_name": "The Moon Unit",
+    "a_wins": 6,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 888.42,
+    "b_points": 728.84,
+    "games": [
+      {
+        "season": 2019,
+        "week": 5,
+        "a_score": 93.94,
+        "b_score": 86.22
+      },
+      {
+        "season": 2020,
+        "week": 1,
+        "a_score": 115.16,
+        "b_score": 77.36
+      },
+      {
+        "season": 2020,
+        "week": 11,
+        "a_score": 84.42,
+        "b_score": 83.56
+      },
+      {
+        "season": 2021,
+        "week": 5,
+        "a_score": 141.7,
+        "b_score": 77.32
+      },
+      {
+        "season": 2022,
+        "week": 10,
+        "a_score": 90.28,
+        "b_score": 103.36
+      },
+      {
+        "season": 2023,
+        "week": 3,
+        "a_score": 83.18,
+        "b_score": 103.36
+      },
+      {
+        "season": 2024,
+        "week": 10,
+        "a_score": 115.12,
+        "b_score": 111.24
+      },
+      {
+        "season": 2025,
+        "week": 10,
+        "a_score": 164.62,
+        "b_score": 86.42
+      }
+    ]
+  },
+  {
+    "a": "394531785582608384",
+    "b": "407246708687314944",
+    "a_name": "The Factory",
+    "b_name": "Mattpao",
+    "a_wins": 4,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 620.32,
+    "b_points": 598.74,
+    "games": [
+      {
+        "season": 2019,
+        "week": 10,
+        "a_score": 106.44,
+        "b_score": 125.02
+      },
+      {
+        "season": 2020,
+        "week": 5,
+        "a_score": 113.9,
+        "b_score": 96.98
+      },
+      {
+        "season": 2021,
+        "week": 9,
+        "a_score": 79.04,
+        "b_score": 61.24
+      },
+      {
+        "season": 2022,
+        "week": 2,
+        "a_score": 73.36,
+        "b_score": 81.96
+      },
+      {
+        "season": 2023,
+        "week": 1,
+        "a_score": 88.34,
+        "b_score": 63.8
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 77.9,
+        "b_score": 103.2
+      },
+      {
+        "season": 2025,
+        "week": 11,
+        "a_score": 81.34,
+        "b_score": 66.54
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394491025806135296",
+    "a_name": "The Moon Unit",
+    "b_name": "BateBoul",
+    "a_wins": 5,
+    "b_wins": 3,
+    "ties": 0,
+    "a_points": 813.24,
+    "b_points": 753.6,
+    "games": [
+      {
+        "season": 2019,
+        "week": 7,
+        "a_score": 111.16,
+        "b_score": 67.9
+      },
+      {
+        "season": 2020,
+        "week": 2,
+        "a_score": 82.88,
+        "b_score": 107.18
+      },
+      {
+        "season": 2020,
+        "week": 12,
+        "a_score": 96.22,
+        "b_score": 39.16
+      },
+      {
+        "season": 2021,
+        "week": 7,
+        "a_score": 100.48,
+        "b_score": 83.84
+      },
+      {
+        "season": 2022,
+        "week": 2,
+        "a_score": 105.2,
+        "b_score": 136.72
+      },
+      {
+        "season": 2023,
+        "week": 9,
+        "a_score": 93.22,
+        "b_score": 69.18
+      },
+      {
+        "season": 2024,
+        "week": 2,
+        "a_score": 98.74,
+        "b_score": 139.92
+      },
+      {
+        "season": 2025,
+        "week": 11,
+        "a_score": 125.34,
+        "b_score": 109.7
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394252975431766016",
+    "a_name": "The Moon Unit",
+    "b_name": "Brock Hard",
+    "a_wins": 4,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 796.14,
+    "b_points": 788.52,
+    "games": [
+      {
+        "season": 2019,
+        "week": 8,
+        "a_score": 105.8,
+        "b_score": 118.56
+      },
+      {
+        "season": 2020,
+        "week": 3,
+        "a_score": 77.34,
+        "b_score": 127.92
+      },
+      {
+        "season": 2020,
+        "week": 13,
+        "a_score": 81.26,
+        "b_score": 101.42
+      },
+      {
+        "season": 2021,
+        "week": 12,
+        "a_score": 77.48,
+        "b_score": 83.04
+      },
+      {
+        "season": 2022,
+        "week": 12,
+        "a_score": 112.64,
+        "b_score": 96.24
+      },
+      {
+        "season": 2023,
+        "week": 11,
+        "a_score": 125.18,
+        "b_score": 84.62
+      },
+      {
+        "season": 2024,
+        "week": 8,
+        "a_score": 123.18,
+        "b_score": 102.52
+      },
+      {
+        "season": 2025,
+        "week": 3,
+        "a_score": 93.26,
+        "b_score": 74.2
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394251491289911296",
+    "a_name": "The Moon Unit",
+    "b_name": "Fuck Michael Thomas",
+    "a_wins": 5,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 640.1,
+    "b_points": 617.98,
+    "games": [
+      {
+        "season": 2019,
+        "week": 9,
+        "a_score": 55.04,
+        "b_score": 111.64
+      },
+      {
+        "season": 2020,
+        "week": 5,
+        "a_score": 108.08,
+        "b_score": 98.76
+      },
+      {
+        "season": 2021,
+        "week": 6,
+        "a_score": 107.16,
+        "b_score": 82.84
+      },
+      {
+        "season": 2022,
+        "week": 11,
+        "a_score": 61.58,
+        "b_score": 125.14
+      },
+      {
+        "season": 2023,
+        "week": 6,
+        "a_score": 120.94,
+        "b_score": 69.94
+      },
+      {
+        "season": 2024,
+        "week": 3,
+        "a_score": 80.28,
+        "b_score": 39.1
+      },
+      {
+        "season": 2025,
+        "week": 5,
+        "a_score": 107.02,
+        "b_score": 90.56
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394253124748980224",
+    "a_name": "The Moon Unit",
+    "b_name": "Long Live Wopo ",
+    "a_wins": 3,
+    "b_wins": 5,
+    "ties": 0,
+    "a_points": 779.5,
+    "b_points": 862.44,
+    "games": [
+      {
+        "season": 2019,
+        "week": 1,
+        "a_score": 89.22,
+        "b_score": 117.4
+      },
+      {
+        "season": 2019,
+        "week": 11,
+        "a_score": 83.44,
+        "b_score": 99.98
+      },
+      {
+        "season": 2020,
+        "week": 10,
+        "a_score": 72.44,
+        "b_score": 103.16
+      },
+      {
+        "season": 2021,
+        "week": 9,
+        "a_score": 96.56,
+        "b_score": 94.44
+      },
+      {
+        "season": 2022,
+        "week": 3,
+        "a_score": 94.58,
+        "b_score": 128.42
+      },
+      {
+        "season": 2023,
+        "week": 1,
+        "a_score": 100.94,
+        "b_score": 72.16
+      },
+      {
+        "season": 2024,
+        "week": 9,
+        "a_score": 106.04,
+        "b_score": 119.88
+      },
+      {
+        "season": 2025,
+        "week": 2,
+        "a_score": 136.28,
+        "b_score": 127.0
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "407246708687314944",
+    "a_name": "The Moon Unit",
+    "b_name": "Mattpao",
+    "a_wins": 5,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 705.36,
+    "b_points": 604.02,
+    "games": [
+      {
+        "season": 2019,
+        "week": 4,
+        "a_score": 140.78,
+        "b_score": 104.68
+      },
+      {
+        "season": 2020,
+        "week": 8,
+        "a_score": 91.98,
+        "b_score": 63.64
+      },
+      {
+        "season": 2021,
+        "week": 4,
+        "a_score": 45.2,
+        "b_score": 79.72
+      },
+      {
+        "season": 2022,
+        "week": 7,
+        "a_score": 88.6,
+        "b_score": 76.26
+      },
+      {
+        "season": 2023,
+        "week": 2,
+        "a_score": 96.44,
+        "b_score": 109.4
+      },
+      {
+        "season": 2024,
+        "week": 12,
+        "a_score": 111.26,
+        "b_score": 88.02
+      },
+      {
+        "season": 2025,
+        "week": 9,
+        "a_score": 131.1,
+        "b_score": 82.3
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394226654450315264",
+    "a_name": "The Moon Unit",
+    "b_name": "The Cheese Children ",
+    "a_wins": 4,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 668.5,
+    "b_points": 604.3,
+    "games": [
+      {
+        "season": 2020,
+        "week": 6,
+        "a_score": 90.74,
+        "b_score": 105.08
+      },
+      {
+        "season": 2021,
+        "week": 1,
+        "a_score": 116.98,
+        "b_score": 113.72
+      },
+      {
+        "season": 2022,
+        "week": 8,
+        "a_score": 123.72,
+        "b_score": 96.0
+      },
+      {
+        "season": 2023,
+        "week": 5,
+        "a_score": 109.3,
+        "b_score": 96.12
+      },
+      {
+        "season": 2024,
+        "week": 4,
+        "a_score": 90.78,
+        "b_score": 101.74
+      },
+      {
+        "season": 2025,
+        "week": 6,
+        "a_score": 136.98,
+        "b_score": 91.64
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394248955468185600",
+    "a_name": "The Moon Unit",
+    "b_name": "The Chicken Boys\ud83d\udc14",
+    "a_wins": 4,
+    "b_wins": 2,
+    "ties": 0,
+    "a_points": 731.38,
+    "b_points": 574.4,
+    "games": [
+      {
+        "season": 2019,
+        "week": 6,
+        "a_score": 141.32,
+        "b_score": 97.7
+      },
+      {
+        "season": 2021,
+        "week": 3,
+        "a_score": 84.9,
+        "b_score": 101.34
+      },
+      {
+        "season": 2022,
+        "week": 1,
+        "a_score": 104.0,
+        "b_score": 117.8
+      },
+      {
+        "season": 2023,
+        "week": 4,
+        "a_score": 116.78,
+        "b_score": 76.78
+      },
+      {
+        "season": 2024,
+        "week": 13,
+        "a_score": 127.14,
+        "b_score": 64.58
+      },
+      {
+        "season": 2025,
+        "week": 7,
+        "a_score": 157.24,
+        "b_score": 116.2
+      }
+    ]
+  },
+  {
+    "a": "393989477577588736",
+    "b": "394531785582608384",
+    "a_name": "The Moon Unit",
+    "b_name": "The Factory",
+    "a_wins": 4,
+    "b_wins": 4,
+    "ties": 0,
+    "a_points": 840.62,
+    "b_points": 739.34,
+    "games": [
+      {
+        "season": 2019,
+        "week": 2,
+        "a_score": 103.96,
+        "b_score": 131.32
+      },
+      {
+        "season": 2019,
+        "week": 12,
+        "a_score": 78.66,
+        "b_score": 85.58
+      },
+      {
+        "season": 2020,
+        "week": 4,
+        "a_score": 136.0,
+        "b_score": 79.04
+      },
+      {
+        "season": 2021,
+        "week": 2,
+        "a_score": 71.12,
+        "b_score": 103.12
+      },
+      {
+        "season": 2022,
+        "week": 5,
+        "a_score": 53.84,
+        "b_score": 91.88
+      },
+      {
+        "season": 2023,
+        "week": 8,
+        "a_score": 168.28,
+        "b_score": 94.0
+      },
+      {
+        "season": 2024,
+        "week": 11,
+        "a_score": 127.34,
+        "b_score": 67.48
+      },
+      {
+        "season": 2025,
+        "week": 1,
+        "a_score": 101.42,
+        "b_score": 86.92
+      }
+    ]
+  }
+]

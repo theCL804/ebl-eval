@@ -51,6 +51,7 @@ NAV_ITEMS = [
     ("power-rankings.html", "Power Rankings"),
     ("history.html", "League History"),
     ("head-to-head.html", "Head-to-Head"),
+    ("rivalries.html", "Rivalries"),
     ("analytics.html", "Analytics"),
     ("draft-flow.html", "Draft Capital Flow"),
     ("trades.html", "Trades Hub"),
@@ -488,7 +489,9 @@ def build_head_to_head_page(matrix, teams):
             if rec["ties"]:
                 label += f"-{rec['ties']}"
             cls = "h2h-winning" if rec["wins"] > rec["losses"] else ("h2h-losing" if rec["losses"] > rec["wins"] else "")
-            cells.append(f'<td class="{cls}" title="{esc(name_by_owner[row_owner])} vs {esc(name_by_owner[col_owner])}: {label}">{label}</td>')
+            lo, hi = sorted((row_owner, col_owner))
+            href = f"rivalries.html#pair-{lo}-{hi}"
+            cells.append(f'<td class="{cls}"><a href="{href}" title="{esc(name_by_owner[row_owner])} vs {esc(name_by_owner[col_owner])}: {label} &mdash; see every game">{label}</a></td>')
         rows.append(f'<tr><th class="h2h-row-label">{esc(name_by_owner[row_owner])}</th>{"".join(cells)}</tr>')
 
     body = f"""
@@ -509,6 +512,91 @@ def build_head_to_head_page(matrix, teams):
 </footer>
 """
     return page_shell("Head-to-Head — Ethel's Dynasty", body, description="All-time head-to-head records between every team in the league.", active="head-to-head.html")
+
+
+def build_rivalries_page(rivalries, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+    teams_sorted = sorted(teams, key=lambda t: t["team_name"])
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    def pair_anchor(a, b):
+        lo, hi = sorted((a, b))
+        return f"pair-{lo}-{hi}"
+
+    def options_html(selected_owner_id):
+        opts = []
+        for t in teams_sorted:
+            sel = " selected" if t["owner_id"] == selected_owner_id else ""
+            opts.append(f'<option value="{esc(t["owner_id"])}"{sel}>{esc(t["team_name"])}</option>')
+        return "".join(opts)
+
+    default_a = teams_sorted[0]["owner_id"] if teams_sorted else ""
+    default_b = teams_sorted[1]["owner_id"] if len(teams_sorted) > 1 else ""
+
+    def game_row(g, a_name, b_name):
+        if g["a_score"] > g["b_score"]:
+            result = f"{esc(a_name)} won"
+        elif g["b_score"] > g["a_score"]:
+            result = f"{esc(b_name)} won"
+        else:
+            result = "Tied"
+        return f"""<tr>
+<td>{g['season']}</td>
+<td>Week {g['week']}</td>
+<td>{g['a_score']:.2f} &ndash; {g['b_score']:.2f}</td>
+<td>{result}</td>
+</tr>"""
+
+    sections = []
+    for p in rivalries:
+        rows = "".join(game_row(g, p["a_name"], p["b_name"]) for g in p["games"])
+        record = f"{p['a_wins']}-{p['b_wins']}" + (f"-{p['ties']}" if p["ties"] else "")
+        sections.append(f"""
+<div class="pair-section" id="{pair_anchor(p['a'], p['b'])}">
+  <h3>{team_link(p['a'], p['a_name'])} &harr; {team_link(p['b'], p['b_name'])}</h3>
+  <p class="section-note">All-time: {esc(p['a_name'])} {record} {esc(p['b_name'])} ({p['a_points']:.2f} &ndash; {p['b_points']:.2f} combined points) across {len(p['games'])} game{'s' if len(p['games']) != 1 else ''}.</p>
+  <table class="roster-table">
+    <thead><tr><th>Season</th><th>Week</th><th>Score ({esc(p['a_name'])} &ndash; {esc(p['b_name'])})</th><th>Result</th></tr></thead>
+    <tbody>{rows or '<tr><td colspan="4" class="trade-empty">No games on record</td></tr>'}</tbody>
+  </table>
+</div>""")
+
+    body = f"""
+<header class="league-header">
+  <h1>Rivalries</h1>
+  <p class="league-summary">Pick any two teams to see their complete head-to-head history, game by game, back to 2019. Regular-season games only; 2022&ndash;2025 week 14 "vs. league median" games are excluded since there was no real opponent that week.</p>
+</header>
+
+<section class="analytics-section">
+  <div class="rivalry-picker">
+    <select id="rivalry-team-a">{options_html(default_a)}</select>
+    <span class="rivalry-vs">vs</span>
+    <select id="rivalry-team-b">{options_html(default_b)}</select>
+    <button type="button" onclick="(function(){{
+      var a=document.getElementById('rivalry-team-a').value;
+      var b=document.getElementById('rivalry-team-b').value;
+      if(a===b){{return;}}
+      var pair=[a,b].sort();
+      window.location.hash='pair-'+pair[0]+'-'+pair[1];
+    }})()">View history</button>
+  </div>
+</section>
+
+<section class="analytics-section">
+  {"".join(sections)}
+</section>
+"""
+    return page_shell(
+        "Rivalries — Ethel's Dynasty",
+        body,
+        description="Full head-to-head game log between any two teams in league history.",
+        active="rivalries.html",
+    )
 
 
 def build_analytics_page(analytics, teams):
@@ -970,6 +1058,8 @@ a:hover { text-decoration: underline; }
 .h2h-none { color: var(--text-muted); }
 .h2h-winning { color: var(--contender); font-weight: 700; }
 .h2h-losing { color: var(--winnow); font-weight: 700; }
+.h2h-table td a { color: inherit; text-decoration: none; }
+.h2h-table td a:hover { text-decoration: underline; }
 
 .league-header h1 { font-size: 2rem; margin-bottom: 8px; }
 .league-summary { color: var(--text-muted); max-width: 68ch; font-size: 1.05rem; }
@@ -1143,6 +1233,12 @@ a:hover { text-decoration: underline; }
 .pair-section h3 { margin-bottom: 10px; }
 .pair-section .trade-list { margin-bottom: 4px; }
 
+.rivalry-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.rivalry-picker select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); min-width: 200px; }
+.rivalry-picker .rivalry-vs { color: var(--text-muted); font-weight: 600; }
+.rivalry-picker button { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: none; background: var(--accent); color: #fff; cursor: pointer; }
+.rivalry-picker button:hover { opacity: 0.9; }
+
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 """
 
@@ -1181,6 +1277,10 @@ def main():
     h2h_html = build_head_to_head_page(h2h_matrix, teams)
     (DOCS_DIR / "head-to-head.html").write_text(h2h_html)
 
+    rivalries = load("rivalries.json")
+    rivalries_html = build_rivalries_page(rivalries, teams)
+    (DOCS_DIR / "rivalries.html").write_text(rivalries_html)
+
     analytics = load("analytics.json")
     analytics_html = build_analytics_page(analytics, teams)
     (DOCS_DIR / "analytics.html").write_text(analytics_html)
@@ -1193,7 +1293,7 @@ def main():
     trades_html = build_trades_page(trades_data, teams)
     (DOCS_DIR / "trades.html").write_text(trades_html)
 
-    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + analytics + draft-flow + trades into {DOCS_DIR}")
+    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + analytics + draft-flow + trades into {DOCS_DIR}")
 
 
 if __name__ == "__main__":

@@ -157,6 +157,77 @@ def head_to_head(all_season_data, current_owner_ids):
     return matrix
 
 
+def rivalry_games(all_season_data, current_owner_ids, owner_to_name):
+    """Per-pair chronological game log, for the rivalries page. Same filtering
+    rules as head_to_head() (regular season only, week 14 excluded, phantom and
+    departed franchises excluded), but keeps every individual game rather than
+    just the aggregate record.
+    """
+    pair_games = {}  # frozenset({a, b}) -> list of games
+
+    for season in sorted(all_season_data):
+        data = all_season_data[season]
+        roster_owner = {r["roster_id"]: OWNER_ALIASES.get(r["owner_id"], r["owner_id"]) for r in data["rosters"]}
+        playoff_week_start = data["league"]["settings"]["playoff_week_start"]
+        for week_str, matchups in sorted(data["matchups_by_week"].items(), key=lambda kv: int(kv[0])):
+            week = int(week_str)
+            if week >= playoff_week_start:
+                continue
+            if season in MEDIAN_WEEK_SEASONS and week == MEDIAN_WEEK:
+                continue
+            by_matchup_id = {}
+            for m in matchups:
+                if m.get("matchup_id") is None:
+                    continue
+                by_matchup_id.setdefault(m["matchup_id"], []).append(m)
+            for pair in by_matchup_id.values():
+                if len(pair) != 2:
+                    continue
+                m1, m2 = pair
+                owner1 = roster_owner.get(m1["roster_id"])
+                owner2 = roster_owner.get(m2["roster_id"])
+                if not owner1 or not owner2:
+                    continue
+                if owner1 == PHANTOM_OWNER_ID or owner2 == PHANTOM_OWNER_ID:
+                    continue
+                if owner1 not in current_owner_ids or owner2 not in current_owner_ids:
+                    continue
+                p1, p2 = m1.get("points", 0) or 0, m2.get("points", 0) or 0
+                a, b = sorted((owner1, owner2))
+                a_score, b_score = (p1, p2) if owner1 == a else (p2, p1)
+                pair_games.setdefault(frozenset((a, b)), []).append(
+                    {
+                        "season": season,
+                        "week": week,
+                        "a_score": round(a_score, 2),
+                        "b_score": round(b_score, 2),
+                    }
+                )
+
+    pairs = []
+    for key, games in pair_games.items():
+        a, b = sorted(key)
+        a_wins = sum(1 for g in games if g["a_score"] > g["b_score"])
+        b_wins = sum(1 for g in games if g["b_score"] > g["a_score"])
+        ties = len(games) - a_wins - b_wins
+        pairs.append(
+            {
+                "a": a,
+                "b": b,
+                "a_name": owner_to_name.get(a, "(unknown team)"),
+                "b_name": owner_to_name.get(b, "(unknown team)"),
+                "a_wins": a_wins,
+                "b_wins": b_wins,
+                "ties": ties,
+                "a_points": round(sum(g["a_score"] for g in games), 2),
+                "b_points": round(sum(g["b_score"] for g in games), 2),
+                "games": games,
+            }
+        )
+    pairs.sort(key=lambda p: (p["a_name"], p["b_name"]))
+    return pairs
+
+
 def main():
     owner_to_name, current_owner_ids = current_team_lookup()
 
@@ -191,6 +262,10 @@ def main():
     matrix = head_to_head(all_season_data, current_owner_ids)
     (DATA_DIR / "head_to_head.json").write_text(json.dumps(matrix, indent=2))
     print(f"wrote head_to_head.json ({len(matrix)} teams)")
+
+    pairs = rivalry_games(all_season_data, current_owner_ids, owner_to_name)
+    (DATA_DIR / "rivalries.json").write_text(json.dumps(pairs, indent=2))
+    print(f"wrote rivalries.json ({len(pairs)} pairs)")
 
 
 if __name__ == "__main__":
