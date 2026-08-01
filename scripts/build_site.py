@@ -787,7 +787,7 @@ def tx_date(t):
     return dt.strftime("%b %-d, %Y")
 
 
-def build_trades_page(trades_data, teams):
+def build_trades_page(trades_data, teams, trade_grades):
     owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
 
     def team_link(owner_id, name):
@@ -811,6 +811,36 @@ def build_trades_page(trades_data, teams):
             return '<li class="trade-empty">(nothing)</li>'
         return "".join(items)
 
+    def grade_html(t):
+        g = trade_grades.get(t["transaction_id"])
+        if not g:
+            return '<p class="trade-grade-note">Not graded &mdash; either too recent (needs a year to pass) or predates available dynasty value data (before May 2020).</p>'
+
+        aged_vals = {o: g["sides"][o]["aged_value"] for o in t["teams"]}
+        best = max(aged_vals.values())
+        any_incomplete = any(not g["sides"][o]["hist_complete"] or not g["sides"][o]["aged_complete"] for o in t["teams"])
+        rows = []
+        for o in t["teams"]:
+            s = g["sides"][o]
+            won_cls = " trade-grade-won" if s["aged_value"] == best and len(set(aged_vals.values())) > 1 else ""
+            rows.append(
+                f'<tr class="{won_cls.strip()}"><td>{team_link(o, t["team_names"][o])}</td>'
+                f'<td>{s["hist_value"]:.0f}</td><td>{s["aged_value"]:.0f}</td></tr>'
+            )
+        horizon_label = f"{g['horizon_years']}-yr avg" if g["horizon_years"] > 1 else "1-yr"
+        incomplete_note = (
+            '<p class="trade-grade-note">* one or more assets couldn\'t be fully valued (missing from a snapshot); totals are a lower bound.</p>'
+            if any_incomplete
+            else ""
+        )
+        return f"""<div class="trade-grade">
+  <table class="trade-grade-table">
+    <thead><tr><th>Team</th><th>At Trade</th><th>{esc(horizon_label)} Later</th></tr></thead>
+    <tbody>{"".join(rows)}</tbody>
+  </table>
+  {incomplete_note}
+</div>"""
+
     def trade_card(t):
         sides_html = "".join(
             f"""<div class="trade-side">
@@ -823,6 +853,7 @@ def build_trades_page(trades_data, teams):
 <div class="trade-card">
   <div class="trade-meta">{esc(tx_date(t))}</div>
   <div class="trade-sides">{sides_html}</div>
+  {grade_html(t)}
 </div>"""
 
     # --- top trade partners leaderboard ---
@@ -851,6 +882,7 @@ def build_trades_page(trades_data, teams):
 <header class="league-header">
   <h1>Trades Hub</h1>
   <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both, not just picks. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
+  <p class="section-note">Each trade with a Dynasty Value grade shows what each side was worth at the moment of the trade versus the average of its value 1, 2, and 3 years later (whichever have elapsed) &mdash; not "value today," which would unfairly zero out old trades just from players aging out of relevance. Values come from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess's open-data project</a>; trades before May 2020 predate their value history and aren't graded, and trades under a year old haven't aged long enough yet.</p>
 </header>
 
 <section class="analytics-section">
@@ -1233,6 +1265,13 @@ a:hover { text-decoration: underline; }
 .pair-section h3 { margin-bottom: 10px; }
 .pair-section .trade-list { margin-bottom: 4px; }
 
+.trade-grade { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); }
+.trade-grade-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.trade-grade-table th { text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 2px 8px 4px 0; }
+.trade-grade-table td { padding: 3px 8px 3px 0; }
+.trade-grade-table tr.trade-grade-won td { font-weight: 700; color: var(--contender); }
+.trade-grade-note { color: var(--text-muted); font-size: 0.76rem; font-style: italic; margin: 10px 0 0; }
+
 .rivalry-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .rivalry-picker select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); min-width: 200px; }
 .rivalry-picker .rivalry-vs { color: var(--text-muted); font-weight: 600; }
@@ -1290,7 +1329,8 @@ def main():
     (DOCS_DIR / "draft-flow.html").write_text(draft_flow_html)
 
     trades_data = load("trades.json")
-    trades_html = build_trades_page(trades_data, teams)
+    trade_grades = load("trade_grades.json")
+    trades_html = build_trades_page(trades_data, teams, trade_grades)
     (DOCS_DIR / "trades.html").write_text(trades_html)
 
     print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + analytics + draft-flow + trades into {DOCS_DIR}")

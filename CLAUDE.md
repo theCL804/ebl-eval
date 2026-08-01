@@ -35,13 +35,26 @@ step beyond running Python scripts and committing the output:
      every player who ever appears in any historical trade, waiver claim,
      or free agent move's adds/drops, since transactions reference players
      who have since retired or been dropped.
+   - `scripts/fetch_dynasty_values.py` — point-in-time dynasty trade values
+     from DynastyProcess's open-data repo (`github.com/dynastyprocess/data`)
+     for every player/pick referenced in `data/trades.json`: the commit
+     nearest each trade's date, plus the commits nearest 1/2/3 years after
+     each trade (whichever have elapsed), joined to our Sleeper player ids
+     via DynastyProcess's own id crosswalk. Writes `data/dynasty_values.json`.
+     See "Dynasty trade grading" below for why KeepTradeCut isn't used here
+     and why this doesn't grade against "value today."
 2. **Compute scripts** turn raw data into the shapes the site templates
    consume:
    - `scripts/compute_teams.py` → `data/teams.json` (per-team roster
      composition, age, draft capital for the current league)
    - `scripts/compute_history.py` → `data/season_summaries.json` +
-     `data/head_to_head.json` (season standings/champions, all-time
-     rivalry matrix)
+     `data/head_to_head.json` + `data/rivalries.json` (season
+     standings/champions, all-time head-to-head matrix, and a full
+     chronological game log per team pair for the Rivalries page — same
+     filtering rules as the head-to-head matrix, just game-by-game instead
+     of aggregated)
+   - `scripts/compute_trade_grades.py` → `data/trade_grades.json` (per-trade
+     dynasty value grade, from `data/trades.json` + `data/dynasty_values.json`)
    - `scripts/compute_analytics.py` → `data/analytics.json` (all-play
      luck, positional scoring mix, transaction activity)
    - `scripts/compute_draft_flow.py` → `data/draft_flow.json` (draft pick
@@ -67,8 +80,8 @@ step beyond running Python scripts and committing the output:
    Transactions page, a Home landing page (`index.html`, added 2026-08 —
    a hub linking to every section plus a few league-wide facts, not the
    scouting-report grid), and Power Rankings, League History,
-   Head-to-Head, Analytics, Draft Capital Flow, and Trades Hub pages, all
-   sharing one `style.css` and a nav bar). **`index.html` is the home
+   Head-to-Head, Rivalries, Analytics, Draft Capital Flow, and Trades Hub
+   pages, all sharing one `style.css` and a nav bar). **`index.html` is the home
    page, not Power Rankings** — the per-team scouting-report grid that
    used to live at `index.html` is now `power-rankings.html`; don't point
    new "back to all teams"-style links at `index.html`. Each team page
@@ -81,10 +94,15 @@ step beyond running Python scripts and committing the output:
 Run order for a full rebuild from scratch: `fetch_data.py` →
 `fetch_history.py` → `compute_teams.py` → `compute_history.py` →
 `compute_analytics.py` → `compute_draft_flow.py` → `compute_trades.py` →
-`compute_team_transactions.py` → `build_site.py`. In practice the fetch
-scripts only need re-running when Sleeper data changes
-(new season, new trades); the compute + build scripts are cheap and safe
-to re-run anytime.
+`compute_team_transactions.py` → `fetch_dynasty_values.py` →
+`compute_trade_grades.py` → `build_site.py`. `compute_trades.py` must run
+before `fetch_dynasty_values.py`, since the latter only pulls values for
+players/picks that actually appear in `data/trades.json`. In practice the
+fetch scripts only need re-running when Sleeper data changes (new season,
+new trades) or, for `fetch_dynasty_values.py`, when new trades are added or
+enough time has passed for more trades to cross a 1/2/3-year aging
+checkpoint; the compute + build scripts are cheap and safe to re-run
+anytime.
 
 ## Key decisions
 
@@ -292,6 +310,57 @@ count. Two rules, applied to every season 2019–2026:
   separate median/playoff-week exclusion (see above), since it has a
   stricter requirement: it needs a real opponent to attribute the result
   to, not just a real result.
+
+## Dynasty trade grading (`fetch_dynasty_values.py`, `compute_trade_grades.py`)
+
+The Trades Hub shows a Dynasty Value grade on each trade: what each side was
+worth at the moment of the trade, versus the average of its value 1, 2, and 3
+years later (whichever of those have elapsed so far).
+
+- **KeepTradeCut was considered and rejected as the value source.** It's the
+  most widely cited dynasty value site, but its Terms & Conditions
+  explicitly prohibit "web scraping, data mining, data extraction... use of
+  bots or crawlers" and redistributing its data, with no carve-out for
+  non-commercial use (checked 2026-08). `robots.txt` alone would technically
+  allow a crawler through, but that doesn't override the contractual
+  prohibition in the ToS. **Don't scrape KeepTradeCut for this site.**
+- **DynastyProcess (`github.com/dynastyprocess/data`) is used instead** — an
+  open-data repo explicitly meant to be consumed programmatically. It
+  doesn't publish a dated archive, but its git commit history for
+  `files/values-players.csv` effectively is one: every commit is a dated
+  snapshot of that day's values. `fetch_dynasty_values.py` fetches whichever
+  commits are needed for each trade directly via
+  `raw.githubusercontent.com/dynastyprocess/data/{commit_sha}/...`.
+- **Grades are NOT "value at trade time" vs. "value today."** A trade from
+  2019 graded against 2026 values would show both sides near zero just from
+  players naturally aging out of dynasty relevance by now, regardless of
+  whether the trade itself was any good — that would make every old trade
+  look meaningless and bias grades toward whatever's recent. Instead the
+  comparison point is fixed *relative to the trade date* (1/2/3 years later,
+  averaged), so every trade is graded on the same relative clock. Don't
+  change this back to a fixed "today" comparison without discussing the
+  bias it reintroduces.
+- **Two schema eras, handled explicitly, not smoothed over:** DynastyProcess
+  switched from an ECR-rank-only schema (`mergename`, `dynoECR`, no dollar
+  value, no `fp_id` to join on) to the modern one (`fp_id`, `value_1qb`)
+  around commit `9f08039c` (2020-05-04). Snapshots older than that have no
+  value data in a usable form at all, so trades from before ~May 2020 are
+  simply left ungraded rather than approximated — don't try to reconstruct
+  values for that era from the rank-only columns.
+- **Draft picks don't have a `value_1qb` in DynastyProcess's data**, only an
+  ECR rank (`values-picks.csv`). To put picks on the same value scale as
+  players, `fetch_dynasty_values.py` converts a pick's ECR to a value by
+  finding the player in that same snapshot with the closest ECR and using
+  their `value_1qb` — a same-day nearest-rank bridge, not a fitted formula.
+  Picks are matched by season + round only (our trade data doesn't track
+  exact draft slot), using the round-average row DynastyProcess publishes
+  when one exists, or averaging the exact-slot/tiered rows for that round
+  otherwise.
+- **Both `hist_complete`/`aged_complete` flags matter.** A side's total is
+  marked incomplete if any asset in it couldn't be valued in a given
+  snapshot (crosswalk miss, or the player/pick just isn't in that
+  snapshot). Incomplete totals are still a *lower bound*, not garbage, and
+  are shown as such in the UI rather than hidden — don't discard them.
 
 ## General rule
 

@@ -277,6 +277,13 @@ a:hover { text-decoration: underline; }
 .pair-section h3 { margin-bottom: 10px; }
 .pair-section .trade-list { margin-bottom: 4px; }
 
+.trade-grade { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); }
+.trade-grade-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.trade-grade-table th { text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 2px 8px 4px 0; }
+.trade-grade-table td { padding: 3px 8px 3px 0; }
+.trade-grade-table tr.trade-grade-won td { font-weight: 700; color: var(--contender); }
+.trade-grade-note { color: var(--text-muted); font-size: 0.76rem; font-style: italic; margin: 10px 0 0; }
+
 .rivalry-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .rivalry-picker select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); min-width: 200px; }
 .rivalry-picker .rivalry-vs { color: var(--text-muted); font-weight: 600; }

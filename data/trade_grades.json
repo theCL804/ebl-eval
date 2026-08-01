@@ -1,0 +1,1966 @@
+{
+  "1252339138707849216": {
+    "snapshot_date": "2025-07-18",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-07-17"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 21.0,
+        "hist_complete": true,
+        "aged_value": 23.0,
+        "aged_complete": true
+      },
+      "394252975431766016": {
+        "hist_value": 104.0,
+        "hist_complete": true,
+        "aged_value": 14.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1251732038965280768": {
+    "snapshot_date": "2025-07-18",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-07-17"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 4950.0,
+        "hist_complete": false,
+        "aged_value": 3957.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 1529.0,
+        "hist_complete": true,
+        "aged_value": 1893.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1243082789394333696": {
+    "snapshot_date": "2025-06-27",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-06-26"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 224.0,
+        "hist_complete": true,
+        "aged_value": 261.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 656.0,
+        "hist_complete": true,
+        "aged_value": 130.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1238330588524466176": {
+    "snapshot_date": "2025-06-06",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-06-12"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 7609.0,
+        "hist_complete": true,
+        "aged_value": 6920.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 3965.0,
+        "hist_complete": true,
+        "aged_value": 3392.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1236837010518331392": {
+    "snapshot_date": "2025-06-06",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-06-05"
+    ],
+    "sides": {
+      "336348640681398272": {
+        "hist_value": 1619.0,
+        "hist_complete": true,
+        "aged_value": 2102.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 2281.0,
+        "hist_complete": true,
+        "aged_value": 2417.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1228369030440550400": {
+    "snapshot_date": "2025-05-16",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-05-15"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 198.0,
+        "hist_complete": true,
+        "aged_value": 196.0,
+        "aged_complete": true
+      },
+      "394252975431766016": {
+        "hist_value": 812.0,
+        "hist_complete": true,
+        "aged_value": 197.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1223769814032461824": {
+    "snapshot_date": "2025-05-02",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-05-01"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 4718.0,
+        "hist_complete": true,
+        "aged_value": 5056.0,
+        "aged_complete": false
+      },
+      "394226654450315264": {
+        "hist_value": 2295.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1204132265995534336": {
+    "snapshot_date": "2025-03-07",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-02-27"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 4675.0,
+        "hist_complete": true,
+        "aged_value": 3027.0,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 7819.0,
+        "hist_complete": true,
+        "aged_value": 4061.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1203904625212674048": {
+    "snapshot_date": "2025-03-07",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2026-02-27"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 298.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "394252975431766016": {
+        "hist_value": 717.0,
+        "hist_complete": true,
+        "aged_value": 838.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1172061918782709760": {
+    "snapshot_date": "2024-12-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-12-12"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 1126.0,
+        "hist_complete": true,
+        "aged_value": 3243.0,
+        "aged_complete": true
+      },
+      "407246708687314944": {
+        "hist_value": 3026.0,
+        "hist_complete": true,
+        "aged_value": 436.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1172032833297489920": {
+    "snapshot_date": "2024-12-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-12-12"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 951.0,
+        "hist_complete": true,
+        "aged_value": 1172.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 1472.0,
+        "hist_complete": true,
+        "aged_value": 1391.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1172032637776519168": {
+    "snapshot_date": "2024-12-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-12-12"
+    ],
+    "sides": {
+      "394491025806135296": {
+        "hist_value": 287.0,
+        "hist_complete": true,
+        "aged_value": 317.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 1080.0,
+        "hist_complete": true,
+        "aged_value": 2075.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1171922412737646592": {
+    "snapshot_date": "2024-12-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-12-12"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 4765.0,
+        "hist_complete": true,
+        "aged_value": 5404.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 3410.0,
+        "hist_complete": true,
+        "aged_value": 425.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1171867207882694656": {
+    "snapshot_date": "2024-12-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-12-12"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 21.0,
+        "hist_complete": true,
+        "aged_value": 5.0,
+        "aged_complete": true
+      },
+      "407246708687314944": {
+        "hist_value": 106.0,
+        "hist_complete": true,
+        "aged_value": 114.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1166101164665016320": {
+    "snapshot_date": "2024-11-22",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-11-21"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 4945.0,
+        "hist_complete": true,
+        "aged_value": 6658.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 5299.0,
+        "hist_complete": true,
+        "aged_value": 6203.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 7042.0,
+        "hist_complete": true,
+        "aged_value": 7277.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1161749253325389824": {
+    "snapshot_date": "2024-11-15",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-11-14"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 385.0,
+        "hist_complete": true,
+        "aged_value": 109.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 49.0,
+        "hist_complete": true,
+        "aged_value": 60.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1157832288378482688": {
+    "snapshot_date": "2024-11-01",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-10-31"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 41.0,
+        "hist_complete": true,
+        "aged_value": 59.0,
+        "aged_complete": true
+      },
+      "394252975431766016": {
+        "hist_value": 7.0,
+        "hist_complete": true,
+        "aged_value": 3.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1144662669778403328": {
+    "snapshot_date": "2024-09-27",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-09-26"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 1943.0,
+        "hist_complete": true,
+        "aged_value": 1452.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 453.0,
+        "hist_complete": true,
+        "aged_value": 607.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1139321478652149760": {
+    "snapshot_date": "2024-09-13",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-09-12"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 31.0,
+        "hist_complete": true,
+        "aged_value": 475.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 43.0,
+        "hist_complete": true,
+        "aged_value": 63.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1136809933275717632": {
+    "snapshot_date": "2024-09-06",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-09-05"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 4658.0,
+        "hist_complete": true,
+        "aged_value": 1836.0,
+        "aged_complete": true
+      },
+      "394252975431766016": {
+        "hist_value": 2501.0,
+        "hist_complete": true,
+        "aged_value": 1974.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1136788757098897408": {
+    "snapshot_date": "2024-09-06",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-09-05"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 257.0,
+        "hist_complete": true,
+        "aged_value": 290.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 1366.0,
+        "hist_complete": true,
+        "aged_value": 472.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1136786082949107712": {
+    "snapshot_date": "2024-09-06",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-09-05"
+    ],
+    "sides": {
+      "336348640681398272": {
+        "hist_value": 3766.0,
+        "hist_complete": true,
+        "aged_value": 4372.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 7168.0,
+        "hist_complete": false,
+        "aged_value": 9006.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1134585802660425728": {
+    "snapshot_date": "2024-08-30",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-08-29"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 5.0,
+        "hist_complete": true,
+        "aged_value": 2.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 10.0,
+        "hist_complete": true,
+        "aged_value": 16.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1130675243065958400": {
+    "snapshot_date": "2024-08-16",
+    "horizon_years": 1,
+    "horizon_dates": [
+      "2025-08-15"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 5974.0,
+        "hist_complete": true,
+        "aged_value": 4646.0,
+        "aged_complete": true
+      },
+      "394531785582608384": {
+        "hist_value": 1737.0,
+        "hist_complete": true,
+        "aged_value": 2339.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1117325506619318272": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 24.0,
+        "hist_complete": true,
+        "aged_value": 7.5,
+        "aged_complete": false
+      },
+      "394531785582608384": {
+        "hist_value": 13.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1117321149291040768": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 192.0,
+        "hist_complete": true,
+        "aged_value": 247.5,
+        "aged_complete": true
+      },
+      "407246708687314944": {
+        "hist_value": 1569.0,
+        "hist_complete": true,
+        "aged_value": 761.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1117312387356454912": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 1177.0,
+        "hist_complete": true,
+        "aged_value": 1317.0,
+        "aged_complete": true
+      },
+      "394251491289911296": {
+        "hist_value": 2167.0,
+        "hist_complete": true,
+        "aged_value": 1470.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1117168114988359680": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "394531785582608384": {
+        "hist_value": 1975.0,
+        "hist_complete": true,
+        "aged_value": 1223.0,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 2475.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1117162949044457472": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "407246708687314944": {
+        "hist_value": 1452.0,
+        "hist_complete": true,
+        "aged_value": 738.0,
+        "aged_complete": true
+      },
+      "394531785582608384": {
+        "hist_value": 579.0,
+        "hist_complete": true,
+        "aged_value": 11.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1116913262777511936": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 2778.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 5199.0,
+        "hist_complete": true,
+        "aged_value": 542.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1116847230196998144": {
+    "snapshot_date": "2024-07-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-11",
+      "2026-07-10"
+    ],
+    "sides": {
+      "407246708687314944": {
+        "hist_value": 761.0,
+        "hist_complete": true,
+        "aged_value": 54.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 1975.0,
+        "hist_complete": true,
+        "aged_value": 1223.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1115004647309201408": {
+    "snapshot_date": "2024-07-05",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-07-04",
+      "2026-07-03"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 4668.0,
+        "hist_complete": true,
+        "aged_value": 3029.5,
+        "aged_complete": true
+      },
+      "394251491289911296": {
+        "hist_value": 1809.0,
+        "hist_complete": true,
+        "aged_value": 2256.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1076247687365832704": {
+    "snapshot_date": "2024-03-27",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-03-21",
+      "2026-02-27"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 650.0,
+        "hist_complete": true,
+        "aged_value": 194.5,
+        "aged_complete": true
+      },
+      "394531785582608384": {
+        "hist_value": 276.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1068364719511142400": {
+    "snapshot_date": "2024-02-23",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-02-28",
+      "2026-02-27"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 5385.0,
+        "hist_complete": true,
+        "aged_value": 4696.5,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 6335.0,
+        "hist_complete": true,
+        "aged_value": 6219.5,
+        "aged_complete": true
+      }
+    }
+  },
+  "1066107615706517504": {
+    "snapshot_date": "2024-02-23",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-02-21",
+      "2026-02-20"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 4497.0,
+        "hist_complete": true,
+        "aged_value": 1081.5,
+        "aged_complete": false
+      },
+      "1065778674277945344": {
+        "hist_value": 4140.0,
+        "hist_complete": true,
+        "aged_value": 6315.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1064378405686255616": {
+    "snapshot_date": "2024-02-16",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-02-14",
+      "2026-02-20"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 2164.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "407246708687314944": {
+        "hist_value": 2987.0,
+        "hist_complete": true,
+        "aged_value": 1252.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1051371546566115328": {
+    "snapshot_date": "2024-01-12",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-01-10",
+      "2026-01-09"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 369.0,
+        "hist_complete": true,
+        "aged_value": 26.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 1723.0,
+        "hist_complete": true,
+        "aged_value": 2438.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1049429518194196480": {
+    "snapshot_date": "2024-01-05",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-01-10",
+      "2026-01-09"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 491.0,
+        "hist_complete": true,
+        "aged_value": 6.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 556.0,
+        "hist_complete": true,
+        "aged_value": 73.5,
+        "aged_complete": true
+      }
+    }
+  },
+  "1048313849444794368": {
+    "snapshot_date": "2024-01-05",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2025-01-03",
+      "2026-01-02"
+    ],
+    "sides": {
+      "407246708687314944": {
+        "hist_value": 2890.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 5297.0,
+        "hist_complete": true,
+        "aged_value": 4065.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1033218684665352192": {
+    "snapshot_date": "2023-11-24",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-11-22",
+      "2025-11-21"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 119.0,
+        "hist_complete": true,
+        "aged_value": 5.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 79.0,
+        "hist_complete": false,
+        "aged_value": 125.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1031669088541683712": {
+    "snapshot_date": "2023-11-17",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-11-22",
+      "2025-11-21"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 304.0,
+        "hist_complete": true,
+        "aged_value": 37.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 520.0,
+        "hist_complete": true,
+        "aged_value": 198.5,
+        "aged_complete": true
+      }
+    }
+  },
+  "1021933109723660288": {
+    "snapshot_date": "2023-10-20",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-10-25",
+      "2025-10-24"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 2377.0,
+        "hist_complete": true,
+        "aged_value": 911.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 2109.0,
+        "hist_complete": true,
+        "aged_value": 1197.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1019292880370315264": {
+    "snapshot_date": "2023-10-13",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-10-18",
+      "2025-10-17"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 3884.0,
+        "hist_complete": true,
+        "aged_value": 5209.5,
+        "aged_complete": true
+      },
+      "394253124748980224": {
+        "hist_value": 4338.0,
+        "hist_complete": true,
+        "aged_value": 1103.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1017534896476098560": {
+    "snapshot_date": "2023-10-13",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-10-11",
+      "2025-10-10"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 998.0,
+        "hist_complete": true,
+        "aged_value": 895.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 2244.0,
+        "hist_complete": true,
+        "aged_value": 3117.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1016525236910571520": {
+    "snapshot_date": "2023-10-06",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-10-11",
+      "2025-10-10"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 20.0,
+        "hist_complete": true,
+        "aged_value": 29.5,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 8.0,
+        "hist_complete": false,
+        "aged_value": 55.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "1009596674760695808": {
+    "snapshot_date": "2023-09-22",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-09-20",
+      "2025-09-19"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 2463.0,
+        "hist_complete": true,
+        "aged_value": 3500.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 1684.0,
+        "hist_complete": true,
+        "aged_value": 2372.5,
+        "aged_complete": false
+      }
+    }
+  },
+  "1008129229210353664": {
+    "snapshot_date": "2023-09-15",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-09-13",
+      "2025-09-12"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 2931.0,
+        "hist_complete": true,
+        "aged_value": 1636.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 2075.0,
+        "hist_complete": true,
+        "aged_value": 1243.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "1008095331650818048": {
+    "snapshot_date": "2023-09-15",
+    "horizon_years": 2,
+    "horizon_dates": [
+      "2024-09-13",
+      "2025-09-12"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 2945.0,
+        "hist_complete": true,
+        "aged_value": 2403.0,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 4411.0,
+        "hist_complete": true,
+        "aged_value": 1520.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "967210840376107008": {
+    "snapshot_date": "2023-05-26",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-05-24",
+      "2025-05-23",
+      "2026-05-22"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 44.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 44.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "967198310358368256": {
+    "snapshot_date": "2023-05-26",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-05-24",
+      "2025-05-23",
+      "2026-05-22"
+    ],
+    "sides": {
+      "336348640681398272": {
+        "hist_value": 275.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "394531785582608384": {
+        "hist_value": 420.0,
+        "hist_complete": true,
+        "aged_value": 15.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "967091412967702528": {
+    "snapshot_date": "2023-05-26",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-05-24",
+      "2025-05-23",
+      "2026-05-22"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 284.0,
+        "hist_complete": true,
+        "aged_value": 1.3,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 288.0,
+        "hist_complete": true,
+        "aged_value": 94.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "916081990280212480": {
+    "snapshot_date": "2023-01-06",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-01-05",
+      "2025-01-03",
+      "2026-01-02"
+    ],
+    "sides": {
+      "394531785582608384": {
+        "hist_value": 2668.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 4428.0,
+        "hist_complete": true,
+        "aged_value": 2245.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "916073097852391424": {
+    "snapshot_date": "2023-01-06",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-01-05",
+      "2025-01-03",
+      "2026-01-02"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 5941.0,
+        "hist_complete": true,
+        "aged_value": 2354.3,
+        "aged_complete": false
+      },
+      "394531785582608384": {
+        "hist_value": 3686.0,
+        "hist_complete": true,
+        "aged_value": 239.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "915862070455955456": {
+    "snapshot_date": "2023-01-06",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2024-01-05",
+      "2025-01-03",
+      "2026-01-02"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 2668.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "394531785582608384": {
+        "hist_value": 9597.0,
+        "hist_complete": true,
+        "aged_value": 1650.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "898704331963199488": {
+    "snapshot_date": "2022-11-18",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-11-17",
+      "2024-11-15",
+      "2025-11-14"
+    ],
+    "sides": {
+      "336348640681398272": {
+        "hist_value": 820.0,
+        "hist_complete": true,
+        "aged_value": 786.3,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 226.0,
+        "hist_complete": true,
+        "aged_value": 71.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "889006499970961408": {
+    "snapshot_date": "2022-10-21",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-10-20",
+      "2024-10-18",
+      "2025-10-24"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 20.0,
+        "hist_complete": true,
+        "aged_value": 0.7,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 51.0,
+        "hist_complete": true,
+        "aged_value": 16.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "852352295696994304": {
+    "snapshot_date": "2022-07-15",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-07-14",
+      "2024-07-12",
+      "2025-07-11"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 1512.0,
+        "hist_complete": true,
+        "aged_value": 197.7,
+        "aged_complete": true
+      },
+      "390894031879553024": {
+        "hist_value": 1339.0,
+        "hist_complete": true,
+        "aged_value": 269.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "826587414351982592": {
+    "snapshot_date": "2022-04-29",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-04-21",
+      "2024-05-03",
+      "2025-05-02"
+    ],
+    "sides": {
+      "406674259818065920": {
+        "hist_value": 2295.0,
+        "hist_complete": true,
+        "aged_value": 823.0,
+        "aged_complete": false
+      },
+      "407246708687314944": {
+        "hist_value": 3168.0,
+        "hist_complete": true,
+        "aged_value": 1086.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "818567537364189184": {
+    "snapshot_date": "2022-04-08",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-04-07",
+      "2024-04-12",
+      "2025-04-11"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 2.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "406674259818065920": {
+        "hist_value": 5.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "812736723112042496": {
+    "snapshot_date": "2022-03-25",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-03-24",
+      "2024-03-27",
+      "2025-03-21"
+    ],
+    "sides": {
+      "406674259818065920": {
+        "hist_value": 2836.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "394491025806135296": {
+        "hist_value": 3566.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "796983941214081024": {
+    "snapshot_date": "2022-02-11",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2023-02-15",
+      "2024-02-09",
+      "2025-02-07"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 2070.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 3175.0,
+        "hist_complete": true,
+        "aged_value": 1486.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "745465255312027648": {
+    "snapshot_date": "2021-09-17",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-23",
+      "2023-09-22",
+      "2024-09-20"
+    ],
+    "sides": {
+      "407246708687314944": {
+        "hist_value": 101.0,
+        "hist_complete": false,
+        "aged_value": 42.0,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 1069.0,
+        "hist_complete": true,
+        "aged_value": 299.7,
+        "aged_complete": true
+      }
+    }
+  },
+  "742886571845664768": {
+    "snapshot_date": "2021-09-10",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-16",
+      "2023-09-15",
+      "2024-09-13"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 446.0,
+        "hist_complete": true,
+        "aged_value": 1316.0,
+        "aged_complete": true
+      },
+      "336348640681398272": {
+        "hist_value": 1062.0,
+        "hist_complete": true,
+        "aged_value": 4236.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "741128593803001856": {
+    "snapshot_date": "2021-09-10",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-09",
+      "2023-09-08",
+      "2024-09-06"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 428.0,
+        "hist_complete": true,
+        "aged_value": 93.3,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 297.0,
+        "hist_complete": false,
+        "aged_value": 364.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "741005709126344704": {
+    "snapshot_date": "2021-09-10",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-09",
+      "2023-09-08",
+      "2024-09-06"
+    ],
+    "sides": {
+      "406674259818065920": {
+        "hist_value": 2099.0,
+        "hist_complete": true,
+        "aged_value": 872.7,
+        "aged_complete": false
+      },
+      "407246708687314944": {
+        "hist_value": 1498.0,
+        "hist_complete": true,
+        "aged_value": 184.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "741003042924675072": {
+    "snapshot_date": "2021-09-10",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-09",
+      "2023-09-08",
+      "2024-09-06"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 500.0,
+        "hist_complete": true,
+        "aged_value": 166.3,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 229.0,
+        "hist_complete": false,
+        "aged_value": 434.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "737897855410429952": {
+    "snapshot_date": "2021-08-27",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-02",
+      "2023-09-01",
+      "2024-08-30"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 752.0,
+        "hist_complete": true,
+        "aged_value": 152.3,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 45.0,
+        "hist_complete": false,
+        "aged_value": 74.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "737890831758962688": {
+    "snapshot_date": "2021-08-27",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-02",
+      "2023-09-01",
+      "2024-08-30"
+    ],
+    "sides": {
+      "406674259818065920": {
+        "hist_value": 272.0,
+        "hist_complete": true,
+        "aged_value": 106.7,
+        "aged_complete": false
+      },
+      "336348640681398272": {
+        "hist_value": 1428.0,
+        "hist_complete": true,
+        "aged_value": 176.3,
+        "aged_complete": true
+      }
+    }
+  },
+  "737885108090052608": {
+    "snapshot_date": "2021-08-27",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-09-02",
+      "2023-09-01",
+      "2024-08-30"
+    ],
+    "sides": {
+      "336348640681398272": {
+        "hist_value": 495.0,
+        "hist_complete": true,
+        "aged_value": 292.0,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 350.0,
+        "hist_complete": true,
+        "aged_value": 132.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "707744519130521600": {
+    "snapshot_date": "2021-06-11",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-06-10",
+      "2023-06-09",
+      "2024-06-07"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 13.0,
+        "hist_complete": true,
+        "aged_value": 25.3,
+        "aged_complete": true
+      },
+      "394252975431766016": {
+        "hist_value": 251.0,
+        "hist_complete": true,
+        "aged_value": 111.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "702260638788943872": {
+    "snapshot_date": "2021-05-21",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-05-20",
+      "2023-05-26",
+      "2024-05-24"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 771.0,
+        "hist_complete": true,
+        "aged_value": 793.3,
+        "aged_complete": true
+      },
+      "406674259818065920": {
+        "hist_value": 310.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "700435516004315136": {
+    "snapshot_date": "2021-05-21",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-05-20",
+      "2023-05-26",
+      "2024-05-17"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 2487.0,
+        "hist_complete": true,
+        "aged_value": 19.7,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 2383.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "695376423262699520": {
+    "snapshot_date": "2021-05-12",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-05-06",
+      "2023-04-21",
+      "2024-05-03"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 2372.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": false
+      },
+      "394491025806135296": {
+        "hist_value": 4650.0,
+        "hist_complete": true,
+        "aged_value": 3473.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "686636308235378688": {
+    "snapshot_date": "2021-04-09",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-04-08",
+      "2023-04-14",
+      "2024-04-12"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 6404.0,
+        "hist_complete": true,
+        "aged_value": 1803.0,
+        "aged_complete": false
+      },
+      "394531785582608384": {
+        "hist_value": 9227.0,
+        "hist_complete": true,
+        "aged_value": 3032.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "682433217629876224": {
+    "snapshot_date": "2021-04-02",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2022-04-01",
+      "2023-03-31",
+      "2024-03-29"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 3846.0,
+        "hist_complete": true,
+        "aged_value": 1538.7,
+        "aged_complete": false
+      },
+      "394251491289911296": {
+        "hist_value": 6993.0,
+        "hist_complete": true,
+        "aged_value": 2108.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "642099772651569152": {
+    "snapshot_date": "2020-11-08",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-12-10",
+      "2022-12-09",
+      "2023-12-08"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 142.0,
+        "hist_complete": false,
+        "aged_value": 282.7,
+        "aged_complete": false
+      },
+      "394252975431766016": {
+        "hist_value": 7.0,
+        "hist_complete": false,
+        "aged_value": 48.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "632319353903230976": {
+    "snapshot_date": "2020-11-08",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-11-12",
+      "2022-11-11",
+      "2023-11-10"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 831.0,
+        "hist_complete": true,
+        "aged_value": 60.3,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 644.0,
+        "hist_complete": true,
+        "aged_value": 130.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "625063960273571840": {
+    "snapshot_date": "2020-10-18",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-10-22",
+      "2022-10-21",
+      "2023-10-20"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 408.0,
+        "hist_complete": true,
+        "aged_value": 187.3,
+        "aged_complete": true
+      },
+      "394491025806135296": {
+        "hist_value": 579.0,
+        "hist_complete": true,
+        "aged_value": 74.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "614325423614046208": {
+    "snapshot_date": "2020-09-25",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-09-24",
+      "2022-09-23",
+      "2023-09-22"
+    ],
+    "sides": {
+      "394253124748980224": {
+        "hist_value": 2139.0,
+        "hist_complete": false,
+        "aged_value": 9583.7,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 2301.0,
+        "hist_complete": true,
+        "aged_value": 1097.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "589545352617570304": {
+    "snapshot_date": "2020-07-17",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-07-16",
+      "2022-07-15",
+      "2023-07-14"
+    ],
+    "sides": {
+      "394252975431766016": {
+        "hist_value": 5183.0,
+        "hist_complete": true,
+        "aged_value": 2065.7,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 6248.0,
+        "hist_complete": true,
+        "aged_value": 8380.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "589229712480448512": {
+    "snapshot_date": "2020-07-17",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-07-16",
+      "2022-07-15",
+      "2023-07-14"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 5044.0,
+        "hist_complete": true,
+        "aged_value": 5464.7,
+        "aged_complete": true
+      },
+      "394491025806135296": {
+        "hist_value": 2638.0,
+        "hist_complete": false,
+        "aged_value": 3534.0,
+        "aged_complete": false
+      },
+      "393989477577588736": {
+        "hist_value": 1043.0,
+        "hist_complete": true,
+        "aged_value": 580.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "583854895891791872": {
+    "snapshot_date": "2020-07-03",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-07-02",
+      "2022-07-01",
+      "2023-06-30"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 9958.0,
+        "hist_complete": false,
+        "aged_value": 5705.0,
+        "aged_complete": false
+      },
+      "1065778674277945344": {
+        "hist_value": 11474.0,
+        "hist_complete": true,
+        "aged_value": 12352.7,
+        "aged_complete": true
+      }
+    }
+  },
+  "575369461095907328": {
+    "snapshot_date": "2020-06-05",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-06-04",
+      "2022-06-10",
+      "2023-06-09"
+    ],
+    "sides": {
+      "393989477577588736": {
+        "hist_value": 7442.0,
+        "hist_complete": true,
+        "aged_value": 5780.7,
+        "aged_complete": false
+      },
+      "407246708687314944": {
+        "hist_value": 2248.0,
+        "hist_complete": false,
+        "aged_value": 2399.3,
+        "aged_complete": false
+      }
+    }
+  },
+  "570810907443650560": {
+    "snapshot_date": "2020-05-29",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-05-28",
+      "2022-05-28",
+      "2023-05-26"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 23.0,
+        "hist_complete": true,
+        "aged_value": 5.3,
+        "aged_complete": false
+      },
+      "390894031879553024": {
+        "hist_value": 0.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "570810217230098432": {
+    "snapshot_date": "2020-05-29",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-05-28",
+      "2022-05-28",
+      "2023-05-26"
+    ],
+    "sides": {
+      "406674259818065920": {
+        "hist_value": 0.0,
+        "hist_complete": true,
+        "aged_value": 0.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 782.0,
+        "hist_complete": true,
+        "aged_value": 445.7,
+        "aged_complete": false
+      }
+    }
+  },
+  "569055247190585344": {
+    "snapshot_date": "2020-05-22",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-05-21",
+      "2022-05-20",
+      "2023-05-26"
+    ],
+    "sides": {
+      "394248955468185600": {
+        "hist_value": 11445.0,
+        "hist_complete": true,
+        "aged_value": 7795.3,
+        "aged_complete": false
+      },
+      "407246708687314944": {
+        "hist_value": 12462.0,
+        "hist_complete": true,
+        "aged_value": 9318.0,
+        "aged_complete": false
+      }
+    }
+  },
+  "569006924450258944": {
+    "snapshot_date": "2020-05-22",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-05-21",
+      "2022-05-20",
+      "2023-05-26"
+    ],
+    "sides": {
+      "394251491289911296": {
+        "hist_value": 2383.0,
+        "hist_complete": true,
+        "aged_value": 480.0,
+        "aged_complete": true
+      },
+      "1065778674277945344": {
+        "hist_value": 3266.0,
+        "hist_complete": true,
+        "aged_value": 5002.0,
+        "aged_complete": true
+      }
+    }
+  },
+  "568992493436874752": {
+    "snapshot_date": "2020-05-22",
+    "horizon_years": 3,
+    "horizon_dates": [
+      "2021-05-21",
+      "2022-05-20",
+      "2023-05-26"
+    ],
+    "sides": {
+      "394226654450315264": {
+        "hist_value": 5180.0,
+        "hist_complete": true,
+        "aged_value": 5264.3,
+        "aged_complete": false
+      },
+      "394253124748980224": {
+        "hist_value": 5518.0,
+        "hist_complete": true,
+        "aged_value": 976.7,
+        "aged_complete": false
+      }
+    }
+  }
+}
