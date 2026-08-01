@@ -64,9 +64,15 @@ step beyond running Python scripts and committing the output:
    when the analysis needs to change.
 4. **`scripts/build_site.py`** reads everything in `data/` and renders
    plain HTML/CSS into `docs/` (one file per team plus a per-team
-   Transactions page, plus Power Rankings, League History, Head-to-Head,
-   Analytics, Draft Capital Flow, and Trades Hub pages, all sharing one
-   `style.css` and a nav bar). Each team page also shows a full
+   Transactions page, a Home landing page (`index.html`, added 2026-08 —
+   a hub linking to every section plus a few league-wide facts, not the
+   scouting-report grid), and Power Rankings, League History,
+   Head-to-Head, Analytics, Draft Capital Flow, and Trades Hub pages, all
+   sharing one `style.css` and a nav bar). **`index.html` is the home
+   page, not Power Rankings** — the per-team scouting-report grid that
+   used to live at `index.html` is now `power-rankings.html`; don't point
+   new "back to all teams"-style links at `index.html`. Each team page
+   also shows a full
    season-by-season record/finish table (from `season_summaries.json`,
    not just the last couple seasons) linking to that team's Transactions
    page. Re-run this after editing `content.json` or any compute script's

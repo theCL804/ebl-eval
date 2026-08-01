@@ -47,7 +47,8 @@ def esc(s):
 
 
 NAV_ITEMS = [
-    ("index.html", "Power Rankings"),
+    ("index.html", "Home"),
+    ("power-rankings.html", "Power Rankings"),
     ("history.html", "League History"),
     ("head-to-head.html", "Head-to-Head"),
     ("analytics.html", "Analytics"),
@@ -168,7 +169,7 @@ def build_team_page(team, content, rings, runner_ups, season_summaries, transact
     )
 
     body = f"""
-<a class="back-link" href="index.html">&larr; All Teams</a>
+<a class="back-link" href="power-rankings.html">&larr; All Teams</a>
 <header class="team-header">
   <div class="verdict-badge {vclass}">{esc(verdict)}</div>
   <h1>{esc(team['team_name'])} {trophies}</h1>
@@ -257,7 +258,89 @@ def build_team_page(team, content, rings, runner_ups, season_summaries, transact
     )
 
 
-def build_index(teams, content_all, league_content, rings, runner_ups):
+HUB_SECTIONS = [
+    ("power-rankings.html", "Power Rankings", "Every team's 2026 outlook: verdict, strengths, weaknesses, and draft recommendations."),
+    ("history.html", "League History", "Season-by-season standings and champions, back to the league's 2018 founding."),
+    ("head-to-head.html", "Head-to-Head", "All-time records between every team currently in the league."),
+    ("analytics.html", "Analytics", "All-play luck, positional scoring mix, and roster-management activity."),
+    ("draft-flow.html", "Draft Capital Flow", "Every draft pick trade in league history, and who's stockpiling future capital."),
+    ("trades.html", "Trades Hub", "Every trade ever made, players and picks both, broken down by team pair."),
+]
+
+
+def build_home_page(league_content, teams, rings, season_summaries, current_owner_ids):
+    hub_cards = "".join(
+        f"""<a class="hub-card" href="{href}">
+  <h3>{esc(label)}</h3>
+  <p>{esc(desc)}</p>
+</a>"""
+        for href, label, desc in HUB_SECTIONS
+    )
+
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+    real_seasons = sorted((s for s in season_summaries if s["season"] != 2018), key=lambda s: -s["season"])
+    latest = real_seasons[0] if real_seasons else None
+    champ_roster = owner_to_roster.get(latest["champion_owner_id"]) if latest else None
+    champ_link = (
+        f'<a href="team-{champ_roster}.html">{esc(latest["champion"])}</a>'
+        if latest and champ_roster
+        else esc(latest["champion"]) if latest else "&mdash;"
+    )
+    total_rings = sum(rings.values())
+
+    facts = f"""
+<div class="snapshot-card">
+  <h3>Founded</h3>
+  <p class="big-stat">2018</p>
+  <p class="stat-label">on a different platform, pre-Sleeper</p>
+</div>
+<div class="snapshot-card">
+  <h3>Teams</h3>
+  <p class="big-stat">{len(current_owner_ids)}</p>
+  <p class="stat-label">half-PPR, one QB, four-round rookie draft</p>
+</div>
+<div class="snapshot-card">
+  <h3>Reigning Champion</h3>
+  <p class="big-stat">{champ_link}</p>
+  <p class="stat-label">{latest['season'] if latest else ''} season</p>
+</div>
+<div class="snapshot-card">
+  <h3>Championships Awarded</h3>
+  <p class="big-stat">{total_rings}</p>
+  <p class="stat-label">since 2018, including the pre-Sleeper era</p>
+</div>
+"""
+
+    body = f"""
+<header class="league-header">
+  <h1>Ethel's Dynasty</h1>
+  <p class="league-summary">{esc(league_content['league_summary'])}</p>
+</header>
+
+<section class="snapshot-grid">
+  {facts}
+</section>
+
+<section class="hub-section">
+  <h2>Explore the League</h2>
+  <div class="hub-grid">
+    {hub_cards}
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Built from live Sleeper league data. Analysis and grades are opinion, not projections.</p>
+</footer>
+"""
+    return page_shell(
+        "Ethel's Dynasty",
+        body,
+        active="index.html",
+        description=league_content["league_summary"],
+    )
+
+
+def build_power_rankings_page(teams, content_all, league_content, rings, runner_ups):
     verdict_order = ["Win-Now Contender", "Contender", "Retool", "Rebuild"]
     teams_by_verdict = {v: [] for v in verdict_order}
     for t in teams:
@@ -311,7 +394,7 @@ def build_index(teams, content_all, league_content, rings, runner_ups):
     return page_shell(
         league_content["league_headline"],
         body,
-        active="index.html",
+        active="power-rankings.html",
         description=league_content["league_summary"],
     )
 
@@ -913,6 +996,20 @@ a:hover { text-decoration: underline; }
 .card-tagline { font-size: 0.9rem; margin: 0 0 12px; }
 .card-stats { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 8px; }
 
+.hub-section { margin-top: 8px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.hub-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  color: var(--text);
+}
+.hub-card:hover { border-color: var(--accent); text-decoration: none; }
+.hub-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.hub-card p { margin: 0; font-size: 0.88rem; color: var(--text-muted); }
+
 .verdict-badge {
   display: inline-block;
   font-size: 0.75rem;
@@ -1070,8 +1167,12 @@ def main():
         tx_html = build_team_transactions_page(t, tx_list, teams)
         (DOCS_DIR / f"team-{t['roster_id']}-transactions.html").write_text(tx_html)
 
-    index_html = build_index(teams, content["teams"], content, rings, runner_ups)
-    (DOCS_DIR / "index.html").write_text(index_html)
+    current_owner_ids = {t["owner_id"] for t in teams}
+    home_html = build_home_page(content, teams, rings, season_summaries, current_owner_ids)
+    (DOCS_DIR / "index.html").write_text(home_html)
+
+    power_rankings_html = build_power_rankings_page(teams, content["teams"], content, rings, runner_ups)
+    (DOCS_DIR / "power-rankings.html").write_text(power_rankings_html)
 
     history_html = build_history_page(season_summaries, teams)
     (DOCS_DIR / "history.html").write_text(history_html)
@@ -1092,7 +1193,7 @@ def main():
     trades_html = build_trades_page(trades_data, teams)
     (DOCS_DIR / "trades.html").write_text(trades_html)
 
-    print(f"Built {len(teams)} team pages + index + history + head-to-head + analytics + draft-flow + trades into {DOCS_DIR}")
+    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + analytics + draft-flow + trades into {DOCS_DIR}")
 
 
 if __name__ == "__main__":
