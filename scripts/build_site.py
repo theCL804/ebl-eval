@@ -49,7 +49,11 @@ NAV_ITEMS = [
     ("index.html", "Power Rankings"),
     ("history.html", "League History"),
     ("head-to-head.html", "Head-to-Head"),
+    ("analytics.html", "Analytics"),
+    ("draft-flow.html", "Draft Capital Flow"),
 ]
+
+POSITION_COLORS = {"QB": "#7c93f0", "RB": "#3fb97d", "WR": "#d9a635", "TE": "#e0664a"}
 
 
 def nav_html(active):
@@ -303,22 +307,34 @@ def build_history_page(season_summaries, teams):
 </div>""")
             continue
 
+        def playoff_badge(place):
+            if place == 1:
+                return '<span class="badge-finish badge-1">🏆 Champion</span>'
+            if place == 2:
+                return '<span class="badge-finish badge-2">🥈 Runner-up</span>'
+            if place == 3:
+                return '<span class="badge-finish badge-3">🥉 3rd</span>'
+            if place:
+                return f'<span class="badge-finish">{place}th</span>'
+            return '<span class="badge-finish badge-none">&mdash;</span>'
+
         rows = "".join(
             f"""<tr>
-<td class="place">{st['place'] or '-'}</td>
+<td class="rank">{i}</td>
 <td>{team_link(st['team_name'], st['owner_id'])}</td>
 <td>{st['wins']}-{st['losses']}{'-' + str(st['ties']) if st['ties'] else ''}</td>
 <td>{st['points_for']:.1f}</td>
 <td>{st['points_against']:.1f}</td>
+<td>{playoff_badge(st['place'])}</td>
 </tr>"""
-            for st in s["standings"]
+            for i, st in enumerate(s["standings"], start=1)
         )
         cards.append(f"""
 <div class="season-card">
   <h3>{s['season']}</h3>
   <p class="season-champ">🏆 {team_link(s['champion'], s['champion_owner_id'])} beat {team_link(s['runner_up'], s['runner_up_owner_id'])}{f" (3rd: {team_link(s['third'], None)})" if s.get('third') else ''}</p>
   <table class="roster-table season-standings">
-    <thead><tr><th>Place</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr></thead>
+    <thead><tr><th>#</th><th>Team</th><th>Regular Season</th><th>PF</th><th>PA</th><th>Playoff Finish</th></tr></thead>
     <tbody>{rows}</tbody>
   </table>
 </div>""")
@@ -343,7 +359,7 @@ def build_head_to_head_page(matrix, teams):
     owner_ids = [t["owner_id"] for t in teams_sorted]
     name_by_owner = {t["owner_id"]: t["team_name"] for t in teams_sorted}
 
-    header_cells = "".join(f'<th title="{esc(name_by_owner[o])}">{esc(name_by_owner[o][:3].upper())}</th>' for o in owner_ids)
+    header_cells = "".join(f'<th class="h2h-col-label"><span>{esc(name_by_owner[o])}</span></th>' for o in owner_ids)
     rows = []
     for row_owner in owner_ids:
         cells = []
@@ -380,6 +396,187 @@ def build_head_to_head_page(matrix, teams):
 </footer>
 """
     return page_shell("Head-to-Head — Ethel's Dynasty", body, description="All-time head-to-head records between every team in the league.", active="head-to-head.html")
+
+
+def build_analytics_page(analytics, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    # --- luck table ---
+    luck_rows_data = sorted(analytics["luck"]["all_time"].items(), key=lambda x: -x[1]["luck"])
+    luck_rows = "".join(
+        f"""<tr>
+<td>{team_link(o, v['team_name'])}</td>
+<td>{v['actual_wins']:g}</td>
+<td>{v['expected_wins']:.1f}</td>
+<td class="{'luck-pos' if v['luck'] > 0 else ('luck-neg' if v['luck'] < 0 else '')}">{v['luck']:+.1f}</td>
+</tr>"""
+        for o, v in luck_rows_data
+    )
+
+    # --- positional mix stacked bars ---
+    pos_rows = []
+    for o, v in sorted(analytics["positional"]["all_time"].items(), key=lambda x: x[1]["team_name"] or ""):
+        total = sum(v[p] for p in ["QB", "RB", "WR", "TE"]) or 1
+        segments = "".join(
+            f'<span class="pos-seg" style="width:{v[p]/total*100:.1f}%;background:{POSITION_COLORS[p]}" title="{p}: {v[p]:.0f} pts ({v[p]/total*100:.0f}%)"></span>'
+            for p in ["QB", "RB", "WR", "TE"]
+        )
+        pos_rows.append(f"""
+<div class="pos-row">
+  <div class="pos-team">{team_link(o, v['team_name'])}</div>
+  <div class="pos-bar">{segments}</div>
+</div>""")
+
+    pos_legend = "".join(
+        f'<span class="pos-legend-item"><span class="pos-swatch" style="background:{POSITION_COLORS[p]}"></span>{p}</span>'
+        for p in ["QB", "RB", "WR", "TE"]
+    )
+
+    # --- transaction activity ---
+    tx_rows_data = sorted(analytics["transactions"]["all_time"].items(), key=lambda x: -x[1]["total"])
+    tx_rows = "".join(
+        f"""<tr>
+<td>{team_link(o, v['team_name'])}</td>
+<td>{v['trade']}</td>
+<td>{v['waiver']}</td>
+<td>{v['free_agent']}</td>
+<td class="tx-total">{v['total']}</td>
+</tr>"""
+        for o, v in tx_rows_data
+    )
+
+    partner_rows = "".join(
+        f"""<tr>
+<td>{team_link(p['a'], p['a_name'])} &harr; {team_link(p['b'], p['b_name'])}</td>
+<td>{p['trades']}</td>
+</tr>"""
+        for p in analytics["transactions"]["trade_partners"][:10]
+    )
+
+    body = f"""
+<header class="league-header">
+  <h1>Analytics</h1>
+  <p class="league-summary">Advanced stats computed from every game played since 2019: all-play luck, positional scoring mix, and roster-management activity. Games against the phantom bye team and 2022-2025 week-14 median games are excluded, same as Head-to-Head.</p>
+</header>
+
+<section class="analytics-section">
+  <h2>Luck: Record vs. All-Play Expectation</h2>
+  <p class="section-note">"Expected wins" is how many games a team's weekly score would have beaten if it had played every other team that week, summed across every real matchup week since 2019. Positive luck means the team has won more than its scoring would predict; negative means the opposite &mdash; often true of high-scoring teams that still run into a big week from an opponent.</p>
+  <table class="roster-table">
+    <thead><tr><th>Team</th><th>Actual Wins</th><th>Expected Wins</th><th>Luck</th></tr></thead>
+    <tbody>{luck_rows}</tbody>
+  </table>
+</section>
+
+<section class="analytics-section">
+  <h2>Career Positional Scoring Mix</h2>
+  <p class="section-note">Share of each team's all-time starter points that has come from each position, since 2019.</p>
+  <div class="pos-legend">{pos_legend}</div>
+  <div class="pos-chart">{"".join(pos_rows)}</div>
+</section>
+
+<section class="analytics-section">
+  <h2>Roster Management Activity</h2>
+  <p class="section-note">All-time transaction counts by type, since 2019.</p>
+  <table class="roster-table">
+    <thead><tr><th>Team</th><th>Trades</th><th>Waiver Claims</th><th>Free Agent Adds</th><th>Total</th></tr></thead>
+    <tbody>{tx_rows}</tbody>
+  </table>
+</section>
+
+<section class="analytics-section">
+  <h2>Top Trade Partners</h2>
+  <p class="section-note">The pairs of teams that have traded with each other the most, all-time.</p>
+  <table class="roster-table">
+    <thead><tr><th>Pair</th><th>Trades</th></tr></thead>
+    <tbody>{partner_rows}</tbody>
+  </table>
+</section>
+"""
+    return page_shell("Analytics — Ethel's Dynasty", body, description="All-play luck, positional scoring trends, and trade/transaction activity.", active="analytics.html")
+
+
+def build_draft_flow_page(draft_flow, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    # --- net capital leaderboard ---
+    nc_sorted = sorted(draft_flow["net_capital"].items(), key=lambda x: -x[1]["net"])
+    max_abs = max((abs(v["net"]) for _, v in nc_sorted), default=1) or 1
+    net_rows = []
+    for o, v in nc_sorted:
+        pct = abs(v["net"]) / max_abs * 50
+        bar = (
+            f'<div class="net-bar-neg" style="width:{pct if v["net"] < 0 else 0:.0f}%"></div>'
+            f'<div class="net-bar-mid"></div>'
+            f'<div class="net-bar-pos" style="width:{pct if v["net"] > 0 else 0:.0f}%"></div>'
+        )
+        net_rows.append(f"""
+<div class="net-row">
+  <div class="net-team">{team_link(o, v['team_name'])}</div>
+  <div class="net-bar-track">{bar}</div>
+  <div class="net-value {'luck-pos' if v['net']>0 else ('luck-neg' if v['net']<0 else '')}">{v['net']:+d}</div>
+</div>""")
+
+    # --- trade ledgers, grouped by season ---
+    def trade_ledger(trades, seasons_desc=True):
+        by_season = {}
+        for t in trades:
+            by_season.setdefault(t["season"], []).append(t)
+        seasons = sorted(by_season.keys(), key=lambda s: -int(s) if seasons_desc else int(s))
+        cards = []
+        for season in seasons:
+            rows = "".join(
+                f"""<tr>
+<td class="rd">Rd {t['round']}</td>
+<td>{team_link(t['from_owner'], t['from_name'])}</td>
+<td class="arrow">&rarr;</td>
+<td>{team_link(t['to_owner'], t['to_name'])}</td>
+</tr>"""
+                for t in sorted(by_season[season], key=lambda t: t["round"])
+            )
+            cards.append(f"""
+<div class="season-card">
+  <h3>{season}</h3>
+  <table class="roster-table trade-ledger">
+    <tbody>{rows}</tbody>
+  </table>
+</div>""")
+        return "".join(cards)
+
+    body = f"""
+<header class="league-header">
+  <h1>Draft Capital Flow</h1>
+  <p class="league-summary">Every draft pick trade in league history, 2019 through the 2028 class. "Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
+</header>
+
+<section class="analytics-section">
+  <h2>All-Time Net Draft Capital</h2>
+  <div class="net-chart">{"".join(net_rows)}</div>
+</section>
+
+<section class="analytics-section">
+  <h2>Future Pick Trades (2026-2028)</h2>
+  <div class="history-list">{trade_ledger(draft_flow["future_trades"], seasons_desc=False)}</div>
+</section>
+
+<section class="analytics-section">
+  <h2>Historical Pick Trades (2019-2025)</h2>
+  <div class="history-list">{trade_ledger(draft_flow["historical_trades"])}</div>
+</section>
+"""
+    return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
 CSS = """
@@ -462,13 +659,26 @@ a:hover { text-decoration: underline; }
 .season-note { color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
 .season-champ { margin: 0 0 10px; font-size: 0.95rem; }
 .season-standings { font-size: 0.85rem; }
-.season-standings .place { color: var(--text-muted); font-weight: 700; }
+.season-standings .rank { color: var(--text-muted); font-weight: 700; }
+.badge-finish { font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+.badge-finish.badge-1 { color: var(--retool); }
+.badge-finish.badge-2, .badge-finish.badge-3 { color: var(--text-muted); }
+.badge-finish.badge-none { color: var(--text-muted); opacity: 0.5; }
 
 .h2h-section { margin-top: 8px; }
 .h2h-scroll { overflow-x: auto; }
 .h2h-table { border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
 .h2h-table th, .h2h-table td { padding: 7px 9px; text-align: center; border: 1px solid var(--border); }
 .h2h-row-label { text-align: left !important; font-weight: 600; position: sticky; left: 0; background: var(--bg); }
+.h2h-col-label { vertical-align: bottom; padding: 8px 4px !important; height: 150px; }
+.h2h-col-label span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
 .h2h-self { background: var(--border); }
 .h2h-none { color: var(--text-muted); }
 .h2h-winning { color: var(--contender); font-weight: 700; }
@@ -577,6 +787,37 @@ a:hover { text-decoration: underline; }
 .history-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
 .hist-year { color: var(--text-muted); font-weight: 600; }
 
+.analytics-section { margin-bottom: 40px; }
+.section-note { color: var(--text-muted); font-size: 0.88rem; max-width: 68ch; margin: 4px 0 16px; }
+.luck-pos { color: var(--contender); font-weight: 700; }
+.luck-neg { color: var(--winnow); font-weight: 700; }
+.tx-total { font-weight: 700; }
+
+.pos-legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); }
+.pos-legend-item { display: flex; align-items: center; gap: 5px; }
+.pos-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.pos-chart { display: flex; flex-direction: column; gap: 10px; }
+.pos-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 10px; }
+.pos-team { font-size: 0.85rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pos-bar { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--border); }
+.pos-seg { height: 100%; }
+@media (max-width: 560px) {
+  .pos-row { grid-template-columns: 1fr; }
+}
+
+.net-chart { display: flex; flex-direction: column; gap: 8px; }
+.net-row { display: grid; grid-template-columns: 150px 1fr 40px; align-items: center; gap: 10px; font-size: 0.85rem; }
+.net-team { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.net-bar-track { display: flex; align-items: center; height: 14px; }
+.net-bar-neg { height: 100%; background: var(--winnow); border-radius: 3px 0 0 3px; margin-left: auto; }
+.net-bar-mid { width: 2px; height: 100%; background: var(--border); }
+.net-bar-pos { height: 100%; background: var(--contender); border-radius: 0 3px 3px 0; }
+.net-value { font-weight: 700; text-align: right; }
+
+.trade-ledger td { font-size: 0.85rem; padding: 5px 8px; }
+.trade-ledger .rd { color: var(--text-muted); font-weight: 600; width: 55px; }
+.trade-ledger .arrow { color: var(--text-muted); width: 20px; text-align: center; }
+
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 """
 
@@ -605,7 +846,15 @@ def main():
     h2h_html = build_head_to_head_page(h2h_matrix, teams)
     (DOCS_DIR / "head-to-head.html").write_text(h2h_html)
 
-    print(f"Built {len(teams)} team pages + index + history + head-to-head into {DOCS_DIR}")
+    analytics = load("analytics.json")
+    analytics_html = build_analytics_page(analytics, teams)
+    (DOCS_DIR / "analytics.html").write_text(analytics_html)
+
+    draft_flow = load("draft_flow.json")
+    draft_flow_html = build_draft_flow_page(draft_flow, teams)
+    (DOCS_DIR / "draft-flow.html").write_text(draft_flow_html)
+
+    print(f"Built {len(teams)} team pages + index + history + head-to-head + analytics + draft-flow into {DOCS_DIR}")
 
 
 if __name__ == "__main__":

@@ -50,6 +50,15 @@ def fetch_season(season, league_id):
     except Exception:
         winners_bracket = []
 
+    transactions_by_week = {}
+    for week in range(1, num_weeks):
+        t = get(f"{BASE}/league/{league_id}/transactions/{week}")
+        if t:
+            transactions_by_week[week] = t
+
+    traded_picks = get(f"{BASE}/league/{league_id}/traded_picks")
+    draft_picks = get(f"{BASE}/draft/{league['draft_id']}/picks")
+
     return {
         "season": season,
         "league_id": league_id,
@@ -58,6 +67,9 @@ def fetch_season(season, league_id):
         "rosters": rosters,
         "matchups_by_week": matchups_by_week,
         "winners_bracket": winners_bracket,
+        "transactions_by_week": transactions_by_week,
+        "traded_picks": traded_picks,
+        "draft_picks": draft_picks,
     }
 
 

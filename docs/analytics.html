@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics — Ethel's Dynasty</title>
+<meta name="description" content="All-play luck, positional scoring trends, and trade/transaction activity.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="site-nav"><span class="nav-brand">Ethel's Dynasty</span><div class="nav-links"><a class="nav-link" href="index.html">Power Rankings</a><a class="nav-link" href="history.html">League History</a><a class="nav-link" href="head-to-head.html">Head-to-Head</a><a class="nav-link active" href="analytics.html">Analytics</a><a class="nav-link" href="draft-flow.html">Draft Capital Flow</a></div></nav>
+<div class="page">
+
+<header class="league-header">
+  <h1>Analytics</h1>
+  <p class="league-summary">Advanced stats computed from every game played since 2019: all-play luck, positional scoring mix, and roster-management activity. Games against the phantom bye team and 2022-2025 week-14 median games are excluded, same as Head-to-Head.</p>
+</header>
+
+<section class="analytics-section">
+  <h2>Luck: Record vs. All-Play Expectation</h2>
+  <p class="section-note">"Expected wins" is how many games a team's weekly score would have beaten if it had played every other team that week, summed across every real matchup week since 2019. Positive luck means the team has won more than its scoring would predict; negative means the opposite &mdash; often true of high-scoring teams that still run into a big week from an opponent.</p>
+  <table class="roster-table">
+    <thead><tr><th>Team</th><th>Actual Wins</th><th>Expected Wins</th><th>Luck</th></tr></thead>
+    <tbody><tr>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td>22</td>
+<td>19.8</td>
+<td class="luck-pos">+2.2</td>
+</tr><tr>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td>26</td>
+<td>24.2</td>
+<td class="luck-pos">+1.8</td>
+</tr><tr>
+<td><a href="team-11.html">The Factory</a></td>
+<td>39</td>
+<td>38.0</td>
+<td class="luck-pos">+1.0</td>
+</tr><tr>
+<td><a href="team-6.html">Mattpao</a></td>
+<td>46</td>
+<td>45.3</td>
+<td class="luck-pos">+0.7</td>
+</tr><tr>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td>46.5</td>
+<td>47.8</td>
+<td class="luck-neg">-1.3</td>
+</tr><tr>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td>63</td>
+<td>65.4</td>
+<td class="luck-neg">-2.4</td>
+</tr><tr>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td>58</td>
+<td>62.3</td>
+<td class="luck-neg">-4.3</td>
+</tr><tr>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td>47</td>
+<td>51.4</td>
+<td class="luck-neg">-4.4</td>
+</tr><tr>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td>64.5</td>
+<td>69.5</td>
+<td class="luck-neg">-5.0</td>
+</tr><tr>
+<td><a href="team-9.html">BateBoul</a></td>
+<td>48</td>
+<td>53.5</td>
+<td class="luck-neg">-5.5</td>
+</tr><tr>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td>60</td>
+<td>66.7</td>
+<td class="luck-neg">-6.7</td>
+</tr><tr>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td>46</td>
+<td>52.8</td>
+<td class="luck-neg">-6.8</td>
+</tr></tbody>
+  </table>
+</section>
+
+<section class="analytics-section">
+  <h2>Career Positional Scoring Mix</h2>
+  <p class="section-note">Share of each team's all-time starter points that has come from each position, since 2019.</p>
+  <div class="pos-legend"><span class="pos-legend-item"><span class="pos-swatch" style="background:#7c93f0"></span>QB</span><span class="pos-legend-item"><span class="pos-swatch" style="background:#3fb97d"></span>RB</span><span class="pos-legend-item"><span class="pos-swatch" style="background:#d9a635"></span>WR</span><span class="pos-legend-item"><span class="pos-swatch" style="background:#e0664a"></span>TE</span></div>
+  <div class="pos-chart">
+<div class="pos-row">
+  <div class="pos-team"><a href="team-9.html">BateBoul</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:22.4%;background:#7c93f0" title="QB: 2528 pts (22%)"></span><span class="pos-seg" style="width:27.8%;background:#3fb97d" title="RB: 3146 pts (28%)"></span><span class="pos-seg" style="width:36.7%;background:#d9a635" title="WR: 4149 pts (37%)"></span><span class="pos-seg" style="width:13.1%;background:#e0664a" title="TE: 1484 pts (13%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-7.html">Brock Hard</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:18.0%;background:#7c93f0" title="QB: 2263 pts (18%)"></span><span class="pos-seg" style="width:37.7%;background:#3fb97d" title="RB: 4746 pts (38%)"></span><span class="pos-seg" style="width:35.2%;background:#d9a635" title="WR: 4426 pts (35%)"></span><span class="pos-seg" style="width:9.1%;background:#e0664a" title="TE: 1143 pts (9%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-2.html">DickTatorMiller</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:19.6%;background:#7c93f0" title="QB: 2186 pts (20%)"></span><span class="pos-seg" style="width:30.1%;background:#3fb97d" title="RB: 3364 pts (30%)"></span><span class="pos-seg" style="width:42.3%;background:#d9a635" title="WR: 4725 pts (42%)"></span><span class="pos-seg" style="width:7.9%;background:#e0664a" title="TE: 884 pts (8%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-4.html">Fuck Michael Thomas</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:21.1%;background:#7c93f0" title="QB: 2334 pts (21%)"></span><span class="pos-seg" style="width:30.2%;background:#3fb97d" title="RB: 3346 pts (30%)"></span><span class="pos-seg" style="width:32.5%;background:#d9a635" title="WR: 3601 pts (33%)"></span><span class="pos-seg" style="width:16.2%;background:#e0664a" title="TE: 1794 pts (16%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-8.html">Long Live Wopo </a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:21.7%;background:#7c93f0" title="QB: 2642 pts (22%)"></span><span class="pos-seg" style="width:34.8%;background:#3fb97d" title="RB: 4248 pts (35%)"></span><span class="pos-seg" style="width:35.6%;background:#d9a635" title="WR: 4342 pts (36%)"></span><span class="pos-seg" style="width:7.9%;background:#e0664a" title="TE: 969 pts (8%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-6.html">Mattpao</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:19.6%;background:#7c93f0" title="QB: 2028 pts (20%)"></span><span class="pos-seg" style="width:39.5%;background:#3fb97d" title="RB: 4103 pts (40%)"></span><span class="pos-seg" style="width:32.3%;background:#d9a635" title="WR: 3355 pts (32%)"></span><span class="pos-seg" style="width:8.6%;background:#e0664a" title="TE: 888 pts (9%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-12.html">Nikkis’ Victims</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:17.8%;background:#7c93f0" title="QB: 1238 pts (18%)"></span><span class="pos-seg" style="width:32.9%;background:#3fb97d" title="RB: 2285 pts (33%)"></span><span class="pos-seg" style="width:37.1%;background:#d9a635" title="WR: 2573 pts (37%)"></span><span class="pos-seg" style="width:12.2%;background:#e0664a" title="TE: 843 pts (12%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-3.html">The Cheese Children </a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:20.1%;background:#7c93f0" title="QB: 2348 pts (20%)"></span><span class="pos-seg" style="width:28.0%;background:#3fb97d" title="RB: 3283 pts (28%)"></span><span class="pos-seg" style="width:43.4%;background:#d9a635" title="WR: 5085 pts (43%)"></span><span class="pos-seg" style="width:8.5%;background:#e0664a" title="TE: 991 pts (8%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-1.html">The Chicken Boys🐔</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:17.8%;background:#7c93f0" title="QB: 2283 pts (18%)"></span><span class="pos-seg" style="width:32.4%;background:#3fb97d" title="RB: 4142 pts (32%)"></span><span class="pos-seg" style="width:38.2%;background:#d9a635" title="WR: 4891 pts (38%)"></span><span class="pos-seg" style="width:11.6%;background:#e0664a" title="TE: 1478 pts (12%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-10.html">The Choo Choo Crew</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:19.8%;background:#7c93f0" title="QB: 769 pts (20%)"></span><span class="pos-seg" style="width:40.8%;background:#3fb97d" title="RB: 1584 pts (41%)"></span><span class="pos-seg" style="width:31.1%;background:#d9a635" title="WR: 1210 pts (31%)"></span><span class="pos-seg" style="width:8.3%;background:#e0664a" title="TE: 321 pts (8%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-11.html">The Factory</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:25.6%;background:#7c93f0" title="QB: 2549 pts (26%)"></span><span class="pos-seg" style="width:27.8%;background:#3fb97d" title="RB: 2770 pts (28%)"></span><span class="pos-seg" style="width:38.3%;background:#d9a635" title="WR: 3816 pts (38%)"></span><span class="pos-seg" style="width:8.3%;background:#e0664a" title="TE: 822 pts (8%)"></span></div>
+</div>
+<div class="pos-row">
+  <div class="pos-team"><a href="team-5.html">The Moon Unit</a></div>
+  <div class="pos-bar"><span class="pos-seg" style="width:17.0%;background:#7c93f0" title="QB: 2135 pts (17%)"></span><span class="pos-seg" style="width:32.7%;background:#3fb97d" title="RB: 4114 pts (33%)"></span><span class="pos-seg" style="width:43.6%;background:#d9a635" title="WR: 5480 pts (44%)"></span><span class="pos-seg" style="width:6.7%;background:#e0664a" title="TE: 845 pts (7%)"></span></div>
+</div></div>
+</section>
+
+<section class="analytics-section">
+  <h2>Roster Management Activity</h2>
+  <p class="section-note">All-time transaction counts by type, since 2019.</p>
+  <table class="roster-table">
+    <thead><tr><th>Team</th><th>Trades</th><th>Waiver Claims</th><th>Free Agent Adds</th><th>Total</th></tr></thead>
+    <tbody><tr>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td>31</td>
+<td>30</td>
+<td>195</td>
+<td class="tx-total">256</td>
+</tr><tr>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td>31</td>
+<td>33</td>
+<td>118</td>
+<td class="tx-total">182</td>
+</tr><tr>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td>28</td>
+<td>16</td>
+<td>137</td>
+<td class="tx-total">181</td>
+</tr><tr>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td>16</td>
+<td>11</td>
+<td>116</td>
+<td class="tx-total">143</td>
+</tr><tr>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td>28</td>
+<td>12</td>
+<td>71</td>
+<td class="tx-total">111</td>
+</tr><tr>
+<td><a href="team-6.html">Mattpao</a></td>
+<td>19</td>
+<td>18</td>
+<td>71</td>
+<td class="tx-total">108</td>
+</tr><tr>
+<td><a href="team-11.html">The Factory</a></td>
+<td>22</td>
+<td>15</td>
+<td>69</td>
+<td class="tx-total">106</td>
+</tr><tr>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td>20</td>
+<td>15</td>
+<td>70</td>
+<td class="tx-total">105</td>
+</tr><tr>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td>14</td>
+<td>20</td>
+<td>71</td>
+<td class="tx-total">105</td>
+</tr><tr>
+<td><a href="team-9.html">BateBoul</a></td>
+<td>10</td>
+<td>16</td>
+<td>67</td>
+<td class="tx-total">93</td>
+</tr><tr>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td>16</td>
+<td>8</td>
+<td>54</td>
+<td class="tx-total">78</td>
+</tr><tr>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td>12</td>
+<td>7</td>
+<td>28</td>
+<td class="tx-total">47</td>
+</tr></tbody>
+  </table>
+</section>
+
+<section class="analytics-section">
+  <h2>Top Trade Partners</h2>
+  <p class="section-note">The pairs of teams that have traded with each other the most, all-time.</p>
+  <table class="roster-table">
+    <thead><tr><th>Pair</th><th>Trades</th></tr></thead>
+    <tbody><tr>
+<td><a href="team-12.html">Nikkis’ Victims</a> &harr; <a href="team-7.html">Brock Hard</a></td>
+<td>8</td>
+</tr><tr>
+<td><a href="team-5.html">The Moon Unit</a> &harr; <a href="team-6.html">Mattpao</a></td>
+<td>6</td>
+</tr><tr>
+<td><a href="team-1.html">The Chicken Boys🐔</a> &harr; <a href="team-7.html">Brock Hard</a></td>
+<td>6</td>
+</tr><tr>
+<td><a href="team-2.html">DickTatorMiller</a> &harr; <a href="team-1.html">The Chicken Boys🐔</a></td>
+<td>5</td>
+</tr><tr>
+<td><a href="team-12.html">Nikkis’ Victims</a> &harr; <a href="team-4.html">Fuck Michael Thomas</a></td>
+<td>5</td>
+</tr><tr>
+<td><a href="team-1.html">The Chicken Boys🐔</a> &harr; <a href="team-11.html">The Factory</a></td>
+<td>4</td>
+</tr><tr>
+<td><a href="team-2.html">DickTatorMiller</a> &harr; <a href="team-7.html">Brock Hard</a></td>
+<td>4</td>
+</tr><tr>
+<td><a href="team-5.html">The Moon Unit</a> &harr; <a href="team-4.html">Fuck Michael Thomas</a></td>
+<td>3</td>
+</tr><tr>
+<td><a href="team-5.html">The Moon Unit</a> &harr; <a href="team-7.html">Brock Hard</a></td>
+<td>3</td>
+</tr><tr>
+<td><a href="team-1.html">The Chicken Boys🐔</a> &harr; <a href="team-6.html">Mattpao</a></td>
+<td>3</td>
+</tr></tbody>
+  </table>
+</section>
+
+</div>
+</body>
+</html>

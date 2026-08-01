@@ -18,26 +18,6 @@
     "third": "Fuck Michael Thomas",
     "standings": [
       {
-        "owner_id": "394253124748980224",
-        "team_name": "Long Live Wopo ",
-        "wins": 9,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1341.56,
-        "points_against": 1361.26,
-        "place": 1
-      },
-      {
-        "owner_id": "390894031879553024",
-        "team_name": "DickTatorMiller",
-        "wins": 7,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1333.32,
-        "points_against": 1206.82,
-        "place": 2
-      },
-      {
         "owner_id": "394251491289911296",
         "team_name": "Fuck Michael Thomas",
         "wins": 9,
@@ -48,14 +28,14 @@
         "place": 3
       },
       {
-        "owner_id": "394252975431766016",
-        "team_name": "Brock Hard",
-        "wins": 8,
-        "losses": 5,
+        "owner_id": "394253124748980224",
+        "team_name": "Long Live Wopo ",
+        "wins": 9,
+        "losses": 4,
         "ties": 0,
-        "points_for": 1236.72,
-        "points_against": 1110.58,
-        "place": 4
+        "points_for": 1341.56,
+        "points_against": 1361.26,
+        "place": 1
       },
       {
         "owner_id": "407246708687314944",
@@ -68,8 +48,28 @@
         "place": 5
       },
       {
+        "owner_id": "394252975431766016",
+        "team_name": "Brock Hard",
+        "wins": 8,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1236.72,
+        "points_against": 1110.58,
+        "place": 4
+      },
+      {
+        "owner_id": "390894031879553024",
+        "team_name": "DickTatorMiller",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1333.32,
+        "points_against": 1206.82,
+        "place": 2
+      },
+      {
         "owner_id": "394252838206713856",
-        "team_name": "(departed team)",
+        "team_name": "Sexy Wentzy",
         "wins": 7,
         "losses": 6,
         "ties": 0,
@@ -119,7 +119,7 @@
       },
       {
         "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
+        "team_name": "LTeamCaptain",
         "wins": 4,
         "losses": 9,
         "ties": 0,
@@ -145,7 +145,7 @@
     "champion_owner_id": "394248955468185600",
     "runner_up": "Brock Hard",
     "runner_up_owner_id": "394252975431766016",
-    "third": "(departed team)",
+    "third": "Nick Gives Me A Chubb",
     "standings": [
       {
         "owner_id": "394248955468185600",
@@ -158,26 +158,6 @@
         "place": 1
       },
       {
-        "owner_id": "394252975431766016",
-        "team_name": "Brock Hard",
-        "wins": 10,
-        "losses": 3,
-        "ties": 0,
-        "points_for": 1445.56,
-        "points_against": 1203.36,
-        "place": 2
-      },
-      {
-        "owner_id": "394252838206713856",
-        "team_name": "(departed team)",
-        "wins": 7,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1425.62,
-        "points_against": 1296.06,
-        "place": 3
-      },
-      {
         "owner_id": "390894031879553024",
         "team_name": "DickTatorMiller",
         "wins": 11,
@@ -188,6 +168,16 @@
         "place": 4
       },
       {
+        "owner_id": "394252975431766016",
+        "team_name": "Brock Hard",
+        "wins": 10,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1445.56,
+        "points_against": 1203.36,
+        "place": 2
+      },
+      {
         "owner_id": "394226654450315264",
         "team_name": "The Cheese Children ",
         "wins": 8,
@@ -196,6 +186,16 @@
         "points_for": 1304.9,
         "points_against": 1275.28,
         "place": 5
+      },
+      {
+        "owner_id": "394252838206713856",
+        "team_name": "Nick Gives Me A Chubb",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1425.62,
+        "points_against": 1296.06,
+        "place": 3
       },
       {
         "owner_id": "407246708687314944",
@@ -249,7 +249,7 @@
       },
       {
         "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
+        "team_name": "Team 12 ",
         "wins": 3,
         "losses": 10,
         "ties": 0,
@@ -278,26 +278,6 @@
     "third": "Brock Hard",
     "standings": [
       {
-        "owner_id": "394248955468185600",
-        "team_name": "The Chicken Boys\ud83d\udc14",
-        "wins": 9,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1466.16,
-        "points_against": 1202.08,
-        "place": 1
-      },
-      {
-        "owner_id": "394531785582608384",
-        "team_name": "The Factory",
-        "wins": 8,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 1048.2,
-        "points_against": 1098.96,
-        "place": 2
-      },
-      {
         "owner_id": "394252975431766016",
         "team_name": "Brock Hard",
         "wins": 9,
@@ -306,6 +286,16 @@
         "points_for": 1548.68,
         "points_against": 1188.2,
         "place": 3
+      },
+      {
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1466.16,
+        "points_against": 1202.08,
+        "place": 1
       },
       {
         "owner_id": "394251491289911296",
@@ -318,16 +308,6 @@
         "place": 4
       },
       {
-        "owner_id": "394226654450315264",
-        "team_name": "The Cheese Children ",
-        "wins": 7,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1430.6,
-        "points_against": 1181.4,
-        "place": 5
-      },
-      {
         "owner_id": "407246708687314944",
         "team_name": "Mattpao",
         "wins": 8,
@@ -338,8 +318,28 @@
         "place": 6
       },
       {
+        "owner_id": "394531785582608384",
+        "team_name": "The Factory",
+        "wins": 8,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1048.2,
+        "points_against": 1098.96,
+        "place": 2
+      },
+      {
+        "owner_id": "394226654450315264",
+        "team_name": "The Cheese Children ",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1430.6,
+        "points_against": 1181.4,
+        "place": 5
+      },
+      {
         "owner_id": "394252838206713856",
-        "team_name": "(departed team)",
+        "team_name": "BeHated",
         "wins": 7,
         "losses": 6,
         "ties": 0,
@@ -379,7 +379,7 @@
       },
       {
         "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
+        "team_name": "\ud83d\udc51Team 45\ud83d\udc51",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -418,16 +418,6 @@
     "third": "Brock Hard",
     "standings": [
       {
-        "owner_id": "394248955468185600",
-        "team_name": "The Chicken Boys\ud83d\udc14",
-        "wins": 9,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1395.6,
-        "points_against": 1152.6,
-        "place": 1
-      },
-      {
         "owner_id": "394253124748980224",
         "team_name": "Long Live Wopo ",
         "wins": 11,
@@ -438,6 +428,26 @@
         "place": 2
       },
       {
+        "owner_id": "394252838206713856",
+        "team_name": "BeHated",
+        "wins": 10,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1542.52,
+        "points_against": 1123.08,
+        "place": 4
+      },
+      {
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1395.6,
+        "points_against": 1152.6,
+        "place": 1
+      },
+      {
         "owner_id": "394252975431766016",
         "team_name": "Brock Hard",
         "wins": 9,
@@ -446,16 +456,6 @@
         "points_for": 1290.46,
         "points_against": 1082.46,
         "place": 3
-      },
-      {
-        "owner_id": "394252838206713856",
-        "team_name": "(departed team)",
-        "wins": 10,
-        "losses": 3,
-        "ties": 0,
-        "points_for": 1542.52,
-        "points_against": 1123.08,
-        "place": 4
       },
       {
         "owner_id": "393989477577588736",
@@ -489,7 +489,7 @@
       },
       {
         "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
+        "team_name": "LastChanceUniversity\ud83c\uddf7\ud83c\uddfa",
         "wins": 7,
         "losses": 6,
         "ties": 0,
@@ -558,26 +558,6 @@
     "third": "The Moon Unit",
     "standings": [
       {
-        "owner_id": "394248955468185600",
-        "team_name": "The Chicken Boys\ud83d\udc14",
-        "wins": 10,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1747.04,
-        "points_against": 1288.76,
-        "place": 1
-      },
-      {
-        "owner_id": "407246708687314944",
-        "team_name": "Mattpao",
-        "wins": 8,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1214.26,
-        "points_against": 1193.38,
-        "place": 2
-      },
-      {
         "owner_id": "393989477577588736",
         "team_name": "The Moon Unit",
         "wins": 12,
@@ -586,6 +566,16 @@
         "points_for": 1645.22,
         "points_against": 1081.98,
         "place": 3
+      },
+      {
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "wins": 10,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1747.04,
+        "points_against": 1288.76,
+        "place": 1
       },
       {
         "owner_id": "394252975431766016",
@@ -599,13 +589,23 @@
       },
       {
         "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
+        "team_name": "\ud83c\udff3\ufe0f\u200d\ud83c\udf08ALLAS ARMY\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
         "wins": 8,
         "losses": 6,
         "ties": 0,
         "points_for": 1225.42,
         "points_against": 1125.2,
         "place": 5
+      },
+      {
+        "owner_id": "407246708687314944",
+        "team_name": "Mattpao",
+        "wins": 8,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1214.26,
+        "points_against": 1193.38,
+        "place": 2
       },
       {
         "owner_id": "394531785582608384",
@@ -619,7 +619,7 @@
       },
       {
         "owner_id": "394252838206713856",
-        "team_name": "(departed team)",
+        "team_name": "BeHated",
         "wins": 8,
         "losses": 6,
         "ties": 0,
@@ -698,16 +698,6 @@
     "third": "BateBoul",
     "standings": [
       {
-        "owner_id": "394253124748980224",
-        "team_name": "Long Live Wopo ",
-        "wins": 8,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1578.0,
-        "points_against": 1281.6,
-        "place": 1
-      },
-      {
         "owner_id": "1065778674277945344",
         "team_name": "The Choo Choo Crew",
         "wins": 12,
@@ -726,6 +716,16 @@
         "points_for": 1622.56,
         "points_against": 1262.78,
         "place": 3
+      },
+      {
+        "owner_id": "406674259818065920",
+        "team_name": "\ud83c\udff3\ufe0f\u200d\ud83c\udf08ALLAS ARMY\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+        "wins": 11,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1453.08,
+        "points_against": 1265.74,
+        "place": 6
       },
       {
         "owner_id": "394252975431766016",
@@ -748,14 +748,14 @@
         "place": 5
       },
       {
-        "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
-        "wins": 11,
-        "losses": 3,
+        "owner_id": "394253124748980224",
+        "team_name": "Long Live Wopo ",
+        "wins": 8,
+        "losses": 6,
         "ties": 0,
-        "points_for": 1453.08,
-        "points_against": 1265.74,
-        "place": 6
+        "points_for": 1578.0,
+        "points_against": 1281.6,
+        "place": 1
       },
       {
         "owner_id": "393989477577588736",
@@ -838,16 +838,6 @@
     "third": "The Choo Choo Crew",
     "standings": [
       {
-        "owner_id": "393989477577588736",
-        "team_name": "The Moon Unit",
-        "wins": 11,
-        "losses": 3,
-        "ties": 0,
-        "points_for": 1626.14,
-        "points_against": 1331.42,
-        "place": 1
-      },
-      {
         "owner_id": "394491025806135296",
         "team_name": "BateBoul",
         "wins": 12,
@@ -866,6 +856,26 @@
         "points_for": 1498.42,
         "points_against": 1082.18,
         "place": 3
+      },
+      {
+        "owner_id": "393989477577588736",
+        "team_name": "The Moon Unit",
+        "wins": 11,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1626.14,
+        "points_against": 1331.42,
+        "place": 1
+      },
+      {
+        "owner_id": "406674259818065920",
+        "team_name": "\ud83c\udff3\ufe0f\u200d\ud83c\udf08ALLAS ARMY\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+        "wins": 8,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1512.72,
+        "points_against": 1124.96,
+        "place": null
       },
       {
         "owner_id": "394253124748980224",
@@ -896,16 +906,6 @@
         "points_for": 1149.74,
         "points_against": 1183.96,
         "place": 6
-      },
-      {
-        "owner_id": "406674259818065920",
-        "team_name": "(departed team)",
-        "wins": 8,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1512.72,
-        "points_against": 1124.96,
-        "place": null
       },
       {
         "owner_id": "394252975431766016",

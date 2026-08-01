@@ -78,13 +78,26 @@ a:hover { text-decoration: underline; }
 .season-note { color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
 .season-champ { margin: 0 0 10px; font-size: 0.95rem; }
 .season-standings { font-size: 0.85rem; }
-.season-standings .place { color: var(--text-muted); font-weight: 700; }
+.season-standings .rank { color: var(--text-muted); font-weight: 700; }
+.badge-finish { font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+.badge-finish.badge-1 { color: var(--retool); }
+.badge-finish.badge-2, .badge-finish.badge-3 { color: var(--text-muted); }
+.badge-finish.badge-none { color: var(--text-muted); opacity: 0.5; }
 
 .h2h-section { margin-top: 8px; }
 .h2h-scroll { overflow-x: auto; }
 .h2h-table { border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
 .h2h-table th, .h2h-table td { padding: 7px 9px; text-align: center; border: 1px solid var(--border); }
 .h2h-row-label { text-align: left !important; font-weight: 600; position: sticky; left: 0; background: var(--bg); }
+.h2h-col-label { vertical-align: bottom; padding: 8px 4px !important; height: 150px; }
+.h2h-col-label span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
 .h2h-self { background: var(--border); }
 .h2h-none { color: var(--text-muted); }
 .h2h-winning { color: var(--contender); font-weight: 700; }
@@ -192,5 +205,36 @@ a:hover { text-decoration: underline; }
 .history-table th { text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .history-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
 .hist-year { color: var(--text-muted); font-weight: 600; }
+
+.analytics-section { margin-bottom: 40px; }
+.section-note { color: var(--text-muted); font-size: 0.88rem; max-width: 68ch; margin: 4px 0 16px; }
+.luck-pos { color: var(--contender); font-weight: 700; }
+.luck-neg { color: var(--winnow); font-weight: 700; }
+.tx-total { font-weight: 700; }
+
+.pos-legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); }
+.pos-legend-item { display: flex; align-items: center; gap: 5px; }
+.pos-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.pos-chart { display: flex; flex-direction: column; gap: 10px; }
+.pos-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 10px; }
+.pos-team { font-size: 0.85rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pos-bar { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--border); }
+.pos-seg { height: 100%; }
+@media (max-width: 560px) {
+  .pos-row { grid-template-columns: 1fr; }
+}
+
+.net-chart { display: flex; flex-direction: column; gap: 8px; }
+.net-row { display: grid; grid-template-columns: 150px 1fr 40px; align-items: center; gap: 10px; font-size: 0.85rem; }
+.net-team { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.net-bar-track { display: flex; align-items: center; height: 14px; }
+.net-bar-neg { height: 100%; background: var(--winnow); border-radius: 3px 0 0 3px; margin-left: auto; }
+.net-bar-mid { width: 2px; height: 100%; background: var(--border); }
+.net-bar-pos { height: 100%; background: var(--contender); border-radius: 0 3px 3px 0; }
+.net-value { font-weight: 700; text-align: right; }
+
+.trade-ledger td { font-size: 0.85rem; padding: 5px 8px; }
+.trade-ledger .rd { color: var(--text-muted); font-weight: 600; width: 55px; }
+.trade-ledger .arrow { color: var(--text-muted); width: 20px; text-align: center; }
 
 .site-footer { margin-top: 60px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }

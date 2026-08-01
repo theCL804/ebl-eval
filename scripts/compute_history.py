@@ -47,6 +47,9 @@ def season_summary(season, data, owner_to_name):
     rosters = data["rosters"]
     roster_owner = {r["roster_id"]: r["owner_id"] for r in rosters}
     placements = build_placements(data["winners_bracket"])
+    season_name_by_owner = {
+        u["user_id"]: (u.get("metadata") or {}).get("team_name") or u["display_name"] for u in data["users"]
+    }
 
     standings = []
     for r in rosters:
@@ -56,10 +59,11 @@ def season_summary(season, data, owner_to_name):
         settings = r["settings"]
         fpts = settings.get("fpts", 0) + settings.get("fpts_decimal", 0) / 100
         fpts_against = settings.get("fpts_against", 0) + settings.get("fpts_against_decimal", 0) / 100
+        name = owner_to_name.get(owner_id) or season_name_by_owner.get(owner_id) or "(unknown team)"
         standings.append(
             {
                 "owner_id": owner_id,
-                "team_name": owner_to_name.get(owner_id, "(departed team)"),
+                "team_name": name,
                 "wins": settings.get("wins", 0),
                 "losses": settings.get("losses", 0),
                 "ties": settings.get("ties", 0),
@@ -69,7 +73,10 @@ def season_summary(season, data, owner_to_name):
             }
         )
 
-    standings.sort(key=lambda s: (s["place"] if s["place"] else 99, -s["wins"], -s["points_for"]))
+    # sort by regular-season record first (what a "standings" table means),
+    # not by final playoff finish -- upsets in the bracket are shown as a
+    # separate place/badge rather than reordering the table
+    standings.sort(key=lambda s: (-s["wins"], -s["points_for"]))
     champion = next((s for s in standings if s["place"] == 1), None)
     runner_up = next((s for s in standings if s["place"] == 2), None)
     third = next((s for s in standings if s["place"] == 3), None)
