@@ -197,17 +197,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [
-            {
-              "player_id": "8180",
-              "name": "Jalen Nailor",
-              "position": "WR",
-              "team": "LV"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
@@ -215,6 +204,17 @@
               "name": "Jacoby Brissett",
               "position": "QB",
               "team": "ARI"
+            }
+          ],
+          "picks": []
+        },
+        "336348640681398272": {
+          "players": [
+            {
+              "player_id": "8180",
+              "name": "Jalen Nailor",
+              "position": "WR",
+              "team": "LV"
             }
           ],
           "picks": []
@@ -235,17 +235,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [
-            {
-              "player_id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB",
-              "team": "HOU"
-            }
-          ],
-          "picks": []
-        },
         "394531785582608384": {
           "players": [
             {
@@ -261,6 +250,17 @@
               "round": 2
             }
           ]
+        },
+        "390894031879553024": {
+          "players": [
+            {
+              "player_id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB",
+              "team": "HOU"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -314,6 +314,15 @@
         "394531785582608384"
       ],
       "sides": {
+        "394531785582608384": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2027",
+              "round": 2
+            }
+          ]
+        },
         "393989477577588736": {
           "players": [
             {
@@ -324,15 +333,6 @@
             }
           ],
           "picks": []
-        },
-        "394531785582608384": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2027",
-              "round": 2
-            }
-          ]
         }
       },
       "team_names": {
@@ -350,6 +350,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "8134",
+              "name": "Khalil Shakir",
+              "position": "WR",
+              "team": "BUF"
+            }
+          ],
+          "picks": []
+        },
         "1065778674277945344": {
           "players": [
             {
@@ -365,17 +376,6 @@
               "round": 3
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "8134",
-              "name": "Khalil Shakir",
-              "position": "WR",
-              "team": "BUF"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -547,22 +547,6 @@
         "394251491289911296"
       ],
       "sides": {
-        "394251491289911296": {
-          "players": [
-            {
-              "player_id": "9754",
-              "name": "Quentin Johnston",
-              "position": "WR",
-              "team": "LAC"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2026",
-              "round": 1
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -579,6 +563,22 @@
             }
           ],
           "picks": []
+        },
+        "394251491289911296": {
+          "players": [
+            {
+              "player_id": "9754",
+              "name": "Quentin Johnston",
+              "position": "WR",
+              "team": "LAC"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2026",
+              "round": 1
+            }
+          ]
         }
       },
       "team_names": {
@@ -596,17 +596,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "9500",
-              "name": "Josh Downs",
-              "position": "WR",
-              "team": "IND"
-            }
-          ],
-          "picks": []
-        },
         "394531785582608384": {
           "players": [
             {
@@ -626,6 +615,17 @@
               "round": 2
             }
           ]
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "9500",
+              "name": "Josh Downs",
+              "position": "WR",
+              "team": "IND"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -800,28 +800,6 @@
         "394491025806135296"
       ],
       "sides": {
-        "394491025806135296": {
-          "players": [
-            {
-              "player_id": "3294",
-              "name": "Dak Prescott",
-              "position": "QB",
-              "team": "DAL"
-            },
-            {
-              "player_id": "7564",
-              "name": "Ja'Marr Chase",
-              "position": "WR",
-              "team": "CIN"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2026",
-              "round": 2
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -843,6 +821,28 @@
               "round": 1
             }
           ]
+        },
+        "394491025806135296": {
+          "players": [
+            {
+              "player_id": "3294",
+              "name": "Dak Prescott",
+              "position": "QB",
+              "team": "DAL"
+            },
+            {
+              "player_id": "7564",
+              "name": "Ja'Marr Chase",
+              "position": "WR",
+              "team": "CIN"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2026",
+              "round": 2
+            }
+          ]
         }
       },
       "team_names": {
@@ -860,6 +860,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "1479",
+              "name": "Keenan Allen",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
         "394248955468185600": {
           "players": [],
           "picks": [
@@ -872,17 +883,6 @@
               "round": 4
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "1479",
-              "name": "Keenan Allen",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -977,22 +977,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [
-            {
-              "player_id": "3198",
-              "name": "Derrick Henry",
-              "position": "RB",
-              "team": "BAL"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2027",
-              "round": 1
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1009,6 +993,22 @@
             }
           ],
           "picks": []
+        },
+        "390894031879553024": {
+          "players": [
+            {
+              "player_id": "3198",
+              "name": "Derrick Henry",
+              "position": "RB",
+              "team": "BAL"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2027",
+              "round": 1
+            }
+          ]
         }
       },
       "team_names": {
@@ -1026,19 +1026,6 @@
         "336348640681398272"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2027",
-              "round": 1
-            },
-            {
-              "season": "2027",
-              "round": 2
-            }
-          ]
-        },
         "1065778674277945344": {
           "players": [
             {
@@ -1052,6 +1039,19 @@
             {
               "season": "2026",
               "round": 1
+            }
+          ]
+        },
+        "336348640681398272": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2027",
+              "round": 1
+            },
+            {
+              "season": "2027",
+              "round": 2
             }
           ]
         }
@@ -1071,17 +1071,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "8408",
-              "name": "Jordan Mason",
-              "position": "RB",
-              "team": "MIN"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1089,6 +1078,17 @@
               "name": "Deebo Samuel",
               "position": "WR",
               "team": "SF"
+            }
+          ],
+          "picks": []
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "8408",
+              "name": "Jordan Mason",
+              "position": "RB",
+              "team": "MIN"
             }
           ],
           "picks": []
@@ -1109,6 +1109,15 @@
         "394248955468185600"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 1
+            }
+          ]
+        },
         "394248955468185600": {
           "players": [
             {
@@ -1118,15 +1127,6 @@
               "team": "DAL"
             }
           ],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 1
-            }
-          ]
-        },
-        "394226654450315264": {
-          "players": [],
           "picks": [
             {
               "season": "2025",
@@ -1203,15 +1203,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 2
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1222,6 +1213,15 @@
             }
           ],
           "picks": []
+        },
+        "394248955468185600": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 2
+            }
+          ]
         }
       },
       "team_names": {
@@ -1282,17 +1282,6 @@
         "394248955468185600"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "9753",
-              "name": "Zach Charbonnet",
-              "position": "RB",
-              "team": "SEA"
-            }
-          ],
-          "picks": []
-        },
         "1065778674277945344": {
           "players": [
             {
@@ -1300,6 +1289,17 @@
               "name": "Khalil Shakir",
               "position": "WR",
               "team": "BUF"
+            }
+          ],
+          "picks": []
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "9753",
+              "name": "Zach Charbonnet",
+              "position": "RB",
+              "team": "SEA"
             }
           ],
           "picks": []
@@ -1356,22 +1356,6 @@
         "393989477577588736"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "8138",
-              "name": "James Cook",
-              "position": "RB",
-              "team": "BUF"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2026",
-              "round": 3
-            }
-          ]
-        },
         "1065778674277945344": {
           "players": [
             {
@@ -1385,6 +1369,22 @@
             {
               "season": "2025",
               "round": 2
+            }
+          ]
+        },
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "8138",
+              "name": "James Cook",
+              "position": "RB",
+              "team": "BUF"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2026",
+              "round": 3
             }
           ]
         }
@@ -1445,28 +1445,6 @@
         "394226654450315264"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [
-            {
-              "player_id": "11620",
-              "name": "Rome Odunze",
-              "position": "WR",
-              "team": "CHI"
-            }
-          ],
-          "picks": []
-        },
-        "1065778674277945344": {
-          "players": [
-            {
-              "player_id": "6813",
-              "name": "Jonathan Taylor",
-              "position": "RB",
-              "team": "IND"
-            }
-          ],
-          "picks": []
-        },
         "394226654450315264": {
           "players": [
             {
@@ -1486,6 +1464,28 @@
               "round": 1
             }
           ]
+        },
+        "1065778674277945344": {
+          "players": [
+            {
+              "player_id": "6813",
+              "name": "Jonathan Taylor",
+              "position": "RB",
+              "team": "IND"
+            }
+          ],
+          "picks": []
+        },
+        "336348640681398272": {
+          "players": [
+            {
+              "player_id": "11620",
+              "name": "Rome Odunze",
+              "position": "WR",
+              "team": "CHI"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -1504,15 +1504,6 @@
         "394226654450315264"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 3
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -1523,6 +1514,15 @@
             }
           ],
           "picks": []
+        },
+        "390894031879553024": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 3
+            }
+          ]
         }
       },
       "team_names": {
@@ -1540,15 +1540,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 3
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1559,6 +1550,15 @@
             }
           ],
           "picks": []
+        },
+        "394248955468185600": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 3
+            }
+          ]
         }
       },
       "team_names": {
@@ -1576,6 +1576,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "5892",
+              "name": "David Montgomery",
+              "position": "RB",
+              "team": "HOU"
+            }
+          ],
+          "picks": []
+        },
         "390894031879553024": {
           "players": [],
           "picks": [
@@ -1588,17 +1599,6 @@
               "round": 2
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "5892",
-              "name": "David Montgomery",
-              "position": "RB",
-              "team": "HOU"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -1616,15 +1616,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 3
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1635,6 +1626,15 @@
             }
           ],
           "picks": []
+        },
+        "336348640681398272": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 3
+            }
+          ]
         }
       },
       "team_names": {
@@ -1652,22 +1652,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "6819",
-              "name": "Michael Pittman",
-              "position": "WR",
-              "team": "PIT"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 3
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -1687,6 +1671,22 @@
             {
               "season": "2025",
               "round": 2
+            }
+          ]
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "6819",
+              "name": "Michael Pittman",
+              "position": "WR",
+              "team": "PIT"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 3
             }
           ]
         }
@@ -1742,19 +1742,6 @@
         "336348640681398272"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 1
-            },
-            {
-              "season": "2026",
-              "round": 1
-            }
-          ]
-        },
         "1065778674277945344": {
           "players": [
             {
@@ -1778,6 +1765,19 @@
             {
               "season": "2026",
               "round": 3
+            }
+          ]
+        },
+        "336348640681398272": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 1
+            },
+            {
+              "season": "2026",
+              "round": 1
             }
           ]
         }
@@ -1833,17 +1833,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "4046",
-              "name": "Patrick Mahomes",
-              "position": "QB",
-              "team": "KC"
-            }
-          ],
-          "picks": []
-        },
         "394531785582608384": {
           "players": [
             {
@@ -1857,6 +1846,17 @@
               "name": "Zamir White",
               "position": "RB",
               "team": null
+            }
+          ],
+          "picks": []
+        },
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB",
+              "team": "KC"
             }
           ],
           "picks": []
@@ -1877,6 +1877,15 @@
         "394531785582608384"
       ],
       "sides": {
+        "394531785582608384": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 4
+            }
+          ]
+        },
         "394251491289911296": {
           "players": [],
           "picks": [
@@ -1886,15 +1895,6 @@
             },
             {
               "season": "2025",
-              "round": 4
-            }
-          ]
-        },
-        "394531785582608384": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
               "round": 4
             }
           ]
@@ -1951,6 +1951,19 @@
         "394251491289911296"
       ],
       "sides": {
+        "394251491289911296": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 1
+            },
+            {
+              "season": "2026",
+              "round": 2
+            }
+          ]
+        },
         "394248955468185600": {
           "players": [
             {
@@ -1967,19 +1980,6 @@
             }
           ],
           "picks": []
-        },
-        "394251491289911296": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 1
-            },
-            {
-              "season": "2026",
-              "round": 2
-            }
-          ]
         }
       },
       "team_names": {
@@ -1997,20 +1997,20 @@
         "394531785582608384"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 1
-            }
-          ]
-        },
         "394531785582608384": {
           "players": [],
           "picks": [
             {
               "season": "2025",
+              "round": 1
+            }
+          ]
+        },
+        "390894031879553024": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
               "round": 1
             }
           ]
@@ -2074,6 +2074,19 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 1
+            },
+            {
+              "season": "2024",
+              "round": 2
+            }
+          ]
+        },
         "390894031879553024": {
           "players": [
             {
@@ -2093,19 +2106,6 @@
             {
               "season": "2024",
               "round": 1
-            }
-          ]
-        },
-        "394252975431766016": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 1
-            },
-            {
-              "season": "2024",
-              "round": 2
             }
           ]
         }
@@ -2167,6 +2167,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "5846",
+              "name": "DK Metcalf",
+              "position": "WR",
+              "team": "PIT"
+            }
+          ],
+          "picks": []
+        },
         "394251491289911296": {
           "players": [],
           "picks": [
@@ -2179,17 +2190,6 @@
               "round": 1
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "5846",
-              "name": "DK Metcalf",
-              "position": "WR",
-              "team": "PIT"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -2207,15 +2207,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "394531785582608384": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 2
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -2226,6 +2217,15 @@
             }
           ],
           "picks": []
+        },
+        "394531785582608384": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 2
+            }
+          ]
         }
       },
       "team_names": {
@@ -2243,17 +2243,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [
-            {
-              "player_id": "9226",
-              "name": "De'Von Achane",
-              "position": "RB",
-              "team": "MIA"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
@@ -2269,6 +2258,17 @@
               "round": 2
             }
           ]
+        },
+        "336348640681398272": {
+          "players": [
+            {
+              "player_id": "9226",
+              "name": "De'Von Achane",
+              "position": "RB",
+              "team": "MIA"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -2286,17 +2286,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "1065778674277945344": {
-          "players": [
-            {
-              "player_id": "8138",
-              "name": "James Cook",
-              "position": "RB",
-              "team": "BUF"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
@@ -2316,6 +2305,17 @@
               "round": 3
             }
           ]
+        },
+        "1065778674277945344": {
+          "players": [
+            {
+              "player_id": "8138",
+              "name": "James Cook",
+              "position": "RB",
+              "team": "BUF"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -2333,6 +2333,15 @@
         "407246708687314944"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 1
+            }
+          ]
+        },
         "407246708687314944": {
           "players": [
             {
@@ -2343,15 +2352,6 @@
             }
           ],
           "picks": []
-        },
-        "394252975431766016": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 1
-            }
-          ]
         }
       },
       "team_names": {
@@ -2369,17 +2369,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [
-            {
-              "player_id": "5927",
-              "name": "Terry McLaurin",
-              "position": "WR",
-              "team": "WAS"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [],
           "picks": [
@@ -2396,6 +2385,17 @@
               "round": 2
             }
           ]
+        },
+        "336348640681398272": {
+          "players": [
+            {
+              "player_id": "5927",
+              "name": "Terry McLaurin",
+              "position": "WR",
+              "team": "WAS"
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -2557,17 +2557,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [
-            {
-              "player_id": "8132",
-              "name": "Tyler Allgeier",
-              "position": "RB",
-              "team": "ARI"
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
@@ -2575,6 +2564,17 @@
               "name": "Gus Edwards",
               "position": "RB",
               "team": null
+            }
+          ],
+          "picks": []
+        },
+        "390894031879553024": {
+          "players": [
+            {
+              "player_id": "8132",
+              "name": "Tyler Allgeier",
+              "position": "RB",
+              "team": "ARI"
             }
           ],
           "picks": []
@@ -2595,15 +2595,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 1
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -2620,6 +2611,15 @@
             }
           ],
           "picks": []
+        },
+        "336348640681398272": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 1
+            }
+          ]
         }
       },
       "team_names": {
@@ -2637,22 +2637,6 @@
         "394253124748980224"
       ],
       "sides": {
-        "394253124748980224": {
-          "players": [
-            {
-              "player_id": "4039",
-              "name": "Cooper Kupp",
-              "position": "WR",
-              "team": "SEA"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2024",
-              "round": 2
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -2666,6 +2650,22 @@
             {
               "season": "2025",
               "round": 1
+            }
+          ]
+        },
+        "394253124748980224": {
+          "players": [
+            {
+              "player_id": "4039",
+              "name": "Cooper Kupp",
+              "position": "WR",
+              "team": "SEA"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2024",
+              "round": 2
             }
           ]
         }
@@ -2685,22 +2685,6 @@
         "394226654450315264"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [
-            {
-              "player_id": "8228",
-              "name": "Jaylen Warren",
-              "position": "RB",
-              "team": "PIT"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2025",
-              "round": 1
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -2720,6 +2704,22 @@
               "round": 3
             }
           ]
+        },
+        "336348640681398272": {
+          "players": [
+            {
+              "player_id": "8228",
+              "name": "Jaylen Warren",
+              "position": "RB",
+              "team": "PIT"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2025",
+              "round": 1
+            }
+          ]
         }
       },
       "team_names": {
@@ -2737,6 +2737,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "1339",
+              "name": "Zach Ertz",
+              "position": "TE",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
         "336348640681398272": {
           "players": [],
           "picks": [
@@ -2749,17 +2760,6 @@
               "round": 3
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "1339",
-              "name": "Zach Ertz",
-              "position": "TE",
-              "team": null
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -2777,6 +2777,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "6819",
+              "name": "Michael Pittman",
+              "position": "WR",
+              "team": "PIT"
+            }
+          ],
+          "picks": []
+        },
         "336348640681398272": {
           "players": [
             {
@@ -2792,17 +2803,6 @@
               "round": 1
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "6819",
-              "name": "Michael Pittman",
-              "position": "WR",
-              "team": "PIT"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -2856,6 +2856,17 @@
         "393989477577588736"
       ],
       "sides": {
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "5844",
+              "name": "T.J. Hockenson",
+              "position": "TE",
+              "team": "MIN"
+            }
+          ],
+          "picks": []
+        },
         "390894031879553024": {
           "players": [
             {
@@ -2877,17 +2888,6 @@
               "round": 1
             }
           ]
-        },
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "5844",
-              "name": "T.J. Hockenson",
-              "position": "TE",
-              "team": "MIN"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -2939,15 +2939,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2023",
-              "round": 2
-            }
-          ]
-        },
         "394531785582608384": {
           "players": [
             {
@@ -2957,6 +2948,15 @@
               "team": null
             }
           ],
+          "picks": [
+            {
+              "season": "2023",
+              "round": 2
+            }
+          ]
+        },
+        "336348640681398272": {
+          "players": [],
           "picks": [
             {
               "season": "2023",
@@ -2980,6 +2980,22 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "2319",
+              "name": "DeVante Parker",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": [
+            {
+              "season": "2023",
+              "round": 2
+            }
+          ]
+        },
         "336348640681398272": {
           "players": [
             {
@@ -2996,22 +3012,6 @@
             },
             {
               "season": "2024",
-              "round": 2
-            }
-          ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "2319",
-              "name": "DeVante Parker",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": [
-            {
-              "season": "2023",
               "round": 2
             }
           ]
@@ -3032,6 +3032,15 @@
         "394531785582608384"
       ],
       "sides": {
+        "394531785582608384": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2023",
+              "round": 1
+            }
+          ]
+        },
         "390894031879553024": {
           "players": [
             {
@@ -3041,15 +3050,6 @@
               "team": "HOU"
             }
           ],
-          "picks": [
-            {
-              "season": "2023",
-              "round": 1
-            }
-          ]
-        },
-        "394531785582608384": {
-          "players": [],
           "picks": [
             {
               "season": "2023",
@@ -3073,13 +3073,13 @@
         "394531785582608384"
       ],
       "sides": {
-        "394248955468185600": {
+        "394531785582608384": {
           "players": [
             {
-              "player_id": "6797",
-              "name": "Justin Herbert",
-              "position": "QB",
-              "team": "LAC"
+              "player_id": "5001",
+              "name": "Dalton Schultz",
+              "position": "TE",
+              "team": "HOU"
             }
           ],
           "picks": [
@@ -3089,13 +3089,13 @@
             }
           ]
         },
-        "394531785582608384": {
+        "394248955468185600": {
           "players": [
             {
-              "player_id": "5001",
-              "name": "Dalton Schultz",
-              "position": "TE",
-              "team": "HOU"
+              "player_id": "6797",
+              "name": "Justin Herbert",
+              "position": "QB",
+              "team": "LAC"
             }
           ],
           "picks": [
@@ -3121,15 +3121,6 @@
         "394531785582608384"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2023",
-              "round": 1
-            }
-          ]
-        },
         "394531785582608384": {
           "players": [
             {
@@ -3145,6 +3136,15 @@
               "team": null
             }
           ],
+          "picks": [
+            {
+              "season": "2023",
+              "round": 1
+            }
+          ]
+        },
+        "393989477577588736": {
+          "players": [],
           "picks": [
             {
               "season": "2023",
@@ -3723,6 +3723,15 @@
         "406674259818065920"
       ],
       "sides": {
+        "406674259818065920": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2022",
+              "round": 2
+            }
+          ]
+        },
         "336348640681398272": {
           "players": [
             {
@@ -3733,15 +3742,6 @@
             }
           ],
           "picks": []
-        },
-        "406674259818065920": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2022",
-              "round": 2
-            }
-          ]
         }
       },
       "team_names": {
@@ -3759,6 +3759,19 @@
         "390894031879553024"
       ],
       "sides": {
+        "336348640681398272": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2022",
+              "round": 2
+            },
+            {
+              "season": "2023",
+              "round": 2
+            }
+          ]
+        },
         "390894031879553024": {
           "players": [
             {
@@ -3772,19 +3785,6 @@
             {
               "season": "2022",
               "round": 3
-            }
-          ]
-        },
-        "336348640681398272": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2022",
-              "round": 2
-            },
-            {
-              "season": "2023",
-              "round": 2
             }
           ]
         }
@@ -3804,6 +3804,15 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2022",
+              "round": 2
+            }
+          ]
+        },
         "394248955468185600": {
           "players": [
             {
@@ -3814,15 +3823,6 @@
             }
           ],
           "picks": []
-        },
-        "394252975431766016": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2022",
-              "round": 2
-            }
-          ]
         }
       },
       "team_names": {
@@ -3876,15 +3876,6 @@
         "394226654450315264"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 1
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [],
           "picks": [
@@ -3899,6 +3890,15 @@
             {
               "season": "2021",
               "round": 3
+            }
+          ]
+        },
+        "393989477577588736": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 1
             }
           ]
         }
@@ -3918,6 +3918,15 @@
         "394491025806135296"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 1
+            }
+          ]
+        },
         "394491025806135296": {
           "players": [
             {
@@ -3933,15 +3942,6 @@
               "team": "PHI"
             }
           ],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 1
-            }
-          ]
-        },
-        "394226654450315264": {
-          "players": [],
           "picks": [
             {
               "season": "2021",
@@ -3965,6 +3965,17 @@
         "394531785582608384"
       ],
       "sides": {
+        "394531785582608384": {
+          "players": [
+            {
+              "player_id": "4035",
+              "name": "Alvin Kamara",
+              "position": "RB",
+              "team": "NO"
+            }
+          ],
+          "picks": []
+        },
         "394248955468185600": {
           "players": [
             {
@@ -3990,17 +4001,6 @@
               "round": 2
             }
           ]
-        },
-        "394531785582608384": {
-          "players": [
-            {
-              "player_id": "4035",
-              "name": "Alvin Kamara",
-              "position": "RB",
-              "team": "NO"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -4018,22 +4018,6 @@
         "394251491289911296"
       ],
       "sides": {
-        "394251491289911296": {
-          "players": [
-            {
-              "player_id": "4199",
-              "name": "Aaron Jones",
-              "position": "RB",
-              "team": "MIN"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 2
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -4053,6 +4037,22 @@
               "round": 1
             }
           ]
+        },
+        "394251491289911296": {
+          "players": [
+            {
+              "player_id": "4199",
+              "name": "Aaron Jones",
+              "position": "RB",
+              "team": "MIN"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 2
+            }
+          ]
         }
       },
       "team_names": {
@@ -4070,22 +4070,6 @@
         "394253124748980224"
       ],
       "sides": {
-        "394253124748980224": {
-          "players": [
-            {
-              "player_id": "5110",
-              "name": "Russell Gage",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": [
-            {
-              "season": "2022",
-              "round": 2
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -4099,6 +4083,22 @@
             {
               "season": "2022",
               "round": 3
+            }
+          ]
+        },
+        "394253124748980224": {
+          "players": [
+            {
+              "player_id": "5110",
+              "name": "Russell Gage",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": [
+            {
+              "season": "2022",
+              "round": 2
             }
           ]
         }
@@ -4118,22 +4118,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "2118",
-              "name": "Eric Ebron",
-              "position": "TE",
-              "team": "PIT"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 2
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -4147,6 +4131,22 @@
             {
               "season": "2021",
               "round": 3
+            }
+          ]
+        },
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "2118",
+              "name": "Eric Ebron",
+              "position": "TE",
+              "team": "PIT"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 2
             }
           ]
         }
@@ -4166,6 +4166,17 @@
         "394491025806135296"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [
+            {
+              "player_id": "1049",
+              "name": "Ryan Tannehill",
+              "position": "QB",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
         "394491025806135296": {
           "players": [
             {
@@ -4181,17 +4192,6 @@
               "round": 3
             }
           ]
-        },
-        "394226654450315264": {
-          "players": [
-            {
-              "player_id": "1049",
-              "name": "Ryan Tannehill",
-              "position": "QB",
-              "team": null
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -4209,17 +4209,6 @@
         "394253124748980224"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [
-            {
-              "player_id": "1234",
-              "name": "Russell Wilson",
-              "position": "QB",
-              "team": null
-            }
-          ],
-          "picks": []
-        },
         "394253124748980224": {
           "players": [
             {
@@ -4235,6 +4224,17 @@
               "round": 3
             }
           ]
+        },
+        "390894031879553024": {
+          "players": [
+            {
+              "player_id": "1234",
+              "name": "Russell Wilson",
+              "position": "QB",
+              "team": null
+            }
+          ],
+          "picks": []
         }
       },
       "team_names": {
@@ -4252,22 +4252,6 @@
         "394252975431766016"
       ],
       "sides": {
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR",
-              "team": "NE"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 3
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -4289,6 +4273,22 @@
               "round": 2
             }
           ]
+        },
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR",
+              "team": "NE"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 3
+            }
+          ]
         }
       },
       "team_names": {
@@ -4307,23 +4307,6 @@
         "394491025806135296"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "1466",
-              "name": "Travis Kelce",
-              "position": "TE",
-              "team": "KC"
-            },
-            {
-              "player_id": "2331",
-              "name": "Breshad Perriman",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": []
-        },
         "394491025806135296": {
           "players": [
             {
@@ -4355,6 +4338,23 @@
               "round": 1
             }
           ]
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "1466",
+              "name": "Travis Kelce",
+              "position": "TE",
+              "team": "KC"
+            },
+            {
+              "player_id": "2331",
+              "name": "Breshad Perriman",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": []
         },
         "393989477577588736": {
           "players": [
@@ -4497,10 +4497,6 @@
         "394226654450315264"
       ],
       "sides": {
-        "390894031879553024": {
-          "players": [],
-          "picks": []
-        },
         "394226654450315264": {
           "players": [],
           "picks": [
@@ -4509,6 +4505,10 @@
               "round": 4
             }
           ]
+        },
+        "390894031879553024": {
+          "players": [],
+          "picks": []
         }
       },
       "team_names": {
@@ -4667,6 +4667,22 @@
         "394253124748980224"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [
+            {
+              "player_id": "4039",
+              "name": "Cooper Kupp",
+              "position": "WR",
+              "team": "SEA"
+            }
+          ],
+          "picks": [
+            {
+              "season": "2021",
+              "round": 2
+            }
+          ]
+        },
         "394253124748980224": {
           "players": [
             {
@@ -4686,22 +4702,6 @@
             {
               "season": "2021",
               "round": 1
-            }
-          ]
-        },
-        "394226654450315264": {
-          "players": [
-            {
-              "player_id": "4039",
-              "name": "Cooper Kupp",
-              "position": "WR",
-              "team": "SEA"
-            }
-          ],
-          "picks": [
-            {
-              "season": "2021",
-              "round": 2
             }
           ]
         }
@@ -4860,6 +4860,17 @@
         "393989477577588736"
       ],
       "sides": {
+        "393989477577588736": {
+          "players": [
+            {
+              "player_id": "4037",
+              "name": "Chris Godwin",
+              "position": "WR",
+              "team": "TB"
+            }
+          ],
+          "picks": []
+        },
         "390894031879553024": {
           "players": [
             {
@@ -4875,17 +4886,6 @@
               "round": 1
             }
           ]
-        },
-        "393989477577588736": {
-          "players": [
-            {
-              "player_id": "4037",
-              "name": "Chris Godwin",
-              "position": "WR",
-              "team": "TB"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -4980,6 +4980,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [
+            {
+              "player_id": "1339",
+              "name": "Zach Ertz",
+              "position": "TE",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
         "394252975431766016": {
           "players": [
             {
@@ -5038,17 +5049,6 @@
               "round": 4
             }
           ]
-        },
-        "394226654450315264": {
-          "players": [
-            {
-              "player_id": "1339",
-              "name": "Zach Ertz",
-              "position": "TE",
-              "team": null
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -5067,6 +5067,17 @@
         "394252975431766016"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "3198",
+              "name": "Derrick Henry",
+              "position": "RB",
+              "team": "BAL"
+            }
+          ],
+          "picks": []
+        },
         "393989477577588736": {
           "players": [
             {
@@ -5096,17 +5107,6 @@
               "round": 2
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "3198",
-              "name": "Derrick Henry",
-              "position": "RB",
-              "team": "BAL"
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -5211,15 +5211,6 @@
         "406674259818065920"
       ],
       "sides": {
-        "406674259818065920": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2020",
-              "round": 1
-            }
-          ]
-        },
         "394252975431766016": {
           "players": [
             {
@@ -5236,6 +5227,15 @@
             }
           ],
           "picks": []
+        },
+        "406674259818065920": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2020",
+              "round": 1
+            }
+          ]
         }
       },
       "team_names": {
@@ -5253,6 +5253,15 @@
         "394531785582608384"
       ],
       "sides": {
+        "394226654450315264": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2020",
+              "round": 3
+            }
+          ]
+        },
         "394531785582608384": {
           "players": [
             {
@@ -5263,15 +5272,6 @@
             }
           ],
           "picks": []
-        },
-        "394226654450315264": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2020",
-              "round": 3
-            }
-          ]
         }
       },
       "team_names": {
@@ -5327,6 +5327,15 @@
         "394531785582608384"
       ],
       "sides": {
+        "394531785582608384": {
+          "players": [],
+          "picks": [
+            {
+              "season": "2020",
+              "round": 2
+            }
+          ]
+        },
         "394248955468185600": {
           "players": [
             {
@@ -5337,15 +5346,6 @@
             }
           ],
           "picks": []
-        },
-        "394531785582608384": {
-          "players": [],
-          "picks": [
-            {
-              "season": "2020",
-              "round": 2
-            }
-          ]
         }
       },
       "team_names": {
@@ -5363,6 +5363,23 @@
         "394253124748980224"
       ],
       "sides": {
+        "394252975431766016": {
+          "players": [
+            {
+              "player_id": "2378",
+              "name": "Tevin Coleman",
+              "position": "RB",
+              "team": null
+            },
+            {
+              "player_id": "3423",
+              "name": "Robbie Chosen",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
         "394253124748980224": {
           "players": [
             {
@@ -5384,23 +5401,6 @@
               "round": 2
             }
           ]
-        },
-        "394252975431766016": {
-          "players": [
-            {
-              "player_id": "2378",
-              "name": "Tevin Coleman",
-              "position": "RB",
-              "team": null
-            },
-            {
-              "player_id": "3423",
-              "name": "Robbie Chosen",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": []
         }
       },
       "team_names": {
@@ -5673,28 +5673,6 @@
         "394248955468185600"
       ],
       "sides": {
-        "394248955468185600": {
-          "players": [
-            {
-              "player_id": "4034",
-              "name": "Christian McCaffrey",
-              "position": "RB",
-              "team": "SF"
-            },
-            {
-              "player_id": "5911",
-              "name": "Jalen Hurd",
-              "position": "WR",
-              "team": null
-            }
-          ],
-          "picks": [
-            {
-              "season": "2020",
-              "round": 2
-            }
-          ]
-        },
         "394226654450315264": {
           "players": [
             {
@@ -5720,6 +5698,28 @@
               "round": 1
             }
           ]
+        },
+        "394248955468185600": {
+          "players": [
+            {
+              "player_id": "4034",
+              "name": "Christian McCaffrey",
+              "position": "RB",
+              "team": "SF"
+            },
+            {
+              "player_id": "5911",
+              "name": "Jalen Hurd",
+              "position": "WR",
+              "team": null
+            }
+          ],
+          "picks": [
+            {
+              "season": "2020",
+              "round": 2
+            }
+          ]
         }
       },
       "team_names": {
@@ -5737,23 +5737,23 @@
         "394531785582608384"
       ],
       "sides": {
-        "394531785582608384": {
-          "players": [
-            {
-              "player_id": "23",
-              "name": "Jason Witten",
-              "position": "TE",
-              "team": null
-            }
-          ],
-          "picks": []
-        },
         "394252975431766016": {
           "players": [
             {
               "player_id": "676",
               "name": "LeSean McCoy",
               "position": "RB",
+              "team": null
+            }
+          ],
+          "picks": []
+        },
+        "394531785582608384": {
+          "players": [
+            {
+              "player_id": "23",
+              "name": "Jason Witten",
+              "position": "TE",
               "team": null
             }
           ],
@@ -5922,17 +5922,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "8180",
-                  "name": "Jalen Nailor",
-                  "position": "WR",
-                  "team": "LV"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -5940,6 +5929,17 @@
                   "name": "Jacoby Brissett",
                   "position": "QB",
                   "team": "ARI"
+                }
+              ],
+              "picks": []
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "8180",
+                  "name": "Jalen Nailor",
+                  "position": "WR",
+                  "team": "LV"
                 }
               ],
               "picks": []
@@ -5960,15 +5960,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 3
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -5979,6 +5970,15 @@
                 }
               ],
               "picks": []
+            },
+            "336348640681398272": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 3
+                }
+              ]
             }
           },
           "team_names": {
@@ -5996,17 +5996,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "9226",
-                  "name": "De'Von Achane",
-                  "position": "RB",
-                  "team": "MIA"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6022,6 +6011,17 @@
                   "round": 2
                 }
               ]
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "9226",
+                  "name": "De'Von Achane",
+                  "position": "RB",
+                  "team": "MIA"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -6039,17 +6039,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "5927",
-                  "name": "Terry McLaurin",
-                  "position": "WR",
-                  "team": "WAS"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [],
               "picks": [
@@ -6066,6 +6055,17 @@
                   "round": 2
                 }
               ]
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "5927",
+                  "name": "Terry McLaurin",
+                  "position": "WR",
+                  "team": "WAS"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -6083,15 +6083,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 1
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6108,6 +6099,15 @@
                 }
               ],
               "picks": []
+            },
+            "336348640681398272": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 1
+                }
+              ]
             }
           },
           "team_names": {
@@ -6125,6 +6125,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "1339",
+                  "name": "Zach Ertz",
+                  "position": "TE",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "336348640681398272": {
               "players": [],
               "picks": [
@@ -6137,17 +6148,6 @@
                   "round": 3
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "1339",
-                  "name": "Zach Ertz",
-                  "position": "TE",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -6165,6 +6165,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "6819",
+                  "name": "Michael Pittman",
+                  "position": "WR",
+                  "team": "PIT"
+                }
+              ],
+              "picks": []
+            },
             "336348640681398272": {
               "players": [
                 {
@@ -6180,17 +6191,6 @@
                   "round": 1
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "6819",
-                  "name": "Michael Pittman",
-                  "position": "WR",
-                  "team": "PIT"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -6208,6 +6208,22 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "2319",
+                  "name": "DeVante Parker",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2023",
+                  "round": 2
+                }
+              ]
+            },
             "336348640681398272": {
               "players": [
                 {
@@ -6224,22 +6240,6 @@
                 },
                 {
                   "season": "2024",
-                  "round": 2
-                }
-              ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "2319",
-                  "name": "DeVante Parker",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2023",
                   "round": 2
                 }
               ]
@@ -6555,6 +6555,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "1479",
+                  "name": "Keenan Allen",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394248955468185600": {
               "players": [],
               "picks": [
@@ -6567,17 +6578,6 @@
                   "round": 4
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "1479",
-                  "name": "Keenan Allen",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -6595,17 +6595,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "8408",
-                  "name": "Jordan Mason",
-                  "position": "RB",
-                  "team": "MIN"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6613,6 +6602,17 @@
                   "name": "Deebo Samuel",
                   "position": "WR",
                   "team": "SF"
+                }
+              ],
+              "picks": []
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "8408",
+                  "name": "Jordan Mason",
+                  "position": "RB",
+                  "team": "MIN"
                 }
               ],
               "picks": []
@@ -6633,15 +6633,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 2
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6652,6 +6643,15 @@
                 }
               ],
               "picks": []
+            },
+            "394248955468185600": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 2
+                }
+              ]
             }
           },
           "team_names": {
@@ -6669,15 +6669,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 3
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6688,6 +6679,15 @@
                 }
               ],
               "picks": []
+            },
+            "394248955468185600": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 3
+                }
+              ]
             }
           },
           "team_names": {
@@ -6705,22 +6705,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "6819",
-                  "name": "Michael Pittman",
-                  "position": "WR",
-                  "team": "PIT"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 3
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -6742,6 +6726,22 @@
                   "round": 2
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "6819",
+                  "name": "Michael Pittman",
+                  "position": "WR",
+                  "team": "PIT"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 3
+                }
+              ]
             }
           },
           "team_names": {
@@ -6759,6 +6759,15 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2022",
+                  "round": 2
+                }
+              ]
+            },
             "394248955468185600": {
               "players": [
                 {
@@ -6769,15 +6778,6 @@
                 }
               ],
               "picks": []
-            },
-            "394252975431766016": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2022",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -7610,23 +7610,6 @@
             "394491025806135296"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "1466",
-                  "name": "Travis Kelce",
-                  "position": "TE",
-                  "team": "KC"
-                },
-                {
-                  "player_id": "2331",
-                  "name": "Breshad Perriman",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": []
-            },
             "394491025806135296": {
               "players": [
                 {
@@ -7658,6 +7641,23 @@
                   "round": 1
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "1466",
+                  "name": "Travis Kelce",
+                  "position": "TE",
+                  "team": "KC"
+                },
+                {
+                  "player_id": "2331",
+                  "name": "Breshad Perriman",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": []
             },
             "393989477577588736": {
               "players": [
@@ -7708,17 +7708,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "9500",
-                  "name": "Josh Downs",
-                  "position": "WR",
-                  "team": "IND"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -7738,6 +7727,17 @@
                   "round": 2
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "9500",
+                  "name": "Josh Downs",
+                  "position": "WR",
+                  "team": "IND"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -7755,13 +7755,13 @@
             "394531785582608384"
           ],
           "sides": {
-            "394248955468185600": {
+            "394531785582608384": {
               "players": [
                 {
-                  "player_id": "6797",
-                  "name": "Justin Herbert",
-                  "position": "QB",
-                  "team": "LAC"
+                  "player_id": "5001",
+                  "name": "Dalton Schultz",
+                  "position": "TE",
+                  "team": "HOU"
                 }
               ],
               "picks": [
@@ -7771,13 +7771,13 @@
                 }
               ]
             },
-            "394531785582608384": {
+            "394248955468185600": {
               "players": [
                 {
-                  "player_id": "5001",
-                  "name": "Dalton Schultz",
-                  "position": "TE",
-                  "team": "HOU"
+                  "player_id": "6797",
+                  "name": "Justin Herbert",
+                  "position": "QB",
+                  "team": "LAC"
                 }
               ],
               "picks": [
@@ -7803,6 +7803,17 @@
             "394531785582608384"
           ],
           "sides": {
+            "394531785582608384": {
+              "players": [
+                {
+                  "player_id": "4035",
+                  "name": "Alvin Kamara",
+                  "position": "RB",
+                  "team": "NO"
+                }
+              ],
+              "picks": []
+            },
             "394248955468185600": {
               "players": [
                 {
@@ -7828,17 +7839,6 @@
                   "round": 2
                 }
               ]
-            },
-            "394531785582608384": {
-              "players": [
-                {
-                  "player_id": "4035",
-                  "name": "Alvin Kamara",
-                  "position": "RB",
-                  "team": "NO"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -7856,6 +7856,15 @@
             "394531785582608384"
           ],
           "sides": {
+            "394531785582608384": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2020",
+                  "round": 2
+                }
+              ]
+            },
             "394248955468185600": {
               "players": [
                 {
@@ -7866,15 +7875,6 @@
                 }
               ],
               "picks": []
-            },
-            "394531785582608384": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2020",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -7902,22 +7902,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [
-                {
-                  "player_id": "3198",
-                  "name": "Derrick Henry",
-                  "position": "RB",
-                  "team": "BAL"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2027",
-                  "round": 1
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -7934,6 +7918,22 @@
                 }
               ],
               "picks": []
+            },
+            "390894031879553024": {
+              "players": [
+                {
+                  "player_id": "3198",
+                  "name": "Derrick Henry",
+                  "position": "RB",
+                  "team": "BAL"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2027",
+                  "round": 1
+                }
+              ]
             }
           },
           "team_names": {
@@ -7951,6 +7951,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "5892",
+                  "name": "David Montgomery",
+                  "position": "RB",
+                  "team": "HOU"
+                }
+              ],
+              "picks": []
+            },
             "390894031879553024": {
               "players": [],
               "picks": [
@@ -7963,17 +7974,6 @@
                   "round": 2
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "5892",
-                  "name": "David Montgomery",
-                  "position": "RB",
-                  "team": "HOU"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -7991,6 +7991,19 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 1
+                },
+                {
+                  "season": "2024",
+                  "round": 2
+                }
+              ]
+            },
             "390894031879553024": {
               "players": [
                 {
@@ -8012,19 +8025,6 @@
                   "round": 1
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 1
-                },
-                {
-                  "season": "2024",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -8042,17 +8042,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [
-                {
-                  "player_id": "8132",
-                  "name": "Tyler Allgeier",
-                  "position": "RB",
-                  "team": "ARI"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -8060,6 +8049,17 @@
                   "name": "Gus Edwards",
                   "position": "RB",
                   "team": null
+                }
+              ],
+              "picks": []
+            },
+            "390894031879553024": {
+              "players": [
+                {
+                  "player_id": "8132",
+                  "name": "Tyler Allgeier",
+                  "position": "RB",
+                  "team": "ARI"
                 }
               ],
               "picks": []
@@ -8090,22 +8090,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "2118",
-                  "name": "Eric Ebron",
-                  "position": "TE",
-                  "team": "PIT"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 2
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -8119,6 +8103,22 @@
                 {
                   "season": "2021",
                   "round": 3
+                }
+              ]
+            },
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "2118",
+                  "name": "Eric Ebron",
+                  "position": "TE",
+                  "team": "PIT"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 2
                 }
               ]
             }
@@ -8138,22 +8138,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "5859",
-                  "name": "A.J. Brown",
-                  "position": "WR",
-                  "team": "NE"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 3
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -8175,6 +8159,22 @@
                   "round": 2
                 }
               ]
+            },
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "5859",
+                  "name": "A.J. Brown",
+                  "position": "WR",
+                  "team": "NE"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 3
+                }
+              ]
             }
           },
           "team_names": {
@@ -8193,6 +8193,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "1339",
+                  "name": "Zach Ertz",
+                  "position": "TE",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394252975431766016": {
               "players": [
                 {
@@ -8251,17 +8262,6 @@
                   "round": 4
                 }
               ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "1339",
-                  "name": "Zach Ertz",
-                  "position": "TE",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -8280,6 +8280,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "3198",
+                  "name": "Derrick Henry",
+                  "position": "RB",
+                  "team": "BAL"
+                }
+              ],
+              "picks": []
+            },
             "393989477577588736": {
               "players": [
                 {
@@ -8309,17 +8320,6 @@
                   "round": 2
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "3198",
-                  "name": "Derrick Henry",
-                  "position": "RB",
-                  "team": "BAL"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -8516,17 +8516,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [
-                {
-                  "player_id": "9758",
-                  "name": "C.J. Stroud",
-                  "position": "QB",
-                  "team": "HOU"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -8542,6 +8531,17 @@
                   "round": 2
                 }
               ]
+            },
+            "390894031879553024": {
+              "players": [
+                {
+                  "player_id": "9758",
+                  "name": "C.J. Stroud",
+                  "position": "QB",
+                  "team": "HOU"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -8559,20 +8559,20 @@
             "394531785582608384"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 1
-                }
-              ]
-            },
             "394531785582608384": {
               "players": [],
               "picks": [
                 {
                   "season": "2025",
+                  "round": 1
+                }
+              ]
+            },
+            "390894031879553024": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
                   "round": 1
                 }
               ]
@@ -8593,6 +8593,15 @@
             "394531785582608384"
           ],
           "sides": {
+            "394531785582608384": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2023",
+                  "round": 1
+                }
+              ]
+            },
             "390894031879553024": {
               "players": [
                 {
@@ -8602,15 +8611,6 @@
                   "team": "HOU"
                 }
               ],
-              "picks": [
-                {
-                  "season": "2023",
-                  "round": 1
-                }
-              ]
-            },
-            "394531785582608384": {
-              "players": [],
               "picks": [
                 {
                   "season": "2023",
@@ -8644,6 +8644,15 @@
             "394531785582608384"
           ],
           "sides": {
+            "394531785582608384": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2027",
+                  "round": 2
+                }
+              ]
+            },
             "393989477577588736": {
               "players": [
                 {
@@ -8654,15 +8663,6 @@
                 }
               ],
               "picks": []
-            },
-            "394531785582608384": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2027",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -8680,17 +8680,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "4046",
-                  "name": "Patrick Mahomes",
-                  "position": "QB",
-                  "team": "KC"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -8704,6 +8693,17 @@
                   "name": "Zamir White",
                   "position": "RB",
                   "team": null
+                }
+              ],
+              "picks": []
+            },
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "4046",
+                  "name": "Patrick Mahomes",
+                  "position": "QB",
+                  "team": "KC"
                 }
               ],
               "picks": []
@@ -8724,15 +8724,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2023",
-                  "round": 1
-                }
-              ]
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -8748,6 +8739,15 @@
                   "team": null
                 }
               ],
+              "picks": [
+                {
+                  "season": "2023",
+                  "round": 1
+                }
+              ]
+            },
+            "393989477577588736": {
+              "players": [],
               "picks": [
                 {
                   "season": "2023",
@@ -8781,28 +8781,6 @@
             "394491025806135296"
           ],
           "sides": {
-            "394491025806135296": {
-              "players": [
-                {
-                  "player_id": "3294",
-                  "name": "Dak Prescott",
-                  "position": "QB",
-                  "team": "DAL"
-                },
-                {
-                  "player_id": "7564",
-                  "name": "Ja'Marr Chase",
-                  "position": "WR",
-                  "team": "CIN"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2026",
-                  "round": 2
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -8824,6 +8802,28 @@
                   "round": 1
                 }
               ]
+            },
+            "394491025806135296": {
+              "players": [
+                {
+                  "player_id": "3294",
+                  "name": "Dak Prescott",
+                  "position": "QB",
+                  "team": "DAL"
+                },
+                {
+                  "player_id": "7564",
+                  "name": "Ja'Marr Chase",
+                  "position": "WR",
+                  "team": "CIN"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2026",
+                  "round": 2
+                }
+              ]
             }
           },
           "team_names": {
@@ -8841,6 +8841,15 @@
             "394491025806135296"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 1
+                }
+              ]
+            },
             "394491025806135296": {
               "players": [
                 {
@@ -8856,15 +8865,6 @@
                   "team": "PHI"
                 }
               ],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 1
-                }
-              ]
-            },
-            "394226654450315264": {
-              "players": [],
               "picks": [
                 {
                   "season": "2021",
@@ -8888,6 +8888,17 @@
             "394491025806135296"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "1049",
+                  "name": "Ryan Tannehill",
+                  "position": "QB",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394491025806135296": {
               "players": [
                 {
@@ -8903,17 +8914,6 @@
                   "round": 3
                 }
               ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "1049",
-                  "name": "Ryan Tannehill",
-                  "position": "QB",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -8941,19 +8941,6 @@
             "336348640681398272"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2027",
-                  "round": 1
-                },
-                {
-                  "season": "2027",
-                  "round": 2
-                }
-              ]
-            },
             "1065778674277945344": {
               "players": [
                 {
@@ -8967,6 +8954,19 @@
                 {
                   "season": "2026",
                   "round": 1
+                }
+              ]
+            },
+            "336348640681398272": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2027",
+                  "round": 1
+                },
+                {
+                  "season": "2027",
+                  "round": 2
                 }
               ]
             }
@@ -8987,28 +8987,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "11620",
-                  "name": "Rome Odunze",
-                  "position": "WR",
-                  "team": "CHI"
-                }
-              ],
-              "picks": []
-            },
-            "1065778674277945344": {
-              "players": [
-                {
-                  "player_id": "6813",
-                  "name": "Jonathan Taylor",
-                  "position": "RB",
-                  "team": "IND"
-                }
-              ],
-              "picks": []
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -9028,6 +9006,28 @@
                   "round": 1
                 }
               ]
+            },
+            "1065778674277945344": {
+              "players": [
+                {
+                  "player_id": "6813",
+                  "name": "Jonathan Taylor",
+                  "position": "RB",
+                  "team": "IND"
+                }
+              ],
+              "picks": []
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "11620",
+                  "name": "Rome Odunze",
+                  "position": "WR",
+                  "team": "CHI"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -9046,19 +9046,6 @@
             "336348640681398272"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 1
-                },
-                {
-                  "season": "2026",
-                  "round": 1
-                }
-              ]
-            },
             "1065778674277945344": {
               "players": [
                 {
@@ -9082,6 +9069,19 @@
                 {
                   "season": "2026",
                   "round": 3
+                }
+              ]
+            },
+            "336348640681398272": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 1
+                },
+                {
+                  "season": "2026",
+                  "round": 1
                 }
               ]
             }
@@ -9486,6 +9486,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "8134",
+                  "name": "Khalil Shakir",
+                  "position": "WR",
+                  "team": "BUF"
+                }
+              ],
+              "picks": []
+            },
             "1065778674277945344": {
               "players": [
                 {
@@ -9501,17 +9512,6 @@
                   "round": 3
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "8134",
-                  "name": "Khalil Shakir",
-                  "position": "WR",
-                  "team": "BUF"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -9529,17 +9529,6 @@
             "394252975431766016"
           ],
           "sides": {
-            "1065778674277945344": {
-              "players": [
-                {
-                  "player_id": "8138",
-                  "name": "James Cook",
-                  "position": "RB",
-                  "team": "BUF"
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -9559,6 +9548,17 @@
                   "round": 3
                 }
               ]
+            },
+            "1065778674277945344": {
+              "players": [
+                {
+                  "player_id": "8138",
+                  "name": "James Cook",
+                  "position": "RB",
+                  "team": "BUF"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -9716,22 +9716,6 @@
             "394251491289911296"
           ],
           "sides": {
-            "394251491289911296": {
-              "players": [
-                {
-                  "player_id": "9754",
-                  "name": "Quentin Johnston",
-                  "position": "WR",
-                  "team": "LAC"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2026",
-                  "round": 1
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -9748,6 +9732,22 @@
                 }
               ],
               "picks": []
+            },
+            "394251491289911296": {
+              "players": [
+                {
+                  "player_id": "9754",
+                  "name": "Quentin Johnston",
+                  "position": "WR",
+                  "team": "LAC"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2026",
+                  "round": 1
+                }
+              ]
             }
           },
           "team_names": {
@@ -9765,22 +9765,6 @@
             "394251491289911296"
           ],
           "sides": {
-            "394251491289911296": {
-              "players": [
-                {
-                  "player_id": "4199",
-                  "name": "Aaron Jones",
-                  "position": "RB",
-                  "team": "MIN"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 2
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -9798,6 +9782,22 @@
                 {
                   "season": "2022",
                   "round": 1
+                }
+              ]
+            },
+            "394251491289911296": {
+              "players": [
+                {
+                  "player_id": "4199",
+                  "name": "Aaron Jones",
+                  "position": "RB",
+                  "team": "MIN"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 2
                 }
               ]
             }
@@ -10018,6 +10018,15 @@
             "394248955468185600"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 1
+                }
+              ]
+            },
             "394248955468185600": {
               "players": [
                 {
@@ -10027,15 +10036,6 @@
                   "team": "DAL"
                 }
               ],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 1
-                }
-              ]
-            },
-            "394226654450315264": {
-              "players": [],
               "picks": [
                 {
                   "season": "2025",
@@ -10059,28 +10059,6 @@
             "394248955468185600"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "4034",
-                  "name": "Christian McCaffrey",
-                  "position": "RB",
-                  "team": "SF"
-                },
-                {
-                  "player_id": "5911",
-                  "name": "Jalen Hurd",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2020",
-                  "round": 2
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -10104,6 +10082,28 @@
                 {
                   "season": "2021",
                   "round": 1
+                }
+              ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "4034",
+                  "name": "Christian McCaffrey",
+                  "position": "RB",
+                  "team": "SF"
+                },
+                {
+                  "player_id": "5911",
+                  "name": "Jalen Hurd",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2020",
+                  "round": 2
                 }
               ]
             }
@@ -10134,28 +10134,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "11620",
-                  "name": "Rome Odunze",
-                  "position": "WR",
-                  "team": "CHI"
-                }
-              ],
-              "picks": []
-            },
-            "1065778674277945344": {
-              "players": [
-                {
-                  "player_id": "6813",
-                  "name": "Jonathan Taylor",
-                  "position": "RB",
-                  "team": "IND"
-                }
-              ],
-              "picks": []
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -10175,6 +10153,28 @@
                   "round": 1
                 }
               ]
+            },
+            "1065778674277945344": {
+              "players": [
+                {
+                  "player_id": "6813",
+                  "name": "Jonathan Taylor",
+                  "position": "RB",
+                  "team": "IND"
+                }
+              ],
+              "picks": []
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "11620",
+                  "name": "Rome Odunze",
+                  "position": "WR",
+                  "team": "CHI"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -10193,22 +10193,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "8228",
-                  "name": "Jaylen Warren",
-                  "position": "RB",
-                  "team": "PIT"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 1
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -10226,6 +10210,22 @@
                 {
                   "season": "2025",
                   "round": 3
+                }
+              ]
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "8228",
+                  "name": "Jaylen Warren",
+                  "position": "RB",
+                  "team": "PIT"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 1
                 }
               ]
             }
@@ -10255,15 +10255,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 3
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -10274,6 +10265,15 @@
                 }
               ],
               "picks": []
+            },
+            "390894031879553024": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 3
+                }
+              ]
             }
           },
           "team_names": {
@@ -10291,10 +10291,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [],
-              "picks": []
-            },
             "394226654450315264": {
               "players": [],
               "picks": [
@@ -10303,6 +10299,10 @@
                   "round": 4
                 }
               ]
+            },
+            "390894031879553024": {
+              "players": [],
+              "picks": []
             }
           },
           "team_names": {
@@ -10330,15 +10330,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "394531785582608384": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 2
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -10349,6 +10340,15 @@
                 }
               ],
               "picks": []
+            },
+            "394531785582608384": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 2
+                }
+              ]
             }
           },
           "team_names": {
@@ -10366,23 +10366,23 @@
             "394531785582608384"
           ],
           "sides": {
-            "394531785582608384": {
-              "players": [
-                {
-                  "player_id": "23",
-                  "name": "Jason Witten",
-                  "position": "TE",
-                  "team": null
-                }
-              ],
-              "picks": []
-            },
             "394252975431766016": {
               "players": [
                 {
                   "player_id": "676",
                   "name": "LeSean McCoy",
                   "position": "RB",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
+            "394531785582608384": {
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Jason Witten",
+                  "position": "TE",
                   "team": null
                 }
               ],
@@ -10414,22 +10414,6 @@
             "394253124748980224"
           ],
           "sides": {
-            "394253124748980224": {
-              "players": [
-                {
-                  "player_id": "4039",
-                  "name": "Cooper Kupp",
-                  "position": "WR",
-                  "team": "SEA"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 2
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -10443,6 +10427,22 @@
                 {
                   "season": "2025",
                   "round": 1
+                }
+              ]
+            },
+            "394253124748980224": {
+              "players": [
+                {
+                  "player_id": "4039",
+                  "name": "Cooper Kupp",
+                  "position": "WR",
+                  "team": "SEA"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 2
                 }
               ]
             }
@@ -10462,6 +10462,22 @@
             "394253124748980224"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "4039",
+                  "name": "Cooper Kupp",
+                  "position": "WR",
+                  "team": "SEA"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 2
+                }
+              ]
+            },
             "394253124748980224": {
               "players": [
                 {
@@ -10481,22 +10497,6 @@
                 {
                   "season": "2021",
                   "round": 1
-                }
-              ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "4039",
-                  "name": "Cooper Kupp",
-                  "position": "WR",
-                  "team": "SEA"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 2
                 }
               ]
             }
@@ -10526,6 +10526,17 @@
             "393989477577588736"
           ],
           "sides": {
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "5844",
+                  "name": "T.J. Hockenson",
+                  "position": "TE",
+                  "team": "MIN"
+                }
+              ],
+              "picks": []
+            },
             "390894031879553024": {
               "players": [
                 {
@@ -10547,17 +10558,6 @@
                   "round": 1
                 }
               ]
-            },
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "5844",
-                  "name": "T.J. Hockenson",
-                  "position": "TE",
-                  "team": "MIN"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -10575,6 +10575,17 @@
             "393989477577588736"
           ],
           "sides": {
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "4037",
+                  "name": "Chris Godwin",
+                  "position": "WR",
+                  "team": "TB"
+                }
+              ],
+              "picks": []
+            },
             "390894031879553024": {
               "players": [
                 {
@@ -10590,17 +10601,6 @@
                   "round": 1
                 }
               ]
-            },
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "4037",
-                  "name": "Chris Godwin",
-                  "position": "WR",
-                  "team": "TB"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -10717,15 +10717,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2021",
-                  "round": 1
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [],
               "picks": [
@@ -10740,6 +10731,15 @@
                 {
                   "season": "2021",
                   "round": 3
+                }
+              ]
+            },
+            "393989477577588736": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2021",
+                  "round": 1
                 }
               ]
             }
@@ -10760,6 +10760,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "1339",
+                  "name": "Zach Ertz",
+                  "position": "TE",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394252975431766016": {
               "players": [
                 {
@@ -10818,17 +10829,6 @@
                   "round": 4
                 }
               ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "1339",
-                  "name": "Zach Ertz",
-                  "position": "TE",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -10857,22 +10857,6 @@
             "394253124748980224"
           ],
           "sides": {
-            "394253124748980224": {
-              "players": [
-                {
-                  "player_id": "5110",
-                  "name": "Russell Gage",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2022",
-                  "round": 2
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -10886,6 +10870,22 @@
                 {
                   "season": "2022",
                   "round": 3
+                }
+              ]
+            },
+            "394253124748980224": {
+              "players": [
+                {
+                  "player_id": "5110",
+                  "name": "Russell Gage",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2022",
+                  "round": 2
                 }
               ]
             }
@@ -10905,6 +10905,23 @@
             "394253124748980224"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "2378",
+                  "name": "Tevin Coleman",
+                  "position": "RB",
+                  "team": null
+                },
+                {
+                  "player_id": "3423",
+                  "name": "Robbie Chosen",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394253124748980224": {
               "players": [
                 {
@@ -10926,23 +10943,6 @@
                   "round": 2
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "2378",
-                  "name": "Tevin Coleman",
-                  "position": "RB",
-                  "team": null
-                },
-                {
-                  "player_id": "3423",
-                  "name": "Robbie Chosen",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -10971,23 +10971,6 @@
             "394491025806135296"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "1466",
-                  "name": "Travis Kelce",
-                  "position": "TE",
-                  "team": "KC"
-                },
-                {
-                  "player_id": "2331",
-                  "name": "Breshad Perriman",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": []
-            },
             "394491025806135296": {
               "players": [
                 {
@@ -11019,6 +11002,23 @@
                   "round": 1
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "1466",
+                  "name": "Travis Kelce",
+                  "position": "TE",
+                  "team": "KC"
+                },
+                {
+                  "player_id": "2331",
+                  "name": "Breshad Perriman",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": []
             },
             "393989477577588736": {
               "players": [
@@ -11322,17 +11322,6 @@
             "394248955468185600"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "9753",
-                  "name": "Zach Charbonnet",
-                  "position": "RB",
-                  "team": "SEA"
-                }
-              ],
-              "picks": []
-            },
             "1065778674277945344": {
               "players": [
                 {
@@ -11340,6 +11329,17 @@
                   "name": "Khalil Shakir",
                   "position": "WR",
                   "team": "BUF"
+                }
+              ],
+              "picks": []
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "9753",
+                  "name": "Zach Charbonnet",
+                  "position": "RB",
+                  "team": "SEA"
                 }
               ],
               "picks": []
@@ -11416,22 +11416,6 @@
             "393989477577588736"
           ],
           "sides": {
-            "393989477577588736": {
-              "players": [
-                {
-                  "player_id": "8138",
-                  "name": "James Cook",
-                  "position": "RB",
-                  "team": "BUF"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2026",
-                  "round": 3
-                }
-              ]
-            },
             "1065778674277945344": {
               "players": [
                 {
@@ -11445,6 +11429,22 @@
                 {
                   "season": "2025",
                   "round": 2
+                }
+              ]
+            },
+            "393989477577588736": {
+              "players": [
+                {
+                  "player_id": "8138",
+                  "name": "James Cook",
+                  "position": "RB",
+                  "team": "BUF"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2026",
+                  "round": 3
                 }
               ]
             }
@@ -11475,28 +11475,6 @@
             "394226654450315264"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [
-                {
-                  "player_id": "11620",
-                  "name": "Rome Odunze",
-                  "position": "WR",
-                  "team": "CHI"
-                }
-              ],
-              "picks": []
-            },
-            "1065778674277945344": {
-              "players": [
-                {
-                  "player_id": "6813",
-                  "name": "Jonathan Taylor",
-                  "position": "RB",
-                  "team": "IND"
-                }
-              ],
-              "picks": []
-            },
             "394226654450315264": {
               "players": [
                 {
@@ -11516,6 +11494,28 @@
                   "round": 1
                 }
               ]
+            },
+            "1065778674277945344": {
+              "players": [
+                {
+                  "player_id": "6813",
+                  "name": "Jonathan Taylor",
+                  "position": "RB",
+                  "team": "IND"
+                }
+              ],
+              "picks": []
+            },
+            "336348640681398272": {
+              "players": [
+                {
+                  "player_id": "11620",
+                  "name": "Rome Odunze",
+                  "position": "WR",
+                  "team": "CHI"
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -11590,6 +11590,15 @@
             "394531785582608384"
           ],
           "sides": {
+            "394531785582608384": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 4
+                }
+              ]
+            },
             "394251491289911296": {
               "players": [],
               "picks": [
@@ -11599,15 +11608,6 @@
                 },
                 {
                   "season": "2025",
-                  "round": 4
-                }
-              ]
-            },
-            "394531785582608384": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
                   "round": 4
                 }
               ]
@@ -11684,6 +11684,19 @@
             "394251491289911296"
           ],
           "sides": {
+            "394251491289911296": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2025",
+                  "round": 1
+                },
+                {
+                  "season": "2026",
+                  "round": 2
+                }
+              ]
+            },
             "394248955468185600": {
               "players": [
                 {
@@ -11700,19 +11713,6 @@
                 }
               ],
               "picks": []
-            },
-            "394251491289911296": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2025",
-                  "round": 1
-                },
-                {
-                  "season": "2026",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -11845,6 +11845,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [
+                {
+                  "player_id": "5846",
+                  "name": "DK Metcalf",
+                  "position": "WR",
+                  "team": "PIT"
+                }
+              ],
+              "picks": []
+            },
             "394251491289911296": {
               "players": [],
               "picks": [
@@ -11857,17 +11868,6 @@
                   "round": 1
                 }
               ]
-            },
-            "394252975431766016": {
-              "players": [
-                {
-                  "player_id": "5846",
-                  "name": "DK Metcalf",
-                  "position": "WR",
-                  "team": "PIT"
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -11895,6 +11895,15 @@
             "407246708687314944"
           ],
           "sides": {
+            "394252975431766016": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2024",
+                  "round": 1
+                }
+              ]
+            },
             "407246708687314944": {
               "players": [
                 {
@@ -11905,15 +11914,6 @@
                 }
               ],
               "picks": []
-            },
-            "394252975431766016": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2024",
-                  "round": 1
-                }
-              ]
             }
           },
           "team_names": {
@@ -11941,15 +11941,6 @@
             "394531785582608384"
           ],
           "sides": {
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2023",
-                  "round": 2
-                }
-              ]
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -11959,6 +11950,15 @@
                   "team": null
                 }
               ],
+              "picks": [
+                {
+                  "season": "2023",
+                  "round": 2
+                }
+              ]
+            },
+            "336348640681398272": {
+              "players": [],
               "picks": [
                 {
                   "season": "2023",
@@ -12200,6 +12200,15 @@
             "406674259818065920"
           ],
           "sides": {
+            "406674259818065920": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2022",
+                  "round": 2
+                }
+              ]
+            },
             "336348640681398272": {
               "players": [
                 {
@@ -12210,15 +12219,6 @@
                 }
               ],
               "picks": []
-            },
-            "406674259818065920": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2022",
-                  "round": 2
-                }
-              ]
             }
           },
           "team_names": {
@@ -12246,6 +12246,19 @@
             "390894031879553024"
           ],
           "sides": {
+            "336348640681398272": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2022",
+                  "round": 2
+                },
+                {
+                  "season": "2023",
+                  "round": 2
+                }
+              ]
+            },
             "390894031879553024": {
               "players": [
                 {
@@ -12259,19 +12272,6 @@
                 {
                   "season": "2022",
                   "round": 3
-                }
-              ]
-            },
-            "336348640681398272": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2022",
-                  "round": 2
-                },
-                {
-                  "season": "2023",
-                  "round": 2
                 }
               ]
             }
@@ -12347,17 +12347,6 @@
             "394253124748980224"
           ],
           "sides": {
-            "390894031879553024": {
-              "players": [
-                {
-                  "player_id": "1234",
-                  "name": "Russell Wilson",
-                  "position": "QB",
-                  "team": null
-                }
-              ],
-              "picks": []
-            },
             "394253124748980224": {
               "players": [
                 {
@@ -12373,6 +12362,17 @@
                   "round": 3
                 }
               ]
+            },
+            "390894031879553024": {
+              "players": [
+                {
+                  "player_id": "1234",
+                  "name": "Russell Wilson",
+                  "position": "QB",
+                  "team": null
+                }
+              ],
+              "picks": []
             }
           },
           "team_names": {
@@ -12401,23 +12401,6 @@
             "394491025806135296"
           ],
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "1466",
-                  "name": "Travis Kelce",
-                  "position": "TE",
-                  "team": "KC"
-                },
-                {
-                  "player_id": "2331",
-                  "name": "Breshad Perriman",
-                  "position": "WR",
-                  "team": null
-                }
-              ],
-              "picks": []
-            },
             "394491025806135296": {
               "players": [
                 {
@@ -12449,6 +12432,23 @@
                   "round": 1
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "1466",
+                  "name": "Travis Kelce",
+                  "position": "TE",
+                  "team": "KC"
+                },
+                {
+                  "player_id": "2331",
+                  "name": "Breshad Perriman",
+                  "position": "WR",
+                  "team": null
+                }
+              ],
+              "picks": []
             },
             "393989477577588736": {
               "players": [
@@ -12710,6 +12710,17 @@
             "394252975431766016"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "1339",
+                  "name": "Zach Ertz",
+                  "position": "TE",
+                  "team": null
+                }
+              ],
+              "picks": []
+            },
             "394252975431766016": {
               "players": [
                 {
@@ -12768,17 +12779,6 @@
                   "round": 4
                 }
               ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "1339",
-                  "name": "Zach Ertz",
-                  "position": "TE",
-                  "team": null
-                }
-              ],
-              "picks": []
             }
           },
           "team_names": {
@@ -12807,15 +12807,6 @@
             "406674259818065920"
           ],
           "sides": {
-            "406674259818065920": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2020",
-                  "round": 1
-                }
-              ]
-            },
             "394252975431766016": {
               "players": [
                 {
@@ -12832,6 +12823,15 @@
                 }
               ],
               "picks": []
+            },
+            "406674259818065920": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2020",
+                  "round": 1
+                }
+              ]
             }
           },
           "team_names": {
@@ -12859,6 +12859,15 @@
             "394531785582608384"
           ],
           "sides": {
+            "394226654450315264": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2020",
+                  "round": 3
+                }
+              ]
+            },
             "394531785582608384": {
               "players": [
                 {
@@ -12869,15 +12878,6 @@
                 }
               ],
               "picks": []
-            },
-            "394226654450315264": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2020",
-                  "round": 3
-                }
-              ]
             }
           },
           "team_names": {

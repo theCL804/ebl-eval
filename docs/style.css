@@ -159,6 +159,8 @@ a:hover { text-decoration: underline; }
 .history-season, .comp-pos { font-weight: 600; }
 .history-pts, .comp-age { color: var(--text-muted); }
 
+.season-history-section { margin-bottom: 32px; }
+
 .standing-section { margin-bottom: 32px; }
 .standing { max-width: 72ch; }
 .standing p { margin: 0 0 14px; }
@@ -240,6 +242,7 @@ a:hover { text-decoration: underline; }
 .trade-list { display: flex; flex-direction: column; gap: 12px; }
 .trade-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
 .trade-meta { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.trade-heading { font-weight: 600; margin: 0 0 10px; font-size: 0.95rem; }
 .trade-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .trade-side h4 { margin: 0 0 8px; font-size: 0.95rem; }
 .trade-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }

@@ -76,12 +76,13 @@ def fetch_season(season, league_id):
 
 def expand_player_cache():
     """The players.json cache (built by fetch_data.py) only covers currently
-    rostered players. Trades going back to 2019 reference players who have
-    since retired or been dropped, so widen the cache to every player_id that
-    ever appears in a trade's adds/drops across all fetched history."""
+    rostered players. Trades, waiver claims, and free agent moves going back
+    to 2019 reference players who have since retired or been dropped, so
+    widen the cache to every player_id that ever appears in any completed
+    transaction's adds/drops across all fetched history."""
     players_path = DATA_DIR / "players.json"
     known = json.loads(players_path.read_text()) if players_path.exists() else {}
-    traded_ids = set(known.keys())
+    seen_ids = set(known.keys())
     for season in SEASON_LEAGUE_IDS:
         path = HISTORY_DIR / f"{season}.json"
         if not path.exists():
@@ -89,16 +90,16 @@ def expand_player_cache():
         data = json.loads(path.read_text())
         for txs in data.get("transactions_by_week", {}).values():
             for t in txs:
-                if t.get("type") != "trade":
+                if t.get("type") not in ("trade", "waiver", "free_agent"):
                     continue
                 for side in (t.get("adds"), t.get("drops")):
                     if side:
-                        traded_ids.update(side.keys())
+                        seen_ids.update(side.keys())
 
-    missing = traded_ids - known.keys()
+    missing = seen_ids - known.keys()
     if not missing:
         return
-    print(f"fetching {len(missing)} additional players seen in historical trades...")
+    print(f"fetching {len(missing)} additional players seen in historical transactions...")
     all_players = get(f"{BASE}/players/nfl")
     for pid in missing:
         if pid in all_players:

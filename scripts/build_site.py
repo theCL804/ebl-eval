@@ -112,7 +112,7 @@ def player_row(p):
 </tr>"""
 
 
-def build_team_page(team, content, rings, runner_ups):
+def build_team_page(team, content, rings, runner_ups, season_summaries, transaction_count):
     verdict = content["verdict"]
     vclass = VERDICT_CLASS.get(verdict, "")
     ring_count = rings.get(team["roster_id"], 0)
@@ -132,6 +132,27 @@ def build_team_page(team, content, rings, runner_ups):
     history_items = "".join(
         f'<div class="history-item"><span class="history-season">{h["season"]}</span><span class="history-record">{h["wins"]}-{h["losses"]}{"-" + str(h["ties"]) if h["ties"] else ""}</span><span class="history-pts">{h["fpts"]:.1f} pts</span></div>'
         for h in team["recent_history"]
+    )
+
+    season_rows = []
+    for s in sorted(season_summaries, key=lambda s: -s["season"]):
+        st = next((x for x in s.get("standings", []) if x["owner_id"] == team["owner_id"]), None)
+        if not st:
+            continue
+        season_rows.append(f"""<tr>
+<td>{s['season']}</td>
+<td>{st['wins']}-{st['losses']}{'-' + str(st['ties']) if st['ties'] else ''}</td>
+<td>{st['points_for']:.1f}</td>
+<td>{st['points_against']:.1f}</td>
+<td>{playoff_badge(st['place'])}</td>
+</tr>""")
+    season_history_table = (
+        f"""<table class="roster-table season-standings">
+<thead><tr><th>Season</th><th>Record</th><th>PF</th><th>PA</th><th>Finish</th></tr></thead>
+<tbody>{"".join(season_rows)}</tbody>
+</table>"""
+        if season_rows
+        else '<p class="stat-label">No prior seasons on record</p>'
     )
 
     strengths = "".join(f"<li>{esc(s)}</li>" for s in content["strengths"])
@@ -170,6 +191,12 @@ def build_team_page(team, content, rings, runner_ups):
     <h3>Position Composition</h3>
     {comp_rows}
   </div>
+</section>
+
+<section class="season-history-section">
+  <h2>Season History</h2>
+  {season_history_table}
+  <p class="section-note"><a href="team-{team['roster_id']}-transactions.html">See all {transaction_count} transactions across every season &rarr;</a></p>
 </section>
 
 <section class="standing-section">
@@ -289,6 +316,18 @@ def build_index(teams, content_all, league_content, rings, runner_ups):
     )
 
 
+def playoff_badge(place):
+    if place == 1:
+        return '<span class="badge-finish badge-1">🏆 Champion</span>'
+    if place == 2:
+        return '<span class="badge-finish badge-2">🥈 Runner-up</span>'
+    if place == 3:
+        return '<span class="badge-finish badge-3">🥉 3rd</span>'
+    if place:
+        return f'<span class="badge-finish">{place}th</span>'
+    return '<span class="badge-finish badge-none">&mdash;</span>'
+
+
 def build_history_page(season_summaries, teams):
     owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
 
@@ -308,17 +347,6 @@ def build_history_page(season_summaries, teams):
   <p class="season-note">{esc(s.get('note', ''))}</p>
 </div>""")
             continue
-
-        def playoff_badge(place):
-            if place == 1:
-                return '<span class="badge-finish badge-1">🏆 Champion</span>'
-            if place == 2:
-                return '<span class="badge-finish badge-2">🥈 Runner-up</span>'
-            if place == 3:
-                return '<span class="badge-finish badge-3">🥉 3rd</span>'
-            if place:
-                return f'<span class="badge-finish">{place}th</span>'
-            return '<span class="badge-finish badge-none">&mdash;</span>'
 
         rows = "".join(
             f"""<tr>
@@ -581,6 +609,13 @@ def build_draft_flow_page(draft_flow, teams):
     return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
+def tx_date(t):
+    if not t.get("created"):
+        return f"{t['season']} season"
+    dt = datetime.fromtimestamp(t["created"] / 1000, tz=timezone.utc)
+    return dt.strftime("%b %-d, %Y")
+
+
 def build_trades_page(trades_data, teams):
     owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
 
@@ -592,12 +627,6 @@ def build_trades_page(trades_data, teams):
 
     def pair_anchor(a, b):
         return f"pair-{a}-{b}"
-
-    def trade_date(t):
-        if not t.get("created"):
-            return f"{t['season']} season"
-        dt = datetime.fromtimestamp(t["created"] / 1000, tz=timezone.utc)
-        return dt.strftime("%b %-d, %Y")
 
     def side_items(side):
         items = []
@@ -621,7 +650,7 @@ def build_trades_page(trades_data, teams):
         )
         return f"""
 <div class="trade-card">
-  <div class="trade-meta">{esc(trade_date(t))}</div>
+  <div class="trade-meta">{esc(tx_date(t))}</div>
   <div class="trade-sides">{sides_html}</div>
 </div>"""
 
@@ -673,6 +702,85 @@ def build_trades_page(trades_data, teams):
 </section>
 """
     return page_shell("Trades Hub — Ethel's Dynasty", body, description="Every trade in league history, players and picks, with a breakdown of who trades with whom.", active="trades.html")
+
+
+TX_TYPE_LABEL = {"trade": "Trade", "waiver": "Waiver Claim", "free_agent": "Free Agent Move"}
+
+
+def build_team_transactions_page(team, tx_list, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    def asset_items(items):
+        rendered = []
+        for a in items:
+            if a.get("pick"):
+                rendered.append(f'<li><span class="trade-pos trade-pick">PICK</span> {esc(a["season"])} Round {a["round"]}</li>')
+            else:
+                pos = a["position"] or ""
+                nfl = a["team"] or "FA"
+                rendered.append(f'<li><span class="trade-pos pos-{pos}">{esc(pos)}</span> {esc(a["name"])} <span class="trade-nfl">{esc(nfl)}</span></li>')
+        if not rendered:
+            return '<li class="trade-empty">(nothing)</li>'
+        return "".join(rendered)
+
+    def tx_card(tx):
+        label = TX_TYPE_LABEL.get(tx["type"], tx["type"])
+        if tx["type"] == "trade":
+            opp = " &amp; ".join(team_link(o["owner_id"], o["name"]) for o in tx["opponents"])
+            heading = f'<p class="trade-heading">Trade with {opp}</p>'
+            gave_label, received_label = "Gave", "Received"
+        else:
+            heading = ""
+            gave_label, received_label = "Dropped", "Added"
+        return f"""
+<div class="trade-card">
+  <div class="trade-meta">{esc(tx_date(tx))} &middot; {esc(label)}</div>
+  {heading}
+  <div class="trade-sides">
+    <div class="trade-side">
+      <h4>{gave_label}</h4>
+      <ul>{asset_items(tx["gave"])}</ul>
+    </div>
+    <div class="trade-side">
+      <h4>{received_label}</h4>
+      <ul>{asset_items(tx["received"])}</ul>
+    </div>
+  </div>
+</div>"""
+
+    cards_html = "".join(tx_card(tx) for tx in tx_list)
+    counts = {}
+    for tx in tx_list:
+        counts[tx["type"]] = counts.get(tx["type"], 0) + 1
+    count_summary = " &middot; ".join(
+        f"{counts.get(k, 0)} {TX_TYPE_LABEL[k].lower()}{'s' if counts.get(k, 0) != 1 else ''}"
+        for k in ("trade", "waiver", "free_agent")
+        if counts.get(k)
+    )
+
+    body = f"""
+<a class="back-link" href="team-{team['roster_id']}.html">&larr; {esc(team['team_name'])}</a>
+<header class="league-header">
+  <h1>{esc(team['team_name'])} &mdash; All Transactions</h1>
+  <p class="league-summary">Every trade, waiver claim, and free agent move this team has made across every season on record. {len(tx_list)} total: {count_summary}</p>
+</header>
+
+<section class="analytics-section">
+  <div class="trade-list">{cards_html or '<p class="stat-label">No transactions on record</p>'}</div>
+</section>
+"""
+    return page_shell(
+        f"{team['team_name']} Transactions — Ethel's Dynasty",
+        body,
+        description=f"Every trade, waiver claim, and free agent move made by {team['team_name']}.",
+        active="",
+    )
 
 
 CSS = """
@@ -836,6 +944,8 @@ a:hover { text-decoration: underline; }
 .history-season, .comp-pos { font-weight: 600; }
 .history-pts, .comp-age { color: var(--text-muted); }
 
+.season-history-section { margin-bottom: 32px; }
+
 .standing-section { margin-bottom: 32px; }
 .standing { max-width: 72ch; }
 .standing p { margin: 0 0 14px; }
@@ -917,6 +1027,7 @@ a:hover { text-decoration: underline; }
 .trade-list { display: flex; flex-direction: column; gap: 12px; }
 .trade-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
 .trade-meta { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.trade-heading { font-weight: 600; margin: 0 0 10px; font-size: 0.95rem; }
 .trade-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .trade-side h4 { margin: 0 0 8px; font-size: 0.95rem; }
 .trade-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
@@ -947,15 +1058,21 @@ def main():
 
     (DOCS_DIR / "style.css").write_text(CSS)
 
+    season_summaries = load("season_summaries.json")
+    team_transactions = load("team_transactions.json")
+
     for t in teams:
         c = content["teams"][str(t["roster_id"])]
-        html = build_team_page(t, c, rings, runner_ups)
+        tx_list = team_transactions.get(t["owner_id"], [])
+        html = build_team_page(t, c, rings, runner_ups, season_summaries, len(tx_list))
         (DOCS_DIR / f"team-{t['roster_id']}.html").write_text(html)
+
+        tx_html = build_team_transactions_page(t, tx_list, teams)
+        (DOCS_DIR / f"team-{t['roster_id']}-transactions.html").write_text(tx_html)
 
     index_html = build_index(teams, content["teams"], content, rings, runner_ups)
     (DOCS_DIR / "index.html").write_text(index_html)
 
-    season_summaries = load("season_summaries.json")
     history_html = build_history_page(season_summaries, teams)
     (DOCS_DIR / "history.html").write_text(history_html)
 

@@ -32,9 +32,9 @@ step beyond running Python scripts and committing the output:
      picks, and that season's draft results. Writes one file per season to
      `data/history/{season}.json`. Also widens `data/players.json` (which
      `fetch_data.py` filters to only currently-rostered players) to include
-     every player who ever appears in a historical trade's adds/drops,
-     since trades reference players who have since retired or been
-     dropped.
+     every player who ever appears in any historical trade, waiver claim,
+     or free agent move's adds/drops, since transactions reference players
+     who have since retired or been dropped.
 2. **Compute scripts** turn raw data into the shapes the site templates
    consume:
    - `scripts/compute_teams.py` → `data/teams.json` (per-team roster
@@ -52,6 +52,10 @@ step beyond running Python scripts and committing the output:
      trade transactions rather than pick-ownership snapshots; also a
      pairwise team-partner breakdown for the trades hub's "click a pair,
      see every deal" view)
+   - `scripts/compute_team_transactions.py` → `data/team_transactions.json`
+     (every trade, waiver claim, and free agent move for each current team
+     across all history, gave/received framed from that team's own
+     perspective, for the per-team "Transactions" drill-down page)
 3. **`data/content.json`** is hand-authored, not generated: the
    opinionated scouting-report prose per team (verdict, tagline,
    strengths/weaknesses, narrative, current standing, future outlook) and
@@ -59,18 +63,20 @@ step beyond running Python scripts and committing the output:
    mechanical transform of the Sleeper API and should be edited directly
    when the analysis needs to change.
 4. **`scripts/build_site.py`** reads everything in `data/` and renders
-   plain HTML/CSS into `docs/` (one file per team plus Power Rankings,
-   League History, Head-to-Head, Analytics, Draft Capital Flow, and
-   Trades Hub pages, all sharing one `style.css` and a nav bar). Re-run
-   this after editing `content.json` or any compute script's output; it's
-   the only script
-   that touches `docs/`.
+   plain HTML/CSS into `docs/` (one file per team plus a per-team
+   Transactions page, plus Power Rankings, League History, Head-to-Head,
+   Analytics, Draft Capital Flow, and Trades Hub pages, all sharing one
+   `style.css` and a nav bar). Each team page also shows a full
+   season-by-season record/finish table (from `season_summaries.json`,
+   not just the last couple seasons) linking to that team's Transactions
+   page. Re-run this after editing `content.json` or any compute script's
+   output; it's the only script that touches `docs/`.
 
 Run order for a full rebuild from scratch: `fetch_data.py` →
 `fetch_history.py` → `compute_teams.py` → `compute_history.py` →
 `compute_analytics.py` → `compute_draft_flow.py` → `compute_trades.py` →
-`build_site.py`. In practice the fetch scripts only need re-running when
-Sleeper data changes
+`compute_team_transactions.py` → `build_site.py`. In practice the fetch
+scripts only need re-running when Sleeper data changes
 (new season, new trades); the compute + build scripts are cheap and safe
 to re-run anytime.
 
