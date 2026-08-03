@@ -69,40 +69,78 @@ step beyond running Python scripts and committing the output:
      (every trade, waiver claim, and free agent move for each current team
      across all history, gave/received framed from that team's own
      perspective, for the per-team "Transactions" drill-down page)
+   - `scripts/compute_weekly.py` → `data/weekly.json` (current-season-only,
+     2026: scores, highlight stats, and that week's transactions for every
+     week that's actually been played, for the Weekly Recap section — see
+     "Weekly Recap" below)
 3. **`data/content.json`** is hand-authored, not generated: the
    opinionated scouting-report prose per team (verdict, tagline,
    strengths/weaknesses, narrative, current standing, future outlook) and
    the league-wide summary. This is the one file in `data/` that isn't a
    mechanical transform of the Sleeper API and should be edited directly
-   when the analysis needs to change.
+   when the analysis needs to change. `data/weekly_recap_prose.json` is
+   the same pattern applied to weekly recaps (see "Weekly Recap" below).
 4. **`scripts/build_site.py`** reads everything in `data/` and renders
    plain HTML/CSS into `docs/` (one file per team plus a per-team
    Transactions page, a Home landing page (`index.html`, added 2026-08 —
    a hub linking to every section plus a few league-wide facts, not the
    scouting-report grid), and Power Rankings, League History,
-   Head-to-Head, Rivalries, Analytics, Draft Capital Flow, and Trades Hub
-   pages, all sharing one `style.css` and a nav bar). **`index.html` is the home
+   Head-to-Head, Rivalries, Analytics, Trades (which folds in Draft
+   Capital Flow and the Hall of Bad Trades — there's no separate
+   `draft-flow.html` anymore), and Weekly Recap pages, all sharing one
+   `style.css` and a nav bar. **`index.html` is the home
    page, not Power Rankings** — the per-team scouting-report grid that
    used to live at `index.html` is now `power-rankings.html`; don't point
    new "back to all teams"-style links at `index.html`. Each team page
    also shows a full
    season-by-season record/finish table (from `season_summaries.json`,
    not just the last couple seasons) linking to that team's Transactions
-   page. Re-run this after editing `content.json` or any compute script's
-   output; it's the only script that touches `docs/`.
+   page. Re-run this after editing `content.json`, `weekly_recap_prose.json`,
+   or any compute script's output; it's the only script that touches `docs/`.
 
 Run order for a full rebuild from scratch: `fetch_data.py` →
 `fetch_history.py` → `compute_teams.py` → `compute_history.py` →
 `compute_analytics.py` → `compute_draft_flow.py` → `compute_trades.py` →
-`compute_team_transactions.py` → `fetch_dynasty_values.py` →
-`compute_trade_grades.py` → `build_site.py`. `compute_trades.py` must run
-before `fetch_dynasty_values.py`, since the latter only pulls values for
-players/picks that actually appear in `data/trades.json`. In practice the
-fetch scripts only need re-running when Sleeper data changes (new season,
-new trades) or, for `fetch_dynasty_values.py`, when new trades are added or
-enough time has passed for more trades to cross a 1/2/3-year aging
-checkpoint; the compute + build scripts are cheap and safe to re-run
-anytime.
+`compute_team_transactions.py` → `compute_weekly.py` →
+`fetch_dynasty_values.py` → `compute_trade_grades.py` → `build_site.py`.
+`compute_trades.py` must run before `fetch_dynasty_values.py`, since the
+latter only pulls values for players/picks that actually appear in
+`data/trades.json`. In practice the fetch scripts only need re-running
+when Sleeper data changes (new season, new trades) or, for
+`fetch_dynasty_values.py`, when new trades are added or enough time has
+passed for more trades to cross a 1/2/3-year aging checkpoint; the
+compute + build scripts are cheap and safe to re-run anytime.
+`compute_weekly.py` needs `fetch_history.py` to have re-fetched the
+current season (`data/history/2026.json`) since the last games were
+played — it only reads weeks Sleeper has already returned data for.
+
+## Weekly Recap
+
+- Added 2026-08. One page per played week of the *current* (2026) season
+  only — no historical backfill to 2019 was requested. `week-N-recap.html`
+  shows every game's score, that week's highlight stats (top scorer, low
+  scorer, closest game, biggest blowout — all computed, not opinion), and
+  that week's trades/waivers/free agent moves. `weekly-recaps.html` is the
+  hub, listing every played week newest-first.
+- The nav bar groups the hub + every week page under one "Weekly Recap"
+  dropdown (`NAV_ITEMS` supports `("group", label, [(href, label), ...])`
+  entries alongside plain `("link", href, label)` ones — see `nav_html()`
+  in `build_site.py`). This is the general mechanism for putting multiple
+  pages under one top-bar header; reuse it rather than inventing another
+  approach if another multi-page section comes up.
+- Scores/highlights/transactions are 100% mechanical (`compute_weekly.py`,
+  same pattern as the other compute scripts). The narrative recap prose is
+  **not** — it lives in `data/weekly_recap_prose.json`, hand/AI-authored
+  per week (headline + intro + a blurb per game, keyed by
+  `game_key` = the two owner_ids sorted and joined with `-`, stable
+  regardless of game display order), same spirit as `content.json`'s
+  scouting reports. Write it in the same opinionated voice (no em dashes,
+  per the standing style rule below) when asked to do a week's recap;
+  don't try to generate it programmatically.
+- `data/history/2026.json`'s `matchups_by_week` only ever contains weeks
+  Sleeper has actually returned data for (`fetch_history.py` stops at the
+  first empty response), so `compute_weekly.py` doesn't need its own
+  "has this week happened yet" heuristic — every week key present is real.
 
 ## Key decisions
 

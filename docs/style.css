@@ -71,6 +71,38 @@ a:hover { text-decoration: underline; }
 .nav-link:hover { text-decoration: none; background: var(--surface); color: var(--text); }
 .nav-link.active { color: var(--text); background: var(--surface); border: 1px solid var(--border); }
 
+.nav-group { position: relative; }
+.nav-group-summary { cursor: pointer; list-style: none; }
+.nav-group-summary::-webkit-details-marker { display: none; }
+.nav-group-summary::after { content: "be"; margin-left: 4px; font-size: 0.7em; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  flex-direction: column;
+  min-width: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  z-index: 30;
+}
+.nav-group[open] > .nav-dropdown,
+.nav-group:hover > .nav-dropdown { display: flex; }
+.nav-dropdown-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.nav-dropdown-link:hover { text-decoration: none; background: var(--bg); color: var(--text); }
+.nav-dropdown-link.active { color: var(--text); background: var(--bg); }
+
 .header-links { font-size: 0.9rem; margin-top: 12px; }
 
 .season-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
@@ -160,6 +192,15 @@ a:hover { text-decoration: underline; }
 .verdict-badge.small { font-size: 0.7rem; }
 
 .back-link { display: inline-block; margin-bottom: 16px; font-size: 0.9rem; }
+
+.week-game-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.week-game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+.week-game-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 0.92rem; }
+.week-game-team { font-weight: 600; }
+.week-game-score { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text-muted); }
+.week-game-winner .week-game-team, .week-game-winner .week-game-score { color: var(--contender); }
+.week-game-blurb { margin: 8px 0 0; font-size: 0.88rem; }
+.week-pager { display: flex; justify-content: space-between; margin-top: 24px; font-size: 0.9rem; }
 .team-header { margin-bottom: 28px; }
 .team-header h1 { font-size: 1.9rem; margin: 10px 0 2px; }
 .owner { color: var(--text-muted); margin: 0 0 4px; }

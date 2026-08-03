@@ -47,24 +47,46 @@ def esc(s):
 
 
 NAV_ITEMS = [
-    ("index.html", "Home"),
-    ("power-rankings.html", "Power Rankings"),
-    ("history.html", "League History"),
-    ("head-to-head.html", "Head-to-Head"),
-    ("rivalries.html", "Rivalries"),
-    ("analytics.html", "Analytics"),
-    ("trades.html", "Trades"),
+    ("link", "index.html", "Home"),
+    ("link", "power-rankings.html", "Power Rankings"),
+    ("link", "history.html", "League History"),
+    ("link", "head-to-head.html", "Head-to-Head"),
+    ("link", "rivalries.html", "Rivalries"),
+    ("link", "analytics.html", "Analytics"),
+    ("link", "trades.html", "Trades"),
 ]
 
 POSITION_COLORS = {"QB": "#e5484d", "RB": "#3fb97d", "WR": "#4f7fe0", "TE": "#d9a635"}
 
 
 def nav_html(active):
-    links = []
-    for href, label in NAV_ITEMS:
-        cls = "nav-link active" if href == active else "nav-link"
-        links.append(f'<a class="{cls}" href="{href}">{esc(label)}</a>')
-    return f'<nav class="site-nav"><span class="nav-brand">Ethel\'s Dynasty</span><div class="nav-links">{"".join(links)}</div></nav>'
+    """Renders NAV_ITEMS. Each item is either ("link", href, label) for a
+    plain top-bar link, or ("group", label, [(href, label), ...]) for a
+    dropdown holding multiple pages under one header (e.g. Weekly Recap,
+    one page per week) -- a <details>/<summary> disclosure so it works
+    without JS: native click-to-toggle for touch, plus a CSS :hover
+    override for desktop mouse users.
+    """
+    parts = []
+    for item in NAV_ITEMS:
+        if item[0] == "link":
+            _, href, label = item
+            cls = "nav-link active" if href == active else "nav-link"
+            parts.append(f'<a class="{cls}" href="{href}">{esc(label)}</a>')
+        else:
+            _, label, children = item
+            group_active = any(href == active for href, _ in children)
+            open_attr = " open" if group_active else ""
+            summary_cls = "nav-link nav-group-summary active" if group_active else "nav-link nav-group-summary"
+            child_links = "".join(
+                f'<a class="nav-dropdown-link{" active" if href == active else ""}" href="{href}">{esc(clabel)}</a>'
+                for href, clabel in children
+            )
+            parts.append(
+                f'<details class="nav-group"{open_attr}><summary class="{summary_cls}">{esc(label)}</summary>'
+                f'<div class="nav-dropdown">{child_links}</div></details>'
+            )
+    return f'<nav class="site-nav"><span class="nav-brand">Ethel\'s Dynasty</span><div class="nav-links">{"".join(parts)}</div></nav>'
 
 
 def page_shell(title, body, description="", active=""):
@@ -264,6 +286,7 @@ HUB_SECTIONS = [
     ("head-to-head.html", "Head-to-Head", "All-time records between every team currently in the league."),
     ("analytics.html", "Analytics", "All-play luck, positional scoring mix, and roster-management activity."),
     ("trades.html", "Trades", "Every trade ever made, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger."),
+    ("weekly-recaps.html", "Weekly Recap", "Scores, transactions, and a recap of how each week's matchups went."),
 ]
 
 
@@ -849,11 +872,25 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
         """For every graded trade, find the side that came out worst against
         the best-off side in that same trade (by the aged-value checkpoint),
         and rank across all trades by how big that gap was. Only meaningful
-        for 2+ side trades that actually got graded (see grade_html)."""
+        for 2+ side trades that actually got graded (see grade_html).
+
+        Requires every side to be aged_complete (the gap is computed purely
+        from aged_value, so that's the only completeness that matters here).
+        Otherwise a side whose only asset couldn't be priced at all (e.g. a
+        same-year pick that already resolved by the time the 1-year
+        checkpoint rolled around, so it dropped out of DynastyProcess's data
+        entirely) totals to a literal $0 and would rank as "lost everything"
+        -- indistinguishable from an actually bad trade -- when the honest
+        answer is just "unknown." hist_complete doesn't gate ranking (a side
+        can have an under-counted at-trade value and still have a fully
+        known aged value), but bad_trade_card still surfaces it visually.
+        """
         entries = []
         for t in trades_data["trades"]:
             g = trade_grades.get(t["transaction_id"])
             if not g or len(t["teams"]) < 2:
+                continue
+            if any(not g["sides"][o]["aged_complete"] for o in t["teams"]):
                 continue
             aged = {o: g["sides"][o]["aged_value"] for o in t["teams"]}
             for o in t["teams"]:
@@ -881,9 +918,9 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
         def side_block(o):
             s = g["sides"][o]
             aged_cls = "badtrade-bar-pos" if s["aged_value"] >= s["hist_value"] else "badtrade-bar-neg"
-            incomplete_note = (
-                '<p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>'
-                if not s["hist_complete"] or not s["aged_complete"]
+            hist_note = (
+                '<p class="trade-grade-note">* at-trade value is a lower bound, not every asset was priceable then.</p>'
+                if not s["hist_complete"]
                 else ""
             )
             return f"""<div class="trade-side">
@@ -893,7 +930,7 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
     <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span>{value_bar(s['hist_value'], scale_max, 'badtrade-bar-neutral')}</div>
     <div class="badtrade-bar-row"><span class="badtrade-bar-label">{esc(horizon_label)}</span>{value_bar(s['aged_value'], scale_max, aged_cls)}</div>
   </div>
-  {incomplete_note}
+  {hist_note}
 </div>"""
 
         sides_html = "".join(side_block(o) for o in t["teams"])
@@ -992,6 +1029,182 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
 {draft_flow_html}
 """
     return page_shell("Trades — Ethel's Dynasty", body, description="Every trade in league history, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger.", active="trades.html")
+
+
+def weekly_nav_children(weekly_data):
+    """The (href, label) pairs for the Weekly Recap dropdown -- the hub
+    plus one entry per played week, newest first (weekly_data["weeks"] is
+    already sorted that way by compute_weekly.py)."""
+    children = [("weekly-recaps.html", "Overview")]
+    for w in weekly_data["weeks"]:
+        children.append((f"week-{w['week']}-recap.html", f"Week {w['week']}"))
+    return children
+
+
+def build_weekly_recap_hub_page(weekly_data, prose_data, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    weeks = weekly_data["weeks"]
+    if not weeks:
+        cards_html = '<p class="section-note">The 2026 season hasn\'t kicked off yet &mdash; check back after Week 1 for scores, transactions, and recaps.</p>'
+    else:
+        cards = []
+        for w in weeks:
+            headline = prose_data.get("weeks", {}).get(str(w["week"]), {}).get("headline")
+            top = w["highlights"]["top_scorer"]
+            summary = esc(headline) if headline else f"Top score: {team_link(top['owner_id'], top['name'])} with {top['points']:.1f}"
+            cards.append(f"""<a class="hub-card" href="week-{w['week']}-recap.html">
+  <h3>Week {w['week']}</h3>
+  <p>{summary}</p>
+</a>""")
+        cards_html = f'<div class="hub-grid">{"".join(cards)}</div>'
+
+    body = f"""
+<header class="league-header">
+  <h1>Weekly Recap</h1>
+  <p class="league-summary">Every week of the {weekly_data['season']} season &mdash; scores, transactions, and a recap of how each matchup went.</p>
+</header>
+
+<section class="hub-section">
+  {cards_html}
+</section>
+"""
+    return page_shell("Weekly Recap — Ethel's Dynasty", body, description="Weekly scores, transactions, and recaps for the current season.", active="weekly-recaps.html")
+
+
+def build_weekly_recap_page(week_data, weekly_data, prose_data, teams):
+    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
+
+    def team_link(owner_id, name):
+        roster_id = owner_to_roster.get(owner_id)
+        if roster_id:
+            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
+        return esc(name)
+
+    week_prose = prose_data.get("weeks", {}).get(str(week_data["week"]), {})
+
+    def asset_items(items):
+        rendered = []
+        for a in items:
+            pos = a["position"] or ""
+            nfl = a["team"] or "FA"
+            rendered.append(f'<li><span class="trade-pos pos-{pos}">{esc(pos)}</span> {esc(a["name"])} <span class="trade-nfl">{esc(nfl)}</span></li>')
+        if not rendered:
+            return '<li class="trade-empty">(nothing)</li>'
+        return "".join(rendered)
+
+    def pick_items(picks):
+        return "".join(f'<li><span class="trade-pos trade-pick">PICK</span> {esc(pk["season"])} Round {pk["round"]}</li>' for pk in picks)
+
+    def tx_card(tx):
+        if tx["type"] == "trade":
+            sides_html = "".join(
+                f"""<div class="trade-side">
+  <h4>{team_link(o, tx['team_names'][o])}</h4>
+  <ul>{asset_items(tx['sides'][o]['players']) + pick_items(tx['sides'][o]['picks'])}</ul>
+</div>"""
+                for o in tx["teams"]
+            )
+            return f"""
+<div class="trade-card">
+  <div class="trade-meta">{esc(tx_date(tx))} &middot; Trade</div>
+  <div class="trade-sides">{sides_html}</div>
+</div>"""
+        label = TX_TYPE_LABEL.get(tx["type"], tx["type"])
+        return f"""
+<div class="trade-card">
+  <div class="trade-meta">{esc(tx_date(tx))} &middot; {esc(label)} &middot; {team_link(tx['owner_id'], tx['name'])}</div>
+  <div class="trade-sides">
+    <div class="trade-side"><h4>Dropped</h4><ul>{asset_items(tx['gave'])}</ul></div>
+    <div class="trade-side"><h4>Added</h4><ul>{asset_items(tx['received'])}</ul></div>
+  </div>
+</div>"""
+
+    def game_card(g):
+        a, b = g["team_a"], g["team_b"]
+        a_win = g["winner_owner_id"] == a["owner_id"]
+        b_win = g["winner_owner_id"] == b["owner_id"]
+        blurb = week_prose.get("games", {}).get(g["game_key"])
+        blurb_html = f'<p class="week-game-blurb">{esc(blurb)}</p>' if blurb else ""
+        return f"""<div class="week-game-card">
+  <div class="week-game-row{' week-game-winner' if a_win else ''}">
+    <span class="week-game-team">{team_link(a['owner_id'], a['name'])}</span>
+    <span class="week-game-score">{a['points']:.1f}</span>
+  </div>
+  <div class="week-game-row{' week-game-winner' if b_win else ''}">
+    <span class="week-game-team">{team_link(b['owner_id'], b['name'])}</span>
+    <span class="week-game-score">{b['points']:.1f}</span>
+  </div>
+  <p class="section-note">Margin: {g['margin']:.1f}</p>
+  {blurb_html}
+</div>"""
+
+    h = week_data["highlights"]
+    highlight_cards = f"""
+<div class="snapshot-card">
+  <h3>Top Score</h3>
+  <p class="big-stat">{team_link(h['top_scorer']['owner_id'], h['top_scorer']['name'])}</p>
+  <p class="stat-label">{h['top_scorer']['points']:.1f} points</p>
+</div>
+<div class="snapshot-card">
+  <h3>Low Score</h3>
+  <p class="big-stat">{team_link(h['low_scorer']['owner_id'], h['low_scorer']['name'])}</p>
+  <p class="stat-label">{h['low_scorer']['points']:.1f} points</p>
+</div>
+<div class="snapshot-card">
+  <h3>Closest Game</h3>
+  {f"<p class='big-stat'>{h['closest_game']['margin']:.1f} pts</p><p class='stat-label'>{team_link(h['closest_game']['team_a']['owner_id'], h['closest_game']['team_a']['name'])} vs {team_link(h['closest_game']['team_b']['owner_id'], h['closest_game']['team_b']['name'])}</p>" if h['closest_game'] else "<p class='big-stat'>&mdash;</p>"}
+</div>
+<div class="snapshot-card">
+  <h3>Biggest Blowout</h3>
+  <p class="big-stat">{h['biggest_blowout']['margin']:.1f} pts</p>
+  <p class="stat-label">{team_link(h['biggest_blowout']['team_a']['owner_id'], h['biggest_blowout']['team_a']['name'])} vs {team_link(h['biggest_blowout']['team_b']['owner_id'], h['biggest_blowout']['team_b']['name'])}</p>
+</div>
+"""
+
+    intro = f'<p class="league-summary">{esc(week_prose["intro"])}</p>' if week_prose.get("intro") else ""
+    title_suffix = f": {week_prose['headline']}" if week_prose.get("headline") else ""
+
+    weeks_nav = weekly_nav_children(weekly_data)
+    idx = next(i for i, (href, _) in enumerate(weeks_nav) if href == f"week-{week_data['week']}-recap.html")
+    prev_link = f'<a href="{weeks_nav[idx + 1][0]}">&larr; {esc(weeks_nav[idx + 1][1])}</a>' if idx + 1 < len(weeks_nav) else ""
+    next_link = f'<a href="{weeks_nav[idx - 1][0]}">{esc(weeks_nav[idx - 1][1])} &rarr;</a>' if idx > 0 else ""
+
+    body = f"""
+<a class="back-link" href="weekly-recaps.html">&larr; Weekly Recap</a>
+<header class="league-header">
+  <h1>Week {week_data['week']}{esc(title_suffix)}</h1>
+  {intro}
+</header>
+
+<section class="snapshot-grid">
+  {highlight_cards}
+</section>
+
+<section class="analytics-section">
+  <h2>Scores</h2>
+  <div class="week-game-list">{"".join(game_card(g) for g in week_data['games'])}</div>
+</section>
+
+<section class="analytics-section">
+  <h2>Transactions</h2>
+  <div class="trade-list">{"".join(tx_card(t) for t in week_data['transactions']) or '<p class="stat-label">No transactions this week.</p>'}</div>
+</section>
+
+<div class="week-pager">{prev_link}{next_link}</div>
+"""
+    return page_shell(
+        f"Week {week_data['week']} Recap — Ethel's Dynasty",
+        body,
+        description=f"Scores, transactions, and recap for Week {week_data['week']} of the {weekly_data['season']} season.",
+        active=f"week-{week_data['week']}-recap.html",
+    )
 
 
 TX_TYPE_LABEL = {"trade": "Trade", "waiver": "Waiver Claim", "free_agent": "Free Agent Move"}
@@ -1146,6 +1359,38 @@ a:hover { text-decoration: underline; }
 .nav-link:hover { text-decoration: none; background: var(--surface); color: var(--text); }
 .nav-link.active { color: var(--text); background: var(--surface); border: 1px solid var(--border); }
 
+.nav-group { position: relative; }
+.nav-group-summary { cursor: pointer; list-style: none; }
+.nav-group-summary::-webkit-details-marker { display: none; }
+.nav-group-summary::after { content: "\25be"; margin-left: 4px; font-size: 0.7em; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  flex-direction: column;
+  min-width: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  z-index: 30;
+}
+.nav-group[open] > .nav-dropdown,
+.nav-group:hover > .nav-dropdown { display: flex; }
+.nav-dropdown-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.nav-dropdown-link:hover { text-decoration: none; background: var(--bg); color: var(--text); }
+.nav-dropdown-link.active { color: var(--text); background: var(--bg); }
+
 .header-links { font-size: 0.9rem; margin-top: 12px; }
 
 .season-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
@@ -1235,6 +1480,15 @@ a:hover { text-decoration: underline; }
 .verdict-badge.small { font-size: 0.7rem; }
 
 .back-link { display: inline-block; margin-bottom: 16px; font-size: 0.9rem; }
+
+.week-game-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.week-game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+.week-game-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 0.92rem; }
+.week-game-team { font-weight: 600; }
+.week-game-score { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text-muted); }
+.week-game-winner .week-game-team, .week-game-winner .week-game-score { color: var(--contender); }
+.week-game-blurb { margin: 8px 0 0; font-size: 0.88rem; }
+.week-pager { display: flex; justify-content: space-between; margin-top: 24px; font-size: 0.9rem; }
 .team-header { margin-bottom: 28px; }
 .team-header h1 { font-size: 1.9rem; margin: 10px 0 2px; }
 .owner { color: var(--text-muted); margin: 0 0 4px; }
@@ -1405,6 +1659,10 @@ def main():
     content = load("content.json")
     rings, runner_ups = compute_rings(content.get("championships", []))
 
+    weekly_data = load("weekly.json") if (DATA_DIR / "weekly.json").exists() else {"season": 2026, "weeks": []}
+    weekly_prose = load("weekly_recap_prose.json") if (DATA_DIR / "weekly_recap_prose.json").exists() else {"weeks": {}}
+    NAV_ITEMS.append(("group", "Weekly Recap", weekly_nav_children(weekly_data)))
+
     (DOCS_DIR / "style.css").write_text(CSS)
 
     season_summaries = load("season_summaries.json")
@@ -1452,7 +1710,22 @@ def main():
     if stale_draft_flow_page.exists():
         stale_draft_flow_page.unlink()
 
-    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + analytics + trades (incl. draft capital flow) into {DOCS_DIR}")
+    weekly_hub_html = build_weekly_recap_hub_page(weekly_data, weekly_prose, teams)
+    (DOCS_DIR / "weekly-recaps.html").write_text(weekly_hub_html)
+    current_week_pages = set()
+    for w in weekly_data["weeks"]:
+        week_html = build_weekly_recap_page(w, weekly_data, weekly_prose, teams)
+        filename = f"week-{w['week']}-recap.html"
+        (DOCS_DIR / filename).write_text(week_html)
+        current_week_pages.add(filename)
+    for stale in DOCS_DIR.glob("week-*-recap.html"):
+        if stale.name not in current_week_pages:
+            stale.unlink()
+
+    print(
+        f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + "
+        f"analytics + trades (incl. draft capital flow) + weekly recap ({len(weekly_data['weeks'])} weeks) into {DOCS_DIR}"
+    )
 
 
 if __name__ == "__main__":
