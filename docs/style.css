@@ -284,6 +284,36 @@ a:hover { text-decoration: underline; }
 .trade-grade-table tr.trade-grade-won td { font-weight: 700; color: var(--contender); }
 .trade-grade-note { color: var(--text-muted); font-size: 0.76rem; font-style: italic; margin: 10px 0 0; }
 
+.subnav { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 4px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 0.85rem; }
+.subnav a { color: var(--text-muted); font-weight: 600; }
+.subnav a:hover { color: var(--text); }
+
+.badtrade-leaderboard { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.badtrade-lb-row { display: grid; grid-template-columns: 30px 150px 1fr 70px; align-items: center; gap: 10px; font-size: 0.85rem; padding: 4px 0; color: var(--text); }
+.badtrade-lb-row:hover { text-decoration: none; }
+.badtrade-lb-row:hover .badtrade-lb-team { text-decoration: underline; }
+.badtrade-lb-rank { color: var(--text-muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+.badtrade-lb-team { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badtrade-lb-track { height: 12px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.badtrade-lb-fill { display: block; height: 100%; background: var(--winnow); border-radius: 3px; }
+.badtrade-lb-val { text-align: right; font-weight: 700; color: var(--winnow); font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .badtrade-lb-row { grid-template-columns: 24px 90px 1fr 55px; font-size: 0.78rem; }
+}
+
+.bad-trade-card { border-color: var(--winnow); }
+.bad-trade-badge { float: right; color: var(--winnow); font-weight: 700; letter-spacing: normal; text-transform: none; }
+
+.badtrade-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.badtrade-bar-row { display: grid; grid-template-columns: 62px 1fr 55px; align-items: center; gap: 6px; font-size: 0.76rem; }
+.badtrade-bar-label { color: var(--text-muted); }
+.badtrade-bar-track { height: 10px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.badtrade-bar-fill { display: block; height: 100%; border-radius: 3px; }
+.badtrade-bar-neutral { background: var(--text-muted); }
+.badtrade-bar-pos { background: var(--contender); }
+.badtrade-bar-neg { background: var(--winnow); }
+.badtrade-bar-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
 .rivalry-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .rivalry-picker select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); min-width: 200px; }
 .rivalry-picker .rivalry-vs { color: var(--text-muted); font-weight: 600; }

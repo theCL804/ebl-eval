@@ -3,21 +3,292 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trades Hub — Ethel's Dynasty</title>
-<meta name="description" content="Every trade in league history, players and picks, with a breakdown of who trades with whom.">
+<title>Trades — Ethel's Dynasty</title>
+<meta name="description" content="Every trade in league history, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="site-nav"><span class="nav-brand">Ethel's Dynasty</span><div class="nav-links"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="power-rankings.html">Power Rankings</a><a class="nav-link" href="history.html">League History</a><a class="nav-link" href="head-to-head.html">Head-to-Head</a><a class="nav-link" href="rivalries.html">Rivalries</a><a class="nav-link" href="analytics.html">Analytics</a><a class="nav-link" href="draft-flow.html">Draft Capital Flow</a><a class="nav-link active" href="trades.html">Trades Hub</a></div></nav>
+<nav class="site-nav"><span class="nav-brand">Ethel's Dynasty</span><div class="nav-links"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="power-rankings.html">Power Rankings</a><a class="nav-link" href="history.html">League History</a><a class="nav-link" href="head-to-head.html">Head-to-Head</a><a class="nav-link" href="rivalries.html">Rivalries</a><a class="nav-link" href="analytics.html">Analytics</a><a class="nav-link active" href="trades.html">Trades</a></div></nav>
 <div class="page">
 
 <header class="league-header">
-  <h1>Trades Hub</h1>
-  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both, not just picks. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
+  <h1>Trades</h1>
+  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both &mdash; plus the draft pick capital ledger. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
   <p class="section-note">Each trade with a Dynasty Value grade shows what each side was worth at the moment of the trade versus the average of its value 1, 2, and 3 years later (whichever have elapsed) &mdash; not "value today," which would unfairly zero out old trades just from players aging out of relevance. Values come from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess's open-data project</a>; trades before May 2020 predate their value history and aren't graded, and trades under a year old haven't aged long enough yet.</p>
+  <nav class="subnav">
+    <a href="#hall-of-bad-trades">Hall of Bad Trades</a>
+    <a href="#trade-partners">Trade Partners</a>
+    <a href="#all-trades">All Trades</a>
+    <a href="#by-pair">By Team Pair</a>
+    <a href="#draft-capital">Draft Capital Flow</a>
+  </nav>
 </header>
 
-<section class="analytics-section">
+<section class="analytics-section" id="hall-of-bad-trades">
+  <h2>Hall of Bad Trades</h2>
+  <p class="section-note">The most lopsided deals in hindsight &mdash; ranked by how far the losing side's aged Dynasty Value fell behind the other side's, at the same checkpoint.</p>
+  <div class="trade-list"><div class="badtrade-leaderboard"><a class="badtrade-lb-row" href="#bad-trade-1">
+  <span class="badtrade-lb-rank">#1</span>
+  <span class="badtrade-lb-team">DickTatorMiller</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:100%"></span></span>
+  <span class="badtrade-lb-val">-8,507</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-2">
+  <span class="badtrade-lb-rank">#2</span>
+  <span class="badtrade-lb-team">Brock Hard</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:72%"></span></span>
+  <span class="badtrade-lb-val">-6,135</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-3">
+  <span class="badtrade-lb-rank">#3</span>
+  <span class="badtrade-lb-team">The Cheese Children </span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:59%"></span></span>
+  <span class="badtrade-lb-val">-5,056</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-4">
+  <span class="badtrade-lb-rank">#4</span>
+  <span class="badtrade-lb-team">The Choo Choo Crew</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:59%"></span></span>
+  <span class="badtrade-lb-val">-4,979</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-5">
+  <span class="badtrade-lb-rank">#5</span>
+  <span class="badtrade-lb-team">Brock Hard</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:58%"></span></span>
+  <span class="badtrade-lb-val">-4,973</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-6">
+  <span class="badtrade-lb-rank">#6</span>
+  <span class="badtrade-lb-team">The Moon Unit</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:57%"></span></span>
+  <span class="badtrade-lb-val">-4,885</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-7">
+  <span class="badtrade-lb-rank">#7</span>
+  <span class="badtrade-lb-team">The Moon Unit</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:57%"></span></span>
+  <span class="badtrade-lb-val">-4,843</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-8">
+  <span class="badtrade-lb-rank">#8</span>
+  <span class="badtrade-lb-team">Nikkis’ Victims</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:54%"></span></span>
+  <span class="badtrade-lb-val">-4,634</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-9">
+  <span class="badtrade-lb-rank">#9</span>
+  <span class="badtrade-lb-team">Fuck Michael Thomas</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:53%"></span></span>
+  <span class="badtrade-lb-val">-4,522</span>
+</a><a class="badtrade-lb-row" href="#bad-trade-10">
+  <span class="badtrade-lb-rank">#10</span>
+  <span class="badtrade-lb-team">Mattpao</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:49%"></span></span>
+  <span class="badtrade-lb-val">-4,129</span>
+</a></div>
+<div class="trade-card bad-trade-card" id="bad-trade-1">
+  <div class="trade-meta">#1 &middot; Sep 23, 2020 <span class="bad-trade-badge">&#128315; <a href="team-2.html">DickTatorMiller</a> lost by 8,507</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-2.html">DickTatorMiller</a></h4>
+  <ul><li><span class="trade-pos pos-QB">QB</span> Russell Wilson <span class="trade-nfl">FA</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:24%"></span></span><span class="badtrade-bar-val">2,301</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:11%"></span></span><span class="badtrade-bar-val">1,097</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-8.html">Long Live Wopo </a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> Justin Jefferson <span class="trade-nfl">MIN</span></li><li><span class="trade-pos trade-pick">PICK</span> 2022 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:22%"></span></span><span class="badtrade-bar-val">2,139</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">9,604</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-2">
+  <div class="trade-meta">#2 &middot; Jul 16, 2020 <span class="bad-trade-badge">&#128315; <a href="team-7.html">Brock Hard</a> lost by 6,135</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-5.html">The Moon Unit</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> A.J. Brown <span class="trade-nfl">NE</span></li><li><span class="trade-pos trade-pick">PICK</span> 2021 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:74%"></span></span><span class="badtrade-bar-val">6,248</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">8,422</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-7.html">Brock Hard</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> Robert Woods <span class="trade-nfl">FA</span></li><li><span class="trade-pos pos-RB">RB</span> James Conner <span class="trade-nfl">ARI</span></li><li><span class="trade-pos trade-pick">PICK</span> 2021 Round 2</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:62%"></span></span><span class="badtrade-bar-val">5,183</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:27%"></span></span><span class="badtrade-bar-val">2,287</span></div>
+  </div>
+  
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-3">
+  <div class="trade-meta">#3 &middot; May 1, 2025 <span class="bad-trade-badge">&#128315; <a href="team-3.html">The Cheese Children </a> lost by 5,056</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-3.html">The Cheese Children </a></h4>
+  <ul><li><span class="trade-pos trade-pick">PICK</span> 2025 Round 1</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:45%"></span></span><span class="badtrade-bar-val">2,295</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:0%"></span></span><span class="badtrade-bar-val">0</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div><div class="trade-side">
+  <h4><a href="team-1.html">The Chicken Boys🐔</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> George Pickens <span class="trade-nfl">DAL</span></li><li><span class="trade-pos trade-pick">PICK</span> 2025 Round 1</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:93%"></span></span><span class="badtrade-bar-val">4,718</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">5,056</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-4">
+  <div class="trade-meta">#4 &middot; Dec 9, 2024 <span class="bad-trade-badge">&#128315; <a href="team-10.html">The Choo Choo Crew</a> lost by 4,979</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-10.html">The Choo Choo Crew</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> Joe Mixon <span class="trade-nfl">FA</span></li><li><span class="trade-pos trade-pick">PICK</span> 2025 Round 2</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:63%"></span></span><span class="badtrade-bar-val">3,410</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:8%"></span></span><span class="badtrade-bar-val">425</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-5.html">The Moon Unit</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> James Cook <span class="trade-nfl">BUF</span></li><li><span class="trade-pos trade-pick">PICK</span> 2026 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:88%"></span></span><span class="badtrade-bar-val">4,765</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">5,404</span></div>
+  </div>
+  
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-5">
+  <div class="trade-meta">#5 &middot; Feb 21, 2024 <span class="bad-trade-badge">&#128315; <a href="team-7.html">Brock Hard</a> lost by 4,973</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-10.html">The Choo Choo Crew</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> James Cook <span class="trade-nfl">BUF</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:66%"></span></span><span class="badtrade-bar-val">4,140</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">2-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">6,315</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-7.html">Brock Hard</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> Rhamondre Stevenson <span class="trade-nfl">NE</span></li><li><span class="trade-pos trade-pick">PICK</span> 2024 Round 2</li><li><span class="trade-pos trade-pick">PICK</span> 2025 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:71%"></span></span><span class="badtrade-bar-val">4,497</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">2-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:21%"></span></span><span class="badtrade-bar-val">1,342</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-6">
+  <div class="trade-meta">#6 &middot; Jul 1, 2020 <span class="bad-trade-badge">&#128315; <a href="team-5.html">The Moon Unit</a> lost by 4,885</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-10.html">The Choo Choo Crew</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> Stefon Diggs <span class="trade-nfl">FA</span></li><li><span class="trade-pos pos-RB">RB</span> Nick Chubb <span class="trade-nfl">FA</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:93%"></span></span><span class="badtrade-bar-val">11,474</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">12,353</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-5.html">The Moon Unit</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> Joe Mixon <span class="trade-nfl">FA</span></li><li><span class="trade-pos trade-pick">PICK</span> 2021 Round 1</li><li><span class="trade-pos trade-pick">PICK</span> 2022 Round 2</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:81%"></span></span><span class="badtrade-bar-val">9,958</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:60%"></span></span><span class="badtrade-bar-val">7,468</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-7">
+  <div class="trade-meta">#7 &middot; Jul 15, 2020 <span class="bad-trade-badge">&#128315; <a href="team-5.html">The Moon Unit</a> lost by 4,843</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-5.html">The Moon Unit</a></h4>
+  <ul><li><span class="trade-pos pos-QB">QB</span> Teddy Bridgewater <span class="trade-nfl">DET</span></li><li><span class="trade-pos pos-WR">WR</span> Laviska Shenault <span class="trade-nfl">FA</span></li><li><span class="trade-pos trade-pick">PICK</span> 2021 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:19%"></span></span><span class="badtrade-bar-val">1,043</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:11%"></span></span><span class="badtrade-bar-val">622</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-1.html">The Chicken Boys🐔</a></h4>
+  <ul><li><span class="trade-pos pos-TE">TE</span> Travis Kelce <span class="trade-nfl">KC</span></li><li><span class="trade-pos pos-WR">WR</span> Breshad Perriman <span class="trade-nfl">FA</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:92%"></span></span><span class="badtrade-bar-val">5,044</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">5,465</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-9.html">BateBoul</a></h4>
+  <ul><li><span class="trade-pos pos-TE">TE</span> Tyler Higbee <span class="trade-nfl">LAR</span></li><li><span class="trade-pos pos-WR">WR</span> Anthony Miller <span class="trade-nfl">FA</span></li><li><span class="trade-pos pos-TE">TE</span> Dallas Goedert <span class="trade-nfl">PHI</span></li><li><span class="trade-pos trade-pick">PICK</span> 2021 Round 2</li><li><span class="trade-pos trade-pick">PICK</span> 2022 Round 1</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:48%"></span></span><span class="badtrade-bar-val">2,638</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:83%"></span></span><span class="badtrade-bar-val">4,520</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-8">
+  <div class="trade-meta">#8 &middot; Sep 3, 2024 <span class="bad-trade-badge">&#128315; <a href="team-12.html">Nikkis’ Victims</a> lost by 4,634</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-10.html">The Choo Choo Crew</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> Terry McLaurin <span class="trade-nfl">WAS</span></li><li><span class="trade-pos pos-RB">RB</span> De'Von Achane <span class="trade-nfl">MIA</span></li><li><span class="trade-pos trade-pick">PICK</span> 2027 Round 2</li><li><span class="trade-pos trade-pick">PICK</span> 2026 Round 3</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:80%"></span></span><span class="badtrade-bar-val">7,168</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">9,006</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div><div class="trade-side">
+  <h4><a href="team-12.html">Nikkis’ Victims</a></h4>
+  <ul><li><span class="trade-pos trade-pick">PICK</span> 2025 Round 1</li><li><span class="trade-pos trade-pick">PICK</span> 2026 Round 1</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:42%"></span></span><span class="badtrade-bar-val">3,766</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">1-yr</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:49%"></span></span><span class="badtrade-bar-val">4,372</span></div>
+  </div>
+  
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-9">
+  <div class="trade-meta">#9 &middot; May 21, 2020 <span class="bad-trade-badge">&#128315; <a href="team-4.html">Fuck Michael Thomas</a> lost by 4,522</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-10.html">The Choo Choo Crew</a></h4>
+  <ul><li><span class="trade-pos pos-TE">TE</span> Mark Andrews <span class="trade-nfl">BAL</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:65%"></span></span><span class="badtrade-bar-val">3,266</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-pos" style="width:100%"></span></span><span class="badtrade-bar-val">5,002</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-4.html">Fuck Michael Thomas</a></h4>
+  <ul><li><span class="trade-pos pos-RB">RB</span> Devin Singletary <span class="trade-nfl">NYG</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:48%"></span></span><span class="badtrade-bar-val">2,383</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">3-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:10%"></span></span><span class="badtrade-bar-val">480</span></div>
+  </div>
+  
+</div></div>
+</div>
+<div class="trade-card bad-trade-card" id="bad-trade-10">
+  <div class="trade-meta">#10 &middot; Jan 3, 2024 <span class="bad-trade-badge">&#128315; <a href="team-6.html">Mattpao</a> lost by 4,129</span></div>
+  <div class="trade-sides"><div class="trade-side">
+  <h4><a href="team-12.html">Nikkis’ Victims</a></h4>
+  <ul><li><span class="trade-pos pos-WR">WR</span> Tee Higgins <span class="trade-nfl">CIN</span></li><li><span class="trade-pos pos-RB">RB</span> Khalil Herbert <span class="trade-nfl">FA</span></li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:100%"></span></span><span class="badtrade-bar-val">5,297</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">2-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:78%"></span></span><span class="badtrade-bar-val">4,129</span></div>
+  </div>
+  
+</div><div class="trade-side">
+  <h4><a href="team-6.html">Mattpao</a></h4>
+  <ul><li><span class="trade-pos trade-pick">PICK</span> 2024 Round 2</li><li><span class="trade-pos trade-pick">PICK</span> 2024 Round 1</li><li><span class="trade-pos trade-pick">PICK</span> 2024 Round 2</li></ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neutral" style="width:55%"></span></span><span class="badtrade-bar-val">2,890</span></div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">2-yr avg</span><span class="badtrade-bar-track"><span class="badtrade-bar-fill badtrade-bar-neg" style="width:0%"></span></span><span class="badtrade-bar-val">0</span></div>
+  </div>
+  <p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>
+</div></div>
+</div></div>
+</section>
+
+<section class="analytics-section" id="trade-partners">
   <h2>Most Active Trade Partners</h2>
   <table class="roster-table">
     <thead><tr><th>Pair</th><th>Trades</th></tr></thead>
@@ -214,7 +485,7 @@
   </table>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="all-trades">
   <h2>All Trades</h2>
   <p class="section-note">Newest first, 131 trades total.</p>
   <div class="trade-list">
@@ -839,7 +1110,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>24</td><td>8</td></tr><tr class=""><td><a href="team-11.html">The Factory</a></td><td>13</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>24</td><td>15</td></tr><tr class=""><td><a href="team-11.html">The Factory</a></td><td>13</td><td>0</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -873,9 +1144,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1177</td><td>1317</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>2167</td><td>1470</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1177</td><td>1317</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>2167</td><td>2694</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -890,7 +1161,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2475</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>1975</td><td>1223</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2475</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>1975</td><td>2446</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -941,9 +1212,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>1975</td><td>1223</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>761</td><td>54</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>1975</td><td>2446</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>761</td><td>54</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -958,9 +1229,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>1809</td><td>2256</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>4668</td><td>3030</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>1809</td><td>2397</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>4668</td><td>3030</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -992,9 +1263,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>6335</td><td>6220</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5385</td><td>4696</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>6335</td><td>6220</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5385</td><td>5180</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1009,7 +1280,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>4140</td><td>6315</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>4497</td><td>1082</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>4140</td><td>6315</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>4497</td><td>1342</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1043,7 +1314,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1723</td><td>2438</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>369</td><td>26</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1723</td><td>2438</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>369</td><td>52</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1077,7 +1348,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>5297</td><td>4065</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2890</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>5297</td><td>4129</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2890</td><td>0</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1094,7 +1365,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>79</td><td>126</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>119</td><td>5</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>79</td><td>151</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>119</td><td>5</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1128,9 +1399,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2109</td><td>1198</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>2377</td><td>911</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2109</td><td>2395</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>2377</td><td>911</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1145,9 +1416,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3884</td><td>5210</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>4338</td><td>1103</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3884</td><td>5210</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>4338</td><td>1256</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1162,9 +1433,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2244</td><td>3117</td></tr><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>998</td><td>895</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2244</td><td>3117</td></tr><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>998</td><td>1038</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1196,9 +1467,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1684</td><td>2372</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>2463</td><td>3500</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1684</td><td>2378</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>2463</td><td>3500</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1213,9 +1484,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2075</td><td>1243</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>2931</td><td>1636</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>2075</td><td>2486</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>2931</td><td>1636</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1230,9 +1501,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>4411</td><td>1520</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>2945</td><td>2403</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>4411</td><td>2763</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2945</td><td>2403</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1264,7 +1535,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>275</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>420</td><td>16</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>275</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>420</td><td>24</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1281,7 +1552,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>288</td><td>94</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>284</td><td>1</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>288</td><td>278</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>284</td><td>4</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1349,9 +1620,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-10.html">The Choo Choo Crew</a></td><td>226</td><td>71</td></tr><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>820</td><td>786</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-10.html">The Choo Choo Crew</a></td><td>226</td><td>88</td></tr><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>820</td><td>786</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1366,9 +1637,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>51</td><td>16</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>20</td><td>1</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>51</td><td>49</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>20</td><td>2</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1383,9 +1654,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>1339</td><td>269</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1512</td><td>198</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>1339</td><td>534</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1512</td><td>198</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1400,7 +1671,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2295</td><td>823</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>3168</td><td>1086</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2295</td><td>2469</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>3168</td><td>1086</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1502,7 +1773,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>297</td><td>364</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>428</td><td>93</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>297</td><td>586</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>428</td><td>109</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1519,9 +1790,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2099</td><td>873</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>1498</td><td>184</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2099</td><td>2618</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>1498</td><td>203</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1536,7 +1807,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>229</td><td>435</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>500</td><td>166</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>229</td><td>526</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>500</td><td>182</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1553,7 +1824,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>45</td><td>74</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>752</td><td>152</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>45</td><td>90</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>752</td><td>163</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1570,9 +1841,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1428</td><td>176</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>272</td><td>107</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1428</td><td>176</td></tr><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>272</td><td>320</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1587,9 +1858,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>495</td><td>292</td></tr><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>350</td><td>132</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>495</td><td>598</td></tr><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>350</td><td>171</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1604,9 +1875,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>13</td><td>25</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>251</td><td>112</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>13</td><td>25</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>251</td><td>335</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1638,7 +1909,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2383</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>2487</td><td>20</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2383</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>2487</td><td>59</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1689,7 +1960,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>3846</td><td>1539</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>6993</td><td>2108</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3846</td><td>3429</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>6993</td><td>2108</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1706,7 +1977,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>7</td><td>48</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>142</td><td>283</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>7</td><td>72</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>142</td><td>393</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1723,9 +1994,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>644</td><td>131</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>831</td><td>60</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>644</td><td>384</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>831</td><td>115</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1740,9 +2011,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>408</td><td>187</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>579</td><td>74</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>408</td><td>187</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>579</td><td>128</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1757,7 +2028,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2301</td><td>1097</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>2139</td><td>9584</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2301</td><td>1097</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>2139</td><td>9604</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1774,9 +2045,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>6248</td><td>8380</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5183</td><td>2066</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>6248</td><td>8422</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5183</td><td>2287</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1794,7 +2065,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>580</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>3534</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>622</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>4520</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1811,7 +2082,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>11474</td><td>12353</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>9958</td><td>5705</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>11474</td><td>12353</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>9958</td><td>7468</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1828,7 +2099,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>7442</td><td>5781</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2248</td><td>2399</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>7442</td><td>5819</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2248</td><td>4974</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1845,9 +2116,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>0</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>23</td><td>5</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>0</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>23</td><td>16</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1862,9 +2133,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>782</td><td>446</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>0</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>782</td><td>483</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>0</td><td>0</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -1879,7 +2150,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>11445</td><td>7795</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>12462</td><td>9318</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>11445</td><td>8167</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>12462</td><td>9318</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -1913,9 +2184,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>5180</td><td>5264</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>5518</td><td>977</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>5180</td><td>5471</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>5518</td><td>2570</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2198,7 +2469,7 @@
 </div></div>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="by-pair">
   <h2>By Team Pair</h2>
   
 <div class="pair-section" id="pair-336348640681398272-394252975431766016">
@@ -2244,9 +2515,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>6335</td><td>6220</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5385</td><td>4696</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>6335</td><td>6220</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5385</td><td>5180</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2261,7 +2532,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1723</td><td>2438</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>369</td><td>26</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1723</td><td>2438</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>369</td><td>52</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2278,9 +2549,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2109</td><td>1198</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>2377</td><td>911</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2109</td><td>2395</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>2377</td><td>911</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2312,9 +2583,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1684</td><td>2372</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>2463</td><td>3500</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1684</td><td>2378</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>2463</td><td>3500</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2329,7 +2600,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>288</td><td>94</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>284</td><td>1</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>288</td><td>278</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>284</td><td>4</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2361,7 +2632,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>7442</td><td>5781</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2248</td><td>2399</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>7442</td><td>5819</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2248</td><td>4974</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2511,9 +2782,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>13</td><td>25</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>251</td><td>112</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>13</td><td>25</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>251</td><td>335</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -2549,9 +2820,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2075</td><td>1243</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>2931</td><td>1636</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>2075</td><td>2486</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>2931</td><td>1636</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2566,9 +2837,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>1339</td><td>269</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1512</td><td>198</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>1339</td><td>534</td></tr><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1512</td><td>198</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -2643,7 +2914,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>79</td><td>126</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>119</td><td>5</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>79</td><td>151</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>119</td><td>5</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2677,7 +2948,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>229</td><td>435</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>500</td><td>166</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>229</td><td>526</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>500</td><td>182</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2737,7 +3008,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>11445</td><td>7795</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>12462</td><td>9318</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>11445</td><td>8167</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>12462</td><td>9318</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -2800,7 +3071,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>580</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>3534</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>622</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>4520</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3007,9 +3278,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-10.html">The Choo Choo Crew</a></td><td>226</td><td>71</td></tr><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>820</td><td>786</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-10.html">The Choo Choo Crew</a></td><td>226</td><td>88</td></tr><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>820</td><td>786</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -3028,9 +3299,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>644</td><td>131</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>831</td><td>60</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>644</td><td>384</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>831</td><td>115</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3045,9 +3316,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>6248</td><td>8380</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5183</td><td>2066</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>6248</td><td>8422</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>5183</td><td>2287</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3102,7 +3373,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>5297</td><td>4065</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2890</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>5297</td><td>4129</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>2890</td><td>0</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3151,7 +3422,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2475</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>1975</td><td>1223</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2475</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>1975</td><td>2446</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3303,9 +3574,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>408</td><td>187</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>579</td><td>74</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>408</td><td>187</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>579</td><td>128</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -3324,9 +3595,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>51</td><td>16</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>20</td><td>1</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>51</td><td>49</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>20</td><td>2</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3367,7 +3638,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2295</td><td>823</td></tr><tr class="trade-grade-won"><td><a href="team-6.html">Mattpao</a></td><td>3168</td><td>1086</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2295</td><td>2469</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>3168</td><td>1086</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3384,9 +3655,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2099</td><td>873</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>1498</td><td>184</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>2099</td><td>2618</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>1498</td><td>203</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3453,7 +3724,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>4140</td><td>6315</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>4497</td><td>1082</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>4140</td><td>6315</td></tr><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>4497</td><td>1342</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3485,7 +3756,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>3846</td><td>1539</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>6993</td><td>2108</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3846</td><td>3429</td></tr><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>6993</td><td>2108</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3619,7 +3890,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>11474</td><td>12353</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>9958</td><td>5705</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>11474</td><td>12353</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>9958</td><td>7468</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3660,9 +3931,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2244</td><td>3117</td></tr><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>998</td><td>895</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>2244</td><td>3117</td></tr><tr class=""><td><a href="team-3.html">The Cheese Children </a></td><td>998</td><td>1038</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -3698,9 +3969,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>0</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>23</td><td>5</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>0</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>23</td><td>16</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -3751,9 +4022,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3884</td><td>5210</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>4338</td><td>1103</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>3884</td><td>5210</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>4338</td><td>1256</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3768,9 +4039,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>5180</td><td>5264</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>5518</td><td>977</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>5180</td><td>5471</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>5518</td><td>2570</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -3789,9 +4060,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>4411</td><td>1520</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>2945</td><td>2403</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-2.html">DickTatorMiller</a></td><td>4411</td><td>2763</td></tr><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2945</td><td>2403</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 <div class="trade-card">
@@ -3838,7 +4109,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>45</td><td>74</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>752</td><td>152</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>45</td><td>90</td></tr><tr class="trade-grade-won"><td><a href="team-5.html">The Moon Unit</a></td><td>752</td><td>163</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3859,7 +4130,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2383</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>2487</td><td>20</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>2383</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-3.html">The Cheese Children </a></td><td>2487</td><td>59</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3894,7 +4165,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>7</td><td>48</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>142</td><td>283</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-7.html">Brock Hard</a></td><td>7</td><td>72</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>142</td><td>393</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -3929,7 +4200,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>580</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>3534</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>622</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>4520</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4110,7 +4381,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>24</td><td>8</td></tr><tr class=""><td><a href="team-11.html">The Factory</a></td><td>13</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>24</td><td>15</td></tr><tr class=""><td><a href="team-11.html">The Factory</a></td><td>13</td><td>0</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4152,9 +4423,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1177</td><td>1317</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>2167</td><td>1470</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>1177</td><td>1317</td></tr><tr class="trade-grade-won"><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>2167</td><td>2694</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4194,9 +4465,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>1975</td><td>1223</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>761</td><td>54</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>1975</td><td>2446</td></tr><tr class=""><td><a href="team-6.html">Mattpao</a></td><td>761</td><td>54</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4215,9 +4486,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>2-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>1809</td><td>2256</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>4668</td><td>3030</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-4.html">Fuck Michael Thomas</a></td><td>1809</td><td>2397</td></tr><tr class="trade-grade-won"><td><a href="team-7.html">Brock Hard</a></td><td>4668</td><td>3030</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4257,7 +4528,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>275</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>420</td><td>16</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>275</td><td>0</td></tr><tr class="trade-grade-won"><td><a href="team-11.html">The Factory</a></td><td>420</td><td>24</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4320,7 +4591,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>297</td><td>364</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>428</td><td>93</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>297</td><td>586</td></tr><tr class=""><td><a href="team-8.html">Long Live Wopo </a></td><td>428</td><td>109</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4341,9 +4612,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1428</td><td>176</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>272</td><td>107</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-12.html">Nikkis’ Victims</a></td><td>1428</td><td>176</td></tr><tr class="trade-grade-won"><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>272</td><td>320</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4362,9 +4633,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>495</td><td>292</td></tr><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>350</td><td>132</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-12.html">Nikkis’ Victims</a></td><td>495</td><td>598</td></tr><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>350</td><td>171</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4404,7 +4675,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2301</td><td>1097</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>2139</td><td>9584</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-2.html">DickTatorMiller</a></td><td>2301</td><td>1097</td></tr><tr class="trade-grade-won"><td><a href="team-8.html">Long Live Wopo </a></td><td>2139</td><td>9604</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4428,7 +4699,7 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>580</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>3534</td></tr></tbody>
+    <tbody><tr class=""><td><a href="team-5.html">The Moon Unit</a></td><td>1043</td><td>622</td></tr><tr class="trade-grade-won"><td><a href="team-1.html">The Chicken Boys🐔</a></td><td>5044</td><td>5465</td></tr><tr class=""><td><a href="team-9.html">BateBoul</a></td><td>2638</td><td>4520</td></tr></tbody>
   </table>
   <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
 </div>
@@ -4449,9 +4720,9 @@
   <div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>3-yr avg Later</th></tr></thead>
-    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>782</td><td>446</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>0</td><td>0</td></tr></tbody>
+    <tbody><tr class="trade-grade-won"><td><a href="team-10.html">The Choo Choo Crew</a></td><td>782</td><td>483</td></tr><tr class=""><td>🏳️‍🌈ALLAS ARMY🏳️‍🌈</td><td>0</td><td>0</td></tr></tbody>
   </table>
-  <p class="trade-grade-note">* one or more assets couldn't be fully valued (missing from a snapshot); totals are a lower bound.</p>
+  
 </div>
 </div>
 </div>
@@ -4540,6 +4811,1004 @@
 </div>
 </div>
 </section>
+
+
+<section class="analytics-section" id="draft-capital">
+  <h2>Draft Capital Flow</h2>
+  <p class="section-note">Every draft pick trade in league history, 2019 through the 2028 class. "Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
+  <div class="net-chart">
+<div class="net-row">
+  <div class="net-team"><a href="team-11.html">The Factory</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:50%"></div></div>
+  <div class="net-value luck-pos">+16</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-9.html">BateBoul</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:31%"></div></div>
+  <div class="net-value luck-pos">+10</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-6.html">Mattpao</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:25%"></div></div>
+  <div class="net-value luck-pos">+8</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-3.html">The Cheese Children </a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:9%"></div></div>
+  <div class="net-value luck-pos">+3</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-2.html">DickTatorMiller</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:6%"></div></div>
+  <div class="net-value luck-pos">+2</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-5.html">The Moon Unit</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:0%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value ">+0</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-12.html">Nikkis’ Victims</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:3%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-1</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-4.html">Fuck Michael Thomas</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:6%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-2</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-8.html">Long Live Wopo </a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:6%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-2</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-1.html">The Chicken Boys🐔</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:25%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-8</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-10.html">The Choo Choo Crew</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:34%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-11</div>
+</div>
+<div class="net-row">
+  <div class="net-team"><a href="team-7.html">Brock Hard</a></div>
+  <div class="net-bar-track"><div class="net-bar-neg" style="width:47%"></div><div class="net-bar-mid"></div><div class="net-bar-pos" style="width:0%"></div></div>
+  <div class="net-value luck-neg">-15</div>
+</div></div>
+</section>
+
+<section class="analytics-section" id="future-picks">
+  <h2>Future Pick Trades (2026-2028)</h2>
+  <div class="history-list">
+<div class="season-card">
+  <h3>2026</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-9.html">BateBoul</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2027</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-9.html">BateBoul</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2028</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+</tr></tbody>
+  </table>
+</div></div>
+</section>
+
+<section class="analytics-section" id="historical-picks">
+  <h2>Historical Pick Trades (2019-2025)</h2>
+  <div class="history-list">
+<div class="season-card">
+  <h3>2025</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2024</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2023</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2022</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-9.html">BateBoul</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-12.html">Nikkis’ Victims</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2021</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-9.html">BateBoul</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2020</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td>(departed team)</td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-6.html">Mattpao</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-4.html">Fuck Michael Thomas</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-9.html">BateBoul</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-11.html">The Factory</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td>(departed team)</td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 3</td>
+<td><a href="team-6.html">Mattpao</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-7.html">Brock Hard</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+</tr><tr>
+<td class="rd">Rd 4</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr></tbody>
+  </table>
+</div>
+<div class="season-card">
+  <h3>2019</h3>
+  <table class="roster-table trade-ledger">
+    <tbody><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-8.html">Long Live Wopo </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+</tr><tr>
+<td class="rd">Rd 1</td>
+<td><a href="team-10.html">The Choo Choo Crew</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-11.html">The Factory</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-1.html">The Chicken Boys🐔</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-2.html">DickTatorMiller</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-3.html">The Cheese Children </a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+</tr><tr>
+<td class="rd">Rd 2</td>
+<td><a href="team-5.html">The Moon Unit</a></td>
+<td class="arrow">&rarr;</td>
+<td><a href="team-9.html">BateBoul</a></td>
+</tr></tbody>
+  </table>
+</div></div>
+</section>
+
 
 </div>
 </body>

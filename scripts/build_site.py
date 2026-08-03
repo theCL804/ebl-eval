@@ -53,8 +53,7 @@ NAV_ITEMS = [
     ("head-to-head.html", "Head-to-Head"),
     ("rivalries.html", "Rivalries"),
     ("analytics.html", "Analytics"),
-    ("draft-flow.html", "Draft Capital Flow"),
-    ("trades.html", "Trades Hub"),
+    ("trades.html", "Trades"),
 ]
 
 POSITION_COLORS = {"QB": "#e5484d", "RB": "#3fb97d", "WR": "#4f7fe0", "TE": "#d9a635"}
@@ -264,8 +263,7 @@ HUB_SECTIONS = [
     ("history.html", "League History", "Season-by-season standings and champions, back to the league's 2018 founding."),
     ("head-to-head.html", "Head-to-Head", "All-time records between every team currently in the league."),
     ("analytics.html", "Analytics", "All-play luck, positional scoring mix, and roster-management activity."),
-    ("draft-flow.html", "Draft Capital Flow", "Every draft pick trade in league history, and who's stockpiling future capital."),
-    ("trades.html", "Trades Hub", "Every trade ever made, players and picks both, broken down by team pair."),
+    ("trades.html", "Trades", "Every trade ever made, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger."),
 ]
 
 
@@ -703,15 +701,10 @@ def build_analytics_page(analytics, teams):
     return page_shell("Analytics — Ethel's Dynasty", body, description="All-play luck, positional scoring trends, and trade/transaction activity.", active="analytics.html")
 
 
-def build_draft_flow_page(draft_flow, teams):
-    owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
-
-    def team_link(owner_id, name):
-        roster_id = owner_to_roster.get(owner_id)
-        if roster_id:
-            return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
-        return esc(name)
-
+def draft_flow_sections_html(draft_flow, team_link):
+    """Net draft capital leaderboard + pick trade ledgers, as a chunk of
+    <section> HTML to embed in the Trades page (not a standalone page --
+    draft pick trades are just another flavor of trade)."""
     # --- net capital leaderboard ---
     nc_sorted = sorted(draft_flow["net_capital"].items(), key=lambda x: -x[1]["net"])
     max_abs = max((abs(v["net"]) for _, v in nc_sorted), default=1) or 1
@@ -756,28 +749,23 @@ def build_draft_flow_page(draft_flow, teams):
 </div>""")
         return "".join(cards)
 
-    body = f"""
-<header class="league-header">
-  <h1>Draft Capital Flow</h1>
-  <p class="league-summary">Every draft pick trade in league history, 2019 through the 2028 class. "Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
-</header>
-
-<section class="analytics-section">
-  <h2>All-Time Net Draft Capital</h2>
+    return f"""
+<section class="analytics-section" id="draft-capital">
+  <h2>Draft Capital Flow</h2>
+  <p class="section-note">Every draft pick trade in league history, 2019 through the 2028 class. "Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
   <div class="net-chart">{"".join(net_rows)}</div>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="future-picks">
   <h2>Future Pick Trades (2026-2028)</h2>
   <div class="history-list">{trade_ledger(draft_flow["future_trades"], seasons_desc=False)}</div>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="historical-picks">
   <h2>Historical Pick Trades (2019-2025)</h2>
   <div class="history-list">{trade_ledger(draft_flow["historical_trades"])}</div>
 </section>
 """
-    return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
 def tx_date(t):
@@ -787,7 +775,7 @@ def tx_date(t):
     return dt.strftime("%b %-d, %Y")
 
 
-def build_trades_page(trades_data, teams, trade_grades):
+def build_trades_page(trades_data, teams, trade_grades, draft_flow):
     owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
 
     def team_link(owner_id, name):
@@ -856,6 +844,88 @@ def build_trades_page(trades_data, teams, trade_grades):
   {grade_html(t)}
 </div>"""
 
+    # --- hall of bad trades: the most lopsided deals in hindsight ---
+    def bad_trade_entries(limit=10):
+        """For every graded trade, find the side that came out worst against
+        the best-off side in that same trade (by the aged-value checkpoint),
+        and rank across all trades by how big that gap was. Only meaningful
+        for 2+ side trades that actually got graded (see grade_html)."""
+        entries = []
+        for t in trades_data["trades"]:
+            g = trade_grades.get(t["transaction_id"])
+            if not g or len(t["teams"]) < 2:
+                continue
+            aged = {o: g["sides"][o]["aged_value"] for o in t["teams"]}
+            for o in t["teams"]:
+                others_best = max(v for oo, v in aged.items() if oo != o)
+                gap = others_best - aged[o]
+                if gap > 0:
+                    entries.append({"trade": t, "loser": o, "gap": gap})
+        entries.sort(key=lambda e: -e["gap"])
+        return entries[:limit]
+
+    def value_bar(value, scale_max, cls):
+        pct = min(100, value / scale_max * 100) if scale_max else 0
+        return f'<span class="badtrade-bar-track"><span class="badtrade-bar-fill {cls}" style="width:{pct:.0f}%"></span></span><span class="badtrade-bar-val">{value:,.0f}</span>'
+
+    def bad_trade_card(rank, entry):
+        t = entry["trade"]
+        g = trade_grades[t["transaction_id"]]
+        horizon_label = f"{g['horizon_years']}-yr avg" if g["horizon_years"] > 1 else "1-yr"
+        scale_max = max(
+            (g["sides"][o]["hist_value"] for o in t["teams"]),
+            default=1,
+        )
+        scale_max = max(scale_max, max((g["sides"][o]["aged_value"] for o in t["teams"]), default=1), 1)
+
+        def side_block(o):
+            s = g["sides"][o]
+            aged_cls = "badtrade-bar-pos" if s["aged_value"] >= s["hist_value"] else "badtrade-bar-neg"
+            incomplete_note = (
+                '<p class="trade-grade-note">* lower bound, not every asset was priceable at every checkpoint.</p>'
+                if not s["hist_complete"] or not s["aged_complete"]
+                else ""
+            )
+            return f"""<div class="trade-side">
+  <h4>{team_link(o, t['team_names'][o])}</h4>
+  <ul>{side_items(t['sides'][o])}</ul>
+  <div class="badtrade-bars">
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">At Trade</span>{value_bar(s['hist_value'], scale_max, 'badtrade-bar-neutral')}</div>
+    <div class="badtrade-bar-row"><span class="badtrade-bar-label">{esc(horizon_label)}</span>{value_bar(s['aged_value'], scale_max, aged_cls)}</div>
+  </div>
+  {incomplete_note}
+</div>"""
+
+        sides_html = "".join(side_block(o) for o in t["teams"])
+        loser_name = t["team_names"][entry["loser"]]
+        return f"""
+<div class="trade-card bad-trade-card" id="bad-trade-{rank}">
+  <div class="trade-meta">#{rank} &middot; {esc(tx_date(t))} <span class="bad-trade-badge">&#128315; {team_link(entry['loser'], loser_name)} lost by {entry['gap']:,.0f}</span></div>
+  <div class="trade-sides">{sides_html}</div>
+</div>"""
+
+    bad_trades = bad_trade_entries()
+
+    def bad_trades_leaderboard(entries):
+        max_gap = max((e["gap"] for e in entries), default=1) or 1
+        rows = []
+        for i, e in enumerate(entries, 1):
+            pct = e["gap"] / max_gap * 100
+            loser_name = e["trade"]["team_names"][e["loser"]]
+            rows.append(f"""<a class="badtrade-lb-row" href="#bad-trade-{i}">
+  <span class="badtrade-lb-rank">#{i}</span>
+  <span class="badtrade-lb-team">{esc(loser_name)}</span>
+  <span class="badtrade-lb-track"><span class="badtrade-lb-fill" style="width:{pct:.0f}%"></span></span>
+  <span class="badtrade-lb-val">-{e['gap']:,.0f}</span>
+</a>""")
+        return f'<div class="badtrade-leaderboard">{"".join(rows)}</div>'
+
+    bad_trades_html = (
+        bad_trades_leaderboard(bad_trades) + "".join(bad_trade_card(i, e) for i, e in enumerate(bad_trades, 1))
+        if bad_trades
+        else '<p class="section-note">Not enough graded trades yet to rank.</p>'
+    )
+
     # --- top trade partners leaderboard ---
     partner_rows = "".join(
         f"""<tr>
@@ -878,14 +948,29 @@ def build_trades_page(trades_data, teams, trade_grades):
   {cards}
 </div>""")
 
+    draft_flow_html = draft_flow_sections_html(draft_flow, team_link)
+
     body = f"""
 <header class="league-header">
-  <h1>Trades Hub</h1>
-  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both, not just picks. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
+  <h1>Trades</h1>
+  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both &mdash; plus the draft pick capital ledger. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
   <p class="section-note">Each trade with a Dynasty Value grade shows what each side was worth at the moment of the trade versus the average of its value 1, 2, and 3 years later (whichever have elapsed) &mdash; not "value today," which would unfairly zero out old trades just from players aging out of relevance. Values come from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess's open-data project</a>; trades before May 2020 predate their value history and aren't graded, and trades under a year old haven't aged long enough yet.</p>
+  <nav class="subnav">
+    <a href="#hall-of-bad-trades">Hall of Bad Trades</a>
+    <a href="#trade-partners">Trade Partners</a>
+    <a href="#all-trades">All Trades</a>
+    <a href="#by-pair">By Team Pair</a>
+    <a href="#draft-capital">Draft Capital Flow</a>
+  </nav>
 </header>
 
-<section class="analytics-section">
+<section class="analytics-section" id="hall-of-bad-trades">
+  <h2>Hall of Bad Trades</h2>
+  <p class="section-note">The most lopsided deals in hindsight &mdash; ranked by how far the losing side's aged Dynasty Value fell behind the other side's, at the same checkpoint.</p>
+  <div class="trade-list">{bad_trades_html}</div>
+</section>
+
+<section class="analytics-section" id="trade-partners">
   <h2>Most Active Trade Partners</h2>
   <table class="roster-table">
     <thead><tr><th>Pair</th><th>Trades</th></tr></thead>
@@ -893,18 +978,20 @@ def build_trades_page(trades_data, teams, trade_grades):
   </table>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="all-trades">
   <h2>All Trades</h2>
   <p class="section-note">Newest first, {len(trades_data['trades'])} trades total.</p>
   <div class="trade-list">{all_trades_html}</div>
 </section>
 
-<section class="analytics-section">
+<section class="analytics-section" id="by-pair">
   <h2>By Team Pair</h2>
   {"".join(pair_sections)}
 </section>
+
+{draft_flow_html}
 """
-    return page_shell("Trades Hub — Ethel's Dynasty", body, description="Every trade in league history, players and picks, with a breakdown of who trades with whom.", active="trades.html")
+    return page_shell("Trades — Ethel's Dynasty", body, description="Every trade in league history, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger.", active="trades.html")
 
 
 TX_TYPE_LABEL = {"trade": "Trade", "waiver": "Waiver Claim", "free_agent": "Free Agent Move"}
@@ -1272,6 +1359,36 @@ a:hover { text-decoration: underline; }
 .trade-grade-table tr.trade-grade-won td { font-weight: 700; color: var(--contender); }
 .trade-grade-note { color: var(--text-muted); font-size: 0.76rem; font-style: italic; margin: 10px 0 0; }
 
+.subnav { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 4px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 0.85rem; }
+.subnav a { color: var(--text-muted); font-weight: 600; }
+.subnav a:hover { color: var(--text); }
+
+.badtrade-leaderboard { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.badtrade-lb-row { display: grid; grid-template-columns: 30px 150px 1fr 70px; align-items: center; gap: 10px; font-size: 0.85rem; padding: 4px 0; color: var(--text); }
+.badtrade-lb-row:hover { text-decoration: none; }
+.badtrade-lb-row:hover .badtrade-lb-team { text-decoration: underline; }
+.badtrade-lb-rank { color: var(--text-muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+.badtrade-lb-team { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badtrade-lb-track { height: 12px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.badtrade-lb-fill { display: block; height: 100%; background: var(--winnow); border-radius: 3px; }
+.badtrade-lb-val { text-align: right; font-weight: 700; color: var(--winnow); font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .badtrade-lb-row { grid-template-columns: 24px 90px 1fr 55px; font-size: 0.78rem; }
+}
+
+.bad-trade-card { border-color: var(--winnow); }
+.bad-trade-badge { float: right; color: var(--winnow); font-weight: 700; letter-spacing: normal; text-transform: none; }
+
+.badtrade-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.badtrade-bar-row { display: grid; grid-template-columns: 62px 1fr 55px; align-items: center; gap: 6px; font-size: 0.76rem; }
+.badtrade-bar-label { color: var(--text-muted); }
+.badtrade-bar-track { height: 10px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.badtrade-bar-fill { display: block; height: 100%; border-radius: 3px; }
+.badtrade-bar-neutral { background: var(--text-muted); }
+.badtrade-bar-pos { background: var(--contender); }
+.badtrade-bar-neg { background: var(--winnow); }
+.badtrade-bar-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
 .rivalry-picker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .rivalry-picker select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); min-width: 200px; }
 .rivalry-picker .rivalry-vs { color: var(--text-muted); font-weight: 600; }
@@ -1325,15 +1442,17 @@ def main():
     (DOCS_DIR / "analytics.html").write_text(analytics_html)
 
     draft_flow = load("draft_flow.json")
-    draft_flow_html = build_draft_flow_page(draft_flow, teams)
-    (DOCS_DIR / "draft-flow.html").write_text(draft_flow_html)
 
     trades_data = load("trades.json")
     trade_grades = load("trade_grades.json")
-    trades_html = build_trades_page(trades_data, teams, trade_grades)
+    trades_html = build_trades_page(trades_data, teams, trade_grades, draft_flow)
     (DOCS_DIR / "trades.html").write_text(trades_html)
 
-    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + analytics + draft-flow + trades into {DOCS_DIR}")
+    stale_draft_flow_page = DOCS_DIR / "draft-flow.html"
+    if stale_draft_flow_page.exists():
+        stale_draft_flow_page.unlink()
+
+    print(f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + analytics + trades (incl. draft capital flow) into {DOCS_DIR}")
 
 
 if __name__ == "__main__":
