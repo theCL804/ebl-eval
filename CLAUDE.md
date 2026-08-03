@@ -85,9 +85,10 @@ step beyond running Python scripts and committing the output:
    Transactions page, a Home landing page (`index.html`, added 2026-08 —
    a hub linking to every section plus a few league-wide facts, not the
    scouting-report grid), and Power Rankings, League History,
-   Head-to-Head, Rivalries, Analytics, Trades (which folds in Draft
-   Capital Flow and the Hall of Bad Trades — there's no separate
-   `draft-flow.html` anymore), and Weekly Recap pages, all sharing one
+   Head-to-Head, Rivalries, Analytics, Trades (three pages grouped under
+   one nav dropdown — `hall-of-bad-trades.html`, `trade-history.html`,
+   `draft-flow.html`; there's no single combined `trades.html` anymore),
+   and Weekly Recap pages, all sharing one
    `style.css` and a nav bar. **`index.html` is the home
    page, not Power Rankings** — the per-team scouting-report grid that
    used to live at `index.html` is now `power-rankings.html`; don't point
@@ -126,8 +127,10 @@ played — it only reads weeks Sleeper has already returned data for.
   dropdown (`NAV_ITEMS` supports `("group", label, [(href, label), ...])`
   entries alongside plain `("link", href, label)` ones — see `nav_html()`
   in `build_site.py`). This is the general mechanism for putting multiple
-  pages under one top-bar header; reuse it rather than inventing another
-  approach if another multi-page section comes up.
+  pages under one top-bar header; the "Trades" dropdown (`hall-of-bad-trades.html`,
+  `trade-history.html`, `draft-flow.html`) uses the same mechanism with a
+  static (non-data-dependent) children list. Reuse it rather than
+  inventing another approach if another multi-page section comes up.
 - Scores/highlights/transactions are 100% mechanical (`compute_weekly.py`,
   same pattern as the other compute scripts). The narrative recap prose is
   **not** — it lives in `data/weekly_recap_prose.json`, hand/AI-authored

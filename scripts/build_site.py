@@ -53,7 +53,15 @@ NAV_ITEMS = [
     ("link", "head-to-head.html", "Head-to-Head"),
     ("link", "rivalries.html", "Rivalries"),
     ("link", "analytics.html", "Analytics"),
-    ("link", "trades.html", "Trades"),
+    (
+        "group",
+        "Trades",
+        [
+            ("hall-of-bad-trades.html", "Hall of Bad Trades"),
+            ("trade-history.html", "Trade History"),
+            ("draft-flow.html", "Draft Capital Flow"),
+        ],
+    ),
 ]
 
 POSITION_COLORS = {"QB": "#e5484d", "RB": "#3fb97d", "WR": "#4f7fe0", "TE": "#d9a635"}
@@ -285,7 +293,7 @@ HUB_SECTIONS = [
     ("history.html", "League History", "Season-by-season standings and champions, back to the league's 2018 founding."),
     ("head-to-head.html", "Head-to-Head", "All-time records between every team currently in the league."),
     ("analytics.html", "Analytics", "All-play luck, positional scoring mix, and roster-management activity."),
-    ("trades.html", "Trades", "Every trade ever made, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger."),
+    ("trade-history.html", "Trades", "Every trade ever made, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger."),
     ("weekly-recaps.html", "Weekly Recap", "Scores, transactions, and a recap of how each week's matchups went."),
 ]
 
@@ -726,8 +734,7 @@ def build_analytics_page(analytics, teams):
 
 def draft_flow_sections_html(draft_flow, team_link):
     """Net draft capital leaderboard + pick trade ledgers, as a chunk of
-    <section> HTML to embed in the Trades page (not a standalone page --
-    draft pick trades are just another flavor of trade)."""
+    <section> HTML embedded in build_draft_flow_page's page_shell."""
     # --- net capital leaderboard ---
     nc_sorted = sorted(draft_flow["net_capital"].items(), key=lambda x: -x[1]["net"])
     max_abs = max((abs(v["net"]) for _, v in nc_sorted), default=1) or 1
@@ -774,8 +781,8 @@ def draft_flow_sections_html(draft_flow, team_link):
 
     return f"""
 <section class="analytics-section" id="draft-capital">
-  <h2>Draft Capital Flow</h2>
-  <p class="section-note">Every draft pick trade in league history, 2019 through the 2028 class. "Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
+  <h2>Net Draft Capital</h2>
+  <p class="section-note">"Net capital" is picks acquired minus picks given away across the team's whole history &mdash; positive means a team has consistently traded for future equity, negative means it's been spending picks to win now.</p>
   <div class="net-chart">{"".join(net_rows)}</div>
 </section>
 
@@ -798,7 +805,7 @@ def tx_date(t):
     return dt.strftime("%b %-d, %Y")
 
 
-def build_trades_page(trades_data, teams, trade_grades, draft_flow):
+def _team_link_fn(teams):
     owner_to_roster = {t["owner_id"]: t["roster_id"] for t in teams}
 
     def team_link(owner_id, name):
@@ -807,44 +814,45 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
             return f'<a href="team-{roster_id}.html">{esc(name)}</a>'
         return esc(name)
 
-    def pair_anchor(a, b):
-        return f"pair-{a}-{b}"
+    return team_link
 
-    def side_items(side):
-        items = []
-        for p in side["players"]:
-            pos = p["position"] or ""
-            team = p["team"] or "FA"
-            items.append(f'<li><span class="trade-pos pos-{pos}">{esc(pos)}</span> {esc(p["name"])} <span class="trade-nfl">{esc(team)}</span></li>')
-        for pk in side["picks"]:
-            items.append(f'<li><span class="trade-pos trade-pick">PICK</span> {esc(pk["season"])} Round {pk["round"]}</li>')
-        if not items:
-            return '<li class="trade-empty">(nothing)</li>'
-        return "".join(items)
 
-    def grade_html(t):
-        g = trade_grades.get(t["transaction_id"])
-        if not g:
-            return '<p class="trade-grade-note">Not graded &mdash; either too recent (needs a year to pass) or predates available dynasty value data (before May 2020).</p>'
+def _trade_side_items(side):
+    items = []
+    for p in side["players"]:
+        pos = p["position"] or ""
+        team = p["team"] or "FA"
+        items.append(f'<li><span class="trade-pos pos-{pos}">{esc(pos)}</span> {esc(p["name"])} <span class="trade-nfl">{esc(team)}</span></li>')
+    for pk in side["picks"]:
+        items.append(f'<li><span class="trade-pos trade-pick">PICK</span> {esc(pk["season"])} Round {pk["round"]}</li>')
+    if not items:
+        return '<li class="trade-empty">(nothing)</li>'
+    return "".join(items)
 
-        aged_vals = {o: g["sides"][o]["aged_value"] for o in t["teams"]}
-        best = max(aged_vals.values())
-        any_incomplete = any(not g["sides"][o]["hist_complete"] or not g["sides"][o]["aged_complete"] for o in t["teams"])
-        rows = []
-        for o in t["teams"]:
-            s = g["sides"][o]
-            won_cls = " trade-grade-won" if s["aged_value"] == best and len(set(aged_vals.values())) > 1 else ""
-            rows.append(
-                f'<tr class="{won_cls.strip()}"><td>{team_link(o, t["team_names"][o])}</td>'
-                f'<td>{s["hist_value"]:.0f}</td><td>{s["aged_value"]:.0f}</td></tr>'
-            )
-        horizon_label = f"{g['horizon_years']}-yr avg" if g["horizon_years"] > 1 else "1-yr"
-        incomplete_note = (
-            '<p class="trade-grade-note">* one or more assets couldn\'t be fully valued (missing from a snapshot); totals are a lower bound.</p>'
-            if any_incomplete
-            else ""
+
+def _trade_grade_html(t, trade_grades, team_link):
+    g = trade_grades.get(t["transaction_id"])
+    if not g:
+        return '<p class="trade-grade-note">Not graded &mdash; either too recent (needs a year to pass) or predates available dynasty value data (before May 2020).</p>'
+
+    aged_vals = {o: g["sides"][o]["aged_value"] for o in t["teams"]}
+    best = max(aged_vals.values())
+    any_incomplete = any(not g["sides"][o]["hist_complete"] or not g["sides"][o]["aged_complete"] for o in t["teams"])
+    rows = []
+    for o in t["teams"]:
+        s = g["sides"][o]
+        won_cls = " trade-grade-won" if s["aged_value"] == best and len(set(aged_vals.values())) > 1 else ""
+        rows.append(
+            f'<tr class="{won_cls.strip()}"><td>{team_link(o, t["team_names"][o])}</td>'
+            f'<td>{s["hist_value"]:.0f}</td><td>{s["aged_value"]:.0f}</td></tr>'
         )
-        return f"""<div class="trade-grade">
+    horizon_label = f"{g['horizon_years']}-yr avg" if g["horizon_years"] > 1 else "1-yr"
+    incomplete_note = (
+        '<p class="trade-grade-note">* one or more assets couldn\'t be fully valued (missing from a snapshot); totals are a lower bound.</p>'
+        if any_incomplete
+        else ""
+    )
+    return f"""<div class="trade-grade">
   <table class="trade-grade-table">
     <thead><tr><th>Team</th><th>At Trade</th><th>{esc(horizon_label)} Later</th></tr></thead>
     <tbody>{"".join(rows)}</tbody>
@@ -852,20 +860,26 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
   {incomplete_note}
 </div>"""
 
-    def trade_card(t):
-        sides_html = "".join(
-            f"""<div class="trade-side">
+
+def _trade_card(t, trade_grades, team_link):
+    sides_html = "".join(
+        f"""<div class="trade-side">
   <h4>{team_link(o, t['team_names'][o])}</h4>
-  <ul>{side_items(t['sides'][o])}</ul>
+  <ul>{_trade_side_items(t['sides'][o])}</ul>
 </div>"""
-            for o in t["teams"]
-        )
-        return f"""
+        for o in t["teams"]
+    )
+    return f"""
 <div class="trade-card">
   <div class="trade-meta">{esc(tx_date(t))}</div>
   <div class="trade-sides">{sides_html}</div>
-  {grade_html(t)}
+  {_trade_grade_html(t, trade_grades, team_link)}
 </div>"""
+
+
+def build_hall_of_bad_trades_page(trades_data, teams, trade_grades):
+    team_link = _team_link_fn(teams)
+    side_items = _trade_side_items
 
     # --- hall of bad trades: the most lopsided deals in hindsight ---
     def bad_trade_entries(limit=10):
@@ -963,6 +977,29 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
         else '<p class="section-note">Not enough graded trades yet to rank.</p>'
     )
 
+    body = f"""
+<header class="league-header">
+  <h1>Hall of Bad Trades</h1>
+  <p class="league-summary">The most lopsided deals in league history, in hindsight &mdash; ranked by how far the losing side's aged Dynasty Value fell behind the other side's, at the same checkpoint.</p>
+  <p class="section-note">Each trade's grade shows what each side was worth at the moment of the trade versus the average of its value 1, 2, and 3 years later (whichever have elapsed) &mdash; not "value today," which would unfairly zero out old trades just from players aging out of relevance. Values come from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess's open-data project</a>.</p>
+</header>
+
+<section class="analytics-section">
+  <div class="trade-list">{bad_trades_html}</div>
+</section>
+"""
+    return page_shell("Hall of Bad Trades — Ethel's Dynasty", body, description="The most lopsided trades in league history, ranked by how far they fell behind in hindsight.", active="hall-of-bad-trades.html")
+
+
+def build_trade_history_page(trades_data, teams, trade_grades):
+    team_link = _team_link_fn(teams)
+
+    def pair_anchor(a, b):
+        return f"pair-{a}-{b}"
+
+    def trade_card(t):
+        return _trade_card(t, trade_grades, team_link)
+
     # --- top trade partners leaderboard ---
     partner_rows = "".join(
         f"""<tr>
@@ -985,27 +1022,17 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
   {cards}
 </div>""")
 
-    draft_flow_html = draft_flow_sections_html(draft_flow, team_link)
-
     body = f"""
 <header class="league-header">
-  <h1>Trades</h1>
-  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both &mdash; plus the draft pick capital ledger. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
+  <h1>Trade History</h1>
+  <p class="league-summary">Every trade in league history, 2019 through today &mdash; players and draft picks both. Click a pair below to jump straight to every deal those two teams have made with each other.</p>
   <p class="section-note">Each trade with a Dynasty Value grade shows what each side was worth at the moment of the trade versus the average of its value 1, 2, and 3 years later (whichever have elapsed) &mdash; not "value today," which would unfairly zero out old trades just from players aging out of relevance. Values come from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess's open-data project</a>; trades before May 2020 predate their value history and aren't graded, and trades under a year old haven't aged long enough yet.</p>
   <nav class="subnav">
-    <a href="#hall-of-bad-trades">Hall of Bad Trades</a>
     <a href="#trade-partners">Trade Partners</a>
     <a href="#all-trades">All Trades</a>
     <a href="#by-pair">By Team Pair</a>
-    <a href="#draft-capital">Draft Capital Flow</a>
   </nav>
 </header>
-
-<section class="analytics-section" id="hall-of-bad-trades">
-  <h2>Hall of Bad Trades</h2>
-  <p class="section-note">The most lopsided deals in hindsight &mdash; ranked by how far the losing side's aged Dynasty Value fell behind the other side's, at the same checkpoint.</p>
-  <div class="trade-list">{bad_trades_html}</div>
-</section>
 
 <section class="analytics-section" id="trade-partners">
   <h2>Most Active Trade Partners</h2>
@@ -1025,10 +1052,28 @@ def build_trades_page(trades_data, teams, trade_grades, draft_flow):
   <h2>By Team Pair</h2>
   {"".join(pair_sections)}
 </section>
+"""
+    return page_shell("Trade History — Ethel's Dynasty", body, description="Every trade in league history, players and picks, with a breakdown of who trades with whom.", active="trade-history.html")
+
+
+def build_draft_flow_page(draft_flow, teams):
+    team_link = _team_link_fn(teams)
+    draft_flow_html = draft_flow_sections_html(draft_flow, team_link)
+
+    body = f"""
+<header class="league-header">
+  <h1>Draft Capital Flow</h1>
+  <p class="league-summary">Every draft pick trade in league history, 2019 through the 2028 class, and who's accumulated the most future capital.</p>
+  <nav class="subnav">
+    <a href="#draft-capital">Net Draft Capital</a>
+    <a href="#future-picks">Future Pick Trades</a>
+    <a href="#historical-picks">Historical Pick Trades</a>
+  </nav>
+</header>
 
 {draft_flow_html}
 """
-    return page_shell("Trades — Ethel's Dynasty", body, description="Every trade in league history, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger.", active="trades.html")
+    return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
 def weekly_nav_children(weekly_data):
@@ -1700,15 +1745,19 @@ def main():
     (DOCS_DIR / "analytics.html").write_text(analytics_html)
 
     draft_flow = load("draft_flow.json")
+    draft_flow_html = build_draft_flow_page(draft_flow, teams)
+    (DOCS_DIR / "draft-flow.html").write_text(draft_flow_html)
 
     trades_data = load("trades.json")
     trade_grades = load("trade_grades.json")
-    trades_html = build_trades_page(trades_data, teams, trade_grades, draft_flow)
-    (DOCS_DIR / "trades.html").write_text(trades_html)
+    bad_trades_html = build_hall_of_bad_trades_page(trades_data, teams, trade_grades)
+    (DOCS_DIR / "hall-of-bad-trades.html").write_text(bad_trades_html)
+    trade_history_html = build_trade_history_page(trades_data, teams, trade_grades)
+    (DOCS_DIR / "trade-history.html").write_text(trade_history_html)
 
-    stale_draft_flow_page = DOCS_DIR / "draft-flow.html"
-    if stale_draft_flow_page.exists():
-        stale_draft_flow_page.unlink()
+    stale_trades_page = DOCS_DIR / "trades.html"
+    if stale_trades_page.exists():
+        stale_trades_page.unlink()
 
     weekly_hub_html = build_weekly_recap_hub_page(weekly_data, weekly_prose, teams)
     (DOCS_DIR / "weekly-recaps.html").write_text(weekly_hub_html)
@@ -1724,7 +1773,7 @@ def main():
 
     print(
         f"Built {len(teams)} team pages + home + power-rankings + history + head-to-head + rivalries + "
-        f"analytics + trades (incl. draft capital flow) + weekly recap ({len(weekly_data['weeks'])} weeks) into {DOCS_DIR}"
+        f"analytics + hall-of-bad-trades + trade-history + draft-flow + weekly recap ({len(weekly_data['weeks'])} weeks) into {DOCS_DIR}"
     )
 
 
