@@ -345,6 +345,22 @@ a:hover { text-decoration: underline; }
 .bad-trade-card { border-color: var(--winnow); }
 .bad-trade-badge { float: right; color: var(--winnow); font-weight: 700; letter-spacing: normal; text-transform: none; }
 
+.vault-leaderboard { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 28px; }
+.vault-lb-row { display: grid; grid-template-columns: 30px 1fr 1fr 80px; align-items: center; gap: 10px; font-size: 0.85rem; padding: 4px 0; }
+.vault-lb-rank { color: var(--text-muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+.vault-lb-team { font-weight: 600; display: flex; flex-direction: column; overflow: hidden; }
+.vault-lb-range { font-weight: 400; color: var(--text-muted); font-size: 0.76rem; }
+.vault-lb-track { height: 12px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.vault-lb-fill { display: block; height: 100%; border-radius: 3px; }
+.vault-lb-win { background: var(--contender); }
+.vault-lb-loss { background: var(--winnow); }
+.vault-lb-top { background: var(--accent); }
+.vault-lb-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .vault-lb-row { grid-template-columns: 24px 1fr 60px; }
+  .vault-lb-track { display: none; }
+}
+
 .badtrade-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
 .badtrade-bar-row { display: grid; grid-template-columns: 62px 1fr 55px; align-items: center; gap: 6px; font-size: 0.76rem; }
 .badtrade-bar-label { color: var(--text-muted); }

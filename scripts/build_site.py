@@ -53,6 +53,7 @@ NAV_ITEMS = [
     ("link", "head-to-head.html", "Head-to-Head"),
     ("link", "rivalries.html", "Rivalries"),
     ("link", "analytics.html", "Analytics"),
+    ("link", "vault.html", "The Vault"),
     (
         "group",
         "Trades",
@@ -293,6 +294,7 @@ HUB_SECTIONS = [
     ("history.html", "League History", "Season-by-season standings and champions, back to the league's 2018 founding."),
     ("head-to-head.html", "Head-to-Head", "All-time records between every team currently in the league."),
     ("analytics.html", "Analytics", "All-play luck, positional scoring mix, and roster-management activity."),
+    ("vault.html", "The Vault", "All-time records and streaks: highest/lowest scores, biggest blowouts, and the longest win/loss/scoring streaks."),
     ("trade-history.html", "Trades", "Every trade ever made, dynasty value grades, the Hall of Bad Trades, and the draft pick capital ledger."),
     ("weekly-recaps.html", "Weekly Recap", "Scores, transactions, and a recap of how each week's matchups went."),
 ]
@@ -1076,6 +1078,109 @@ def build_draft_flow_page(draft_flow, teams):
     return page_shell("Draft Capital Flow — Ethel's Dynasty", body, description="Every draft pick trade in league history, and who's accumulated the most future capital.", active="draft-flow.html")
 
 
+def build_vault_page(vault, teams):
+    team_link = _team_link_fn(teams)
+
+    def week_label(rec):
+        return f"{rec['season']} Wk {rec['week']}"
+
+    def range_label(run):
+        if (run["start_season"], run["start_week"]) == (run["end_season"], run["end_week"]):
+            return f"{run['start_season']} Wk {run['start_week']}"
+        return f"{run['start_season']} Wk {run['start_week']} &ndash; {run['end_season']} Wk {run['end_week']}"
+
+    gr = vault["game_records"]
+    pr = vault["player_records"]
+
+    game_record_cards = f"""
+<div class="snapshot-card">
+  <h3>Highest Score</h3>
+  <p class="big-stat">{gr['highest_score']['points']:.1f}</p>
+  <p class="stat-label">{team_link(gr['highest_score']['owner_id'], gr['highest_score']['team_name'])} &middot; {week_label(gr['highest_score'])}</p>
+</div>
+<div class="snapshot-card">
+  <h3>Lowest Score</h3>
+  <p class="big-stat">{gr['lowest_score']['points']:.1f}</p>
+  <p class="stat-label">{team_link(gr['lowest_score']['owner_id'], gr['lowest_score']['team_name'])} &middot; {week_label(gr['lowest_score'])}</p>
+</div>
+<div class="snapshot-card">
+  <h3>Biggest Blowout</h3>
+  <p class="big-stat">{gr['biggest_blowout']['margin']:.1f} pts</p>
+  <p class="stat-label">{team_link(gr['biggest_blowout']['team_a']['owner_id'], gr['biggest_blowout']['team_a']['team_name'])} ({gr['biggest_blowout']['team_a']['points']:.1f}) over {team_link(gr['biggest_blowout']['team_b']['owner_id'], gr['biggest_blowout']['team_b']['team_name'])} ({gr['biggest_blowout']['team_b']['points']:.1f}) &middot; {week_label(gr['biggest_blowout'])}</p>
+</div>
+<div class="snapshot-card">
+  <h3>Closest Game</h3>
+  <p class="big-stat">{gr['closest_game']['margin']:.2f} pts</p>
+  <p class="stat-label">{team_link(gr['closest_game']['team_a']['owner_id'], gr['closest_game']['team_a']['team_name'])} vs {team_link(gr['closest_game']['team_b']['owner_id'], gr['closest_game']['team_b']['team_name'])} &middot; {week_label(gr['closest_game'])}</p>
+</div>
+"""
+
+    player_record_cards = f"""
+<div class="snapshot-card">
+  <h3>Best Individual Game</h3>
+  <p class="big-stat">{pr['best_individual']['points']:.1f}</p>
+  <p class="stat-label"><span class="trade-pos pos-{pr['best_individual']['position'] or ''}">{esc(pr['best_individual']['position'] or '')}</span> {esc(pr['best_individual']['name'])} &middot; {team_link(pr['best_individual']['owner_id'], pr['best_individual']['team_name'])} &middot; {week_label(pr['best_individual'])}</p>
+</div>
+<div class="snapshot-card">
+  <h3>Biggest Bust (Started)</h3>
+  <p class="big-stat">{pr['worst_started']['points']:.1f}</p>
+  <p class="stat-label"><span class="trade-pos pos-{pr['worst_started']['position'] or ''}">{esc(pr['worst_started']['position'] or '')}</span> {esc(pr['worst_started']['name'])} &middot; {team_link(pr['worst_started']['owner_id'], pr['worst_started']['team_name'])} &middot; {week_label(pr['worst_started'])}</p>
+</div>
+"""
+
+    def streak_leaderboard(runs, unit_cls, unit_label):
+        if not runs:
+            return '<p class="section-note">Not enough data yet.</p>'
+        max_len = max(r["length"] for r in runs)
+        rows = []
+        for i, r in enumerate(runs, 1):
+            pct = r["length"] / max_len * 100 if max_len else 0
+            rows.append(f"""<div class="vault-lb-row">
+  <span class="vault-lb-rank">#{i}</span>
+  <span class="vault-lb-team">{team_link(r['owner_id'], r['team_name'])}<span class="vault-lb-range">{range_label(r)}</span></span>
+  <span class="vault-lb-track"><span class="vault-lb-fill {unit_cls}" style="width:{pct:.0f}%"></span></span>
+  <span class="vault-lb-val">{r['length']} {unit_label}</span>
+</div>""")
+        return f'<div class="vault-leaderboard">{"".join(rows)}</div>'
+
+    body = f"""
+<header class="league-header">
+  <h1>The Vault</h1>
+  <p class="league-summary">All-time records and streaks across every season on record, 2019 through today.</p>
+  <nav class="subnav">
+    <a href="#game-records">Game Records</a>
+    <a href="#player-records">Player Records</a>
+    <a href="#streaks">Streaks</a>
+  </nav>
+</header>
+
+<section class="analytics-section" id="game-records">
+  <h2>Game Records</h2>
+  <p class="section-note">Blowout and closest-game records exclude each season's "vs. league median" week, since there's no real opponent to credit that week &mdash; same rule the Luck section on the Analytics page follows.</p>
+  <div class="snapshot-grid">{game_record_cards}</div>
+</section>
+
+<section class="analytics-section" id="player-records">
+  <h2>Player Records</h2>
+  <p class="section-note">Starting lineup only &mdash; a bench player's raw point total isn't a meaningful record on its own.</p>
+  <div class="snapshot-grid">{player_record_cards}</div>
+</section>
+
+<section class="analytics-section" id="streaks">
+  <h2>Streaks</h2>
+  <p class="section-note">Regular season only, real head-to-head games only (median weeks and playoff/consolation games excluded), so a "streak" always means the same thing.</p>
+  <h3>Longest Win Streaks</h3>
+  {streak_leaderboard(vault['streaks']['win_streaks'], 'vault-lb-win', 'wins')}
+  <h3>Longest Losing Streaks</h3>
+  {streak_leaderboard(vault['streaks']['loss_streaks'], 'vault-lb-loss', 'losses')}
+  <h3>Longest Weekly-High-Score Streaks</h3>
+  <p class="section-note">Most consecutive weeks a team had the single highest score in the league that week.</p>
+  {streak_leaderboard(vault['streaks']['top_scorer_streaks'], 'vault-lb-top', 'weeks')}
+</section>
+"""
+    return page_shell("The Vault — Ethel's Dynasty", body, description="All-time league records and streaks: highest/lowest scores, biggest blowouts, and the longest win, loss, and top-scorer streaks in league history.", active="vault.html")
+
+
 def weekly_nav_children(weekly_data):
     """The (href, label) pairs for the Weekly Recap dropdown -- the hub
     plus one entry per played week, newest first (weekly_data["weeks"] is
@@ -1678,6 +1783,22 @@ a:hover { text-decoration: underline; }
 .bad-trade-card { border-color: var(--winnow); }
 .bad-trade-badge { float: right; color: var(--winnow); font-weight: 700; letter-spacing: normal; text-transform: none; }
 
+.vault-leaderboard { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 28px; }
+.vault-lb-row { display: grid; grid-template-columns: 30px 1fr 1fr 80px; align-items: center; gap: 10px; font-size: 0.85rem; padding: 4px 0; }
+.vault-lb-rank { color: var(--text-muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+.vault-lb-team { font-weight: 600; display: flex; flex-direction: column; overflow: hidden; }
+.vault-lb-range { font-weight: 400; color: var(--text-muted); font-size: 0.76rem; }
+.vault-lb-track { height: 12px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.vault-lb-fill { display: block; height: 100%; border-radius: 3px; }
+.vault-lb-win { background: var(--contender); }
+.vault-lb-loss { background: var(--winnow); }
+.vault-lb-top { background: var(--accent); }
+.vault-lb-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .vault-lb-row { grid-template-columns: 24px 1fr 60px; }
+  .vault-lb-track { display: none; }
+}
+
 .badtrade-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
 .badtrade-bar-row { display: grid; grid-template-columns: 62px 1fr 55px; align-items: center; gap: 6px; font-size: 0.76rem; }
 .badtrade-bar-label { color: var(--text-muted); }
@@ -1743,6 +1864,10 @@ def main():
     analytics = load("analytics.json")
     analytics_html = build_analytics_page(analytics, teams)
     (DOCS_DIR / "analytics.html").write_text(analytics_html)
+
+    vault = load("vault.json")
+    vault_html = build_vault_page(vault, teams)
+    (DOCS_DIR / "vault.html").write_text(vault_html)
 
     draft_flow = load("draft_flow.json")
     draft_flow_html = build_draft_flow_page(draft_flow, teams)

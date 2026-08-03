@@ -1,0 +1,348 @@
+{
+  "game_records": {
+    "highest_score": {
+      "owner_id": "394248955468185600",
+      "team_name": "The Chicken Boys\ud83d\udc14",
+      "points": 220.76,
+      "season": 2023,
+      "week": 3
+    },
+    "lowest_score": {
+      "owner_id": "393989477577588736",
+      "team_name": "The Moon Unit",
+      "points": 7.4,
+      "season": 2023,
+      "week": 15
+    },
+    "biggest_blowout": {
+      "team_a": {
+        "owner_id": "394226654450315264",
+        "team_name": "The Cheese Children ",
+        "points": 167.3
+      },
+      "team_b": {
+        "owner_id": "394531785582608384",
+        "team_name": "The Factory",
+        "points": 48.38
+      },
+      "margin": 118.92,
+      "season": 2021,
+      "week": 6
+    },
+    "closest_game": {
+      "team_a": {
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14",
+        "points": 84.3
+      },
+      "team_b": {
+        "owner_id": "394253124748980224",
+        "team_name": "Long Live Wopo ",
+        "points": 84.34
+      },
+      "margin": 0.04,
+      "season": 2025,
+      "week": 10
+    }
+  },
+  "player_records": {
+    "best_individual": {
+      "player_id": "4984",
+      "name": "Josh Allen",
+      "position": "QB",
+      "owner_id": "406674259818065920",
+      "team_name": "\ud83c\udff3\ufe0f\u200d\ud83c\udf08ALLAS ARMY\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+      "points": 57.88,
+      "season": 2024,
+      "week": 14
+    },
+    "worst_started": {
+      "player_id": "5917",
+      "name": "Mecole Hardman",
+      "position": "WR",
+      "owner_id": "406674259818065920",
+      "team_name": "LTeamCaptain",
+      "points": -2.3,
+      "season": 2019,
+      "week": 9
+    }
+  },
+  "streaks": {
+    "win_streaks": [
+      {
+        "start_season": 2020,
+        "start_week": 8,
+        "end_season": 2021,
+        "end_week": 4,
+        "length": 10,
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "start_season": 2024,
+        "start_week": 5,
+        "end_season": 2025,
+        "end_week": 2,
+        "length": 10,
+        "owner_id": "394491025806135296",
+        "team_name": "BateBoul"
+      },
+      {
+        "start_season": 2024,
+        "start_week": 11,
+        "end_season": 2025,
+        "end_week": 7,
+        "length": 9,
+        "owner_id": "393989477577588736",
+        "team_name": "The Moon Unit"
+      },
+      {
+        "start_season": 2020,
+        "start_week": 3,
+        "end_season": 2020,
+        "end_week": 10,
+        "length": 8,
+        "owner_id": "390894031879553024",
+        "team_name": "DickTatorMiller"
+      },
+      {
+        "start_season": 2023,
+        "start_week": 13,
+        "end_season": 2024,
+        "end_week": 6,
+        "length": 7,
+        "owner_id": "394252975431766016",
+        "team_name": "Brock Hard"
+      },
+      {
+        "start_season": 2024,
+        "start_week": 7,
+        "end_season": 2024,
+        "end_week": 13,
+        "length": 7,
+        "owner_id": "1065778674277945344",
+        "team_name": "The Choo Choo Crew"
+      },
+      {
+        "start_season": 2019,
+        "start_week": 13,
+        "end_season": 2020,
+        "end_week": 5,
+        "length": 6,
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "start_season": 2022,
+        "start_week": 8,
+        "end_season": 2022,
+        "end_week": 13,
+        "length": 6,
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "start_season": 2021,
+        "start_week": 5,
+        "end_season": 2021,
+        "end_week": 10,
+        "length": 6,
+        "owner_id": "394226654450315264",
+        "team_name": "The Cheese Children "
+      },
+      {
+        "start_season": 2023,
+        "start_week": 8,
+        "end_season": 2024,
+        "end_week": 1,
+        "length": 6,
+        "owner_id": "393989477577588736",
+        "team_name": "The Moon Unit"
+      }
+    ],
+    "loss_streaks": [
+      {
+        "start_season": 2024,
+        "start_week": 5,
+        "end_season": 2025,
+        "end_week": 3,
+        "length": 11,
+        "owner_id": "394251491289911296",
+        "team_name": "Fuck Michael Thomas"
+      },
+      {
+        "start_season": 2020,
+        "start_week": 7,
+        "end_season": 2021,
+        "end_week": 3,
+        "length": 10,
+        "owner_id": "394491025806135296",
+        "team_name": "BateBoul"
+      },
+      {
+        "start_season": 2022,
+        "start_week": 8,
+        "end_season": 2023,
+        "end_week": 2,
+        "length": 7,
+        "owner_id": "394226654450315264",
+        "team_name": "The Cheese Children "
+      },
+      {
+        "start_season": 2024,
+        "start_week": 3,
+        "end_season": 2024,
+        "end_week": 10,
+        "length": 7,
+        "owner_id": "336348640681398272",
+        "team_name": "Nikkis\u2019 Victims"
+      },
+      {
+        "start_season": 2025,
+        "start_week": 5,
+        "end_season": 2025,
+        "end_week": 10,
+        "length": 6,
+        "owner_id": "394248955468185600",
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "start_season": 2022,
+        "start_week": 5,
+        "end_season": 2022,
+        "end_week": 10,
+        "length": 6,
+        "owner_id": "390894031879553024",
+        "team_name": "DickTatorMiller"
+      },
+      {
+        "start_season": 2025,
+        "start_week": 6,
+        "end_season": 2025,
+        "end_week": 12,
+        "length": 6,
+        "owner_id": "394252975431766016",
+        "team_name": "Brock Hard"
+      },
+      {
+        "start_season": 2019,
+        "start_week": 12,
+        "end_season": 2020,
+        "end_week": 4,
+        "length": 6,
+        "owner_id": "394253124748980224",
+        "team_name": "Long Live Wopo "
+      },
+      {
+        "start_season": 2019,
+        "start_week": 5,
+        "end_season": 2019,
+        "end_week": 10,
+        "length": 6,
+        "owner_id": "394491025806135296",
+        "team_name": "BateBoul"
+      },
+      {
+        "start_season": 2022,
+        "start_week": 7,
+        "end_season": 2022,
+        "end_week": 13,
+        "length": 6,
+        "owner_id": "394531785582608384",
+        "team_name": "The Factory"
+      }
+    ],
+    "top_scorer_streaks": [
+      {
+        "owner_id": "393989477577588736",
+        "start_season": 2025,
+        "start_week": 11,
+        "end_season": 2025,
+        "end_week": 13,
+        "length": 3,
+        "team_name": "The Moon Unit"
+      },
+      {
+        "owner_id": "393989477577588736",
+        "start_season": 2019,
+        "start_week": 6,
+        "end_season": 2019,
+        "end_week": 7,
+        "length": 2,
+        "team_name": "The Moon Unit"
+      },
+      {
+        "owner_id": "1065778674277945344",
+        "start_season": 2020,
+        "start_week": 6,
+        "end_season": 2020,
+        "end_week": 7,
+        "length": 2,
+        "team_name": "The Choo Choo Crew"
+      },
+      {
+        "owner_id": "394248955468185600",
+        "start_season": 2020,
+        "start_week": 11,
+        "end_season": 2020,
+        "end_week": 12,
+        "length": 2,
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "owner_id": "394252975431766016",
+        "start_season": 2021,
+        "start_week": 4,
+        "end_season": 2021,
+        "end_week": 5,
+        "length": 2,
+        "team_name": "Brock Hard"
+      },
+      {
+        "owner_id": "1065778674277945344",
+        "start_season": 2022,
+        "start_week": 2,
+        "end_season": 2022,
+        "end_week": 3,
+        "length": 2,
+        "team_name": "The Choo Choo Crew"
+      },
+      {
+        "owner_id": "1065778674277945344",
+        "start_season": 2022,
+        "start_week": 5,
+        "end_season": 2022,
+        "end_week": 6,
+        "length": 2,
+        "team_name": "The Choo Choo Crew"
+      },
+      {
+        "owner_id": "394248955468185600",
+        "start_season": 2023,
+        "start_week": 6,
+        "end_season": 2023,
+        "end_week": 7,
+        "length": 2,
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "owner_id": "394248955468185600",
+        "start_season": 2023,
+        "start_week": 12,
+        "end_season": 2023,
+        "end_week": 13,
+        "length": 2,
+        "team_name": "The Chicken Boys\ud83d\udc14"
+      },
+      {
+        "owner_id": "394491025806135296",
+        "start_season": 2024,
+        "start_week": 8,
+        "end_season": 2024,
+        "end_week": 9,
+        "length": 2,
+        "team_name": "BateBoul"
+      }
+    ]
+  }
+}

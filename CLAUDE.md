@@ -73,6 +73,11 @@ step beyond running Python scripts and committing the output:
      2026: scores, highlight stats, and that week's transactions for every
      week that's actually been played, for the Weekly Recap section — see
      "Weekly Recap" below)
+   - `scripts/compute_vault.py` → `data/vault.json` (all-time, 2019–2026:
+     game/player records and win/loss/top-scorer streaks, for The Vault —
+     see "The Vault" below. Imports `regular_season_weeks()` from
+     `compute_analytics.py` rather than reimplementing the regular-season
+     /median-week filtering)
 3. **`data/content.json`** is hand-authored, not generated: the
    opinionated scouting-report prose per team (verdict, tagline,
    strengths/weaknesses, narrative, current standing, future outlook) and
@@ -85,10 +90,10 @@ step beyond running Python scripts and committing the output:
    Transactions page, a Home landing page (`index.html`, added 2026-08 —
    a hub linking to every section plus a few league-wide facts, not the
    scouting-report grid), and Power Rankings, League History,
-   Head-to-Head, Rivalries, Analytics, Trades (three pages grouped under
-   one nav dropdown — `hall-of-bad-trades.html`, `trade-history.html`,
-   `draft-flow.html`; there's no single combined `trades.html` anymore),
-   and Weekly Recap pages, all sharing one
+   Head-to-Head, Rivalries, Analytics, The Vault (`vault.html`), Trades
+   (three pages grouped under one nav dropdown — `hall-of-bad-trades.html`,
+   `trade-history.html`, `draft-flow.html`; there's no single combined
+   `trades.html` anymore), and Weekly Recap pages, all sharing one
    `style.css` and a nav bar. **`index.html` is the home
    page, not Power Rankings** — the per-team scouting-report grid that
    used to live at `index.html` is now `power-rankings.html`; don't point
@@ -102,8 +107,11 @@ step beyond running Python scripts and committing the output:
 Run order for a full rebuild from scratch: `fetch_data.py` →
 `fetch_history.py` → `compute_teams.py` → `compute_history.py` →
 `compute_analytics.py` → `compute_draft_flow.py` → `compute_trades.py` →
-`compute_team_transactions.py` → `compute_weekly.py` →
+`compute_team_transactions.py` → `compute_weekly.py` → `compute_vault.py` →
 `fetch_dynasty_values.py` → `compute_trade_grades.py` → `build_site.py`.
+`compute_vault.py` must run after `compute_analytics.py` since it imports
+`regular_season_weeks()` from it (not a data dependency, just a Python
+import — the two can still be re-run independently otherwise).
 `compute_trades.py` must run before `fetch_dynasty_values.py`, since the
 latter only pulls values for players/picks that actually appear in
 `data/trades.json`. In practice the fetch scripts only need re-running
@@ -144,6 +152,51 @@ played — it only reads weeks Sleeper has already returned data for.
   Sleeper has actually returned data for (`fetch_history.py` stops at the
   first empty response), so `compute_weekly.py` doesn't need its own
   "has this week happened yet" heuristic — every week key present is real.
+
+## The Vault
+
+- Added 2026-08. All-time (2019–2026) records and streaks, one page
+  (`vault.html`), computed by `scripts/compute_vault.py` into
+  `data/vault.json`. No hand-authored content — everything here is
+  mechanical, unlike the Weekly Recap prose.
+- **Game records** (highest/lowest team score, biggest blowout, closest
+  game) use every real matchup entry from any week, including playoffs.
+  Blowout and closest-game specifically need a *real* opponent, so they
+  reuse the same "discard week 14, every season" rule as
+  `compute_analytics.py`'s Luck section (see "Week 14" above) — Sleeper's
+  raw data still pairs everyone against a fictional matchup_id during a
+  median week, so a "margin" computed from that pairing would be
+  meaningless.
+- **A team's bye week against the phantom "Any Boul FFC" is excluded from
+  game-level score records too**, not just blowout/closest — lineups are
+  often left unoptimized against a guaranteed 0-point opponent, so a bye
+  week score isn't a meaningful "lowest score ever" candidate. Found by
+  checking, per week, which matchup_id the phantom's own roster entry was
+  paired under, and excluding whoever else shared that matchup_id from
+  score-record consideration that week (`bye_matchup_ids` in
+  `compute_vault.py`). This does **not** apply to player-level records — a
+  real player's performance in the real NFL game is genuine regardless of
+  what the fantasy matchup was that week.
+- **Player records** (best individual game, worst started player a.k.a.
+  "Biggest Bust") only look at a team's *starting* lineup
+  (`starters`/`starters_points`), not the full roster — a bench player's
+  raw point total isn't a meaningful record on its own. All weeks,
+  including playoffs and median weeks, count here (no opponent-based
+  filtering needed since these aren't margin-based).
+- **Streaks** (longest win streak, longest loss streak, longest run of
+  weekly-top-score) are restricted to real regular-season games only —
+  `regular_season_weeks()` imported from `compute_analytics.py`, same
+  rationale as `compute_luck()`: toilet-bowl/consolation-bracket games and
+  the week-14 median-week fiction would muddy what a "streak" means. A
+  streak can span a season boundary (e.g. a win streak that starts in
+  November and continues into the next year's Week 1) — that's
+  intentional, not a bug.
+- Leaderboards (top 10 each for win streaks, loss streaks, weekly-top-
+  score streaks) include **departed teams** (Allah's Army, etc.), unlike
+  the Head-to-Head matrix — there's no "no current team to attribute it
+  to" problem here since streaks are per-team, not per-pair, and
+  `display_name()` falls back to that owner's last known team name (same
+  pattern as `compute_trades.py`).
 
 ## Key decisions
 
