@@ -16,6 +16,18 @@ Player-level records (best individual game, worst started player) only
 look at players in a team's starting lineup that week -- a bench player's
 raw point total isn't a meaningful record on its own.
 
+A team's whole game is dropped from every score/player record (not just
+"lowest score") if most of its starters scored exactly 0.0 that week --
+see neglected_lineup(). That's the signature of a manager starting known-
+bye/inactive players on purpose (e.g. already clinched a playoff seed and
+tanking a meaningless week), not just an honest bad week: a lineup that
+actually played, even badly, comes back with small positive scores across
+the board, not a wall of zeros. Tried a hindsight "hypothetical optimal
+lineup vs. actual" gap check first, but that flagged perfectly legitimate
+games too -- a deep bench that happens to outscore the starters in
+hindsight is just normal variance, not neglect, and start/sit calls are
+made before kickoff without hindsight anyway.
+
 Streaks (win/loss, and weekly top-scorer) are restricted to real regular-
 season games (regular_season_weeks(), imported from compute_analytics.py)
 for the same reason compute_luck() is: toilet-bowl/consolation-bracket
@@ -33,10 +45,24 @@ PHANTOM_OWNER_ID = "480904402215890944"
 OWNER_ALIASES = {"394252838206713856": "1065778674277945344"}
 SEASONS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
 DISCARD_WEEK = 14
+# a lineup where at least this fraction of starters scored exactly 0.0 is
+# treated as "didn't set a lineup" and dropped from records entirely.
+NEGLECTED_ZERO_FRACTION = 0.5
 
 
 def load(path):
     return json.loads(path.read_text())
+
+
+def neglected_lineup(starters, starters_points):
+    """True if most of a team's starting lineup scored exactly 0.0 that
+    week -- the signature of starting known-bye/inactive players on
+    purpose rather than an honest (if unlucky) week."""
+    valid = [pts for pid, pts in zip(starters or [], starters_points or []) if pid != "0" and pts is not None]
+    if not valid:
+        return False
+    zero_count = sum(1 for pts in valid if pts == 0)
+    return zero_count / len(valid) >= NEGLECTED_ZERO_FRACTION
 
 
 def main():
@@ -99,6 +125,15 @@ def main():
                 if m.get("matchup_id") in bye_matchup_ids:
                     continue
                 pts = m.get("points") or 0.0
+
+                # a lineup that's mostly known-inactive/bye players wasn't
+                # really "played" that week -- e.g. a team already locked
+                # into a playoff seed benching every real starter -- so it
+                # shouldn't be eligible for score/player records at all,
+                # not just "lowest score."
+                if neglected_lineup(m.get("starters"), m.get("starters_points")):
+                    continue
+
                 if highest_score is None or pts > highest_score["points"]:
                     highest_score = {"owner_id": owner, "team_name": display_name(owner), "points": round(pts, 2), "season": season, "week": week}
                 if lowest_score is None or pts < lowest_score["points"]:

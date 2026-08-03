@@ -177,6 +177,17 @@ played — it only reads weeks Sleeper has already returned data for.
   `compute_vault.py`). This does **not** apply to player-level records — a
   real player's performance in the real NFL game is genuine regardless of
   what the fantasy matchup was that week.
+- **A team's whole game is excluded from every score/player record (not
+  just "lowest score") if it looks like the lineup was never really set**
+  — e.g. a team that's already clinched its playoff seed and benches every
+  real starter for a meaningless week. Detected by `neglected_lineup()`:
+  if at least half a team's starters scored exactly `0.0` that week, the
+  whole game is dropped. Deliberately **not** a "hindsight optimal lineup
+  vs. actual" gap check — that was tried first and it flagged genuinely
+  well-played games too (a deep bench that happens to outscore the
+  starters in hindsight is normal variance, not neglect; start/sit calls
+  are made before kickoff without hindsight). A wall of exact zeros is a
+  much more specific signal of started-on-purpose bye/inactive players.
 - **Player records** (best individual game, worst started player a.k.a.
   "Biggest Bust") only look at a team's *starting* lineup
   (`starters`/`starters_points`), not the full roster — a bench player's
