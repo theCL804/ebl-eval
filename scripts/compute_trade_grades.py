@@ -42,6 +42,42 @@ def side_value(side, snapshot, crosswalk):
     return round(total, 1), complete
 
 
+def side_aged_value(side, horizon_snapshots, crosswalk):
+    """Aged value of a side, averaged per-asset over only the horizon
+    snapshots where that asset was actually priceable, then summed.
+
+    A draft pick only exists as a "future pick" in DynastyProcess's data for
+    the current draft class plus roughly the next two years out -- once its
+    season's draft has happened, it drops out of values-picks.csv entirely
+    rather than being priced low. Averaging a side's *total* across horizons
+    (the old approach) treated that disappearance as the pick's value
+    crashing to $0 at that checkpoint, which dragged down the whole side's
+    aged average even though the other horizons priced it normally. The same
+    thing can happen to a player who's dropped from the league/retired and
+    no longer appears in a later snapshot. Averaging per-asset over just the
+    horizons where it was actually found avoids phantom zeros from either
+    case. An asset that's unpriceable at every horizon still marks the side
+    incomplete, same as before.
+    """
+    complete = True
+    total = 0.0
+    for p in side["players"]:
+        fp_id = crosswalk.get(p["player_id"])
+        vals = [v for s in horizon_snapshots if fp_id and (v := s["player_values"].get(fp_id)) is not None]
+        if vals:
+            total += sum(vals) / len(vals)
+        else:
+            complete = False
+    for pk in side["picks"]:
+        key = f"{pk['season']}-{pk['round']}"
+        vals = [v for s in horizon_snapshots if (v := s["pick_values"].get(key)) is not None]
+        if vals:
+            total += sum(vals) / len(vals)
+        else:
+            complete = False
+    return round(total, 1), complete
+
+
 def main():
     trades = load("trades.json")["trades"]
     dv = load("dynasty_values.json")
@@ -66,12 +102,12 @@ def main():
         sides = {}
         for owner_id, side in t["sides"].items():
             hist_value, hist_complete = side_value(side, at_trade_snapshot, crosswalk)
-            aged_values, aged_completes = zip(*(side_value(side, s, crosswalk) for s in horizon_snapshots))
+            aged_value, aged_complete = side_aged_value(side, horizon_snapshots, crosswalk)
             sides[owner_id] = {
                 "hist_value": hist_value,
                 "hist_complete": hist_complete,
-                "aged_value": round(sum(aged_values) / len(aged_values), 1),
-                "aged_complete": all(aged_completes),
+                "aged_value": aged_value,
+                "aged_complete": aged_complete,
             }
 
         grades[t["transaction_id"]] = {

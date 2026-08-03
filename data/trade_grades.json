@@ -520,7 +520,7 @@
       "394251491289911296": {
         "hist_value": 24.0,
         "hist_complete": true,
-        "aged_value": 7.5,
+        "aged_value": 15.0,
         "aged_complete": false
       },
       "394531785582608384": {
@@ -570,8 +570,8 @@
       "394251491289911296": {
         "hist_value": 2167.0,
         "hist_complete": true,
-        "aged_value": 1470.5,
-        "aged_complete": false
+        "aged_value": 2693.5,
+        "aged_complete": true
       }
     }
   },
@@ -586,8 +586,8 @@
       "394531785582608384": {
         "hist_value": 1975.0,
         "hist_complete": true,
-        "aged_value": 1223.0,
-        "aged_complete": false
+        "aged_value": 2446.0,
+        "aged_complete": true
       },
       "390894031879553024": {
         "hist_value": 2475.0,
@@ -658,8 +658,8 @@
       "1065778674277945344": {
         "hist_value": 1975.0,
         "hist_complete": true,
-        "aged_value": 1223.0,
-        "aged_complete": false
+        "aged_value": 2446.0,
+        "aged_complete": true
       }
     }
   },
@@ -680,8 +680,8 @@
       "394251491289911296": {
         "hist_value": 1809.0,
         "hist_complete": true,
-        "aged_value": 2256.5,
-        "aged_complete": false
+        "aged_value": 2397.0,
+        "aged_complete": true
       }
     }
   },
@@ -718,8 +718,8 @@
       "394252975431766016": {
         "hist_value": 5385.0,
         "hist_complete": true,
-        "aged_value": 4696.5,
-        "aged_complete": false
+        "aged_value": 5180.0,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 6335.0,
@@ -740,7 +740,7 @@
       "394252975431766016": {
         "hist_value": 4497.0,
         "hist_complete": true,
-        "aged_value": 1081.5,
+        "aged_value": 1342.0,
         "aged_complete": false
       },
       "1065778674277945344": {
@@ -784,7 +784,7 @@
       "394252975431766016": {
         "hist_value": 369.0,
         "hist_complete": true,
-        "aged_value": 26.0,
+        "aged_value": 52.0,
         "aged_complete": false
       },
       "336348640681398272": {
@@ -834,8 +834,8 @@
       "336348640681398272": {
         "hist_value": 5297.0,
         "hist_complete": true,
-        "aged_value": 4065.0,
-        "aged_complete": false
+        "aged_value": 4129.0,
+        "aged_complete": true
       }
     }
   },
@@ -856,8 +856,8 @@
       "336348640681398272": {
         "hist_value": 79.0,
         "hist_complete": false,
-        "aged_value": 125.5,
-        "aged_complete": false
+        "aged_value": 151.0,
+        "aged_complete": true
       }
     }
   },
@@ -900,8 +900,8 @@
       "336348640681398272": {
         "hist_value": 2109.0,
         "hist_complete": true,
-        "aged_value": 1197.5,
-        "aged_complete": false
+        "aged_value": 2395.0,
+        "aged_complete": true
       }
     }
   },
@@ -922,8 +922,8 @@
       "394253124748980224": {
         "hist_value": 4338.0,
         "hist_complete": true,
-        "aged_value": 1103.0,
-        "aged_complete": false
+        "aged_value": 1256.0,
+        "aged_complete": true
       }
     }
   },
@@ -938,8 +938,8 @@
       "394226654450315264": {
         "hist_value": 998.0,
         "hist_complete": true,
-        "aged_value": 895.0,
-        "aged_complete": false
+        "aged_value": 1037.5,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 2244.0,
@@ -988,8 +988,8 @@
       "336348640681398272": {
         "hist_value": 1684.0,
         "hist_complete": true,
-        "aged_value": 2372.5,
-        "aged_complete": false
+        "aged_value": 2378.0,
+        "aged_complete": true
       }
     }
   },
@@ -1010,8 +1010,8 @@
       "390894031879553024": {
         "hist_value": 2075.0,
         "hist_complete": true,
-        "aged_value": 1243.0,
-        "aged_complete": false
+        "aged_value": 2486.0,
+        "aged_complete": true
       }
     }
   },
@@ -1032,8 +1032,8 @@
       "390894031879553024": {
         "hist_value": 4411.0,
         "hist_complete": true,
-        "aged_value": 1520.0,
-        "aged_complete": false
+        "aged_value": 2763.0,
+        "aged_complete": true
       }
     }
   },
@@ -1078,7 +1078,7 @@
       "394531785582608384": {
         "hist_value": 420.0,
         "hist_complete": true,
-        "aged_value": 15.7,
+        "aged_value": 23.5,
         "aged_complete": false
       }
     }
@@ -1095,13 +1095,13 @@
       "394252975431766016": {
         "hist_value": 284.0,
         "hist_complete": true,
-        "aged_value": 1.3,
+        "aged_value": 4.0,
         "aged_complete": false
       },
       "336348640681398272": {
         "hist_value": 288.0,
         "hist_complete": true,
-        "aged_value": 94.3,
+        "aged_value": 278.5,
         "aged_complete": false
       }
     }
@@ -1193,8 +1193,8 @@
       "1065778674277945344": {
         "hist_value": 226.0,
         "hist_complete": true,
-        "aged_value": 71.3,
-        "aged_complete": false
+        "aged_value": 87.7,
+        "aged_complete": true
       }
     }
   },
@@ -1210,14 +1210,14 @@
       "394251491289911296": {
         "hist_value": 20.0,
         "hist_complete": true,
-        "aged_value": 0.7,
-        "aged_complete": false
+        "aged_value": 2.0,
+        "aged_complete": true
       },
       "393989477577588736": {
         "hist_value": 51.0,
         "hist_complete": true,
-        "aged_value": 16.3,
-        "aged_complete": false
+        "aged_value": 49.0,
+        "aged_complete": true
       }
     }
   },
@@ -1239,8 +1239,8 @@
       "390894031879553024": {
         "hist_value": 1339.0,
         "hist_complete": true,
-        "aged_value": 269.0,
-        "aged_complete": false
+        "aged_value": 534.3,
+        "aged_complete": true
       }
     }
   },
@@ -1256,8 +1256,8 @@
       "406674259818065920": {
         "hist_value": 2295.0,
         "hist_complete": true,
-        "aged_value": 823.0,
-        "aged_complete": false
+        "aged_value": 2469.0,
+        "aged_complete": true
       },
       "407246708687314944": {
         "hist_value": 3168.0,
@@ -1394,14 +1394,14 @@
       "394253124748980224": {
         "hist_value": 428.0,
         "hist_complete": true,
-        "aged_value": 93.3,
-        "aged_complete": false
+        "aged_value": 109.0,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 297.0,
         "hist_complete": false,
-        "aged_value": 364.0,
-        "aged_complete": false
+        "aged_value": 586.0,
+        "aged_complete": true
       }
     }
   },
@@ -1417,14 +1417,14 @@
       "406674259818065920": {
         "hist_value": 2099.0,
         "hist_complete": true,
-        "aged_value": 872.7,
-        "aged_complete": false
+        "aged_value": 2618.0,
+        "aged_complete": true
       },
       "407246708687314944": {
         "hist_value": 1498.0,
         "hist_complete": true,
-        "aged_value": 184.0,
-        "aged_complete": false
+        "aged_value": 203.3,
+        "aged_complete": true
       }
     }
   },
@@ -1440,14 +1440,14 @@
       "394251491289911296": {
         "hist_value": 500.0,
         "hist_complete": true,
-        "aged_value": 166.3,
-        "aged_complete": false
+        "aged_value": 182.0,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 229.0,
         "hist_complete": false,
-        "aged_value": 434.7,
-        "aged_complete": false
+        "aged_value": 525.5,
+        "aged_complete": true
       }
     }
   },
@@ -1463,14 +1463,14 @@
       "393989477577588736": {
         "hist_value": 752.0,
         "hist_complete": true,
-        "aged_value": 152.3,
-        "aged_complete": false
+        "aged_value": 163.0,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 45.0,
         "hist_complete": false,
-        "aged_value": 74.0,
-        "aged_complete": false
+        "aged_value": 89.7,
+        "aged_complete": true
       }
     }
   },
@@ -1486,8 +1486,8 @@
       "406674259818065920": {
         "hist_value": 272.0,
         "hist_complete": true,
-        "aged_value": 106.7,
-        "aged_complete": false
+        "aged_value": 320.0,
+        "aged_complete": true
       },
       "336348640681398272": {
         "hist_value": 1428.0,
@@ -1509,14 +1509,14 @@
       "336348640681398272": {
         "hist_value": 495.0,
         "hist_complete": true,
-        "aged_value": 292.0,
-        "aged_complete": false
+        "aged_value": 598.0,
+        "aged_complete": true
       },
       "390894031879553024": {
         "hist_value": 350.0,
         "hist_complete": true,
-        "aged_value": 132.0,
-        "aged_complete": false
+        "aged_value": 170.7,
+        "aged_complete": true
       }
     }
   },
@@ -1538,8 +1538,8 @@
       "394252975431766016": {
         "hist_value": 251.0,
         "hist_complete": true,
-        "aged_value": 111.7,
-        "aged_complete": false
+        "aged_value": 335.0,
+        "aged_complete": true
       }
     }
   },
@@ -1578,7 +1578,7 @@
       "394226654450315264": {
         "hist_value": 2487.0,
         "hist_complete": true,
-        "aged_value": 19.7,
+        "aged_value": 59.0,
         "aged_complete": false
       },
       "393989477577588736": {
@@ -1647,7 +1647,7 @@
       "394226654450315264": {
         "hist_value": 3846.0,
         "hist_complete": true,
-        "aged_value": 1538.7,
+        "aged_value": 3429.3,
         "aged_complete": false
       },
       "394251491289911296": {
@@ -1670,14 +1670,14 @@
       "394253124748980224": {
         "hist_value": 142.0,
         "hist_complete": false,
-        "aged_value": 282.7,
-        "aged_complete": false
+        "aged_value": 393.2,
+        "aged_complete": true
       },
       "394252975431766016": {
         "hist_value": 7.0,
         "hist_complete": false,
-        "aged_value": 48.3,
-        "aged_complete": false
+        "aged_value": 72.5,
+        "aged_complete": true
       }
     }
   },
@@ -1693,14 +1693,14 @@
       "394252975431766016": {
         "hist_value": 831.0,
         "hist_complete": true,
-        "aged_value": 60.3,
-        "aged_complete": false
+        "aged_value": 115.0,
+        "aged_complete": true
       },
       "393989477577588736": {
         "hist_value": 644.0,
         "hist_complete": true,
-        "aged_value": 130.7,
-        "aged_complete": false
+        "aged_value": 384.0,
+        "aged_complete": true
       }
     }
   },
@@ -1722,8 +1722,8 @@
       "394491025806135296": {
         "hist_value": 579.0,
         "hist_complete": true,
-        "aged_value": 74.3,
-        "aged_complete": false
+        "aged_value": 127.7,
+        "aged_complete": true
       }
     }
   },
@@ -1739,8 +1739,8 @@
       "394253124748980224": {
         "hist_value": 2139.0,
         "hist_complete": false,
-        "aged_value": 9583.7,
-        "aged_complete": false
+        "aged_value": 9604.2,
+        "aged_complete": true
       },
       "390894031879553024": {
         "hist_value": 2301.0,
@@ -1762,14 +1762,14 @@
       "394252975431766016": {
         "hist_value": 5183.0,
         "hist_complete": true,
-        "aged_value": 2065.7,
-        "aged_complete": false
+        "aged_value": 2287.0,
+        "aged_complete": true
       },
       "393989477577588736": {
         "hist_value": 6248.0,
         "hist_complete": true,
-        "aged_value": 8380.3,
-        "aged_complete": false
+        "aged_value": 8422.3,
+        "aged_complete": true
       }
     }
   },
@@ -1791,14 +1791,14 @@
       "394491025806135296": {
         "hist_value": 2638.0,
         "hist_complete": false,
-        "aged_value": 3534.0,
-        "aged_complete": false
+        "aged_value": 4520.0,
+        "aged_complete": true
       },
       "393989477577588736": {
         "hist_value": 1043.0,
         "hist_complete": true,
-        "aged_value": 580.0,
-        "aged_complete": false
+        "aged_value": 622.0,
+        "aged_complete": true
       }
     }
   },
@@ -1814,8 +1814,8 @@
       "393989477577588736": {
         "hist_value": 9958.0,
         "hist_complete": false,
-        "aged_value": 5705.0,
-        "aged_complete": false
+        "aged_value": 7467.5,
+        "aged_complete": true
       },
       "1065778674277945344": {
         "hist_value": 11474.0,
@@ -1837,14 +1837,14 @@
       "393989477577588736": {
         "hist_value": 7442.0,
         "hist_complete": true,
-        "aged_value": 5780.7,
-        "aged_complete": false
+        "aged_value": 5819.3,
+        "aged_complete": true
       },
       "407246708687314944": {
         "hist_value": 2248.0,
         "hist_complete": false,
-        "aged_value": 2399.3,
-        "aged_complete": false
+        "aged_value": 4974.5,
+        "aged_complete": true
       }
     }
   },
@@ -1860,8 +1860,8 @@
       "394226654450315264": {
         "hist_value": 23.0,
         "hist_complete": true,
-        "aged_value": 5.3,
-        "aged_complete": false
+        "aged_value": 16.0,
+        "aged_complete": true
       },
       "390894031879553024": {
         "hist_value": 0.0,
@@ -1889,8 +1889,8 @@
       "1065778674277945344": {
         "hist_value": 782.0,
         "hist_complete": true,
-        "aged_value": 445.7,
-        "aged_complete": false
+        "aged_value": 483.0,
+        "aged_complete": true
       }
     }
   },
@@ -1906,8 +1906,8 @@
       "394248955468185600": {
         "hist_value": 11445.0,
         "hist_complete": true,
-        "aged_value": 7795.3,
-        "aged_complete": false
+        "aged_value": 8167.0,
+        "aged_complete": true
       },
       "407246708687314944": {
         "hist_value": 12462.0,
@@ -1952,14 +1952,14 @@
       "394226654450315264": {
         "hist_value": 5180.0,
         "hist_complete": true,
-        "aged_value": 5264.3,
-        "aged_complete": false
+        "aged_value": 5471.0,
+        "aged_complete": true
       },
       "394253124748980224": {
         "hist_value": 5518.0,
         "hist_complete": true,
-        "aged_value": 976.7,
-        "aged_complete": false
+        "aged_value": 2569.5,
+        "aged_complete": true
       }
     }
   }
