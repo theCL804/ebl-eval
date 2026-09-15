@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Compute weekly recap data (scores + transactions) for the current
-(2026) season only -- data/history/2026.json's matchups_by_week only ever
-contains weeks that have actually been played (fetch_history.py stops
-fetching the first week Sleeper returns empty), so every key present here
-is real. Writes data/weekly.json: one entry per played week with every
-game's score, the week's highlight stats, and that week's transactions.
+(2026) season only. data/history/2026.json's matchups_by_week now comes
+back with a stub entry (rosters assigned, every score 0.0) for future
+weeks too, rather than an empty response -- Sleeper pre-populates the full
+season's matchup slots once the schedule is set, not just weeks already
+played. So a week key being present is no longer proof the week happened;
+this script additionally skips any week where every game is still 0-0,
+treating that as not-yet-played. Writes data/weekly.json: one entry per
+played week with every game's score, the week's highlight stats, and that
+week's transactions.
 
 The AI-written recap prose that goes with each week's scores lives in
 data/weekly_recap_prose.json instead -- hand/AI-authored per week, same
@@ -84,6 +88,8 @@ def main():
             )
         if not games:
             continue
+        if all(g["team_a"]["points"] == 0 and g["team_b"]["points"] == 0 for g in games):
+            continue  # future week: rosters assigned but nothing played yet
 
         all_scores = [(g["team_a"], g) for g in games] + [(g["team_b"], g) for g in games]
         top = max(all_scores, key=lambda x: x[0]["points"])[0]
