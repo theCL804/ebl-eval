@@ -2,6 +2,502 @@
   "season": 2026,
   "weeks": [
     {
+      "week": 4,
+      "games": [
+        {
+          "game_key": "1065778674277945344-394248955468185600",
+          "team_a": {
+            "owner_id": "394248955468185600",
+            "name": "The Chicken Boys\ud83d\udc14",
+            "points": 134.94
+          },
+          "team_b": {
+            "owner_id": "1065778674277945344",
+            "name": "The Choo Choo Crew",
+            "points": 81.72
+          },
+          "margin": 53.22,
+          "winner_owner_id": "394248955468185600"
+        },
+        {
+          "game_key": "390894031879553024-394531785582608384",
+          "team_a": {
+            "owner_id": "390894031879553024",
+            "name": "DickTatorMiller",
+            "points": 80.78
+          },
+          "team_b": {
+            "owner_id": "394531785582608384",
+            "name": "The Factory",
+            "points": 85.16
+          },
+          "margin": 4.38,
+          "winner_owner_id": "394531785582608384"
+        },
+        {
+          "game_key": "393989477577588736-394226654450315264",
+          "team_a": {
+            "owner_id": "394226654450315264",
+            "name": "The Cheese Children ",
+            "points": 143.56
+          },
+          "team_b": {
+            "owner_id": "393989477577588736",
+            "name": "The Moon Unit",
+            "points": 139.0
+          },
+          "margin": 4.56,
+          "winner_owner_id": "394226654450315264"
+        },
+        {
+          "game_key": "394251491289911296-394253124748980224",
+          "team_a": {
+            "owner_id": "394251491289911296",
+            "name": "Fuck Michael Thomas",
+            "points": 83.28
+          },
+          "team_b": {
+            "owner_id": "394253124748980224",
+            "name": "Long Live Wopo ",
+            "points": 90.78
+          },
+          "margin": 7.5,
+          "winner_owner_id": "394253124748980224"
+        },
+        {
+          "game_key": "394491025806135296-407246708687314944",
+          "team_a": {
+            "owner_id": "407246708687314944",
+            "name": "Mattpao",
+            "points": 113.56
+          },
+          "team_b": {
+            "owner_id": "394491025806135296",
+            "name": "BateBoul",
+            "points": 112.0
+          },
+          "margin": 1.56,
+          "winner_owner_id": "407246708687314944"
+        },
+        {
+          "game_key": "336348640681398272-394252975431766016",
+          "team_a": {
+            "owner_id": "394252975431766016",
+            "name": "Brock Hard",
+            "points": 117.72
+          },
+          "team_b": {
+            "owner_id": "336348640681398272",
+            "name": "Nikkis\u2019 Victims",
+            "points": 116.42
+          },
+          "margin": 1.3,
+          "winner_owner_id": "394252975431766016"
+        }
+      ],
+      "highlights": {
+        "top_scorer": {
+          "owner_id": "394226654450315264",
+          "name": "The Cheese Children ",
+          "points": 143.56
+        },
+        "low_scorer": {
+          "owner_id": "390894031879553024",
+          "name": "DickTatorMiller",
+          "points": 80.78
+        },
+        "closest_game": {
+          "game_key": "336348640681398272-394252975431766016",
+          "team_a": {
+            "owner_id": "394252975431766016",
+            "name": "Brock Hard",
+            "points": 117.72
+          },
+          "team_b": {
+            "owner_id": "336348640681398272",
+            "name": "Nikkis\u2019 Victims",
+            "points": 116.42
+          },
+          "margin": 1.3,
+          "winner_owner_id": "394252975431766016"
+        },
+        "biggest_blowout": {
+          "game_key": "1065778674277945344-394248955468185600",
+          "team_a": {
+            "owner_id": "394248955468185600",
+            "name": "The Chicken Boys\ud83d\udc14",
+            "points": 134.94
+          },
+          "team_b": {
+            "owner_id": "1065778674277945344",
+            "name": "The Choo Choo Crew",
+            "points": 81.72
+          },
+          "margin": 53.22,
+          "winner_owner_id": "394248955468185600"
+        }
+      },
+      "transactions": [
+        {
+          "type": "free_agent",
+          "transaction_id": "1411397822590238720",
+          "created": 1790865972710,
+          "owner_id": "1065778674277945344",
+          "name": "The Choo Choo Crew",
+          "gave": [],
+          "received": [
+            {
+              "player_id": "11571",
+              "name": "Isaiah Davis",
+              "position": "RB",
+              "team": "NYJ"
+            }
+          ]
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1411216050837573632",
+          "created": 1790822634947,
+          "owner_id": "407246708687314944",
+          "name": "Mattpao",
+          "gave": [
+            {
+              "player_id": "13602",
+              "name": "Jack Strand",
+              "position": "QB",
+              "team": "ATL"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "13425",
+              "name": "Jalon Daniels",
+              "position": "QB",
+              "team": "TB"
+            }
+          ]
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1411035514357776384",
+          "created": 1790779591697,
+          "owner_id": "394248955468185600",
+          "name": "The Chicken Boys\ud83d\udc14",
+          "gave": [
+            {
+              "player_id": "8127",
+              "name": "Charlie Kolar",
+              "position": "TE",
+              "team": "LAC"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "3271",
+              "name": "Tyler Higbee",
+              "position": "TE",
+              "team": "LAR"
+            }
+          ]
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1411035427242016768",
+          "created": 1790779570926,
+          "owner_id": "394248955468185600",
+          "name": "The Chicken Boys\ud83d\udc14",
+          "gave": [
+            {
+              "player_id": "10218",
+              "name": "Xavier Hutchinson",
+              "position": "WR",
+              "team": "HOU"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "3634",
+              "name": "Kalif Raymond",
+              "position": "WR",
+              "team": "CHI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "games": [
+        {
+          "game_key": "393989477577588736-394248955468185600",
+          "team_a": {
+            "owner_id": "394248955468185600",
+            "name": "The Chicken Boys\ud83d\udc14",
+            "points": 100.1
+          },
+          "team_b": {
+            "owner_id": "393989477577588736",
+            "name": "The Moon Unit",
+            "points": 119.64
+          },
+          "margin": 19.54,
+          "winner_owner_id": "393989477577588736"
+        },
+        {
+          "game_key": "1065778674277945344-390894031879553024",
+          "team_a": {
+            "owner_id": "390894031879553024",
+            "name": "DickTatorMiller",
+            "points": 97.18
+          },
+          "team_b": {
+            "owner_id": "1065778674277945344",
+            "name": "The Choo Choo Crew",
+            "points": 74.28
+          },
+          "margin": 22.9,
+          "winner_owner_id": "390894031879553024"
+        },
+        {
+          "game_key": "394226654450315264-394491025806135296",
+          "team_a": {
+            "owner_id": "394226654450315264",
+            "name": "The Cheese Children ",
+            "points": 112.14
+          },
+          "team_b": {
+            "owner_id": "394491025806135296",
+            "name": "BateBoul",
+            "points": 157.42
+          },
+          "margin": 45.28,
+          "winner_owner_id": "394491025806135296"
+        },
+        {
+          "game_key": "336348640681398272-394251491289911296",
+          "team_a": {
+            "owner_id": "394251491289911296",
+            "name": "Fuck Michael Thomas",
+            "points": 107.14
+          },
+          "team_b": {
+            "owner_id": "336348640681398272",
+            "name": "Nikkis\u2019 Victims",
+            "points": 94.16
+          },
+          "margin": 12.98,
+          "winner_owner_id": "394251491289911296"
+        },
+        {
+          "game_key": "394531785582608384-407246708687314944",
+          "team_a": {
+            "owner_id": "407246708687314944",
+            "name": "Mattpao",
+            "points": 75.18
+          },
+          "team_b": {
+            "owner_id": "394531785582608384",
+            "name": "The Factory",
+            "points": 64.16
+          },
+          "margin": 11.02,
+          "winner_owner_id": "407246708687314944"
+        },
+        {
+          "game_key": "394252975431766016-394253124748980224",
+          "team_a": {
+            "owner_id": "394252975431766016",
+            "name": "Brock Hard",
+            "points": 108.88
+          },
+          "team_b": {
+            "owner_id": "394253124748980224",
+            "name": "Long Live Wopo ",
+            "points": 83.14
+          },
+          "margin": 25.74,
+          "winner_owner_id": "394252975431766016"
+        }
+      ],
+      "highlights": {
+        "top_scorer": {
+          "owner_id": "394491025806135296",
+          "name": "BateBoul",
+          "points": 157.42
+        },
+        "low_scorer": {
+          "owner_id": "394531785582608384",
+          "name": "The Factory",
+          "points": 64.16
+        },
+        "closest_game": {
+          "game_key": "394531785582608384-407246708687314944",
+          "team_a": {
+            "owner_id": "407246708687314944",
+            "name": "Mattpao",
+            "points": 75.18
+          },
+          "team_b": {
+            "owner_id": "394531785582608384",
+            "name": "The Factory",
+            "points": 64.16
+          },
+          "margin": 11.02,
+          "winner_owner_id": "407246708687314944"
+        },
+        "biggest_blowout": {
+          "game_key": "394226654450315264-394491025806135296",
+          "team_a": {
+            "owner_id": "394226654450315264",
+            "name": "The Cheese Children ",
+            "points": 112.14
+          },
+          "team_b": {
+            "owner_id": "394491025806135296",
+            "name": "BateBoul",
+            "points": 157.42
+          },
+          "margin": 45.28,
+          "winner_owner_id": "394491025806135296"
+        }
+      },
+      "transactions": [
+        {
+          "type": "waiver",
+          "transaction_id": "1410769151739387904",
+          "created": 1790716085900,
+          "owner_id": "394226654450315264",
+          "name": "The Cheese Children ",
+          "gave": [],
+          "received": [
+            {
+              "player_id": "12718",
+              "name": "Konata Mumpfield",
+              "position": "WR",
+              "team": "LAR"
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1410472481248002048",
+          "created": 1790645354143,
+          "owner_id": "394226654450315264",
+          "name": "The Cheese Children ",
+          "gave": [],
+          "received": [
+            {
+              "player_id": "12495",
+              "name": "Ollie Gordon",
+              "position": "RB",
+              "team": "MIA"
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1410111331935285248",
+          "created": 1790559249436,
+          "owner_id": "394252975431766016",
+          "name": "Brock Hard",
+          "gave": [
+            {
+              "player_id": "6931",
+              "name": "DeeJay Dallas",
+              "position": "RB",
+              "team": "JAX"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "4177",
+              "name": "Mack Hollins",
+              "position": "WR",
+              "team": "NE"
+            }
+          ]
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1409929209601675264",
+          "created": 1790515828088,
+          "owner_id": "336348640681398272",
+          "name": "Nikkis\u2019 Victims",
+          "gave": [
+            {
+              "player_id": "12540",
+              "name": "Chimere Dike",
+              "position": "WR",
+              "team": "TEN"
+            }
+          ],
+          "received": []
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1409929126596354048",
+          "created": 1790515808299,
+          "owner_id": "336348640681398272",
+          "name": "Nikkis\u2019 Victims",
+          "gave": [
+            {
+              "player_id": "9479",
+              "name": "Darnell Washington",
+              "position": "TE",
+              "team": "PIT"
+            }
+          ],
+          "received": []
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1409617439116857344",
+          "created": 1790441496213,
+          "owner_id": "407246708687314944",
+          "name": "Mattpao",
+          "gave": [
+            {
+              "player_id": "1737",
+              "name": "Case Keenum",
+              "position": "QB",
+              "team": "CHI"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "96",
+              "name": "Aaron Rodgers",
+              "position": "QB",
+              "team": "PIT"
+            }
+          ]
+        },
+        {
+          "type": "free_agent",
+          "transaction_id": "1409616991425146880",
+          "created": 1790441389475,
+          "owner_id": "407246708687314944",
+          "name": "Mattpao",
+          "gave": [
+            {
+              "player_id": "5854",
+              "name": "Drew Lock",
+              "position": "QB",
+              "team": "SEA"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "1737",
+              "name": "Case Keenum",
+              "position": "QB",
+              "team": "CHI"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "week": 2,
       "games": [
         {
@@ -138,6 +634,114 @@
         }
       },
       "transactions": [
+        {
+          "type": "waiver",
+          "transaction_id": "1408118218073145344",
+          "created": 1790084054062,
+          "owner_id": "390894031879553024",
+          "name": "DickTatorMiller",
+          "gave": [],
+          "received": [
+            {
+              "player_id": "1339",
+              "name": "Zach Ertz",
+              "position": "TE",
+              "team": null
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1407594084268253184",
+          "created": 1789959090825,
+          "owner_id": "407246708687314944",
+          "name": "Mattpao",
+          "gave": [
+            {
+              "player_id": "11237",
+              "name": "Jacob Saylors",
+              "position": "RB",
+              "team": "DET"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "11630",
+              "name": "Roman Wilson",
+              "position": "WR",
+              "team": "PIT"
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1407593702154584064",
+          "created": 1789958999722,
+          "owner_id": "407246708687314944",
+          "name": "Mattpao",
+          "gave": [
+            {
+              "player_id": "96",
+              "name": "Aaron Rodgers",
+              "position": "QB",
+              "team": "PIT"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "5854",
+              "name": "Drew Lock",
+              "position": "QB",
+              "team": "SEA"
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1407588381600280576",
+          "created": 1789957731202,
+          "owner_id": "394253124748980224",
+          "name": "Long Live Wopo ",
+          "gave": [
+            {
+              "player_id": "13348",
+              "name": "J'Mari Taylor",
+              "position": "RB",
+              "team": "JAX"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "7670",
+              "name": "Joshua Palmer",
+              "position": "WR",
+              "team": "BUF"
+            }
+          ]
+        },
+        {
+          "type": "waiver",
+          "transaction_id": "1407483585513934848",
+          "created": 1789932745868,
+          "owner_id": "394252975431766016",
+          "name": "Brock Hard",
+          "gave": [
+            {
+              "player_id": "10235",
+              "name": "Roschon Johnson",
+              "position": "RB",
+              "team": "CHI"
+            }
+          ],
+          "received": [
+            {
+              "player_id": "6931",
+              "name": "DeeJay Dallas",
+              "position": "RB",
+              "team": "JAX"
+            }
+          ]
+        },
         {
           "type": "free_agent",
           "transaction_id": "1406463142090821632",
@@ -960,26 +1564,10 @@
             "394531785582608384"
           ],
           "team_names": {
-            "394491025806135296": "BateBoul",
-            "394531785582608384": "The Factory"
+            "394531785582608384": "The Factory",
+            "394491025806135296": "BateBoul"
           },
           "sides": {
-            "394491025806135296": {
-              "players": [
-                {
-                  "player_id": "9500",
-                  "name": "Josh Downs",
-                  "position": "WR",
-                  "team": "IND"
-                }
-              ],
-              "picks": [
-                {
-                  "season": "2027",
-                  "round": 4
-                }
-              ]
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -995,6 +1583,22 @@
                   "round": 2
                 }
               ]
+            },
+            "394491025806135296": {
+              "players": [
+                {
+                  "player_id": "9500",
+                  "name": "Josh Downs",
+                  "position": "WR",
+                  "team": "IND"
+                }
+              ],
+              "picks": [
+                {
+                  "season": "2027",
+                  "round": 4
+                }
+              ]
             }
           }
         },
@@ -1007,17 +1611,17 @@
             "394252975431766016"
           ],
           "team_names": {
-            "394252975431766016": "Brock Hard",
-            "336348640681398272": "Nikkis\u2019 Victims"
+            "336348640681398272": "Nikkis\u2019 Victims",
+            "394252975431766016": "Brock Hard"
           },
           "sides": {
-            "394252975431766016": {
+            "336348640681398272": {
               "players": [
                 {
-                  "player_id": "12489",
-                  "name": "RJ Harvey",
-                  "position": "RB",
-                  "team": "DEN"
+                  "player_id": "12506",
+                  "name": "Harold Fannin",
+                  "position": "TE",
+                  "team": "CLE"
                 }
               ],
               "picks": [
@@ -1027,13 +1631,13 @@
                 }
               ]
             },
-            "336348640681398272": {
+            "394252975431766016": {
               "players": [
                 {
-                  "player_id": "12506",
-                  "name": "Harold Fannin",
-                  "position": "TE",
-                  "team": "CLE"
+                  "player_id": "12489",
+                  "name": "RJ Harvey",
+                  "position": "RB",
+                  "team": "DEN"
                 }
               ],
               "picks": [
@@ -1093,27 +1697,10 @@
             "394531785582608384"
           ],
           "team_names": {
-            "394248955468185600": "The Chicken Boys\ud83d\udc14",
-            "394531785582608384": "The Factory"
+            "394531785582608384": "The Factory",
+            "394248955468185600": "The Chicken Boys\ud83d\udc14"
           },
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "13298",
-                  "name": "KC Concepcion",
-                  "position": "WR",
-                  "team": "CLE"
-                },
-                {
-                  "player_id": "5012",
-                  "name": "Mark Andrews",
-                  "position": "TE",
-                  "team": "BAL"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -1141,6 +1728,23 @@
                   "round": 3
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "13298",
+                  "name": "KC Concepcion",
+                  "position": "WR",
+                  "team": "CLE"
+                },
+                {
+                  "player_id": "5012",
+                  "name": "Mark Andrews",
+                  "position": "TE",
+                  "team": "BAL"
+                }
+              ],
+              "picks": []
             }
           }
         },
@@ -1302,21 +1906,10 @@
             "394531785582608384"
           ],
           "team_names": {
-            "394248955468185600": "The Chicken Boys\ud83d\udc14",
-            "394531785582608384": "The Factory"
+            "394531785582608384": "The Factory",
+            "394248955468185600": "The Chicken Boys\ud83d\udc14"
           },
           "sides": {
-            "394248955468185600": {
-              "players": [
-                {
-                  "player_id": "7569",
-                  "name": "Nico Collins",
-                  "position": "WR",
-                  "team": "HOU"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -1348,6 +1941,17 @@
                   "round": 2
                 }
               ]
+            },
+            "394248955468185600": {
+              "players": [
+                {
+                  "player_id": "7569",
+                  "name": "Nico Collins",
+                  "position": "WR",
+                  "team": "HOU"
+                }
+              ],
+              "picks": []
             }
           }
         },
@@ -1509,21 +2113,10 @@
             "394531785582608384"
           ],
           "team_names": {
-            "394491025806135296": "BateBoul",
-            "394531785582608384": "The Factory"
+            "394531785582608384": "The Factory",
+            "394491025806135296": "BateBoul"
           },
           "sides": {
-            "394491025806135296": {
-              "players": [
-                {
-                  "player_id": "9221",
-                  "name": "Jahmyr Gibbs",
-                  "position": "RB",
-                  "team": "DET"
-                }
-              ],
-              "picks": []
-            },
             "394531785582608384": {
               "players": [
                 {
@@ -1545,6 +2138,17 @@
                   "round": 1
                 }
               ]
+            },
+            "394491025806135296": {
+              "players": [
+                {
+                  "player_id": "9221",
+                  "name": "Jahmyr Gibbs",
+                  "position": "RB",
+                  "team": "DET"
+                }
+              ],
+              "picks": []
             }
           }
         },
@@ -1621,21 +2225,10 @@
             "407246708687314944"
           ],
           "team_names": {
-            "407246708687314944": "Mattpao",
-            "393989477577588736": "The Moon Unit"
+            "393989477577588736": "The Moon Unit",
+            "407246708687314944": "Mattpao"
           },
           "sides": {
-            "407246708687314944": {
-              "players": [
-                {
-                  "player_id": "8110",
-                  "name": "Jake Ferguson",
-                  "position": "TE",
-                  "team": "DAL"
-                }
-              ],
-              "picks": []
-            },
             "393989477577588736": {
               "players": [],
               "picks": [
@@ -1648,6 +2241,17 @@
                   "round": 2
                 }
               ]
+            },
+            "407246708687314944": {
+              "players": [
+                {
+                  "player_id": "8110",
+                  "name": "Jake Ferguson",
+                  "position": "TE",
+                  "team": "DAL"
+                }
+              ],
+              "picks": []
             }
           }
         },
@@ -1660,10 +2264,21 @@
             "407246708687314944"
           ],
           "team_names": {
-            "407246708687314944": "Mattpao",
-            "394226654450315264": "The Cheese Children "
+            "394226654450315264": "The Cheese Children ",
+            "407246708687314944": "Mattpao"
           },
           "sides": {
+            "394226654450315264": {
+              "players": [
+                {
+                  "player_id": "8138",
+                  "name": "James Cook",
+                  "position": "RB",
+                  "team": "BUF"
+                }
+              ],
+              "picks": []
+            },
             "407246708687314944": {
               "players": [
                 {
@@ -1683,17 +2298,6 @@
                   "round": 1
                 }
               ]
-            },
-            "394226654450315264": {
-              "players": [
-                {
-                  "player_id": "8138",
-                  "name": "James Cook",
-                  "position": "RB",
-                  "team": "BUF"
-                }
-              ],
-              "picks": []
             }
           }
         },
@@ -1835,19 +2439,10 @@
             "407246708687314944"
           ],
           "team_names": {
-            "394491025806135296": "BateBoul",
-            "407246708687314944": "Mattpao"
+            "407246708687314944": "Mattpao",
+            "394491025806135296": "BateBoul"
           },
           "sides": {
-            "394491025806135296": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2028",
-                  "round": 2
-                }
-              ]
-            },
             "407246708687314944": {
               "players": [
                 {
@@ -1858,6 +2453,15 @@
                 }
               ],
               "picks": []
+            },
+            "394491025806135296": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2028",
+                  "round": 2
+                }
+              ]
             }
           }
         },
@@ -2714,24 +3318,24 @@
             "394252975431766016"
           ],
           "team_names": {
-            "394252975431766016": "Brock Hard",
-            "394226654450315264": "The Cheese Children "
+            "394226654450315264": "The Cheese Children ",
+            "394252975431766016": "Brock Hard"
           },
           "sides": {
-            "394252975431766016": {
-              "players": [],
-              "picks": [
-                {
-                  "season": "2026",
-                  "round": 4
-                }
-              ]
-            },
             "394226654450315264": {
               "players": [],
               "picks": [
                 {
                   "season": "2028",
+                  "round": 4
+                }
+              ]
+            },
+            "394252975431766016": {
+              "players": [],
+              "picks": [
+                {
+                  "season": "2026",
                   "round": 4
                 }
               ]
